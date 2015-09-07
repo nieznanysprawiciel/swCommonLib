@@ -39,6 +39,7 @@ template<typename class_type> class ObjectDeleterKey
 {
 	friend class ModelsManager;
 	friend class ResourceContainer<class_type>;
+	friend class ResourcesFactory;
 private:
 	ObjectDeleterKey() = default;						///<Tylko klasa zaprzyjaŸniona mo¿e stworzyæ obiekt.
 	ObjectDeleterKey( const ObjectDeleterKey& ) {};		///<Tylko klasa zaprzyjaŸniona mo¿e stworzyæ obiekt.
@@ -68,6 +69,15 @@ public:
 	
 	@param[in] object Obiekt do skasowania.*/
 	inline void delete_object( class_type* object )
+	{
+		delete object;
+	}
+
+	/**@brief Kasuje podany w parametrze obiekt.
+
+	@param[in] object Obiekt do skasowania.
+	@param[in] deleter_key Klucz dostêpu do obiektu.*/
+	static inline void delete_object( class_type* object, const ObjectDeleterKey<class_type>& deleter_key )
 	{
 		delete object;
 	}
