@@ -1,6 +1,9 @@
 #pragma once
 /**
 @file macros_switches.h
+@author nieznanysprawiciel
+@copyright Plik jest czêœci¹ silnika graficznego SWEngine.
+
 @brief Ten plik zawiera makrodefinicje bêd¹ce prze³¹cznikami miêdzy ró¿nymi opcjami kompilacji.
 Wiêkszoœæ z tych makrodefinicji pozwala na wybór jednej z opcji tylko tymczasowo,
 w docelowej wersji silnika trzeba bêdzie siê zdecydowaæ na któr¹œ z nich.*/
