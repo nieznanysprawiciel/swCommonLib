@@ -1,6 +1,9 @@
 #pragma once
 
 /**@file TypesDefinitions.h
+@author nieznanysprawiciel
+@copyright Plik jest czêœci¹ silnika graficznego SWEngine.
+
 @brief Plik zawiera definicje podstawowych typów zmiennych.
 
 Zmienne s¹ maj¹ sta³y rozmiar, powinny byæ mniej wiêcej niezale¿ne od platformy bo

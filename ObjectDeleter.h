@@ -1,5 +1,8 @@
 #pragma once
 /**@file ObjectDeleter.h
+@author nieznanysprawiciel
+@copyright Plik jest czêœci¹ silnika graficznego SWEngine.
+
 @brief Klasy s³u¿¹ce do zapewnienia ograniczonej mo¿liwoœci kasowania niektórych obiektów silnika,
 które maj¹ prywatne destruktory.
 */
@@ -40,6 +43,7 @@ template<typename class_type> class ObjectDeleterKey
 	friend class ModelsManager;
 	friend class ResourceContainer<class_type>;
 	friend class ResourcesFactory;
+	friend class RenderTargetObject;
 private:
 	ObjectDeleterKey() = default;						///<Tylko klasa zaprzyjaŸniona mo¿e stworzyæ obiekt.
 	ObjectDeleterKey( const ObjectDeleterKey& ) {};		///<Tylko klasa zaprzyjaŸniona mo¿e stworzyæ obiekt.
