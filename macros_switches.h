@@ -8,7 +8,7 @@
 Wiêkszoœæ z tych makrodefinicji pozwala na wybór jednej z opcji tylko tymczasowo,
 w docelowej wersji silnika trzeba bêdzie siê zdecydowaæ na któr¹œ z nich.*/
 
-#include "types_definitions.h"
+#include "Common/TypesDefinitions.h"
 
 ///Definicje Rendererów. Nale¿y przypisaæ sta³ej ENABLE_RENDERER jedn¹ z poni¿szych wartoœci. (DX12 na razie nie ma)
 #define DX11	0
