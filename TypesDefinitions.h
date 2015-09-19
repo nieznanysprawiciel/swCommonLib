@@ -15,6 +15,7 @@ typ int8_t, który jest zamieniany na int8.
 */
 
 /**@defgroup CommonFiles Common
+@ingroup ModulesStructure
 @brief Czêsto u¿ywane deklaracje i inne funkcjonalnoœci.*/
 
 #include <cstdint>
