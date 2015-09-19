@@ -10,18 +10,10 @@ które maj¹ prywatne destruktory.
 template <class TYPE> class ResourceContainer;
 
 
-/*
-
-@page DeletingObjects Usuwanie obiektów wewn¹trz silnika
-
-@section Contents Spis Treœci
-- @ref DeletingObjects_selfDrawingObjects_briefDescription
-
-@subsection DeletingObjects_selfDrawingObjects_briefDescription Ogólny opis
-*/
-
-
-/**@brief Szablon klasy klucza dla obiektów ObjectDeleter.
+/**
+@defgroup DeletingObjects Usuwanie zasobów silnika
+@ingroup CommonFiles
+@brief Modu³ umo¿liwia kasowanie zasobów silnika tylko niektórym klasom.
 
 Niektóre obiekty s¹ zadeklarowane z prywatnym (chronionym) destruktorem, w celu uniemo¿liwienia
 skasowania ich przez niepowo³ane klasy. Jednak¿e musi istnieæ jakiœ dostêp do destruktorów,
@@ -38,6 +30,15 @@ Wystarczy, ¿e zadeklaruj¹ przyjaŸñ z obiektem ObjectDeleter. Taka przyjaŸñ jest 
 klasa ta nie s³u¿y do niczego innego ni¿ kasowanie obiektów, wiêc jesteœmy pewni, ¿e zmiany wprowadzone
 w klasie deklaruj¹cej przyjaŸñ nie bêd¹ psu³y ca³ego kodu aplikacji.
 */
+
+
+/**
+@ingroup DeletingObjects
+@brief Szablon klasy klucza dla obiektów ObjectDeleter.
+
+
+@copydetails DeletingObjects
+*/
 template<typename class_type> class ObjectDeleterKey
 {
 	friend class ModelsManager;
@@ -45,12 +46,13 @@ template<typename class_type> class ObjectDeleterKey
 	friend class RenderTargetObject;
 private:
 	ObjectDeleterKey() = default;						///<Tylko klasa zaprzyjaŸniona mo¿e stworzyæ obiekt.
-	ObjectDeleterKey( const ObjectDeleterKey& ) {};		///<Tylko klasa zaprzyjaŸniona mo¿e stworzyæ obiekt.
-	ObjectDeleterKey( const ObjectDeleterKey&& ) {};	///<Tylko klasa zaprzyjaŸniona mo¿e stworzyæ obiekt.
+	ObjectDeleterKey( const ObjectDeleterKey& ) {}		///<Tylko klasa zaprzyjaŸniona mo¿e stworzyæ obiekt.
+	ObjectDeleterKey( const ObjectDeleterKey&& ) {}		///<Tylko klasa zaprzyjaŸniona mo¿e stworzyæ obiekt.
 public:
 };
 
 /**@brief Klasa s³u¿y do kasowania obiektów, których destruktor jest prywatny.
+@ingroup DeletingObjects
 
 Taka sytuacja zachodzi w momencie, gdy nie chcemy, aby ka¿da klasa mog³a skasowaæ
 jakiœ obiekt, ale chcemy daæ takie uprawnienia jedynie wybrañcom. Ta klasa implementuje
