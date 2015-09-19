@@ -58,7 +58,7 @@ GameRelease/binaries_x64/read_before_use.txt.
 
 Jedynym uruchamialnym w tej chwili projektem jest TestEngine.
 Wywo³uje on funkje testuj¹ce silnika, które wczytuj¹ modele z katalogów GameRelease/tylko_do_testow.
-
+Pozosta³e projekty kompiluj¹ siê do bibliotek statycznych.
 
 ##Dokumentacja
 
