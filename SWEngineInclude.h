@@ -1,5 +1,5 @@
 /**
-@file MeshResources.h
+@file SWEngineInclude.h
 @author nieznanysprawiciel
 @copyright Plik jest czêœci¹ silnika graficznego SWEngine.
 
@@ -149,34 +149,34 @@ w [NazwaProjektu]PathMacros, poniewa¿ ustawienia s¹ dziedziczone i mog¹ wp³ywaæ 
 Wiêkszoœæ projektów umieszcza tu w Additional Include Directories œcie¿kê $( EngineSourceDir ).
 */
 
-/**@page FolderStructure
+/**@page FolderStructure Struktura katalogowa projektu
 
 Pod makrem $( RootDir ) znajduje siê œcie¿ka do katalogu SWEngine (chyba, ¿e ktoœ inaczej nazwa³ katalog z projektem).
 
--	Projects
+-	/Projects
 Katalog zawiera plik Solution oraz w podfolderach wszystkie pliki projektów oraz konfiguracji (.props).
 
--	GameRelease
+-	/GameRelease
 Zawiera strukturê katalogow¹ wynikowej aplikacji oraz modele testowe.
 
--	External
+-	/External
 Zawiera biblioteki zewnetrzne. Nie wszystkie biblioteki tu trafiaj¹. DirectX SDK na przyk³ad
 mo¿e znajdowaæ siê w dowolnym miejscu i ma zdefiniowan¹ zmienn¹ œrodowiskow¹ ze œcie¿k¹.
 
--	EngineBuildDir
+-	/EngineBuildDir
 Tu trafiaj¹ wyniki kompilacji, czyli ca³y œmietnik.
 
--	Documentation
+-	/Documentation
 Zawiera dokumentacjê projektu generowan¹ przez doxygen (w folderze /html).
 
--	EngineLib
+-	/EngineLib
 Tutaj trafiaj¹ skompilowane biblioteki statyczne.
 
--	EngineCode
+-	/EngineCode
 W tym katalogu znajduj¹ siê wszystkie pliki z kodem Ÿród³owym projektów.
 Ka¿dy projekt powinien dodaæ œcie¿kê do tego katalogu w Additional Include Directories.
 
-Zaleca siê, ¿eby includuj¹c pliki podawaæ wszystki œcie¿ki wzglêdem tego katalogu.
+Zaleca siê, ¿eby includuj¹c pliki podawaæ wszystki œcie¿ki wzglêdem katalogu EngineCode.
 Trzeba to robiæ szczególnie wtedy, gdy projekt kompiluje siê do biblioteki statycznej.
 W przeciwnym wypadku wszystkie projekty, które includuj¹ jakieœ headery biblioteczne, mog¹
 siê nie kompilowaæ, ze wzglêdu na b³êdne œcie¿ki.
