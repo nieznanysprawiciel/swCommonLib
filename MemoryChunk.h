@@ -24,11 +24,11 @@ public:
 		:	m_memory( dataPointer ),
 			m_size( dataSize )
 	{}
-	template<typename Type>
-	MemoryChunk( std::vector<Type>&& vector )
-	{
-		//vector.
-	}
+	//template<typename Type>
+	//MemoryChunk( std::vector<Type>&& vector )
+	//{
+	//	//vector.
+	//}
 
 	/**Zwalnia pamiêæ po zasobach.*/
 	~MemoryChunk()

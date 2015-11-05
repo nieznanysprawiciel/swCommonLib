@@ -11,6 +11,7 @@ Ponadto zawiera dokumentacjê uruchamiania, struktury projektu i innych elementów
 #include "EngineCore/MainEngine/EngineInterface.h"
 #include "EngineCore/Actors/ActorObjects.h"
 #include "EngineCore/EventsManager/Event.h"
+#include "EngineCore/GamePlay/FableEngine.h"
 
 
 /**@defgroup ModulesStructure Modu³y silnika
