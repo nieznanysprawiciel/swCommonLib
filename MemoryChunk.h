@@ -61,6 +61,17 @@ public:
 	template<typename Type>
 	inline Type&			Get				( uint32 index )
 	{	return static_cast<Type*>( m_memory )[ index ];		}
+
+	inline bool				IsNull			() const { return !m_memory; }
+	inline void				MemoryCopy		( const int8* dataPointer, uint32 dataSize )
+	{
+		if( m_memory )
+			delete[] m_memory;
+		
+		m_memory = new int8[ dataSize ];
+		memcpy( m_memory, dataPointer, dataSize );
+		m_size = dataSize;
+	}
 };
 
 
