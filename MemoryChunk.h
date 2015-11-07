@@ -14,10 +14,9 @@ protected:
 public:
 	/**@brief Tworzy pusty obszar pamiêci.*/
 	MemoryChunk()
-	{
-		m_memory = nullptr;
-		m_size = 0;
-	}
+		: m_memory( nullptr ),
+		m_size( 0 )
+	{}
 
 	/**@brief Przejmuje na w³asnoœæ podany obszar pamiêci.*/
 	MemoryChunk( int8* dataPointer, uint32 dataSize )
@@ -36,8 +35,18 @@ public:
 		delete[] m_memory;
 	}
 
-	MemoryChunk( const MemoryChunk& ) = delete;		///<Na razie nie mo¿na wykonywaæ kopii. Jedyna opcja to konstrukcja obiektu z semantyk¹ move.
-	MemoryChunk( MemoryChunk&& chunk )				///<Tworzy obiekt kradn¹c pamiêæ z podanego w parametrze obiektu.	
+	MemoryChunk& operator=( const MemoryChunk& ) = delete;		///< Przypisanie obiektów nie ma sensu, bo mo¿e prowadziæ do dwukrotnego zwalniania pamiêci.
+	MemoryChunk( const MemoryChunk& ) = delete;					///< Na razie nie mo¿na wykonywaæ kopii. Jedyna opcja to konstrukcja obiektu z semantyk¹ move.
+
+	MemoryChunk( MemoryChunk&& chunk )				///< Tworzy obiekt kradn¹c pamiêæ z podanego w parametrze obiektu.
+	{
+		m_memory = chunk.m_memory;
+		m_size = chunk.m_size;
+		chunk.m_memory = nullptr;
+		chunk.m_size = 0;
+	}
+
+	MemoryChunk& operator=( MemoryChunk&& chunk )	///< Operator przypisania z semantyk¹ move.
 	{
 		if( &chunk != this )
 		{
@@ -62,7 +71,13 @@ public:
 	inline Type&			Get				( uint32 index )
 	{	return static_cast<Type*>( m_memory )[ index ];		}
 
-	inline bool				IsNull			() const { return !m_memory; }
+	inline bool				IsNull			() const { return !m_memory; }		///< Sprawdza czy MemoryChunk ma zawartoœæ.
+
+	/**@brief Kopiuje podany obszar pamiêci.
+
+	@param[in] dataPointer WskaŸnik na pocz¹tek pamiêci do skopiowania.
+	@param[in] dataSize Liczba bajtów pamiêci do skopiowania.
+	*/
 	inline void				MemoryCopy		( const int8* dataPointer, uint32 dataSize )
 	{
 		if( m_memory )
@@ -72,6 +87,7 @@ public:
 		memcpy( m_memory, dataPointer, dataSize );
 		m_size = dataSize;
 	}
+
 };
 
 
