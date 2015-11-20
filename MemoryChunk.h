@@ -23,6 +23,12 @@ public:
 		:	m_memory( dataPointer ),
 			m_size( dataSize )
 	{}
+	/**@brief alokuje obszar pamiêciu o podanym rozmiarze, nie inicjuj¹c go.*/
+	MemoryChunk( uint32 dataSize )
+		:	m_memory( new int8[dataSize] ),
+			m_size( dataSize )
+	{}
+
 	//template<typename Type>
 	//MemoryChunk( std::vector<Type>&& vector )
 	//{
@@ -69,7 +75,14 @@ public:
 	@param[in] index Indeks w tablicy. U¿ywana jest arytmetyka wskaŸnikowa dla typu Type.*/
 	template<typename Type>
 	inline Type&			Get				( uint32 index )
-	{	return static_cast<Type*>( m_memory )[ index ];		}
+	{	return reinterpret_cast<Type*>( m_memory )[ index ];		}
+
+	/**@brief Zwraca liczbê elementów w buforze o typie podanym w parametrze szablonu.
+	@attention Funkcja nie sprawdza faktycznego typu bufora, bo go nie zna. U¿ytkownik jest odpowiedzialny za poprawne stosowanie.
+	@return Zwraca rozmiar tablicy o typie Type.*/
+	template<typename Type>
+	inline uint32			Count			()
+	{	return GetMemorySize() / sizeof( Type );	}	
 
 	inline bool				IsNull			() const { return !m_memory; }		///< Sprawdza czy MemoryChunk ma zawartoœæ.
 
