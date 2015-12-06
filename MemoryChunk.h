@@ -66,7 +66,7 @@ public:
 
 	/**@brief Zwraca otypowany wskaŸnik na pamiêæ obiektu. @note Nie ma tu ¿adnej kontroli typów.*/
 	template<typename Type>
-	inline Type*			GetMemory		()		{ return m_memory; }
+	inline Type*			GetMemory		()		{ return reinterpret_cast<Type*>( m_memory ); }
 	inline uint32			GetMemorySize	()		{ return m_size; }			///<Zwraca rozmiar pamiêci przechowywanej w obiekcie.
 
 	/**@brief Zwraca referencjê na obiekt w tablicy pod podanym indeksem.
