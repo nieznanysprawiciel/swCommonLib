@@ -1,5 +1,12 @@
 #include "Common/TypesDefinitions.h"
 
+#ifdef _M_AMD64
+#include <mutex>
+
+typedef std::mutex SpinLock;
+
+#else
+
 /**
 @defgroup Multithreading Narzêdzia pomocnicze do obs³ugi wielow¹tkowoœci.
 @ingroup CommonFiles
@@ -81,3 +88,4 @@ inline bool SpinLock::try_lock()
 	return false;
 }
 
+#endif
