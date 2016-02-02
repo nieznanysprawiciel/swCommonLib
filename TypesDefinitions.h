@@ -31,3 +31,5 @@ typedef int64_t int64;
 typedef uint64_t uint64;
 
 typedef size_t Size;
+
+typedef ptrdiff_t PtrOffset;

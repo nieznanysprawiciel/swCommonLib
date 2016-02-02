@@ -27,7 +27,7 @@ na razie klasa nadaje siê do u¿ytku jedynie pod procesorami x86.
 class SpinLock
 {
 private:
-	volatile int16		m_locked;
+	volatile int32		m_locked;
 protected:
 public:
 	SpinLock()
@@ -49,11 +49,11 @@ inline void SpinLock::lock()
 	_asm
 	{
 		mov			ecx,			[this]
-	TRY_LOCK_LABEL:
-		mov			AX,				0xF
-		xchg		AX,				[ecx].m_locked
-		cmp			AX,				0x0
-		jne			TRY_LOCK_LABEL
+		mov			EAX,			0xF
+		TRY_LOCK_LABEL:
+		xchg		EAX,			[ecx].m_locked
+		and			EAX,			0xFF
+		jnz			TRY_LOCK_LABEL
 	}
 }
 
@@ -62,9 +62,10 @@ inline void SpinLock::lock()
 */
 inline void SpinLock::unlock()
 {
-	_asm mov		ecx,		[this]
-	_asm mov		EAX,		0x0
-	_asm xchg		AX,			[ecx].m_locked
+	_asm mov		ecx,				[this]
+	_asm mov		[ecx.m_locked],		0x0
+	//_asm mov		EAX,		0x0
+	//_asm xchg		EAX,		[ecx].m_locked
 }
 
 
@@ -78,9 +79,9 @@ inline bool SpinLock::try_lock()
 	_asm
 	{
 		mov			ecx,			[this]
-		mov			AX,				0xF
-		xchg		AX,				[ecx].m_locked
-		cmp			AX,				0x0
+		mov			EAX,			0xF
+		xchg		EAX,			[ecx].m_locked
+		cmp			EAX,			0x0
 		jne			LOCK_FAILED_LABEL
 	}
 	return true;
