@@ -21,6 +21,7 @@ typ int8_t, który jest zamieniany na int8.
 #include <cstdint>
 
 
+
 typedef int8_t int8;
 typedef uint8_t uint8;
 typedef int16_t int16;
@@ -33,3 +34,6 @@ typedef uint64_t uint64;
 typedef size_t Size;
 
 typedef ptrdiff_t PtrOffset;
+
+
+typedef int16 ActorType;
