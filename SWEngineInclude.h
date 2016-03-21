@@ -52,16 +52,27 @@ Mo¿na to zrobiæ nastêpuj¹co:
 -	Zamykamy okno
 Od tej pory silnik bêdzie kompilowany do wersji 64-bitowej.
 
-Katalogiem wynikowym pliku .exe jest GameRelease/binaries_x64.
-Wersja 64-bitowa uruchamia siê w Visual Studio, ale poza nim nie, poniewa¿
-jest w z³ym katalogu. Instrukcja uruchamiania znajduje siê w pliku 
-GameRelease/binaries_x64/read_before_use.txt.
+Katalogiem wynikowym pliku .exe jest GameRelease (dostêpny pod makrem $(GameReleaseDir)).
+Przy ka¿dej kompilacji do tego katalogu kopiowana jest biblioteka libfbxsdk.dll odpowiadaj¹ca
+aktualnie u¿ywanej wersji aplikacji. Z tego wzglêdu klikaj¹c myszk¹ plik .exe mo¿na uruchomiæ jedynie
+ostatnio kompilowan¹ wersjê aplikacji. Aby przetestowaæ inn¹ wersjê trzeba j¹ uruchomiæ z poziomu
+Visual Studio. 
 
 ##Uruchamianie
 
-Jedynym uruchamialnym w tej chwili projektem jest TestEngine.
-Wywo³uje on funkje testuj¹ce silnika, które wczytuj¹ modele z katalogów GameRelease/tylko_do_testow.
-Pozosta³e projekty kompiluj¹ siê do bibliotek statycznych.
+Uruchamialne projekty:
+-	TestEngine
+-	EditorApp
+-	SerializationJSONTest
+-	SerializationXMLTest
+
+Wszystkie projekty oprócz EditorApp powinny mieæ ustawiony katalog roboczy na GameRelease.
+Properties -> Debugging -> Working Directory
+Uwaga!! Trzeba zmieniæ katalog dla wszystkich konfiguracji projektu (Release/Debug; Win32/x64),
+¿eby potem nie byæ zaskoczonym, ¿e coœ nie dzia³a.
+
+EditorApp powinien miec ustawiony katalog roboczy na EditorRelease (makro $(EditorReleaseDir)).
+
 
 ##Dokumentacja
 
@@ -125,13 +136,9 @@ Bezpoœrednio w konfiguracji mo¿na wprowadzaæ jedynie te zmiany, które odnosz¹ si
 
 ##Podstawowe pliki konfiguracyjne
 
-Istniej¹ dwa pliki .props, których powinien u¿ywac ka¿dy projekt:
--	DebugConfig lub ReleaseConfig
-
-Te pliki definiuj¹ makra ConfigTypeString, które zawieraj¹ napis "Debug" lub "Release" w zale¿noœci
-od konfiguracji. Nastêpnie te makra s¹ u¿ywane do tworzenia nazw œcie¿ek i plików.
-
+Ka¿dy projekt powinien u¿ywaæ pliku:
 -	PathsMacros
+
 Zawiera podstawowe œcie¿ki silnikowe, do których odwo³uj¹ siê póŸniej kolejne pliki .props.
 
 Ka¿dy projekt ma dwa w³aœciwe tylko dla siebie pliki konfiguracyjne
@@ -150,6 +157,28 @@ dodaæ odpowiedni plik .props.
 w [NazwaProjektu]PathMacros, poniewa¿ ustawienia s¹ dziedziczone i mog¹ wp³ywaæ na inne projekty.
 
 Wiêkszoœæ projektów umieszcza tu w Additional Include Directories œcie¿kê $( EngineSourceDir ).
+
+##Makra definiowane przez silnik:
+
+W pliku PathsMacros.props zdefiniowane s¹ makra ze œcie¿kami wewn¹trz katalogów silnika:
+-	EngineShortcut
+-	EngineVersion
+-	EngineVersionString
+-	RootDir
+-	ExternalDir
+-	GameReleaseDir
+-	EngineLibDir
+-	EngineBuildDir
+-	EngineSourceDir
+-	EngineLibName
+-	CommonDir
+-	BuildFolder
+-	EditorReleaseDir
+-	InstallerReleaseDir
+-	ConfigTypeString
+-	ConfigTypeSmallString
+-	DebugSuffix
+
 */
 
 /**@page FolderStructure Struktura katalogowa projektu
@@ -178,6 +207,9 @@ Tutaj trafiaj¹ skompilowane biblioteki statyczne.
 -	/EngineCode
 W tym katalogu znajduj¹ siê wszystkie pliki z kodem Ÿród³owym projektów.
 Ka¿dy projekt powinien dodaæ œcie¿kê do tego katalogu w Additional Include Directories.
+
+-	/EditorRelease
+W tym katalogu znajduj¹ siê pliki edytora.
 
 Zaleca siê, ¿eby includuj¹c pliki podawaæ wszystki œcie¿ki wzglêdem katalogu EngineCode.
 Trzeba to robiæ szczególnie wtedy, gdy projekt kompiluje siê do biblioteki statycznej.
