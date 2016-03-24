@@ -10,6 +10,10 @@ w docelowej wersji silnika trzeba bêdzie siê zdecydowaæ na któr¹œ z nich.*/
 
 #include "Common/TypesDefinitions.h"
 
+#include "TypeInfo.h"
+#include "RTTREnable.h"
+#include "RTTRCast.h"
+
 ///Co tyle sekund aktualizujemy m_framesPerSec.
 static const unsigned int FRAMES_PER_SEC_UPDATE = 10;
 static const float FIXED_MOVE_UPDATE_INTERVAL = ((float)1 / (float)56);	///<Interwa³, po którym nastêpuje kolejne przeliczenie po³o¿eñ obiektów (w sekundach).
