@@ -10,9 +10,7 @@ w docelowej wersji silnika trzeba bêdzie siê zdecydowaæ na któr¹œ z nich.*/
 
 #include "Common/TypesDefinitions.h"
 
-#include "TypeInfo.h"
-#include "RTTREnable.h"
-#include "RTTRCast.h"
+#include "Common/RTTR.h"
 
 ///Co tyle sekund aktualizujemy m_framesPerSec.
 static const unsigned int FRAMES_PER_SEC_UPDATE = 10;

@@ -39,6 +39,7 @@ public:
 
 	PropertyType&		operator()( void )
 	{
+		//assert( rttr_cast< PropertyType >( ) )
 		auto typedProperty = static_cast< MetaProperty< PropertyType >* >( m_metaInfo );
 		return m_ownerObj->*typedProperty->GetPtr();
 	}
