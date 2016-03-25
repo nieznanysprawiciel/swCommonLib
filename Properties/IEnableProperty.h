@@ -5,6 +5,7 @@
 
 class IEnableProperty
 {
+	RTTR_ENABLE()
 private:
 
 	virtual IMetaProperty*		GetMetaProperty	( const char* propertyName ) = 0;
@@ -29,3 +30,4 @@ public:
 		return Property< PropertyType >( nullptr, this );
 	}
 };
+RTTR_DECLARE_STANDARD_META_TYPE_VARIANTS( IEnableProperty )
