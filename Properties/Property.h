@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IMetaProperty.h"
-
+#include <cassert>
 
 class IEnableProperty;
 
@@ -22,10 +22,12 @@ public:
 	{}
 
 	const char*		GetPropertyName()		{ return m_metaInfo->GetPropertyName(); }
-	TypeId			GetPropertyType()		{ return m_metaInfo->GetPropertyType(); }
+	TypeInfo		GetPropertyType()		{ return m_metaInfo->GetPropertyType(); }
 
 	bool			IsValid()				{ return m_metaInfo && m_ownerObj; }
 };
+
+
 
 template< typename PropertyType >
 class Property	:	public IProperty
@@ -35,11 +37,14 @@ public:
 
 	Property( IMetaProperty* metaInfo, IEnableProperty* object )
 		:	IProperty( metaInfo, object )
-	{}
+	{
+		//assert( IsValid() );
+	}
 
 	PropertyType&		operator()( void )
 	{
-		//assert( rttr_cast< PropertyType >( ) )
+		assert( IsValid() );
+
 		auto typedProperty = static_cast< MetaProperty< PropertyType >* >( m_metaInfo );
 		return m_ownerObj->*typedProperty->GetPtr();
 	}

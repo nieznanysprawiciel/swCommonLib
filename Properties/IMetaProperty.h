@@ -5,7 +5,7 @@
 
 class IEnableProperty;
 
-typedef RTTR::TypeInfo::TypeId TypeId;
+typedef RTTR::TypeInfo TypeInfo;
 
 
 class IMetaProperty
@@ -13,20 +13,20 @@ class IMetaProperty
 private:
 	
 	const char*		m_name;		///< Nazwa w³aœciwoœci, po której mo¿na siê do niej odwo³ywaæ.
-	TypeId			m_type;		///< Typ w³aœciwoœci identyfikowany wskaŸnikiem na strukturê typeinfo. (mo¿e siê zmieniæ w przysz³oœci)
+	TypeInfo		m_type;		///< Typ w³aœciwoœci identyfikowany wskaŸnikiem na strukturê typeinfo. (mo¿e siê zmieniæ w przysz³oœci)
 
 	bool			m_serializable;
 	bool			m_showInEditor;
 
 public:
-	IMetaProperty( const char* name, TypeId type )
+	IMetaProperty( const char* name, TypeInfo type )
 		:	m_name( name )
 		,	m_type( type )
 	{}
 
 
 	const char*		GetPropertyName()		{ return m_name; }
-	TypeId			GetPropertyType()		{ return m_type; }
+	TypeInfo		GetPropertyType()		{ return m_type; }
 };
 
 
@@ -38,7 +38,7 @@ private:
 	PropertyType IEnableProperty::*		m_memberPtr;	
 
 public:
-	MetaProperty( const char* name, TypeId type, PropertyType IEnableProperty::* memberPtr )
+	MetaProperty( const char* name, TypeInfo type, PropertyType IEnableProperty::* memberPtr )
 		:	IMetaProperty( name, type )
 		,	m_memberPtr( memberPtr )
 	{}

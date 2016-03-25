@@ -21,8 +21,11 @@ public:
 	inline Property< PropertyType >		GetTypedProperty		( const char* propertyName )
 	{
 		IMetaProperty* metaProperty = GetMetaProperty( propertyName );
-		// @todo Check types compatibility.
 
-		return Property< PropertyType >( metaProperty, this );
+		if( metaProperty->GetPropertyType().isTypeDerivedFrom< PropertyType >() )
+			return Property< PropertyType >( metaProperty, this );
+
+		// Types are inconsistent. Return invalid property.
+		return Property< PropertyType >( nullptr, this );
 	}
 };
