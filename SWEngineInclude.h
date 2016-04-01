@@ -15,9 +15,7 @@ Ponadto zawiera dokumentacjê uruchamiania, struktury projektu i innych elementów
 
 #include <DirectXMath.h>
 
-#include "TypeInfo.h"
-#include "RTTREnable.h"
-#include "RTTRCast.h"
+#include "Common/RTTR.h"
 
 /**@defgroup ModulesStructure Modu³y silnika
 @brief Modu³y silnika*/
