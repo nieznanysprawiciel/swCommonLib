@@ -36,4 +36,10 @@ typedef size_t Size;
 typedef ptrdiff_t PtrOffset;
 
 
-typedef int16 ActorType;
+namespace rttr
+{
+	class type;
+}
+
+
+typedef rttr::type ActorType;
