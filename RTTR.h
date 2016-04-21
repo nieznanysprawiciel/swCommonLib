@@ -6,6 +6,15 @@
 
 #include "Tools/Reflection/RTTR.h"
 
+/**@brief Typy metadanych widoczne z poziomu edytora.*/
+enum class MetaDataType
+{
+	Category,
+	Serialize,
+	ShowInEditor
+};
+
+
 
 /**@defgroup Reflection Mechanizm refleksji
 @ingroup Tools
