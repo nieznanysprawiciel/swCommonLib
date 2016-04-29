@@ -37,8 +37,14 @@ Potem nale¿y ponownie zainstalowaæ Visual C++ 2010 Redistributable, co nie powod
 a przynajmniej nic nie wiem.
 (link: http://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=26999)
 
-Slnik u¿ywa równie¿ FBX SDK do wczytywania modeli w tym formacie. Biblioteka znajduje siê
-w folderze /External.
+Silnik u¿ywa równie¿ FBX SDK do wczytywania modeli w tym formacie. Biblioteka znajduje siê
+w folderze /External. Do skompilowania edytora potrzebne jest kilka pakietów, które Visual Studio
+automatycznie œci¹gnie przy pierwszej kompilacji.
+
+Silnik u¿ywa te¿ bibilioteki RTTR Axela Menzela, do obs³ugiwania dynamicznej informacji o typach
+i metadanych o klasach. Niestety do kompilacji potrzebna jest odpowiednia wersja kompilatora z C++ 11.
+Visual C++ 12 (2013) z Updatem 2 nie dzia³a, poniewa¿ wyskakuj¹ b³êdy z redefinicj¹ funkcji szablonowych
+przy u¿yciu wzorca projektowego SFINAE. Na pewno dzia³a od Updatu 4.
 
 Kompilowanie wersji 32-bitowej poprzez Visual Studio odbywa siê normalnie BUILD->Build Solution.
 
