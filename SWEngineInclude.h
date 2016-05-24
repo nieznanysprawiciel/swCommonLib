@@ -37,14 +37,14 @@ Potem nale¿y ponownie zainstalowaæ Visual C++ 2010 Redistributable, co nie powod
 a przynajmniej nic nie wiem.
 (link: http://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=26999)
 
-Silnik u¿ywa równie¿ FBX SDK do wczytywania modeli w tym formacie. Biblioteka znajduje siê
-w folderze /External. Do skompilowania edytora potrzebne jest kilka pakietów, które Visual Studio
-automatycznie œci¹gnie przy pierwszej kompilacji.
-
 Silnik u¿ywa te¿ bibilioteki RTTR Axela Menzela, do obs³ugiwania dynamicznej informacji o typach
 i metadanych o klasach. Niestety do kompilacji potrzebna jest odpowiednia wersja kompilatora z C++ 11.
 Visual C++ 12 (2013) z Updatem 2 nie dzia³a, poniewa¿ wyskakuj¹ b³êdy z redefinicj¹ funkcji szablonowych
 przy u¿yciu wzorca projektowego SFINAE. Na pewno dzia³a od Updatu 4.
+
+Silnik u¿ywa równie¿ FBX SDK do wczytywania modeli w tym formacie. Biblioteka znajduje siê
+w folderze /External. Do skompilowania edytora potrzebne jest kilka pakietów, które Visual Studio
+automatycznie œci¹gnie przy pierwszej kompilacji.
 
 Kompilowanie wersji 32-bitowej poprzez Visual Studio odbywa siê normalnie BUILD->Build Solution.
 
@@ -75,10 +75,11 @@ Uruchamialne projekty:
 
 Wszystkie projekty oprócz EditorApp powinny mieæ ustawiony katalog roboczy na GameRelease.
 Properties -> Debugging -> Working Directory
+
 Uwaga!! Trzeba zmieniæ katalog dla wszystkich konfiguracji projektu (Release/Debug; Win32/x64),
 ¿eby potem nie byæ zaskoczonym, ¿e coœ nie dzia³a.
 
-EditorApp powinien miec ustawiony katalog roboczy na EditorRelease (makro $(EditorReleaseDir)).
+EditorApp powinien mieæ ustawiony katalog roboczy na EditorRelease (makro $(EditorReleaseDir)).
 
 
 ##Dokumentacja
@@ -89,7 +90,10 @@ http://nieznanysprawiciel.github.io/SWEngine/
 Istnieje specjalny branch gh-pages, który zawiera tylko i wy³¹cznie dokumentacjê
 w postaci html-ów.
 
-@attention Aby móc generowaæ dokumentacjê do tego brancha, sklonowa³em ca³e repo tak,
+@attention Normalnie plik index.html powinien byæ w tym samym katalogu co
+folder .git. Ale wtedy trzeba by wyrzuciæ kod silnika, a jak siê to zrobi, to nie da siê wygenerowaæ
+dokumentacji.
+Aby móc generowaæ dokumentacjê do tego brancha, sklonowa³em ca³e repo tak,
 ¿eby nowy folder .git znajdowa³ siê w katalogu Documentation/html/.
 Dziêki temu bêd¹c w branchu gh-pages mo¿na generowaæ dokumentacjê z plików Ÿród³owych projektu znajduj¹cych siê kilka katalogów wy¿ej.
 
@@ -99,20 +103,22 @@ mieæ ¿adnego wygenerowanego przez doxygen pliku.
 
 Najlepiej jest WOGÓLE nic nie commitowaæ, pushowaæ ani pullowaæ z brancha gh-pages.
 
+Poniewa¿ github u¿ywa Jekylla, to jest jakiœ problem z nazwami plików, które zaczynaj¹ siê od podkreœlenia.
+Dlatego w katalogu SWEngine/Documentation/html musi znajdowaæ siê plik .nojekyll, który ten problem rozwi¹zuje.
 
 ##Generowanie dokumentacji
 
 Dokumentacja jest generowana automatycznie na podstawie kodu Ÿród³owego w komentarzach.
 Poza tym w katalogu SWEngine/EngineCode/documentation znajduj¹ siê pliki dodatkowe z opisem tematycznym
 niektórych zagadnieñ.
-Jak ktoœ bêdzie kiedyœ implementowa³ jakieœ funkcje, to musi na bie¿¹co komentowaæ
-swoje osi¹gniêcia.
+Jak ktoœ bêdzie kiedyœ implementowa³ jakieœ funkcje, to najlepiej na bie¿¹co komentowaæ,
+co siê robi, bo najczêœciej potem siê nie chce.
 
 Aby wygenerowaæ dokumentacjê:
 
 - Nale¿y œci¹gn¹æ program doxywizard ze strony: http://www.stack.nl/~dimitri/doxygen/download.html
 - Ustawiæ working directory, ¿eby odpowiada³o temu, gdzie trzymasz projekt
-- Wczytac plik konfiguracyjny doxywizarda
+- Wczytaæ plik konfiguracyjny doxywizarda
 - Przejœæ do zak³adki Run i klikn¹æ Run doxygen
 
 Plik konfiguracyjny silnika znajduje siê w katalogu:
