@@ -9,9 +9,10 @@
 /**@brief Typy metadanych widoczne z poziomu edytora.*/
 enum class MetaDataType
 {
-	Category,
-	Serialize,
-	ShowInEditor
+	Category,			///< Kategoria do jakiej nale¿y przypisaæ w³aœciwoœæ w edytorze.
+	Serialize,			///< Wartoœæ true oznacza, ¿e w³aœciwoœæ zostanie zserializowana do pliku z map¹. Domyœlnie: true.
+	AllowInSaveFile,	///< Serializuje wartoœæ do pliku z zapisanym stanem gry. Domyœlnie: true.
+	ShowInEditor		///< Umo¿liwia odczytywanie i modyfikowanie wartoœci z edytora. Domyœlnie: true. @todo Zaimplementowaæ filtrowanie w edytorze propertiesów.
 };
 
 
@@ -79,7 +80,8 @@ class StaticActor : public EngineObject
 };
 @endcode
 
-Nastêpnie w pliku .cpp mo¿na dodaæ metadane klasy
+Nastêpnie w pliku .cpp mo¿na dodaæ metadane klasy. Nazwy w³asciwoœci nie powinny zawieraæ
+bia³ych znaków, poniewa¿ to mo¿e powodowaæ problemy przy serializacji do XMLa.
 
 @code
 
@@ -108,7 +110,7 @@ Podobnie sprawa ma siê ze strutkurami wewn¹trz klasy np:
 
 @code
 
-struct Nested
+struct Nested : public EngineObject
 {
 	int variable1;
 	int variable2;
@@ -128,7 +130,7 @@ Typy podstawowe jak
 - float
 - double
 - bool
-nie mog¹ byæ deklrowane z polityk¹ BindAsPtr.
+nie mog¹ byæ deklarowane z polityk¹ BindAsPtr.
 
 @subsection PrivateMembers Prywatne sk³adowe klasy
 
