@@ -12,7 +12,8 @@ enum class MetaDataType
 	Category,			///< Kategoria do jakiej nale¿y przypisaæ w³aœciwoœæ w edytorze.
 	Serialize,			///< Wartoœæ true oznacza, ¿e w³aœciwoœæ zostanie zserializowana do pliku z map¹. Domyœlnie: true.
 	AllowInSaveFile,	///< Serializuje wartoœæ do pliku z zapisanym stanem gry. Domyœlnie: true.
-	ShowInEditor		///< Umo¿liwia odczytywanie i modyfikowanie wartoœci z edytora. Domyœlnie: true. @todo Zaimplementowaæ filtrowanie w edytorze propertiesów.
+	ShowInEditor,		///< Umo¿liwia odczytywanie i modyfikowanie wartoœci z edytora. Domyœlnie: true. @todo Zaimplementowaæ filtrowanie w edytorze propertiesów.
+	EditorName			///< Nazwa wyœwietlana w edytorze. @todo Zaimplementowaæ.
 };
 
 
