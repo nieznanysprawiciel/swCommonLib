@@ -32,5 +32,5 @@ public:
 
 	/// Zwraca iloœæ pamiêci zajmowanej przez obiekt. Implementacje w klasach potomnych powinny te¿
 	/// doliczaæ rekurencyjnie pamiêæ zajmowan¹ przez obiekty, których w³aœcicielem jest ten obiekt.
-	virtual Size		ObjectSize		()							{ return this->get_type().get_sizeof(); }
+	virtual Size		MemorySize		()							{ return this->get_type().get_sizeof(); }
 };
