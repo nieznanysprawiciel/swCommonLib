@@ -6,6 +6,7 @@
 @brief */
 
 #include "Common/RTTR.h"
+#include "Common/TypesDefinitions.h"
 
 class ISerializer;
 class IDeserializer;
@@ -28,4 +29,8 @@ public:
 
 	virtual void		Serialize		( ISerializer* ser ) const	{}
 	virtual void		Deserialize		( IDeserializer* deser )	{}
+
+	/// Zwraca iloœæ pamiêci zajmowanej przez obiekt. Implementacje w klasach potomnych powinny te¿
+	/// doliczaæ rekurencyjnie pamiêæ zajmowan¹ przez obiekty, których w³aœcicielem jest ten obiekt.
+	virtual Size		ObjectSize		()							{ return this->get_type().get_sizeof(); }
 };
