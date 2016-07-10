@@ -12,6 +12,7 @@ Ponadto zawiera dokumentacjê uruchamiania, struktury projektu i innych elementów
 #include "EngineCore/Actors/ActorObjects.h"
 #include "EngineCore/EventsManager/Event.h"
 #include "EngineCore/GamePlay/FableEngine.h"
+#include "EngineCore/MainEngine/EngineContext.h"
 
 #include <DirectXMath.h>
 
