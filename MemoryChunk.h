@@ -19,7 +19,7 @@ public:
 	{}
 
 	/**@brief Przejmuje na w³asnoœæ podany obszar pamiêci.*/
-	MemoryChunk( int8* dataPointer, uint32 dataSize )
+	MemoryChunk( int8*&& dataPointer, uint32 dataSize )
 		:	m_memory( dataPointer ),
 			m_size( dataSize )
 	{}
@@ -67,7 +67,12 @@ public:
 	/**@brief Zwraca otypowany wskaŸnik na pamiêæ obiektu. @note Nie ma tu ¿adnej kontroli typów.*/
 	template<typename Type>
 	inline Type*			GetMemory		()		{ return reinterpret_cast<Type*>( m_memory ); }
-	inline uint32			GetMemorySize	()		{ return m_size; }			///<Zwraca rozmiar pamiêci przechowywanej w obiekcie.
+
+	/**@brief Zwraca otypowany wskaŸnik na pamiêæ obiektu. @note Nie ma tu ¿adnej kontroli typów.*/
+	template<typename Type>
+	inline const Type*		GetMemory		() const	{ return reinterpret_cast<Type*>( m_memory ); }
+
+	inline uint32			GetMemorySize	() const	{ return m_size; }			///<Zwraca rozmiar pamiêci przechowywanej w obiekcie.
 
 	/**@brief Zwraca referencjê na obiekt w tablicy pod podanym indeksem.
 	

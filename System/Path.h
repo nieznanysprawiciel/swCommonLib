@@ -12,6 +12,7 @@ wiêc nie da siê tego zaimplementowac w pe³ni przenoœnie.
 
 #include <filesystem>
 #include <string>
+#include <codecvt>
 
 namespace filesystem
 {
@@ -28,6 +29,7 @@ public:
 	explicit				Path			();
 							Path			( const Path& path );
 							Path			( Path&& path );
+							Path			( const std::wstring& path );
 
 	template< class Source >
 							Path			( const Source& source );
@@ -38,10 +40,11 @@ public:
 
 	Path&					operator/=		( const Path& other );
 	bool					operator==		( const Path& other );
+	bool					Compare			( const Path& path1, const Path& path2 );
 
 	friend Path				operator/		( const Path& path1, const Path& path2 );
 
-	std::string				String			();
+	std::string				String			() const;
 
 
 	std::string				GetFileName		() const;
@@ -83,6 +86,16 @@ inline Path::Path( Path&& path )
 {}
 
 /**@brief */
+inline Path::Path( const std::wstring& path )
+{
+	typedef std::codecvt_utf8< wchar_t > ConvertType;
+	std::wstring_convert< ConvertType, wchar_t > converter;
+	auto pathStr = converter.to_bytes( path );
+
+	m_path = experimental::path( pathStr );
+}
+
+/**@brief */
 inline Path& Path::operator=( const Path& other )
 {
 	m_path = other.m_path;
@@ -109,8 +122,20 @@ inline bool Path::operator==( const Path& other )
 	return m_path == other.m_path;
 }
 
+/**@brief Porównuje œcie¿ki. Przed porównaniem œcie¿ki s¹ normalizowane.*/
+inline bool Path::Compare( const Path& path1, const Path& path2 )
+{
+	Path firstPath( path1 );
+	Path secondPath( path2 );
+
+	firstPath.Normalize();
+	secondPath.Normalize();
+
+	return firstPath == secondPath;
+}
+
 /**@brief */
-inline std::string Path::String()
+inline std::string Path::String() const
 {
 	return m_path.string();
 }
@@ -146,7 +171,7 @@ inline Path Path::GetDirectory() const
 @attention Obecna implementacja mo¿e nie dzia³aæ do koñca.*/
 inline void Path::Normalize()
 {
-	//m_path.
+	m_path = experimental::complete( m_path );
 }
 
 /**@brief */
@@ -158,7 +183,7 @@ inline bool Path::HasRoot() const
 /**@brief */
 inline bool Path::HasFileName() const
 {
-	return m_path.has_filename();;
+	return m_path.has_filename();
 }
 
 /**@brief */
