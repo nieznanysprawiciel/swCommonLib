@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Common/TypesDefinitions.h"
 
 #ifdef _M_AMD64
