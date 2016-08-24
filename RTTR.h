@@ -149,3 +149,5 @@ class StaticActor : public EngineObject
 @endcode
 
 */
+
+#define BIND_AS_PTR		( rttr::policy::prop::BindAsPtr() )
