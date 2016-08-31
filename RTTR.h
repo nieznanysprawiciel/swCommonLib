@@ -32,21 +32,19 @@ http://www.rttr.org/
 @section CreatingOwnClasses Tworzenie w³asnych klas
 
 
-Przy tworzeniu w³asnych klas nale¿y dodawaæ do nich metainformacje,
-aby edytor móg³ je poprawnie wyœwietliæ. Wszystkie klasy powinny mieæ na samym
-szczycie hierarchi dziedziczenia obiekt @ref EngineObject. Je¿eli dziedziczy siê po jakiejœ
-silnikowej klasie aktora, to EngineObject w tej hierarchi na pewno siê znajduje.
+Przy tworzeniu w³asnych klas nale¿y dodawaæ do nich metainformacje, aby edytor móg³ je poprawnie wyœwietliæ.
+Wszystkie klasy powinny mieæ na samym szczycie hierarchi dziedziczenia obiekt EngineObject.
+Je¿eli dziedziczy siê po jakiejœ silnikowej klasie aktora, to EngineObject w tej hierarchi na pewno siê znajduje.
 
-Pamiêtaæ o tym nale¿y tylko wtedy, gdy tworzy siê jak¹œ strukturê lub klasê, która bêdzie
-polem w klasie aktora. Aby edytor móg³ wyœwietlaæ propertisy takiej zagnie¿d¿onej klasy
-trzeba jawnie odziedziczyæ po EngineObject.
+Pamiêtaæ o tym nale¿y tylko wtedy, gdy tworzy siê jak¹œ strukturê lub klasê, która bêdzie polem w klasie aktora.
+Aby edytor móg³ wyœwietlaæ propertisy takiej zagnie¿d¿onej klasy trzeba jawnie odziedziczyæ po EngineObject.
 
-Nale¿y mieæ na uwadze, ¿e klasa EngineObject deklaruje metody virtualne biblioteki RTTR, w zwi¹zku
-z czym wszystkie klasy dziedzicz¹ce bêd¹ mia³y dodatkowe pole ze wskaŸnikiem na vtable, co zwiêkszy
-rozmiar takiej struktury.
-Z tego powodu lepiej jest, gdy aktorzy nie maj¹ p³ask¹ strukturê i takich zagnie¿d¿onych strutkur
-siê nie u¿ywa, ale nikt nie zabrania.
+Nale¿y mieæ na uwadze, ¿e klasa EngineObject deklaruje metody virtualne biblioteki RTTR, w zwi¹zku z czym wszystkie
+klasy dziedzicz¹ce bêd¹ mia³y dodatkowe pole ze wskaŸnikiem na vtable, co zwiêkszy rozmiar takiej struktury. Z tego powodu
+lepiej jest, gdy aktorzy nie maj¹ p³ask¹ strukturê i takich zagnie¿d¿onych strutkur siê nie u¿ywa, ale nikt nie zabrania.
 
+@todo W obecnej wersji silnika wymaganie posiadania EngineObject w hierarchii nie jest ju¿ konieczne z punktu widzenia edytora.
+W kolejnych wersjach trzeba zmieniæ mechanizmy serializacji, ¿eby potrafi³y zapisywaæ równie¿ takie struktury.
 
 @subsection DeklaringRTTRTypes Deklarowanie typów obiektów
 
@@ -119,18 +117,39 @@ struct Nested : public EngineObject
 
 class Actor : public StaticActor
 {
+public:
 	Nested		nestedField;
 }
 
 @endcode
 
-W takim przypadku trzeba dodaæ informacjê o propertisach równie¿ dla klasy Nested.
+W takim przypadku trzeba dodaæ informacjê o propertisach równie¿ dla klasy Nested:
+
+@code
+// Plik .cpp
+
+RTTR_REGISTRATION
+{
+	rttr::registration::class_< Nested >( "Nested" )
+		.property( "variable1", &Nested::variable1 )
+		.property( "variable2", &Nested::variable2 );
+
+	rttr::registration::class_< Actor >( "Actor" )
+		.property( "nestedField", &Actor::nestedField )
+		(
+			rttr::metadata( MetaDataType::Category, "OwnCategory" ),
+			rttr::policy::prop::BindAsPtr()
+		)
+}
+
+#endcode
 
 Typy podstawowe jak
 - int
 - float
 - double
 - bool
+
 nie mog¹ byæ deklarowane z polityk¹ BindAsPtr.
 
 @subsection PrivateMembers Prywatne sk³adowe klasy
