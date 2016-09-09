@@ -8,7 +8,7 @@
 
 
 
-class Converters
+class Convert
 {
 private:
 
@@ -51,7 +51,7 @@ public:
 
 template< typename SrcType >
 inline typename std::enable_if< !std::is_enum< SrcType >::value, std::string >::type
-							Converters::ToString		( const SrcType& val )
+							Convert::ToString		( const SrcType& val )
 {
 	static_assert( false, "Specialize template" );
 	return std::string();
@@ -59,7 +59,7 @@ inline typename std::enable_if< !std::is_enum< SrcType >::value, std::string >::
 
 template< typename SrcType >
 inline typename std::enable_if< !std::is_enum< SrcType >::value, SrcType >::type
-							Converters::FromString		( const std::string& val, const SrcType& defaultValue )
+							Convert::FromString		( const std::string& val, const SrcType& defaultValue )
 {
 	static_assert( false, "Specialize template" );
 	return SrcType();
@@ -73,7 +73,7 @@ inline typename std::enable_if< !std::is_enum< SrcType >::value, SrcType >::type
 /**@brief Konwertuje enuma do stringa.*/
 template< typename SrcType >
 inline typename std::enable_if< std::is_enum< SrcType >::value, std::string >::type
-							Converters::ToString		( const SrcType& val )
+							Convert::ToString		( const SrcType& val )
 {
 	return EnumToString( val );
 }
@@ -81,7 +81,7 @@ inline typename std::enable_if< std::is_enum< SrcType >::value, std::string >::t
 /**@brief Konwertuje stringa do enuma.*/
 template< typename SrcType >
 inline typename std::enable_if< std::is_enum< SrcType >::value, SrcType >::type
-							Converters::FromString		( const std::string& val, const SrcType& defaultValue )
+							Convert::FromString		( const std::string& val, const SrcType& defaultValue )
 {
 	return StringToEnum( val, defaultValue );
 }
@@ -92,7 +92,7 @@ inline typename std::enable_if< std::is_enum< SrcType >::value, SrcType >::type
 
 template<>
 inline typename std::enable_if< !std::is_enum< std::wstring >::value, std::string >::type
-							Converters::ToString< std::wstring >	( const std::wstring& value )
+							Convert::ToString< std::wstring >	( const std::wstring& value )
 {
 	typedef std::codecvt_utf8<wchar_t> convert_type;
 	std::wstring_convert<convert_type, wchar_t> converter;
@@ -101,7 +101,7 @@ inline typename std::enable_if< !std::is_enum< std::wstring >::value, std::strin
 
 template<>
 inline typename std::enable_if< !std::is_enum< std::wstring >::value, std::wstring >::type
-							Converters::FromString< std::wstring >	( const std::string& value, const std::wstring& defaultValue )
+							Convert::FromString< std::wstring >	( const std::string& value, const std::wstring& defaultValue )
 {
 	typedef std::codecvt_utf8<wchar_t> convert_type;
 	std::wstring_convert<convert_type, wchar_t> converter;
@@ -114,7 +114,7 @@ inline typename std::enable_if< !std::is_enum< std::wstring >::value, std::wstri
 
 
 template< typename SrcType >
-std::string				Converters::EnumToString		( SrcType value )
+std::string				Convert::EnumToString		( SrcType value )
 {
 	static_assert( std::is_enum< SrcType >::value, "Type is not enum" );
 
@@ -130,7 +130,7 @@ std::string				Converters::EnumToString		( SrcType value )
 
 
 template< typename SrcType >
-SrcType				Converters::StringToEnum		( const std::string& value, SrcType defaultValue )
+SrcType				Convert::StringToEnum		( const std::string& value, SrcType defaultValue )
 {
 	static_assert( std::is_enum< SrcType >::value, "Type is not enum" );
 
