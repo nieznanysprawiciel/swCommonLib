@@ -24,7 +24,8 @@ class EngineObject
 	RTTR_ENABLE()
 
 public:
-	inline rttr::type	GetType			() const		{ return this->get_type(); }
+	inline TypeID		GetType			() const		{ return this->get_type(); }
+	inline std::string	GetTypeName		() const		{ return this->get_type().get_name(); }
 
 
 	virtual void		Serialize		( ISerializer* ser ) const	{}
@@ -33,4 +34,8 @@ public:
 	/// Zwraca iloœæ pamiêci zajmowanej przez obiekt. Implementacje w klasach potomnych powinny te¿
 	/// doliczaæ rekurencyjnie pamiêæ zajmowan¹ przez obiekty, których w³aœcicielem jest ten obiekt.
 	virtual Size		MemorySize		()							{ return this->get_type().get_sizeof(); }
+
+	template< typename TargetType >
+	TargetType*			DynamicCast		()							{ return rttr::rttr_cast< TargetType* >( this ); }
 };
+

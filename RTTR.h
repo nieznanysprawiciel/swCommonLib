@@ -16,7 +16,7 @@ enum class MetaDataType
 	EditorName			///< Nazwa wyœwietlana w edytorze. @todo Zaimplementowaæ.
 };
 
-
+typedef rttr::type TypeID;
 
 /**@defgroup Reflection Mechanizm refleksji
 @ingroup Tools
