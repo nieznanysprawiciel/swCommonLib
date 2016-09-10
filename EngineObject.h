@@ -28,8 +28,12 @@ public:
 	inline std::string	GetTypeName		() const		{ return this->get_type().get_name(); }
 
 
-	virtual void		Serialize		( ISerializer* ser ) const	{}
-	virtual void		Deserialize		( IDeserializer* deser )	{}
+	/**@brief Implements default serialization.
+	@detail Serializes only declared properties.*/
+	virtual void		Serialize		( ISerializer* ser ) const;
+
+	/**@brief Implements default deserialization.*/
+	virtual void		Deserialize		( IDeserializer* deser );
 
 	/// Zwraca iloœæ pamiêci zajmowanej przez obiekt. Implementacje w klasach potomnych powinny te¿
 	/// doliczaæ rekurencyjnie pamiêæ zajmowan¹ przez obiekty, których w³aœcicielem jest ten obiekt.
