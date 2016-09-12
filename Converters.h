@@ -53,8 +53,7 @@ template< typename SrcType >
 inline typename std::enable_if< !std::is_enum< SrcType >::value, std::string >::type
 							Convert::ToString		( const SrcType& val )
 {
-	static_assert( false, "Specialize template" );
-	return std::string();
+	return std::to_string( val );
 }
 
 template< typename SrcType >
