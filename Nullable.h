@@ -3,6 +3,8 @@
 #include <string>
 
 
+
+
 template< typename ResultType >
 struct Nullable
 {
@@ -10,11 +12,14 @@ struct Nullable
 	bool			IsValid;
 	std::string		ErrorString;
 
+
+
 	/**@brief Creates invalid object. Value fieled is default contructed.*/
 	Nullable()
 		:	IsValid( false )
 		,	Value( ResultType() )
 	{}
+
 
 	/**@brief Creates invalid object and sets error string. Value fieled is default contructed.*/
 	Nullable( std::string&& error )
@@ -29,6 +34,11 @@ struct Nullable
 		,	IsValid( true )
 	{}
 
-
+	bool operator!()
+	{
+		return !IsValid;
+	}
 };
+
+#define ReturnIfInvalid( nullable )		if( !nullable.IsValid ) return std::move( nullable.ErrorString );
 
