@@ -41,7 +41,7 @@ Je¿eli to makro nie jest zdefiniowane, to prêdkoœæ obrotowa jest wyra¿ona jako w
 /**@def ENGINE_MAX_LIGHTS
 @brief Maksymalna liczba œwiate³ w silniku.
 */
-#define ENGINE_MAX_LIGHTS		2
+#define ENGINE_MAX_LIGHTS		10
 
 
 ///@todo Stworzyæ mechanizmy pozwalaj¹ce na wybieranie buforów indeksów 8, 16 i 32 bitowych
