@@ -21,7 +21,7 @@ aby nie powodowaæ wycieków pamiêci. Do kasowania obiektów s³u¿y klasa ObjectDele
 obiekt tej klasy potrzebny jest "klucz", którym jest w³asnie ta klasa.
 
 Klucz ma prywatne konstruktory, w zwi¹zku z czym mo¿e zostaæ stworzony jedynie przez klasy,
-które s¹ z nim zaprzyjaŸnione. Domyœlnie klasami zaprzyjaŸnionymi s¹ ModelsManager i ResourceContainer,
+które s¹ z nim zaprzyjaŸnione. Domyœlnie klasami zaprzyjaŸnionymi s¹ ResourceManager i ResourceContainer,
 aby stworzyæ klucz dla innych typów klas, nale¿y napisaæ specjalizacjê tego szablonu.
 
 Odddelegowanie innej klasy do kasowania obiektów ma za zadanie zlikwidowanie niewygodnych zale¿noœci.
@@ -41,7 +41,8 @@ w klasie deklaruj¹cej przyjaŸñ nie bêd¹ psu³y ca³ego kodu aplikacji.
 */
 template<typename class_type> class ObjectDeleterKey
 {
-	friend class ModelsManager;
+	friend class ResourceManager;
+	friend class AssetsManager;
 	friend class ResourceContainer<class_type>;
 	friend class RenderTargetObject;
 private:
