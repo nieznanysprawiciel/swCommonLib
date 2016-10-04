@@ -4,6 +4,7 @@
 #undef max
 #undef min
 
+#include "Common/TypesDefinitions.h"
 #include "Tools/Reflection/RTTR.h"
 
 /**@brief Typy metadanych widoczne z poziomu edytora.*/
@@ -170,3 +171,6 @@ class StaticActor : public EngineObject
 */
 
 #define BIND_AS_PTR		( rttr::policy::prop::BindAsPtr() )
+
+
+

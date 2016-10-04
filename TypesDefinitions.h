@@ -19,6 +19,7 @@ typ int8_t, który jest zamieniany na int8.
 @brief Czêsto u¿ywane deklaracje i inne funkcjonalnoœci.*/
 
 #include <cstdint>
+#include <memory>
 
 
 
@@ -43,3 +44,7 @@ namespace rttr
 
 
 typedef rttr::type ActorType;
+
+/// @todo Use std::unique_ptr instead. Unique_ptr didn't want to compile in current visual compiler.
+template< typename PtrType >
+using UPtr = std::shared_ptr< PtrType >;

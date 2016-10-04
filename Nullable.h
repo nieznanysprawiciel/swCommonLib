@@ -34,10 +34,38 @@ struct Nullable
 		,	IsValid( true )
 	{}
 
+	Nullable( const Nullable< ResultType >& other )
+		:	ErrorString( other.ErrorString )
+		,	IsValid( other.IsValid )
+		,	Value( other.Value )
+	{}
+
+	Nullable( Nullable< ResultType >&& other )
+		:	ErrorString( std::move( other.ErrorString ) )
+		,	IsValid( other.IsValid )
+		,	Value( std::move( other.Value ) )
+	{}
+
+	void operator=( const Nullable< ResultType >& other )
+	{
+		Value = other.Value;
+		IsValid = other.IsValid;
+		ErrorString = other.ErrorString;
+	}
+
+	void operator=( Nullable< ResultType >&& other )
+	{
+		Value = std::move( other.Value );
+		IsValid = other.IsValid;
+		ErrorString = std::move( other.ErrorString );
+	}
+
+
 	bool operator!()
 	{
 		return !IsValid;
 	}
+
 };
 
 #define ReturnIfInvalid( nullable )		if( !nullable.IsValid ) return std::move( nullable.ErrorString );
