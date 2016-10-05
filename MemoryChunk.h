@@ -62,6 +62,7 @@ public:
 			chunk.m_size = 0;
 			chunk.m_memory = nullptr;
 		}
+		return *this;
 	}
 
 	/**@brief Zwraca otypowany wskaŸnik na pamiêæ obiektu. @note Nie ma tu ¿adnej kontroli typów.*/
