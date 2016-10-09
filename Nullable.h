@@ -3,6 +3,8 @@
 #include <string>
 
 
+enum class NullableInit
+{		Valid	};
 
 
 template< typename ResultType >
@@ -20,6 +22,12 @@ struct Nullable
 		,	Value( ResultType() )
 	{}
 
+
+	/**@brief Creates valid object. Value fieled is default contructed.*/
+	explicit Nullable( NullableInit )
+		:	IsValid( true )
+		,	Value( ResultType() )
+	{}
 
 	/**@brief Creates invalid object and sets error string. Value fieled is default contructed.*/
 	Nullable( std::string&& error )
