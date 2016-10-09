@@ -39,7 +39,7 @@ public:
 	Path&					operator=		( Path&& other );
 
 	Path&					operator/=		( const Path& other );
-	bool					operator==		( const Path& other );
+	bool					operator==		( const Path& other ) const;
 	bool					Compare			( const Path& path1, const Path& path2 );
 
 	friend Path				operator/		( const Path& path1, const Path& path2 );
@@ -117,7 +117,7 @@ inline Path& Path::operator/=( const Path& other )
 }
 
 /**@brief */
-inline bool Path::operator==( const Path& other )
+inline bool Path::operator==( const Path& other ) const
 {
 	return m_path == other.m_path;
 }
