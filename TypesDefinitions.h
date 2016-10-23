@@ -48,3 +48,7 @@ typedef rttr::type ActorType;
 /// @todo Use std::unique_ptr instead. Unique_ptr didn't want to compile in current visual compiler.
 template< typename PtrType >
 using UPtr = std::shared_ptr< PtrType >;
+
+template< typename PtrType >
+using Ptr = std::shared_ptr< PtrType >;
+
