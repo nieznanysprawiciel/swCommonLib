@@ -52,3 +52,17 @@ using UPtr = std::shared_ptr< PtrType >;
 template< typename PtrType >
 using Ptr = std::shared_ptr< PtrType >;
 
+
+template< typename PtrType, typename... Args >
+Ptr< PtrType >		MakePtr		( Args&&... args )
+{
+	return std::make_shared< PtrType >( args... );
+}
+
+template< typename PtrType, typename... Args >
+UPtr< PtrType >		MakeUPtr		( Args... args )
+{
+	return std::make_unique< PtrType >( args... );
+}
+
+
