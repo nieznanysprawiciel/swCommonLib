@@ -143,13 +143,13 @@ inline std::string Path::String() const
 /**@brief */
 inline std::string Path::GetFileName() const
 {
-	return m_path.filename();
+	return m_path.filename().string();
 }
 
 /**@brief */
 inline std::string Path::GetExtension() const
 {
-	return m_path.extension();
+	return m_path.extension().string();
 }
 
 /**@brief */
@@ -171,7 +171,7 @@ inline Path Path::GetDirectory() const
 @attention Obecna implementacja mo¿e nie dzia³aæ do koñca.*/
 inline void Path::Normalize()
 {
-	m_path = experimental::complete( m_path );
+	//m_path = experimental::complete( m_path );
 }
 
 /**@brief */
