@@ -25,7 +25,7 @@ public:
 	~AnimEvaluator() = default;
 
 
-	virtual void		Evaluate	( void* object, TimeType time )			= 0;
+	void				Evaluate	( void* object, TimeType time );
 	void				Evaluate	( void* object, TimelineBase* timeline );
 
 };
@@ -35,6 +35,14 @@ public:
 //====================================================================================//
 //			Implementation	
 //====================================================================================//
+
+// ================================ //
+//
+template< typename KeyType, typename AddressType >
+inline void			AnimEvaluator< KeyType, AddressType >::Evaluate		( void* object, TimeType time )
+{
+
+}
 
 // ================================ //
 //
