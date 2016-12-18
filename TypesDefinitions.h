@@ -36,6 +36,8 @@ typedef size_t Size;
 
 typedef ptrdiff_t PtrOffset;
 
+typedef double TimeType;
+
 
 namespace rttr
 {
