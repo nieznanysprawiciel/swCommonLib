@@ -17,7 +17,7 @@ class DirectProperty
 {
 private:
 	rttr::property		m_property;
-	EngineObject*		m_object;		///< @todo Change to typed pointer some way.
+	rttr::variant		m_object;		///< @todo Change to typed pointer some way.
 
 protected:
 public:
@@ -37,7 +37,7 @@ public:
 template< typename KeyType >
 inline			DirectProperty< KeyType >::DirectProperty()
 	:	m_property( Properties::EmptyProperty() )
-	,	m_object( nullptr )
+	,	m_object( rttr::variant() )
 {}
 
 
@@ -45,6 +45,11 @@ inline			DirectProperty< KeyType >::DirectProperty()
 //
 template< typename KeyType >
 inline			DirectProperty< KeyType >::DirectProperty	( EngineObject* object, const std::string& propertyPath )
-	:	
-{ }
+	:	m_property( Properties::EmptyProperty() )
+	,	m_object( nullptr )
+{
+	auto accessor = Properties::GetProperty( object, propertyPath );
+	m_property = accessor.second;
+	m_object = accessor.first;
+}
 

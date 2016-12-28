@@ -5,7 +5,6 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-#include "Common/System/Path.h"
 
 
 /**@brief */
@@ -13,12 +12,32 @@ template< typename KeyType >
 class StringPropertyPath
 {
 private:
-	filesystem::Path		m_path;
+	std::string		m_path;
 
 protected:
 public:
-	explicit		StringPropertyPath() = default;
-	~StringPropertyPath() = default;
+	explicit		StringPropertyPath	();
+	explicit		StringPropertyPath	( EngineObject* object, const std::string& propertyPath );
+					~StringPropertyPath	() = default;
 
 };
 
+
+//====================================================================================//
+//			Implementation	
+//====================================================================================//
+
+
+// ================================ //
+//
+template< typename KeyType >
+inline		StringPropertyPath< KeyType >::StringPropertyPath()
+	:	m_path( "" )
+{}
+
+// ================================ //
+//
+template< typename KeyType >
+inline		StringPropertyPath<	KeyType >::StringPropertyPath( EngineObject* object, const std::string& propertyPath )
+	:	m_path( propertyPath )
+{}
