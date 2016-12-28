@@ -5,8 +5,6 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-#include "ParamAddress.h"
-
 #include "Common/System/Path.h"
 
 
@@ -24,5 +22,3 @@ public:
 
 };
 
-template< typename KeyType >
-using StringPathAddress = ParamAddress< KeyType, StringPropertyPath< KeyType > >;

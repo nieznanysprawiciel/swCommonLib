@@ -9,18 +9,29 @@
 
 
 /**@brief */
-template< typename KeyType, typename AddressType >
+template< typename KeyType >
 class ParamAddress
 {
-private:
-protected:
-	AddressType		m_address;
-
 public:
-	explicit		ParamAddress() = default;
-	~ParamAddress() = default;
 
-
-
+	static rttr::property		GetProperty	( EngineObject* object, const std::string& propertyPath, Size offset = 0, char separator = '/' );
+	static rttr::property		GetProperty	( rttr::variant object, const std::string& propertyPath, Size offset = 0, char separator = '/' );
 };
 
+
+
+// ================================ //
+//
+template< typename KeyType >
+inline rttr::property		ParamAddress< KeyType >::GetProperty( EngineObject* object, const std::string& propertyPath, Size offset, char separator )
+{
+	TypeID realType = object->GetType();
+
+	Size propertyEnd = propertyPath.find_first_of( separator, offset );
+	if( propertyEnd != std::string::npos )
+	{
+	
+	}
+
+	return rttr::property( nullptr );
+}

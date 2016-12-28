@@ -5,6 +5,8 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
+#include "Common/EngineObject.h"
+
 #include "Common/ParameterAnimation/Parameters/ParamAddress.h"
 #include "Common/ParameterAnimation/KeySet.h"
 #include "Common/ParameterAnimation/Timelines/TimelineBase.h"
@@ -16,17 +18,19 @@ template< typename KeyType, typename AddressType >
 class AnimEvaluator
 {
 private:
-	KeySet< KeyType >						m_keys;
-	ParamAddress< KeyType, AddressType >	m_param;
+	KeySet< KeyType >			m_keys;
+	AddressType					m_param;
 
 protected:
 public:
-	explicit		AnimEvaluator() = default;
-	~AnimEvaluator() = default;
+	/// Constructor for serialization only.
+	explicit		AnimEvaluator	() = default;
+	explicit		AnimEvaluator	( EngineObject* object, const std::string& propertyPath );
+					~AnimEvaluator	() = default;
 
 
-	void				Evaluate	( void* object, TimeType time );
-	void				Evaluate	( void* object, TimelineBase* timeline );
+	void				Evaluate	( EngineObject* object, TimeType time );
+	void				Evaluate	( EngineObject* object, TimelineBase* timeline );
 
 };
 
@@ -36,10 +40,15 @@ public:
 //			Implementation	
 //====================================================================================//
 
+template< typename KeyType, typename AddressType >
+inline				AnimEvaluator< KeyType, AddressType >::AnimEvaluator( EngineObject* object, const std::string& propertyPath )
+{ }
+
+
 // ================================ //
 //
 template< typename KeyType, typename AddressType >
-inline void			AnimEvaluator< KeyType, AddressType >::Evaluate		( void* object, TimeType time )
+inline void			AnimEvaluator< KeyType, AddressType >::Evaluate		( EngineObject* object, TimeType time )
 {
 
 }
@@ -47,7 +56,7 @@ inline void			AnimEvaluator< KeyType, AddressType >::Evaluate		( void* object, T
 // ================================ //
 //
 template< typename KeyType, typename AddressType >
-inline void			AnimEvaluator< KeyType, AddressType >::Evaluate		( void* object, TimelineBase* timeline )
+inline void			AnimEvaluator< KeyType, AddressType >::Evaluate		( EngineObject* object, TimelineBase* timeline )
 {
 	Evaluate( object, timeline->GetTime() );
 }

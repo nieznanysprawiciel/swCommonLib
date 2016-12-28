@@ -5,6 +5,7 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
+#include "Common/EngineObject.h"
 
 #include "Common/ParameterAnimation/Animation/AnimEvaluator.h"
 
@@ -13,7 +14,9 @@
 #include "Common/ParameterAnimation/Parameters/StringPropertyPath.h"
 
 
-/**@brief */
+/**@brief Base animation class.
+
+Allows such operation like evaluating animations without knowing type.*/
 class Animation
 {
 private:
@@ -25,7 +28,14 @@ public:
 };
 
 
-/**@brief */
+//====================================================================================//
+//			AnimationTyped	
+//====================================================================================//
+
+
+/**@brief Interface class for manipulating animation keys.
+
+Inherit from this class to specialize parameter addressing method.*/
 template< typename KeyType >
 class AnimationTyped : public Animation
 {
@@ -62,6 +72,10 @@ public:
 };
 
 
+//====================================================================================//
+//			AnimationImpl	
+//====================================================================================//
+
 /**@brief */
 template< typename KeyType, typename AddressType >
 class AnimationImpl : public AnimationTyped< KeyType >
@@ -72,8 +86,26 @@ public:
 	AnimEvaluator< KeyType, AddressType >		Evaluator;
 
 public:
-	virtual			~AnimationImpl() = default;
+					AnimationImpl	( EngineObject* object, const std::string& propertyPath );
+	virtual			~AnimationImpl	() = default;
 
+
+	/**@copydoc AnimationTyped::AddKey*/
+	virtual bool	AddKey			( TimeType time, const KeyType& value )											override;
+	/**@copydoc AnimationTyped::AddKey*/
+	virtual bool	AddKey			( TimeType time, const KeyType& value, UPtr< Interpolator >&& interpolator )	override;
+	/**@copydoc AnimationTyped::AddKey*/
+	virtual bool	UpdateKey		( TimeType time, const KeyType& newValue, UPtr< Interpolator >&& interpolator ) override;
+	/**@copydoc AnimationTyped::UpdateKey*/
+	virtual bool	UpdateKey		( TimeType time, const KeyType& newValue )										override;
+	/**@copydoc AnimationTyped::RemoveKey*/
+	virtual bool	RemoveKey		( TimeType time )																override;
+
+	/**@copydoc AnimationTyped::UpdateInterpolator*/
+	virtual bool	UpdateInterpolator	( UPtr< Interpolator >&& interpolator )										override;
+
+	/**@copydoc AnimationTyped::GetKey*/
+	virtual const Key< KeyType >*		GetKey	( TimeType time )													override;
 };
 
 typedef AnimationImpl< float, StringPropertyPath< float > > FloatAnimationStrPath;
@@ -82,3 +114,6 @@ typedef AnimationImpl< float, DirectProperty< float > > FloatAnimationDirect;
 
 template< template< typename KeyType > class AddressType >
 using FloatAnimation = AnimationImpl< float, AddressType< float > >;
+
+
+#include "Animation.inl"

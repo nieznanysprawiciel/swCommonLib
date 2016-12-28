@@ -5,7 +5,6 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-#include "ParamAddress.h"
 #include "Common/RTTR.h"
 
 #include <vector>
@@ -22,6 +21,3 @@ public:
 
 
 };
-
-template< typename KeyType >
-using PropertyPathAddress = ParamAddress< KeyType, PropertyPath< KeyType > >;
