@@ -5,6 +5,7 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
+#include "Common/Serialization/SW/Serialization.h"
 
 
 /**@brief */
@@ -20,6 +21,9 @@ public:
 	explicit		StringPropertyPath	( EngineObject* object, const std::string& propertyPath );
 					~StringPropertyPath	() = default;
 
+
+	KeyType			GetValue		( EngineObject* object );
+	void			SetValue		( EngineObject* object, KeyType& value );
 };
 
 
@@ -41,3 +45,25 @@ template< typename KeyType >
 inline		StringPropertyPath<	KeyType >::StringPropertyPath( EngineObject* object, const std::string& propertyPath )
 	:	m_path( propertyPath )
 {}
+
+// ================================ //
+//
+template< typename KeyType >
+inline KeyType		StringPropertyPath< KeyType >::GetValue		( EngineObject* object )
+{
+	auto finalPair = Properties::GetProperty( object, m_path );
+	auto& owner = finalPair.first;
+	auto& prop = finalPair.second;
+
+	return Serialization::GetPropertyValue< KeyType >( prop, owner );
+}
+
+template< typename KeyType >
+inline void			StringPropertyPath< KeyType >::SetValue		( EngineObject* object, KeyType& value )
+{
+	auto finalPair = Properties::GetProperty( object, m_path );
+	auto& owner = finalPair.first;
+	auto& prop = finalPair.second;
+
+	Serialization::SetPropertyValue( prop, owner, value );
+}

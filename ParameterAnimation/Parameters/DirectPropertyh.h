@@ -9,6 +9,7 @@
 #include "Common/EngineObject.h"
 
 #include "Common/Properties/Properties.h"
+#include "Common/Serialization/SW/Serialization.h"
 
 
 /**@brief */
@@ -26,6 +27,9 @@ public:
 	explicit		DirectProperty	( EngineObject* object, const std::string& propertyPath );
 					~DirectProperty	() = default;
 
+
+	KeyType			GetValue		( EngineObject* object );
+	void			SetValue		( EngineObject* object, KeyType& value );
 };
 
 //====================================================================================//
@@ -51,5 +55,21 @@ inline			DirectProperty< KeyType >::DirectProperty	( EngineObject* object, const
 	auto accessor = Properties::GetProperty( object, propertyPath );
 	m_property = accessor.second;
 	m_object = accessor.first;
+}
+
+// ================================ //
+//
+template< typename KeyType >
+inline KeyType		DirectProperty< KeyType >::GetValue		( EngineObject* )
+{
+	return Serialization::GetPropertyValue< KeyType >( m_property, m_object );
+}
+
+// ================================ //
+//
+template< typename KeyType >
+inline void			DirectProperty< KeyType >::SetValue		( EngineObject* object, KeyType& value )
+{
+	Serialization::SetPropertyValue( m_property, m_object, value );
 }
 

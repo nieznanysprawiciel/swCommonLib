@@ -7,25 +7,13 @@
 
 #include "Common/EngineObject.h"
 
+#include "IAnimation.h"
 #include "Common/ParameterAnimation/Animation/AnimEvaluator.h"
 
 #include "Common/ParameterAnimation/Parameters/DirectPropertyh.h"
 #include "Common/ParameterAnimation/Parameters/PropertyPath.h"
 #include "Common/ParameterAnimation/Parameters/StringPropertyPath.h"
 
-
-/**@brief Base animation class.
-
-Allows such operation like evaluating animations without knowing type.*/
-class Animation
-{
-private:
-protected:
-public:
-	explicit		Animation() = default;
-	virtual			~Animation() = default;
-
-};
 
 
 //====================================================================================//
@@ -37,7 +25,7 @@ public:
 
 Inherit from this class to specialize parameter addressing method.*/
 template< typename KeyType >
-class AnimationTyped : public Animation
+class AnimationTyped : public IAnimation
 {
 public:
 	typedef IInterpolator< KeyType > Interpolator;

@@ -31,5 +31,5 @@ template< typename ValueType >
 struct Key
 {
 	TimeType				Time;
-	KeyParam< ValueType >	Value;
+	KeyParam< ValueType >	Param;
 };

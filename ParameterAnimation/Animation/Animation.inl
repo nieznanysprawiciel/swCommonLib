@@ -6,7 +6,7 @@
 //			Constructor	
 //====================================================================================//
 
-template<  typename KeyType, typename AddressType  >
+template< typename KeyType, typename AddressType  >
 inline		AnimationImpl<  KeyType, AddressType  >::AnimationImpl( EngineObject* object, const std::string& propertyPath )
 	:	Evaluator( object, propertyPath )
 {}
@@ -18,18 +18,18 @@ inline		AnimationImpl<  KeyType, AddressType  >::AnimationImpl( EngineObject* ob
 
 // ================================ //
 //
-template<  typename KeyType, typename AddressType  >
+template< typename KeyType, typename AddressType  >
 inline bool			AnimationImpl<  KeyType, AddressType  >::AddKey		( TimeType time, const KeyType& value )
 {
-	return false;
+	return Evaluator.AddKey( time, value );
 }
 
 // ================================ //
 //
-template<  typename KeyType, typename AddressType  >
+template< typename KeyType, typename AddressType  >
 inline bool			AnimationImpl< KeyType, AddressType >::AddKey		( TimeType time, const KeyType& value, UPtr< Interpolator >&& interpolator )
 {
-	return false;
+	return Evaluator.AddKey( time, value, std::move( interpolator ) );
 }
 
 // ================================ //
@@ -37,7 +37,7 @@ inline bool			AnimationImpl< KeyType, AddressType >::AddKey		( TimeType time, co
 template< typename KeyType, typename AddressType >
 inline bool			AnimationImpl< KeyType, AddressType >::UpdateKey	( TimeType time, const KeyType& newValue, UPtr< Interpolator >&& interpolator )
 {
-	return false;
+	return Evaluator.UpdateKey( time, newValue, std::move( interpolator ) );
 }
 
 // ================================ //
@@ -45,7 +45,7 @@ inline bool			AnimationImpl< KeyType, AddressType >::UpdateKey	( TimeType time, 
 template< typename KeyType, typename AddressType >
 inline bool			AnimationImpl< KeyType, AddressType >::UpdateKey	( TimeType time, const KeyType& newValue )
 {
-	return false;
+	return Evaluator.UpdateKey( time, newValue );
 }
 
 // ================================ //
@@ -53,7 +53,7 @@ inline bool			AnimationImpl< KeyType, AddressType >::UpdateKey	( TimeType time, 
 template< typename KeyType, typename AddressType >
 inline bool			AnimationImpl< KeyType, AddressType >::RemoveKey	( TimeType time )
 {
-	return false;
+	return Evaluator.RemoveKey( time );
 }
 
 // ================================ //
@@ -61,7 +61,7 @@ inline bool			AnimationImpl< KeyType, AddressType >::RemoveKey	( TimeType time )
 template< typename KeyType, typename AddressType >
 inline bool			AnimationImpl< KeyType, AddressType >::UpdateInterpolator	( UPtr< Interpolator >&& interpolator )
 {
-	return false;
+	return Evaluator.UpdateInterpolator( std::move( interpolator ) );
 }
 
 // ================================ //
@@ -69,6 +69,6 @@ inline bool			AnimationImpl< KeyType, AddressType >::UpdateInterpolator	( UPtr< 
 template< typename KeyType, typename AddressType >
 inline const Key< KeyType >*	AnimationImpl< KeyType, AddressType >::GetKey	( TimeType time )
 {
-	return nullptr;
+	return Evaluator.GetKey( time );
 }
 
