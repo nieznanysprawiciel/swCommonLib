@@ -15,6 +15,12 @@ struct Key
 {
 	TimeType		Time;
 	ValueType		Value;
+
+	explicit	Key() = default;
+	explicit	Key( TimeType t, ValueType val )
+		:	Time( t )
+		,	Value( val )
+	{ }
 };
 
 
