@@ -7,11 +7,17 @@
 
 #include "Common/TypesDefinitions.h"
 
+/**@defgroup Interpolators Interpolators
+@ingroup KeyFrameAnimation*/
+
+
 template< typename KeyType >
 struct Key;
 
 
-/**@brief */
+/**@brief 
+
+@ingroup Interpolators*/
 template< typename KeyType >
 class IInterpolator
 {

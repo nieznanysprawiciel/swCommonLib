@@ -5,6 +5,9 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
+/**@defgroup KeyFrameAnimation Animation
+@ingroup CommonFiles*/
+
 
 
 

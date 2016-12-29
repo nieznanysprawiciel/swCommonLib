@@ -9,7 +9,9 @@
 
 
 
-/**@brief */
+/**@brief 
+
+@ingroup Interpolators*/
 template< typename KeyType >
 class PointInterpolator : public IInterpolator< KeyType >
 {

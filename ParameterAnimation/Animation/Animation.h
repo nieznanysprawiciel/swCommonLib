@@ -23,7 +23,8 @@
 
 /**@brief Interface class for manipulating animation keys.
 
-Inherit from this class to specialize parameter addressing method.*/
+Inherit from this class to specialize parameter addressing method.
+@ingroup KeyFrameAnimation*/
 template< typename KeyType >
 class AnimationTyped : public IAnimation
 {
@@ -64,7 +65,9 @@ public:
 //			AnimationImpl	
 //====================================================================================//
 
-/**@brief */
+/**@brief 
+
+@ingroup KeyFrameAnimation*/
 template< typename KeyType, typename AddressType >
 class AnimationImpl : public AnimationTyped< KeyType >
 {

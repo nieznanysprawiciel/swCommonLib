@@ -6,30 +6,28 @@
 */
 
 #include "Common/TypesDefinitions.h"
-#include "Interpolators/IInterpolator.h"
-
-/**@defgroup Animation Animation
-@ingroup EngineCore*/
-
-
-/**@brief Key parameters.
-
-Consist of key parameter value for and other key parameters like interpolator.
-@ingroup Animation*/
-template< typename ValueType >
-struct KeyParam
-{
-	ValueType							Value;
-	UPtr< IInterpolator< ValueType > >	Interpolator;
-};
-
 
 
 /**@brief Animation key.
-@ingroup Animation*/
+@ingroup KeyFrameAnimation*/
 template< typename ValueType >
 struct Key
 {
-	TimeType				Time;
-	KeyParam< ValueType >	Param;
+	TimeType		Time;
+	ValueType		Value;
 };
+
+
+
+const static TimeType epsilon = TimeType( 0.00001 );
+
+
+// ================================ //
+//
+template< typename ValueType >
+bool		operator<( const Key< ValueType >& first, const Key< ValueType >& second )
+{
+	if( first.Time < second.Time - epsilon )
+		return true;
+	return false;
+}

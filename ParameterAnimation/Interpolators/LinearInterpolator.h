@@ -7,7 +7,9 @@
 
 #include "IInterpolator.h"
 
-/**@brief */
+/**@brief 
+
+@ingroup Interpolators*/
 template< typename KeyType >
 class LinearInterpolator : public IInterpolator< KeyType >
 {

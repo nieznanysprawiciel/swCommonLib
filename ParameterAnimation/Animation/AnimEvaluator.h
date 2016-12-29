@@ -12,7 +12,16 @@
 
 
 
-/**@brief */
+/**@brief Evaluates animation.
+
+Uses @ref m_keys to interpolate animation value and sets it to @ref m_param.
+
+Template parameter AddressType is class which is used to set parameter value. You can provide
+your own classes or apply build in objects. This library implements parameters using rttr library.
+
+@see DirectProperty, PropertyPath, StringPropertyPath.
+
+@ingroup KeyFrameAnimation*/
 template< typename KeyType, typename AddressType >
 class AnimEvaluator
 {
@@ -74,12 +83,7 @@ inline				AnimEvaluator< KeyType, AddressType >::AnimEvaluator( EngineObject* ob
 	//static_assert( std::is_member_function_pointer< &AddressType::SetValue >::value, "Template parameter AddressType must implement SetValue function." );
 
 	KeyType curValue = m_param.GetValue( object );
-	
-	Key< KeyType > firstKey;
-	firstKey.Time = TimeType( 0.0 );
-	firstKey.Param.Value = curValue;
-	//firstKey.Value.Interpolator = 
-	m_keys.Keys.push_back( std::move( firstKey ) );
+	m_keys.UpdateKey( TimeType( 0.0 ), curValue );
 }
 
 
@@ -152,5 +156,5 @@ inline bool AnimEvaluator<KeyType, AddressType>::UpdateInterpolator( UPtr<Interp
 template< typename KeyType, typename AddressType >
 inline const Key< KeyType >*			AnimEvaluator< KeyType, AddressType >::GetKey( TimeType time )
 {
-	return nullptr;
+	return m_keys.GetKey( time );
 }

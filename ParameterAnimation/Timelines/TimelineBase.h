@@ -7,8 +7,15 @@
 
 #include "Common/ParameterAnimation/Timelines/TimelineTypes.h"
 
+/**@defgroup Timelines Timelines
+@ingroup KeyFrameAnimation*/
 
-/**@brief */
+
+
+
+/**@brief 
+
+@ingroup Timelines*/
 class TimelineBase
 {
 private:
