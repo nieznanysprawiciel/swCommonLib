@@ -129,18 +129,18 @@ inline bool AnimEvaluator<KeyType, AddressType>::UpdateKey( TimeType time, const
 
 // ================================ //
 //
-template<typename KeyType, typename AddressType>
-inline bool AnimEvaluator<KeyType, AddressType>::UpdateKey( TimeType time, const KeyType & newValue )
+template< typename KeyType, typename AddressType >
+inline bool			AnimEvaluator< KeyType, AddressType >::UpdateKey	( TimeType time, const KeyType & newValue )
 {
-	return false;
+	return m_keySet.UpdateKey( time, newValue );
 }
 
 // ================================ //
 //
-template<typename KeyType, typename AddressType>
-inline bool AnimEvaluator<KeyType, AddressType>::RemoveKey( TimeType time )
+template< typename KeyType, typename AddressType >
+inline bool			AnimEvaluator< KeyType, AddressType >::RemoveKey	( TimeType time )
 {
-	return false;
+	return m_keySet.RemoveKey( time );
 }
 
 // ================================ //

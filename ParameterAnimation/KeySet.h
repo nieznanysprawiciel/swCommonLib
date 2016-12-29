@@ -132,6 +132,7 @@ inline bool				KeySet< KeyType >::RemoveKey	( TimeType time )
 	if( iter == Keys.end() )
 		return false;
 
+	///@todo Remove interplator.
 	Keys.erase( iter );
 	return true;
 }
@@ -151,8 +152,11 @@ inline typename std::vector< Key< KeyType > >::iterator			KeySet< KeyType >::Fin
 
 	auto iterRange = std::equal_range( Keys.begin(), Keys.end(), fakeKey );
 
-	assert( std::distance( iterRange.first, iterRange.second ) == 1 );
-	return iterRange.first;
+	assert( std::distance( iterRange.first, iterRange.second ) <= 1 );
+	if( std::distance( iterRange.first, iterRange.second ) == 1 )
+		return iterRange.first;
+	else
+		return Keys.end();
 }
 
 // ================================ //
