@@ -5,7 +5,8 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-/**@defgroup KeyFrameAnimation Animation
+/**@defgroup KeyFrameAnimation Keyframe Animation
+Animation of rttr properties.
 @ingroup CommonFiles*/
 
 
@@ -13,7 +14,8 @@
 
 /**@brief Base animation class.
 
-Allows such operation like evaluating animations without knowing type.*/
+Allows such operation like evaluating animations without knowing type.
+@ingroup KeyFrameAnimation*/
 class IAnimation
 {
 private:

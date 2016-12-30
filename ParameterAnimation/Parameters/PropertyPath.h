@@ -7,6 +7,7 @@
 
 #include "Common/RTTR.h"
 #include "Common/Properties/Properties.h"
+#include "Common/Serialization/SW/Serialization.h"
 
 #include <vector>
 
@@ -51,11 +52,21 @@ inline			PropertyPath< KeyType >::PropertyPath	( EngineObject* object, const std
 template< typename KeyType >
 inline KeyType	PropertyPath< KeyType >::GetValue		( EngineObject* object )
 {
-	return KeyType();
+	auto finalPair = Properties::GetProperty( object, m_path );
+	auto& owner = finalPair.first;
+	auto& prop = finalPair.second;
+
+	return Serialization::GetPropertyValue< KeyType >( prop, owner );
 }
 
 // ================================ //
 //
 template< typename KeyType >
 inline void		PropertyPath< KeyType >::SetValue		( EngineObject* object, KeyType& value )
-{ }
+{
+	auto finalPair = Properties::GetProperty( object, m_path );
+	auto& owner = finalPair.first;
+	auto& prop = finalPair.second;
+
+	Serialization::SetPropertyValue( prop, owner, value );
+}

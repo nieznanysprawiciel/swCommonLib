@@ -97,6 +97,21 @@ std::pair< rttr::variant, rttr::property >		Properties::GetProperty		( rttr::var
 
 // ================================ //
 //
+std::pair< rttr::variant, rttr::property >		Properties::GetProperty		( EngineObject* object, const std::vector< rttr::property >& propertyPath )
+{
+	rttr::variant owner = object;
+
+	for( int i = 0; i < propertyPath.size() - 1; ++i )
+	{
+		rttr::property property = propertyPath[ i ];
+		owner = property.get_value( owner );
+	}
+
+	return std::make_pair( owner, propertyPath.back() );
+}
+
+// ================================ //
+//
 rttr::property			Properties::EmptyProperty()
 {
 	TypeID nullType = TypeID::get< void >();
