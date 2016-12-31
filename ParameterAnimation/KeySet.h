@@ -8,6 +8,7 @@
 
 #include "Key.h"
 #include "Interpolators/IInterpolator.h"
+#include "Interpolators/DefaultInterpolators.h"
 
 #include <vector>
 #include <algorithm>
@@ -86,7 +87,13 @@ inline bool				KeySet< KeyType >::AddKey		( TimeType time, const KeyType& value 
 	if( iter == Keys.end() )
 	{
 		Keys.push_back( Key< KeyType >( time, value ) );
-		// Interpolators
+
+		auto& rightKey = *iter;
+		auto& leftKey = *( --iter );
+
+		UPtr< const IInterpolator< KeyType > > nullInterpolator = std::static_pointer_cast< const IInterpolator< KeyType > >( MakeUPtr< const DummyInterpolator< KeyType > >() );
+		auto interpolator = DefaultInterpolators::Create< KeyType >( leftKey, rightKey, std::static_pointer_cast< const IInterpolator< KeyType > >( Interpolators.back() ), nullInterpolator );
+		Interpolators.push_back( std::move( interpolator ) );
 		return true;
 	}
 
