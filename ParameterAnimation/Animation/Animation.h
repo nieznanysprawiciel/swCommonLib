@@ -84,6 +84,10 @@ public:
 	virtual			~AnimationImpl	() = default;
 
 
+	virtual void	Animate			( EngineObject* object, TimelineBase* timeline )		override;
+	virtual void	Animate			( EngineObject* object, TimeType time )					override;
+
+
 	/**@copydoc AnimationTyped::AddKey*/
 	virtual bool	AddKey			( TimeType time, const KeyType& value )											override;
 	/**@copydoc AnimationTyped::AddKey*/

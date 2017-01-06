@@ -12,6 +12,28 @@ inline		AnimationImpl<  KeyType, AddressType  >::AnimationImpl( EngineObject* ob
 {}
 
 
+
+//====================================================================================//
+//			Animation	 Evaluation
+//====================================================================================//
+
+// ================================ //
+//
+template< typename KeyType, typename AddressType >
+inline void			AnimationImpl< KeyType, AddressType >::Animate		( EngineObject* object, TimelineBase* timeline )
+{
+	AnimationImpl< KeyType, AddressType >::Animate( object, timeline->GetTime() );
+}
+
+// ================================ //
+//
+template< typename KeyType, typename AddressType >
+inline void			AnimationImpl< KeyType, AddressType >::Animate		( EngineObject* object, TimeType time )
+{
+	Evaluator.Evaluate( object, time );
+}
+
+
 //====================================================================================//
 //			Keys manipulation	
 //====================================================================================//

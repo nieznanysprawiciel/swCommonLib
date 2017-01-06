@@ -10,6 +10,7 @@ Animation of rttr properties.
 @ingroup CommonFiles*/
 
 
+class TimelineBase;
 
 
 /**@brief Base animation class.
@@ -24,6 +25,8 @@ public:
 	explicit		IAnimation() = default;
 	virtual			~IAnimation() = default;
 
-};
 
+	virtual void			Animate	( EngineObject* object, TimelineBase* timeline )		= 0;
+	virtual void			Animate	( EngineObject* object, TimeType time )					= 0;
+};
 

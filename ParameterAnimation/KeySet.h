@@ -39,11 +39,12 @@ public:
 	bool					UpdateKey	( TimeType time, const KeyType& value );
 	bool					RemoveKey	( TimeType time );
 
+	KeyType					Evaluate	( TimeType time );
 
 private:
 
 	typename std::vector< Key< KeyType > >::iterator		FindKey			( TimeType time );
-	typename std::vector< Key< KeyType > >::iterator		FindPrevKey		( TimeType time );
+	typename std::vector< Key< KeyType > >::iterator		FindPlace		( TimeType time );
 
 	/**@brief Adds default interpolator for given type.
 	Adds interpolator defined by function DefaultInterpolators::Create< KeyType> for key added under given index.
@@ -97,7 +98,7 @@ inline Key< KeyType >*	KeySet< KeyType >::GetKey		( TimeType time )
 template< typename KeyType >
 inline bool				KeySet< KeyType >::AddKey		( TimeType time, const KeyType& value )
 {
-	auto iter = FindPrevKey( time );
+	auto iter = FindPlace( time );
 
 	if( iter == Keys.end() )
 	{
@@ -166,6 +167,33 @@ inline bool				KeySet< KeyType >::RemoveKey	( TimeType time )
 	return true;
 }
 
+// ================================ //
+//
+template< typename KeyType >
+inline KeyType			KeySet< KeyType >::Evaluate		( TimeType time )
+{
+	if( Keys.size() == 1 )
+		return Keys[ 0 ].Value;
+
+	///@todo Check if we can find keywith std::lower_bound or FindPlace. Messure performance in cases with multiple keys
+	/// and choose better version.
+	auto iter = Keys.begin();
+	for( ; iter != Keys.end(); ++iter )
+	{
+		if( iter->Time > time )
+			break;
+	}
+
+	Size keyIdx = std::distance( Keys.begin(), iter );
+
+	if( keyIdx >= Keys.size() )
+		return Keys.back().Value;
+	if( keyIdx == 0 )
+		return Keys[ 0 ].Value;
+
+	return Interpolators[ keyIdx - 1 ]->Interpolate( time, Keys[ keyIdx - 1 ], Keys[ keyIdx ] );
+}
+
 //====================================================================================//
 //			Internal functions	
 //====================================================================================//
@@ -191,7 +219,7 @@ inline typename std::vector< Key< KeyType > >::iterator			KeySet< KeyType >::Fin
 // ================================ //
 //
 template< typename KeyType >
-inline typename std::vector< Key< KeyType > >::iterator			KeySet< KeyType >::FindPrevKey	( TimeType time )
+inline typename std::vector< Key< KeyType > >::iterator			KeySet< KeyType >::FindPlace	( TimeType time )
 {
 	Key< KeyType > fakeKey;
 	fakeKey.Time = time;

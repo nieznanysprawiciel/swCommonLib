@@ -40,8 +40,6 @@ public:
 
 
 	void				Evaluate	( EngineObject* object, TimeType time );
-	void				Evaluate	( EngineObject* object, TimelineBase* timeline );
-
 
 	/**@brief Adds key and sets default interpolator.
 	@return False if key already exists.*/
@@ -95,15 +93,8 @@ inline				AnimEvaluator< KeyType, AddressType >::AnimEvaluator( EngineObject* ob
 template< typename KeyType, typename AddressType >
 inline void			AnimEvaluator< KeyType, AddressType >::Evaluate		( EngineObject* object, TimeType time )
 {
-
-}
-
-// ================================ //
-//
-template< typename KeyType, typename AddressType >
-inline void			AnimEvaluator< KeyType, AddressType >::Evaluate		( EngineObject* object, TimelineBase* timeline )
-{
-	Evaluate( object, timeline->GetTime() );
+	KeyType value = m_keySet.Evaluate( time );
+	m_param.SetValue( object, value );
 }
 
 // ================================ //
