@@ -64,7 +64,10 @@ public:
 	bool	UpdateInterpolator	( UPtr< Interpolator >&& interpolator );
 
 	/**@brief Return key in given time.*/
-	const Key< KeyType >*		GetKey	( TimeType time );
+	const Key< KeyType >*		GetKey		( TimeType time );
+
+	/**@brief Returns KeySet.*/
+	virtual KeySet< KeyType >&	GetKeySet	();
 };
 
 
@@ -157,4 +160,12 @@ template< typename KeyType, typename AddressType >
 inline const Key< KeyType >*			AnimEvaluator< KeyType, AddressType >::GetKey( TimeType time )
 {
 	return m_keySet.GetKey( time );
+}
+
+// ================================ //
+//
+template< typename KeyType, typename AddressType >
+inline KeySet< KeyType >&				AnimEvaluator< KeyType, AddressType >::GetKeySet()
+{
+	return m_keySet;
 }

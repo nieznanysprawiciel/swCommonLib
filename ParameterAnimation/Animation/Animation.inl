@@ -72,3 +72,11 @@ inline const Key< KeyType >*	AnimationImpl< KeyType, AddressType >::GetKey	( Tim
 	return Evaluator.GetKey( time );
 }
 
+// ================================ //
+//
+template< typename KeyType, typename AddressType >
+inline KeySet< KeyType >&		AnimationImpl< KeyType, AddressType >::GetKeySet()
+{
+	return Evaluator.GetKeySet();
+}
+

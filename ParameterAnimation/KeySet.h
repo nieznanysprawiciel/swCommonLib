@@ -44,6 +44,13 @@ private:
 
 	typename std::vector< Key< KeyType > >::iterator		FindKey			( TimeType time );
 	typename std::vector< Key< KeyType > >::iterator		FindPrevKey		( TimeType time );
+
+	/**@brief Adds default interpolator for given type.
+	Adds interpolator defined by function DefaultInterpolators::Create< KeyType> for key added under given index.
+	@param[in] keyIndex Index of added key.*/
+	void					AddDefaultInterpolator			( Size keyIndex );
+	/**@brief Updates interpolator under index. If interpolator doesn't exists, nothing bad happens.*/
+	void					UpdateInterpolator				( Size index );
 };
 
 
@@ -52,6 +59,14 @@ private:
 //====================================================================================//
 
 extern const TimeType epsilon;
+
+// ================================ //
+//
+template< typename KeyType, template< typename KeyType > class InterpolatorType >
+UPtr< const IInterpolator< KeyType > >		CastConst		( UPtr< InterpolatorType< KeyType > >& interpolator )
+{
+	return std::static_pointer_cast< const IInterpolator< KeyType > >( interpolator );
+}
 
 // ================================ //
 //
@@ -87,13 +102,8 @@ inline bool				KeySet< KeyType >::AddKey		( TimeType time, const KeyType& value 
 	if( iter == Keys.end() )
 	{
 		Keys.push_back( Key< KeyType >( time, value ) );
+		AddDefaultInterpolator( Keys.size() - 1 );
 
-		auto& rightKey = *iter;
-		auto& leftKey = *( --iter );
-
-		UPtr< const IInterpolator< KeyType > > nullInterpolator = std::static_pointer_cast< const IInterpolator< KeyType > >( MakeUPtr< const DummyInterpolator< KeyType > >() );
-		auto interpolator = DefaultInterpolators::Create< KeyType >( leftKey, rightKey, std::static_pointer_cast< const IInterpolator< KeyType > >( Interpolators.back() ), nullInterpolator );
-		Interpolators.push_back( std::move( interpolator ) );
 		return true;
 	}
 
@@ -105,8 +115,8 @@ inline bool				KeySet< KeyType >::AddKey		( TimeType time, const KeyType& value 
 	}
 
 	// Add new key in the middle of vector.
-	Keys.insert( iter, Key< KeyType >( time, value ) );
-	// Interpolators
+	iter = Keys.insert( iter, Key< KeyType >( time, value ) );
+	AddDefaultInterpolator( std::distance( Keys.begin(), iter ) );
 
 	return true;
 }
@@ -121,6 +131,10 @@ inline bool				KeySet< KeyType >::UpdateKey	( TimeType time, const KeyType& valu
 		return false;
 
 	iter->Value = value;
+
+	auto keyIdx = std::distance( Keys.begin(), iter );
+	UpdateInterpolator( keyIdx );
+	UpdateInterpolator( keyIdx - 1 );
 
 	return true;
 }
@@ -139,8 +153,16 @@ inline bool				KeySet< KeyType >::RemoveKey	( TimeType time )
 	if( iter == Keys.end() )
 		return false;
 
-	///@todo Remove interplator.
-	Keys.erase( iter );
+	iter = Keys.erase( iter );
+
+	// Remove interplator.
+	auto keyIdx = std::distance( Keys.begin(), iter );
+	auto interIter = Interpolators.erase( Interpolators.begin() + keyIdx );
+
+	Size interpolatorIdx = std::distance( Interpolators.begin(), interIter );
+	UpdateInterpolator( interpolatorIdx );
+	UpdateInterpolator( interpolatorIdx - 1 );
+
 	return true;
 }
 
@@ -176,4 +198,69 @@ inline typename std::vector< Key< KeyType > >::iterator			KeySet< KeyType >::Fin
 
 	auto iter = std::lower_bound( Keys.begin(), Keys.end(), fakeKey );
 	return iter;
+}
+
+// ================================ //
+//
+template< typename KeyType >
+inline void				KeySet< KeyType >::AddDefaultInterpolator	( Size keyIndex )
+{
+	Size leftKeyIdx;
+	Size rightKeyIdx;
+
+	if( keyIndex == Keys.size() - 1 )
+	{
+		leftKeyIdx = keyIndex - 1;
+		rightKeyIdx = keyIndex;
+	}
+	else
+	{
+		leftKeyIdx = keyIndex;
+		rightKeyIdx = keyIndex + 1;
+	}
+
+
+	// We always have at least one key and we already added the second.
+	auto& leftKey = Keys[ leftKeyIdx ];
+	auto& rightKey = Keys[ rightKeyIdx ];
+	
+	// Create new interpolator.
+	auto& leftInterpolator = keyIndex > 0 && keyIndex < Interpolators.size() ? Interpolators[ keyIndex - 1 ] : MakeUPtr< DummyInterpolator< KeyType > >();
+	auto& rightInterpolator = keyIndex < Interpolators.size() ? Interpolators[ keyIndex ] : MakeUPtr< DummyInterpolator< KeyType > >();
+	
+	auto interpolator = DefaultInterpolators::Create< KeyType >( leftKey, rightKey, CastConst( leftInterpolator ), CastConst( rightInterpolator ) );
+
+	// Add interpolator
+	if( keyIndex == Keys.size() - 1 )
+		Interpolators.push_back( std::move( interpolator ) );
+	else
+		Interpolators.insert( Interpolators.begin() + keyIndex, std::move( interpolator ) );
+
+
+	// Update sourrounding interpolators
+	UpdateInterpolator( keyIndex - 1 );
+	UpdateInterpolator( keyIndex + 1 );		// Note: We inserted interpolator under keyIndex.
+}
+
+// ================================ //
+//
+template< typename KeyType >
+inline void			KeySet< KeyType >::UpdateInterpolator			( Size index )
+{
+	// Updated interpolator must exist. Note: index is unsigned and is always greater than zero.
+	if( index >= Interpolators.size() )
+		return;
+
+	// KeySet is in proper state.
+	assert( Keys.size() == Interpolators.size() + 1 );
+
+	auto& leftInterpolator = index >= 1 ? CastConst( Interpolators[ index - 1 ] ) : CastConst( MakeUPtr< DummyInterpolator< KeyType > >() );
+	auto& rightInterpolator = index + 1 < Interpolators.size() ? CastConst( Interpolators[ index + 1 ] ) : CastConst( MakeUPtr< DummyInterpolator< KeyType > >() );
+	
+	auto& leftKey = Keys[ index ];
+	auto& rightKey = Keys[ index + 1 ];
+
+	auto& interpolator = Interpolators[ index ];
+
+	interpolator->Update( leftKey, rightKey, leftInterpolator, rightInterpolator );
 }

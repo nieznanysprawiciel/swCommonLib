@@ -58,6 +58,9 @@ public:
 
 	/**@brief Return key in given time.*/
 	virtual const Key< KeyType >*		GetKey	( TimeType time )													= 0;
+
+	/**@brief Returns KeySet object.*/
+	virtual KeySet< KeyType >&			GetKeySet	()																= 0;
 };
 
 
@@ -97,6 +100,8 @@ public:
 
 	/**@copydoc AnimationTyped::GetKey*/
 	virtual const Key< KeyType >*		GetKey	( TimeType time )													override;
+	/**@copydoc AnimationTyped::GetKeySet*/
+	virtual KeySet< KeyType >&			GetKeySet	()																override;
 };
 
 typedef AnimationImpl< float, StringPropertyPath< float > > FloatAnimationStrPath;
@@ -108,3 +113,4 @@ using FloatAnimation = AnimationImpl< float, AddressType< float > >;
 
 
 #include "Animation.inl"
+
