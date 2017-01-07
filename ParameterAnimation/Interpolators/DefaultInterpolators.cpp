@@ -8,7 +8,7 @@
 #include "DefaultInterpolators.inl"
 
 #include "LinearInterpolator.h"
-#include "PointInterpolator.h"
+#include "DiscreteInterpolator.h"
 
 namespace DefaultInterpolators
 {
@@ -17,19 +17,24 @@ namespace DefaultInterpolators
 //			Instantiantions	
 //====================================================================================//
 
-template
-UPtr< IInterpolator< float > >		CreateLinear< float >( const Key< float >& leftKey,
-														   const Key< float >& rightKey,
-														   UPtr< const IInterpolator< float > >& leftInterpolator,
-														   UPtr< const IInterpolator< float > >& rightInterpolator );
+#define DEFINE_SPECIALIZATION( type, Function )																	\
+template																										\
+UPtr< IInterpolator< type > >		Function< type >( const Key< type >& leftKey,								\
+													  const Key< type >& rightKey,								\
+													  UPtr< const IInterpolator< type > >& leftInterpolator,	\
+													  UPtr< const IInterpolator< type > >& rightInterpolator );
 
-template
-UPtr< IInterpolator< double > >		CreateLinear< double >( const Key< double >& leftKey,
-															const Key< double >& rightKey,
-															UPtr< const IInterpolator< double > >& leftInterpolator,
-															UPtr< const IInterpolator< double > >& rightInterpolator );
-
-
+DEFINE_SPECIALIZATION( float, CreateLinear );
+DEFINE_SPECIALIZATION( double, CreateLinear );
+DEFINE_SPECIALIZATION( char, CreateLinear );
+DEFINE_SPECIALIZATION( uint8, CreateLinear );
+DEFINE_SPECIALIZATION( int8, CreateLinear );
+DEFINE_SPECIALIZATION( uint16, CreateLinear );
+DEFINE_SPECIALIZATION( int16, CreateLinear );
+DEFINE_SPECIALIZATION( uint32, CreateLinear );
+DEFINE_SPECIALIZATION( int32, CreateLinear );
+DEFINE_SPECIALIZATION( uint64, CreateLinear );
+DEFINE_SPECIALIZATION( int64, CreateLinear );
 
 
 }	// DefaultInterpolators

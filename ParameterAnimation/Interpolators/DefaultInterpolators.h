@@ -21,7 +21,7 @@ namespace DefaultInterpolators
 														  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
 
 	template< typename KeyType >
-	UPtr< IInterpolator< KeyType > >	CreatePoint		( const Key< KeyType >& leftKey,
+	UPtr< IInterpolator< KeyType > >	CreateDiscrete	( const Key< KeyType >& leftKey,
 														  const Key< KeyType >& rightKey,
 														  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
 														  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
@@ -31,7 +31,7 @@ namespace DefaultInterpolators
 	
 	@note Left or right interpolator can be nullptr, but keys always exist.*/
 	template< typename KeyType >
-	UPtr< IInterpolator< typename std::enable_if< !std::is_floating_point< KeyType >::value, KeyType >::type > >
+	UPtr< IInterpolator< typename std::enable_if< !std::is_arithmetic< KeyType >::value, KeyType >::type > >
 		Create		( const Key< KeyType >& leftKey,
 					  const Key< KeyType >& rightKey,
 					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
@@ -44,22 +44,38 @@ namespace DefaultInterpolators
 					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
 					  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
 
+	template< typename KeyType >
+	UPtr< IInterpolator< typename std::enable_if< std::is_integral< KeyType >::value, KeyType >::type > >
+		Create		( const Key< KeyType >& leftKey,
+					  const Key< KeyType >& rightKey,
+					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
+
 
 //====================================================================================//
 //			Specialization declarations	
 //====================================================================================//
 
-template
-UPtr< IInterpolator< float > >		CreateLinear< float >( const Key< float >& leftKey,
-															const Key< float >& rightKey,
-															UPtr< const IInterpolator< float > >& leftInterpolator,
-															UPtr< const IInterpolator< float > >& rightInterpolator );
+#define DECLARE_SPECIALIZATON( type, Function )																	\
+template																										\
+UPtr< IInterpolator< type > >		Function< type >(	const Key< type >& leftKey,								\
+														const Key< type >& rightKey,							\
+														UPtr< const IInterpolator< type > >& leftInterpolator,	\
+														UPtr< const IInterpolator< type > >& rightInterpolator );
 
-template
-UPtr< IInterpolator< double > >		CreateLinear< double >( const Key< double >& leftKey,
-															const Key< double >& rightKey,
-															UPtr< const IInterpolator< double > >& leftInterpolator,
-															UPtr< const IInterpolator< double > >& rightInterpolator );
+DECLARE_SPECIALIZATON( float, CreateLinear );
+DECLARE_SPECIALIZATON( double, CreateLinear );
+DECLARE_SPECIALIZATON( char, CreateLinear );
+DECLARE_SPECIALIZATON( uint8, CreateLinear );
+DECLARE_SPECIALIZATON( int8, CreateLinear );
+DECLARE_SPECIALIZATON( uint16, CreateLinear );
+DECLARE_SPECIALIZATON( int16, CreateLinear );
+DECLARE_SPECIALIZATON( uint32, CreateLinear );
+DECLARE_SPECIALIZATON( int32, CreateLinear );
+DECLARE_SPECIALIZATON( uint64, CreateLinear );
+DECLARE_SPECIALIZATON( int64, CreateLinear );
+
+#undef DECLARE_SPECIALIZATON
 
 //====================================================================================//
 //			Implementation	
@@ -68,7 +84,7 @@ UPtr< IInterpolator< double > >		CreateLinear< double >( const Key< double >& le
 // ================================ //
 //
 template< typename KeyType >
-inline UPtr< IInterpolator< typename std::enable_if< !std::is_floating_point< KeyType >::value, KeyType >::type > >
+inline UPtr< IInterpolator< typename std::enable_if< !std::is_arithmetic< KeyType >::value, KeyType >::type > >
 	Create		( const Key< KeyType >& leftKey,
 					const Key<KeyType>& rightKey,
 					UPtr< const IInterpolator< KeyType > >& leftInterpolator,
@@ -83,6 +99,19 @@ inline UPtr< IInterpolator< typename std::enable_if< !std::is_floating_point< Ke
 //
 template< typename KeyType >
 inline UPtr< IInterpolator< typename std::enable_if< std::is_floating_point< KeyType >::value, KeyType >::type > >
+	Create		( const Key< KeyType >& leftKey,
+					const Key<KeyType>& rightKey,
+					UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+{
+	return CreateLinear( leftKey, rightKey, leftInterpolator, rightInterpolator );
+}
+
+
+// ================================ //
+//
+template< typename KeyType >
+inline UPtr< IInterpolator< typename std::enable_if< std::is_integral< KeyType >::value, KeyType >::type > >
 	Create		( const Key< KeyType >& leftKey,
 					const Key<KeyType>& rightKey,
 					UPtr< const IInterpolator< KeyType > >& leftInterpolator,

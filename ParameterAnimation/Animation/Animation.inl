@@ -6,8 +6,8 @@
 //			Constructor	
 //====================================================================================//
 
-template< typename KeyType, typename AddressType  >
-inline		AnimationImpl<  KeyType, AddressType  >::AnimationImpl( EngineObject* object, const std::string& propertyPath )
+template< typename KeyType, typename AddressType >
+inline		AnimationImpl< KeyType, AddressType >::AnimationImpl( EngineObject* object, const std::string& propertyPath )
 	:	Evaluator( object, propertyPath )
 {}
 
@@ -41,7 +41,7 @@ inline void			AnimationImpl< KeyType, AddressType >::Animate		( EngineObject* ob
 // ================================ //
 //
 template< typename KeyType, typename AddressType  >
-inline bool			AnimationImpl<  KeyType, AddressType  >::AddKey		( TimeType time, const KeyType& value )
+inline bool			AnimationImpl< KeyType, AddressType >::AddKey		( TimeType time, const KeyType& value )
 {
 	return Evaluator.AddKey( time, value );
 }

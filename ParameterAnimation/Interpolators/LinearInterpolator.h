@@ -70,9 +70,12 @@ template< typename KeyType >
 inline KeyType		LinearInterpolator< KeyType >::Interpolate	( TimeType time, Key< KeyType >& left, Key< KeyType >& right )
 {
 	TimeType timeInterval = right.Time - left.Time;
-	KeyType valueInterval = right.Value - left.Value;
+	TimeType progress = ( time - left.Time ) / timeInterval;
 
-	return static_cast< KeyType >( left.Value + valueInterval * ( time - left.Time ) / timeInterval );
+	auto leftResult = ( 1.0 - progress ) * left.Value;
+	auto rightResult = right.Value * progress;
+
+	return static_cast< KeyType >( leftResult + rightResult );
 }
 
 // ================================ //

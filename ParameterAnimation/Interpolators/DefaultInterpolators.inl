@@ -8,7 +8,7 @@
 #include "DefaultInterpolators.h"
 
 #include "LinearInterpolator.h"
-#include "PointInterpolator.h"
+#include "DiscreteInterpolator.h"
 
 
 // ================================ //

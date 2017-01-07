@@ -115,6 +115,11 @@ typedef AnimationImpl< float, DirectProperty< float > > FloatAnimationDirect;
 template< template< typename KeyType > class AddressType >
 using FloatAnimation = AnimationImpl< float, AddressType< float > >;
 
+template< template< typename KeyType > class AddressType >
+using DoubleAnimation = AnimationImpl< double, AddressType< double > >;
+
+template< template< typename KeyType > class AddressType >
+using UIn32Animation = AnimationImpl< uint32, AddressType< uint32 > >;
 
 #include "Animation.inl"
 
