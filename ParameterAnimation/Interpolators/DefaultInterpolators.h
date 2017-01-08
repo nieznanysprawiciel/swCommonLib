@@ -9,6 +9,8 @@
 #include "IInterpolator.h"
 #include "Common/ParameterAnimation/Key.h"
 
+#include <string>
+
 
 /**@brief Interpolators helpers functions.*/
 namespace DefaultInterpolators
@@ -26,17 +28,18 @@ namespace DefaultInterpolators
 														  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
 														  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
 
+
+	//template< typename KeyType >
+	//UPtr< IInterpolator< typename std::enable_if< !std::is_arithmetic< KeyType >::value, KeyType >::type > >
+	//	Create		( const Key< KeyType >& leftKey,
+	//				  const Key< KeyType >& rightKey,
+	//				  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+	//				  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
+
 	/**@brief Function for creating default interpolators for different types of keys.
 	Specialize this template in .cpp file.
 	
 	@note Left or right interpolator can be nullptr, but keys always exist.*/
-	template< typename KeyType >
-	UPtr< IInterpolator< typename std::enable_if< !std::is_arithmetic< KeyType >::value, KeyType >::type > >
-		Create		( const Key< KeyType >& leftKey,
-					  const Key< KeyType >& rightKey,
-					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
-					  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
-
 	template< typename KeyType >
 	UPtr< IInterpolator< typename std::enable_if< std::is_floating_point< KeyType >::value, KeyType >::type > >
 		Create		( const Key< KeyType >& leftKey,
@@ -51,6 +54,33 @@ namespace DefaultInterpolators
 					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
 					  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
 
+	template< typename KeyType >
+	UPtr< IInterpolator< typename std::enable_if< std::is_same< KeyType, bool >::value, KeyType >::type > >
+		Create		( const Key< KeyType >& leftKey,
+					  const Key< KeyType >& rightKey,
+					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
+
+	template< typename KeyType >
+	UPtr< IInterpolator< typename std::enable_if< std::is_enum< KeyType >::value, KeyType >::type > >
+		Create		( const Key< KeyType >& leftKey,
+					  const Key< KeyType >& rightKey,
+					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
+
+	template< typename KeyType >
+	UPtr< IInterpolator< typename std::enable_if< std::is_same< KeyType, std::string >::value, KeyType >::type > >
+		Create		( const Key< KeyType >& leftKey,
+					  const Key< KeyType >& rightKey,
+					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
+
+	template< typename KeyType >
+	UPtr< IInterpolator< typename std::enable_if< std::is_same< KeyType, std::wstring >::value, KeyType >::type > >
+		Create		( const Key< KeyType >& leftKey,
+					  const Key< KeyType >& rightKey,
+					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
 
 //====================================================================================//
 //			Specialization declarations	
@@ -75,6 +105,21 @@ DECLARE_SPECIALIZATON( int32, CreateLinear );
 DECLARE_SPECIALIZATON( uint64, CreateLinear );
 DECLARE_SPECIALIZATON( int64, CreateLinear );
 
+DECLARE_SPECIALIZATON( float, CreateDiscrete );
+DECLARE_SPECIALIZATON( double, CreateDiscrete );
+DECLARE_SPECIALIZATON( char, CreateDiscrete );
+DECLARE_SPECIALIZATON( uint8, CreateDiscrete );
+DECLARE_SPECIALIZATON( int8, CreateDiscrete );
+DECLARE_SPECIALIZATON( uint16, CreateDiscrete );
+DECLARE_SPECIALIZATON( int16, CreateDiscrete );
+DECLARE_SPECIALIZATON( uint32, CreateDiscrete );
+DECLARE_SPECIALIZATON( int32, CreateDiscrete );
+DECLARE_SPECIALIZATON( uint64, CreateDiscrete );
+DECLARE_SPECIALIZATON( int64, CreateDiscrete );
+DECLARE_SPECIALIZATON( bool, CreateDiscrete );
+DECLARE_SPECIALIZATON( std::wstring, CreateDiscrete );
+DECLARE_SPECIALIZATON( std::string, CreateDiscrete );
+
 #undef DECLARE_SPECIALIZATON
 
 //====================================================================================//
@@ -83,16 +128,16 @@ DECLARE_SPECIALIZATON( int64, CreateLinear );
 
 // ================================ //
 //
-template< typename KeyType >
-inline UPtr< IInterpolator< typename std::enable_if< !std::is_arithmetic< KeyType >::value, KeyType >::type > >
-	Create		( const Key< KeyType >& leftKey,
-					const Key<KeyType>& rightKey,
-					UPtr< const IInterpolator< KeyType > >& leftInterpolator,
-					UPtr< const IInterpolator< KeyType > >& rightInterpolator )
-{
-	static_assert( false, "Implement specialization" );
-	return UPtr<IInterpolator<KeyType>>();
-}
+//template< typename KeyType >
+//inline UPtr< IInterpolator< typename std::enable_if< !std::is_arithmetic< KeyType >::value, KeyType >::type > >
+//	Create		( const Key< KeyType >& leftKey,
+//					const Key<KeyType>& rightKey,
+//					UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+//					UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+//{
+//	static_assert( false, "Implement specialization" );
+//	return UPtr<IInterpolator<KeyType>>();
+//}
 
 
 // ================================ //
@@ -120,6 +165,54 @@ inline UPtr< IInterpolator< typename std::enable_if< std::is_integral< KeyType >
 	return CreateLinear( leftKey, rightKey, leftInterpolator, rightInterpolator );
 }
 
+
+// ================================ //
+//
+template< typename KeyType >
+inline UPtr< IInterpolator< typename std::enable_if< std::is_same< KeyType, bool >::value, KeyType >::type > >
+	Create		( const Key< KeyType >& leftKey,
+					const Key<KeyType>& rightKey,
+					UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+{
+	return CreateDiscrete( leftKey, rightKey, leftInterpolator, rightInterpolator );
+}
+
+// ================================ //
+//
+template< typename KeyType >
+inline UPtr< IInterpolator< typename std::enable_if< std::is_enum< KeyType >::value, KeyType >::type > >
+	Create		( const Key< KeyType >& leftKey,
+					const Key<KeyType>& rightKey,
+					UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+{
+	return CreateDiscrete( leftKey, rightKey, leftInterpolator, rightInterpolator );
+}
+
+// ================================ //
+//
+template< typename KeyType >
+inline UPtr< IInterpolator< typename std::enable_if< std::is_same< KeyType, std::string >::value, KeyType >::type > >
+	Create		( const Key< KeyType >& leftKey,
+					const Key<KeyType>& rightKey,
+					UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+{
+	return CreateDiscrete( leftKey, rightKey, leftInterpolator, rightInterpolator );
+}
+
+// ================================ //
+//
+template< typename KeyType >
+inline UPtr< IInterpolator< typename std::enable_if< std::is_same< KeyType, std::wstring >::value, KeyType >::type > >
+	Create		( const Key< KeyType >& leftKey,
+					const Key<KeyType>& rightKey,
+					UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+{
+	return CreateDiscrete( leftKey, rightKey, leftInterpolator, rightInterpolator );
+}
 
 
 }	// DefaultInterpolators

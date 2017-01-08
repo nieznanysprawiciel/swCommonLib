@@ -18,7 +18,13 @@ class DiscreteInterpolator : public IInterpolator< KeyType >
 private:
 protected:
 public:
-	explicit		DiscreteInterpolator() = default;
+	/// Constructor for serialization.
+	explicit		DiscreteInterpolator	() = default;
+	/// Constructor for default interpolator creation function.
+	explicit		DiscreteInterpolator	( const Key< KeyType >& leftKey,
+											  const Key< KeyType >& rightKey,
+											  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+											  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
 					~DiscreteInterpolator() = default;
 
 	/**@brief Interpolates value.*/
@@ -47,9 +53,18 @@ public:
 // ================================ //
 //
 template< typename KeyType >
+inline				DiscreteInterpolator< KeyType >::DiscreteInterpolator	( const Key< KeyType >& leftKey,
+																			  const Key< KeyType >& rightKey,
+																			  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+																			  UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+{}
+
+// ================================ //
+//
+template< typename KeyType >
 inline KeyType		DiscreteInterpolator< KeyType >::Interpolate	( TimeType time, Key< KeyType >& left, Key< KeyType >& right )
 {
-	return left.Value.Value;
+	return left.Value;
 }
 
 // ================================ //

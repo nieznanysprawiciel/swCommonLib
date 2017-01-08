@@ -36,6 +36,21 @@ DEFINE_SPECIALIZATION( int32, CreateLinear );
 DEFINE_SPECIALIZATION( uint64, CreateLinear );
 DEFINE_SPECIALIZATION( int64, CreateLinear );
 
+DEFINE_SPECIALIZATION( float, CreateDiscrete );
+DEFINE_SPECIALIZATION( double, CreateDiscrete );
+DEFINE_SPECIALIZATION( char, CreateDiscrete );
+DEFINE_SPECIALIZATION( uint8, CreateDiscrete );
+DEFINE_SPECIALIZATION( int8, CreateDiscrete );
+DEFINE_SPECIALIZATION( uint16, CreateDiscrete );
+DEFINE_SPECIALIZATION( int16, CreateDiscrete );
+DEFINE_SPECIALIZATION( uint32, CreateDiscrete );
+DEFINE_SPECIALIZATION( int32, CreateDiscrete );
+DEFINE_SPECIALIZATION( uint64, CreateDiscrete );
+DEFINE_SPECIALIZATION( int64, CreateDiscrete );
+DEFINE_SPECIALIZATION( bool, CreateDiscrete );
+
+
+
 
 }	// DefaultInterpolators
 
