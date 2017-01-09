@@ -73,7 +73,7 @@ inline KeyType		LinearInterpolator< KeyType >::Interpolate	( TimeType time, Key<
 	TimeType progress = ( time - left.Time ) / timeInterval;
 
 	auto leftResult = ( 1.0 - progress ) * left.Value;
-	auto rightResult = right.Value * progress;
+	auto rightResult = progress * right.Value;
 
 	return static_cast< KeyType >( leftResult + rightResult );
 }
@@ -118,5 +118,5 @@ inline KeyType		LinearInterpolator< KeyType >::Tangent		( const Key< KeyType >& 
 	KeyType valueInterval = right.Value - left.Value;
 	TimeType timeInterval = right.Time - left.Time;
 
-	return static_cast< KeyType >( valueInterval / timeInterval );
+	return static_cast< KeyType >( ( TimeType( 1.0f ) / timeInterval )* valueInterval );
 }

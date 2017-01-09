@@ -16,6 +16,20 @@
 namespace DefaultInterpolators
 {
 
+	/**@brief Trait for enabling types for parameter animation.
+	
+	Most of basic types can be animated without specializing this trait.
+	For some structs user must provide this function and overload operator+ and operator* for scalar multiplication.
+	
+	You don't have to write this specialization manually. Use macro ENABLE_PARAMETER_ANIMATION instead.*/
+	template< typename KeyType >
+	struct is_param_animation_enabled
+	{
+		const static bool value = false;
+	};
+
+
+
 	template< typename KeyType >
 	UPtr< IInterpolator< KeyType > >	CreateLinear	( const Key< KeyType >& leftKey,
 														  const Key< KeyType >& rightKey,
@@ -70,12 +84,12 @@ namespace DefaultInterpolators
 					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
 					  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
 
-	//template< typename KeyType >
-	//UPtr< IInterpolator< typename std::enable_if< std::is_same< KeyType, std::wstring >::value, KeyType >::type > >
-	//	Create		( const Key< KeyType >& leftKey,
-	//				  const Key< KeyType >& rightKey,
-	//				  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
-	//				  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
+	template< typename KeyType >
+	UPtr< IInterpolator< typename std::enable_if< is_param_animation_enabled< KeyType >::value, KeyType >::type > >
+		Create		( const Key< KeyType >& leftKey,
+					  const Key< KeyType >& rightKey,
+					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
 
 //====================================================================================//
 //			Specialization declarations	
@@ -184,17 +198,18 @@ inline UPtr< IInterpolator< typename std::enable_if< std::is_same< KeyType, std:
 	return CreateDiscrete( leftKey, rightKey, leftInterpolator, rightInterpolator );
 }
 
-//// ================================ //
-////
-//template< typename KeyType >
-//inline UPtr< IInterpolator< typename std::enable_if< std::is_same< KeyType, std::wstring >::value, KeyType >::type > >
-//	Create		( const Key< KeyType >& leftKey,
-//					const Key<KeyType>& rightKey,
-//					UPtr< const IInterpolator< KeyType > >& leftInterpolator,
-//					UPtr< const IInterpolator< KeyType > >& rightInterpolator )
-//{
-//	return CreateDiscrete( leftKey, rightKey, leftInterpolator, rightInterpolator );
-//}
+// ================================ //
+//
+template< typename KeyType >
+inline UPtr< IInterpolator< typename std::enable_if< is_param_animation_enabled< KeyType >::value, KeyType >::type > >
+	Create		( const Key< KeyType >& leftKey,
+					const Key< KeyType >& rightKey,
+					UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+					UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+{
+	return CreateLinear( leftKey, rightKey, leftInterpolator, rightInterpolator );
+}
+
 
 
 }	// DefaultInterpolators

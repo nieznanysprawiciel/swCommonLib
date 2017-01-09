@@ -33,3 +33,18 @@ inline UPtr< IInterpolator< KeyType > >			DefaultInterpolators::CreateDiscrete( 
 {
 	return UPtr< IInterpolator< KeyType > >( new DiscreteInterpolator< KeyType >( leftKey, rightKey, leftInterpolator, rightInterpolator ) );
 }
+
+
+
+#define ENABLE_PARAMETER_ANIMATION( type )							\
+namespace DefaultInterpolators										\
+{																	\
+template<>															\
+struct is_param_animation_enabled< type >							\
+{																	\
+	const static bool value = true;									\
+};																	\
+}
+
+
+
