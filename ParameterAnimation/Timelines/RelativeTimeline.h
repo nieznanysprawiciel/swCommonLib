@@ -15,7 +15,7 @@ class RelativeTimeline : public TimelineBase
 private:
 protected:
 	TimeType			m_offset;			///< Offset relative to parent.
-	TimeType			m_maxDuration;		///< Time after which timeline will be wrapped.
+	TimeType			m_duration;			///< Time after which timeline will be wrapped.
 	float				m_factor;			///< Enables slow motion.
 	WrapMode			m_preWrap;
 	WrapMode			m_postWrap;
@@ -34,7 +34,7 @@ public:
 
 	WrapMode		GetPreWrap	()	{ return m_preWrap; }
 	WrapMode		GetPostWrap	()	{ return m_postWrap; }
-	TimeType		GetDuration	()	{ return m_maxDuration; }
+	TimeType		GetDuration	()	{ return m_duration; }
 
 	// Inherited via TimelineBase
 	virtual void	Update		() override;

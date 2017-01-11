@@ -13,7 +13,7 @@ RelativeTimeline::RelativeTimeline()
 	:	TimelineBase( nullptr )
 	,	m_offset( 0.0 )
 	,	m_factor( 1.0f )
-	,	m_maxDuration( std::numeric_limits< TimeType >::max() )
+	,	m_duration( std::numeric_limits< TimeType >::max() )
 	,	m_preWrap( WrapMode::Clamp )
 	,	m_postWrap( WrapMode::Clamp )
 	,	m_isPaused( false )
@@ -23,24 +23,30 @@ RelativeTimeline::RelativeTimeline()
 // ================================ //
 //
 RelativeTimeline::RelativeTimeline( TimelineBasePtr parent )
-	:	TimelineBase( nullptr )
+	:	TimelineBase( parent )
 	,	m_offset( 0.0 )
 	,	m_factor( 1.0f )
-	,	m_maxDuration( std::numeric_limits< TimeType >::max() )
+	,	m_duration( std::numeric_limits< TimeType >::max() )
 	,	m_preWrap( WrapMode::Clamp )
 	,	m_postWrap( WrapMode::Clamp )
 	,	m_isPaused( false )
 	,	m_isStarted( false )
 {}
 
-void RelativeTimeline::SetPreWrap( WrapMode mode )
-{ }
+// ================================ //
+//
+void		RelativeTimeline::SetPreWrap	( WrapMode mode )
+{	m_preWrap = mode;	}
 
-void RelativeTimeline::SetPostWrap( WrapMode mode )
-{ }
+// ================================ //
+//
+void		RelativeTimeline::SetPostWrap	( WrapMode mode )
+{	m_postWrap = mode;	}
 
-void RelativeTimeline::SetDuration( TimeType duration )
-{ }
+// ================================ //
+//
+void		RelativeTimeline::SetDuration	( TimeType duration )
+{	m_duration = duration;	}
 
 // ================================ //
 //
@@ -73,7 +79,7 @@ void		RelativeTimeline::Start()
 	}
 	else if( auto parent = m_parent.lock() )
 	{
-		m_currentTime = parent->GetTime();
+		m_offset = parent->GetTime();
 		m_isStarted = true;
 	}
 }
@@ -122,19 +128,19 @@ TimeType	RelativeTimeline::EvalTime			( TimeType parentTime )
 {
 	TimeType elapsed = EvalElapsedTime( parentTime );
 
-	while( elapsed > m_maxDuration || elapsed < 0.0 )
+	while( elapsed > m_duration || elapsed < 0.0 )
 	{
-		if( elapsed > m_maxDuration )
+		if( elapsed > m_duration )
 		{
 			switch( m_postWrap )
 			{
 				case WrapMode::Clamp:
-					return m_maxDuration;
+					return m_duration;
 				case WrapMode::Repeat:
-					elapsed = elapsed - m_maxDuration;
+					elapsed = elapsed - m_duration;
 					break;
 				case WrapMode::Mirror:
-					elapsed = 2 * m_maxDuration - elapsed;
+					elapsed = 2 * m_duration - elapsed;
 					break;
 			}
 		}
@@ -145,7 +151,7 @@ TimeType	RelativeTimeline::EvalTime			( TimeType parentTime )
 				case WrapMode::Clamp:
 					return TimeType( 0.0 );
 				case WrapMode::Repeat:
-					elapsed = m_maxDuration + elapsed;
+					elapsed = m_duration + elapsed;
 					break;
 				case WrapMode::Mirror:
 					elapsed = -elapsed;
