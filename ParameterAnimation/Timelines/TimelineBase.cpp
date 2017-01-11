@@ -10,7 +10,8 @@
 
 // ================================ //
 //
-void		TimelineBase::Update	( TimelineBase* parent )
-{
-	Update( parent->GetTime() );
-}
+TimelineBase::TimelineBase( TimelineBasePtr parent )
+	:	m_parent( parent )
+	,	m_currentTime( 0.0 )
+{}
+

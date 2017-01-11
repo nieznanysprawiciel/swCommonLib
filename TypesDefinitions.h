@@ -68,3 +68,7 @@ UPtr< PtrType >		MakeUPtr		( Args... args )
 }
 
 
+#define DEFINE_PTR_TYPE( type )			typedef Ptr< type > type ## Ptr;
+#define DEFINE_UPTR_TYPE( type )		typedef UPtr< type > type ## UPtr;
+#define DEFINE_WPTR_TYPE( type )		typedef std::weak_ptr< type > type ## WPtr;
+
