@@ -80,6 +80,7 @@ void		RelativeTimeline::Start()
 	else if( auto parent = m_parent.lock() )
 	{
 		m_offset = parent->GetTime();
+		m_currentTime = EvalTime( parent->GetTime() );
 		m_isStarted = true;
 	}
 }
