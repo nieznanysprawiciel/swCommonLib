@@ -60,7 +60,7 @@ void		RelativeTimeline::Update()
 		}
 		else if( m_isPaused )
 		{
-
+			m_offset += parent->GetTime() - m_currentTime;
 		}
 	}
 	else
@@ -91,6 +91,7 @@ void		RelativeTimeline::Stop()
 {
 	m_isStarted = false;
 	m_isPaused = false;
+	m_currentTime = TimeType( 0.0 );
 }
 
 // ================================ //
@@ -138,8 +139,11 @@ TimeType	RelativeTimeline::EvalTime			( TimeType parentTime )
 				case WrapMode::Clamp:
 					return m_duration;
 				case WrapMode::Repeat:
-					elapsed = elapsed - m_duration;
+				{
+					int repeats = elapsed / m_duration;
+					elapsed = elapsed - repeats * m_duration;
 					break;
+				}
 				case WrapMode::Mirror:
 					elapsed = 2 * m_duration - elapsed;
 					break;
