@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Common/TypesDefinitions.h"
-#include "Common/Properties/IEnableProperty.h"
-#include "Common/RTTR.h"
+#include "CommonLibrary/Common/TypesDefinitions.h"
+#include "CommonLibrary/Common/Properties/IEnableProperty.h"
+#include "CommonLibrary/Common/RTTR.h"
 
 
 template< typename ElementType = IEnableProperty* >

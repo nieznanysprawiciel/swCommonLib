@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Common/EngineObject.h"
-#include "Common/RTTR.h"
+#include "CommonLibrary/Common/EngineObject.h"
+#include "CommonLibrary/Common/RTTR.h"
 
 #include <vector>
 #include <string>

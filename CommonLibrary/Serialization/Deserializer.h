@@ -5,8 +5,8 @@
 
 @brief Deklaracja klasy deserializatora.*/
 
-#include "Common/TypesDefinitions.h"
-#include "Common/Serialization/SerializationContext.h"
+#include "CommonLibrary/Common/TypesDefinitions.h"
+#include "CommonLibrary/Serialization/SerializationContext.h"
 
 #include <string>
 #include <memory>

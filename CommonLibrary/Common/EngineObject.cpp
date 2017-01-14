@@ -1,5 +1,5 @@
-#include "Common/EngineObject.h"
-#include "Serialization/SW/Serialization.h"
+#include "CommonLibrary/Common/EngineObject.h"
+#include "CommonLibrary/Serialization/PropertySerialization/Serialization.h"
 
 
 

@@ -1,4 +1,4 @@
-#include "Common/Serialization/Deserializer.h"
+#include "CommonLibrary/Serialization/Deserializer.h"
 
 #define RAPIDJSON_HAS_STDSTRING 1
 #include "rapidjson/rapidjson.h"
@@ -13,7 +13,7 @@
 #include <fstream>
 #include <stack>
 
-#include "Common/MemoryLeaks.h"
+#include "CommonLibrary/MemoryLeaks.h"
 #include "ErrorCodes.h"
 
 

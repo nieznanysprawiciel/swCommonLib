@@ -5,8 +5,8 @@
 
 @brief */
 
-#include "Common/RTTR.h"
-#include "Common/TypesDefinitions.h"
+#include "CommonLibrary/Common/RTTR.h"
+#include "CommonLibrary/Common/TypesDefinitions.h"
 
 class ISerializer;
 class IDeserializer;
