@@ -17,9 +17,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Serialization", "Projects\V
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{236BB984-A2C6-4873-9160-8D6FE7DB0B34}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerializationXML", "Projects\Visual2015\Tests\Serialization\SerializationXML\SerializationXML.vcxproj", "{C3291F70-58A1-48AD-BA9A-A8A9B176EA70}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerializationXMLTest", "Projects\Visual2015\Tests\Serialization\SerializationXML\SerializationXML.vcxproj", "{C3291F70-58A1-48AD-BA9A-A8A9B176EA70}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerializationJSON", "Projects\Visual2015\Tests\Serialization\SerializationJSON\SerializationJSON.vcxproj", "{DB1936FB-7267-4EE8-8F96-E4BB79CCE7ED}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerializationJSONTest", "Projects\Visual2015\Tests\Serialization\SerializationJSON\SerializationJSON.vcxproj", "{DB1936FB-7267-4EE8-8F96-E4BB79CCE7ED}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestRTTR", "Projects\Visual2015\Tests\UnitTestRTTR\UnitTestRTTR.vcxproj", "{3F6348E2-4621-45C6-AD8D-91B8BE4C9072}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,14 @@ Global
 		{DB1936FB-7267-4EE8-8F96-E4BB79CCE7ED}.Release|x64.Build.0 = Release|x64
 		{DB1936FB-7267-4EE8-8F96-E4BB79CCE7ED}.Release|x86.ActiveCfg = Release|Win32
 		{DB1936FB-7267-4EE8-8F96-E4BB79CCE7ED}.Release|x86.Build.0 = Release|Win32
+		{3F6348E2-4621-45C6-AD8D-91B8BE4C9072}.Debug|x64.ActiveCfg = Debug|x64
+		{3F6348E2-4621-45C6-AD8D-91B8BE4C9072}.Debug|x64.Build.0 = Debug|x64
+		{3F6348E2-4621-45C6-AD8D-91B8BE4C9072}.Debug|x86.ActiveCfg = Debug|Win32
+		{3F6348E2-4621-45C6-AD8D-91B8BE4C9072}.Debug|x86.Build.0 = Debug|Win32
+		{3F6348E2-4621-45C6-AD8D-91B8BE4C9072}.Release|x64.ActiveCfg = Release|x64
+		{3F6348E2-4621-45C6-AD8D-91B8BE4C9072}.Release|x64.Build.0 = Release|x64
+		{3F6348E2-4621-45C6-AD8D-91B8BE4C9072}.Release|x86.ActiveCfg = Release|Win32
+		{3F6348E2-4621-45C6-AD8D-91B8BE4C9072}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,5 +105,6 @@ Global
 		{561754CB-295D-4D69-8DBC-BC069D1A636A} = {E69067E0-4911-4971-8702-3E7517C264E3}
 		{C3291F70-58A1-48AD-BA9A-A8A9B176EA70} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
 		{DB1936FB-7267-4EE8-8F96-E4BB79CCE7ED} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
+		{3F6348E2-4621-45C6-AD8D-91B8BE4C9072} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
 	EndGlobalSection
 EndGlobal
