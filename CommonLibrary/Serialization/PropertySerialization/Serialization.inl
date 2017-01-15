@@ -56,7 +56,7 @@ void			Serialization::SetPropertyValue			( rttr::property prop, const rttr::inst
 
 @todo Mo¿na zoptymalizowaæ pobieranie nazwy z w³aœciwoœci i ograniczyæ alokacjê stringów.*/
 template< typename PropertyType >
-void			Serialization::DeserializeProperty					( IDeserializer* deser, rttr::property prop, const rttr::instance& object )
+void			Serialization::DeserializeProperty		( IDeserializer* deser, rttr::property prop, const rttr::instance& object )
 {
 	PropertyType value = static_cast< PropertyType >( deser->GetAttribute( prop.get_name().to_string(), TypeDefaultValue< PropertyType >() ) );
 	SetPropertyValue< PropertyType >( prop, object, value );
