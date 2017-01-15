@@ -18,6 +18,27 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\CommonLibrary\Common\Converters.cpp" />
+    <ClCompile Include="..\..\..\CommonLibrary\Common\EngineObject.cpp" />
+    <ClCompile Include="..\..\..\CommonLibrary\Common\Properties\Properties.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Converters.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\EngineObject.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\MemoryChunk.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\MemoryLeaks.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Nullable.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\ObjectDeleter.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\Containers\ICollection.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\IEnableProperty.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\Properties.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\Property.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\RTTR.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Traits.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\TypesDefinitions.h" />
+    <ClInclude Include="..\..\..\CommonLibrary\Common\UPtr.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -58,15 +79,19 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="CommonBaseConfig.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="CommonBaseConfig.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="CommonBaseConfig.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="CommonBaseConfig.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
@@ -126,9 +151,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

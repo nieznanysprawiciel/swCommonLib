@@ -25,7 +25,7 @@ class EngineObject
 
 public:
 	inline TypeID		GetType			() const		{ return this->get_type(); }
-	inline std::string	GetTypeName		() const		{ return this->get_type().get_name(); }
+	inline std::string	GetTypeName		() const		{ return std::string( this->get_type().get_name() ); }
 
 
 	/**@brief Implements default serialization.

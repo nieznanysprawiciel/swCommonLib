@@ -5,7 +5,7 @@
 
 @brief Deklaracja klasy serializatora.*/
 
-#include "CommonLibrary/TypesDefinitions.h"
+#include "CommonLibrary/Common/TypesDefinitions.h"
 #include "CommonLibrary/Serialization/SerializationContext.h"
 
 #include <string>

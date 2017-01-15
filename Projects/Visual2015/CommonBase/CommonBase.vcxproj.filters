@@ -1,20 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Common">
+      <UniqueIdentifier>{44bd5427-fbf3-460d-be60-e0f466a0bde3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="Common\Properties">
+      <UniqueIdentifier>{ae5d449f-760a-4789-ab94-c8f6e2ef9644}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Common\Properties\Containers">
+      <UniqueIdentifier>{0e26b253-c21f-44e7-b471-9f1660539e0d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
+    <ClCompile Include="..\..\..\CommonLibrary\Common\Converters.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\CommonLibrary\Common\EngineObject.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\CommonLibrary\Common\Properties\Properties.cpp">
+      <Filter>Common\Properties</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Converters.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\EngineObject.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\MemoryChunk.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\MemoryLeaks.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Nullable.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\ObjectDeleter.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\RTTR.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Traits.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\TypesDefinitions.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\UPtr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\IEnableProperty.h">
+      <Filter>Common\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\Properties.h">
+      <Filter>Common\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\Property.h">
+      <Filter>Common\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\Containers\ICollection.h">
+      <Filter>Common\Properties\Containers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

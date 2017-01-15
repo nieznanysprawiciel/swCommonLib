@@ -16,11 +16,6 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(SourceDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 	</ClCompile>
-	
-    <Link>
-      <AdditionalLibraryDirectories>$(CommonBaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CommonBaseFileName).lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
   </ItemDefinitionGroup>
   
   <PropertyGroup>

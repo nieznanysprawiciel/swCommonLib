@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerializerXML", "Projects\V
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Reflection", "Projects\Visual2015\Reflection\Reflection.vcxproj", "{59FA8028-2346-4246-854F-14DCFAB6AB56}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommonBase", "Projects\Visual2015\CommonBase\CommonBase.vcxproj", "{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -43,6 +45,14 @@ Global
 		{59FA8028-2346-4246-854F-14DCFAB6AB56}.Release|x64.Build.0 = Release|x64
 		{59FA8028-2346-4246-854F-14DCFAB6AB56}.Release|x86.ActiveCfg = Release|Win32
 		{59FA8028-2346-4246-854F-14DCFAB6AB56}.Release|x86.Build.0 = Release|Win32
+		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Debug|x64.ActiveCfg = Debug|x64
+		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Debug|x64.Build.0 = Debug|x64
+		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Debug|x86.ActiveCfg = Debug|Win32
+		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Debug|x86.Build.0 = Debug|Win32
+		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Release|x64.ActiveCfg = Release|x64
+		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Release|x64.Build.0 = Release|x64
+		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Release|x86.ActiveCfg = Release|Win32
+		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

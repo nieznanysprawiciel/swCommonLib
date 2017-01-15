@@ -89,7 +89,9 @@ std::pair< rttr::variant, rttr::property >		Properties::GetProperty		( rttr::var
 		if( !resultProperty.is_valid() )
 			return std::make_pair( rttr::variant(), resultProperty );
 
-		object.unsafe_convert_void( resultProperty.get_declaring_type_ptr() );
+		//rttr::instance realObject = object;
+		//realObject.get_derived_type()
+		//object.unsafe_convert_void( resultProperty.get_declaring_type_ptr() );
 
 		return std::make_pair( object, resultProperty );
 	}
@@ -124,11 +126,8 @@ rttr::property			Properties::EmptyProperty()
 If class inherited EngineObject, we can check it's real type.*/
 TypeID					Properties::GetRealType		( rttr::variant& object )
 {
-	TypeID realType = object.get_type();
-	if( realType.is_derived_from< EngineObject >() )
-		realType = object.get_value< EngineObject* >()->GetType();
-
-	return realType;
+	rttr::instance realObject = object;
+	return realObject.get_derived_type();
 }
 
 /**@brief Gets real type of object.
