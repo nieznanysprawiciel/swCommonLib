@@ -41,7 +41,7 @@ PropertyType	Serialization::GetPropertyValue			( rttr::property prop, const rttr
 template< typename PropertyType >
 void			Serialization::SerializeProperty		( ISerializer* ser, rttr::property prop, const rttr::instance& object )
 {
-	ser->SetAttribute( prop.get_name(), GetPropertyValue< PropertyType >( prop, object ) );
+	ser->SetAttribute( prop.get_name().to_string(), GetPropertyValue< PropertyType >( prop, object ) );
 }
 
 
@@ -58,7 +58,7 @@ void			Serialization::SetPropertyValue			( rttr::property prop, const rttr::inst
 template< typename PropertyType >
 void			Serialization::DeserializeProperty					( IDeserializer* deser, rttr::property prop, const rttr::instance& object )
 {
-	PropertyType value = static_cast< PropertyType >( deser->GetAttribute( prop.get_name(), TypeDefaultValue< PropertyType >() ) );
+	PropertyType value = static_cast< PropertyType >( deser->GetAttribute( prop.get_name().to_string(), TypeDefaultValue< PropertyType >() ) );
 	SetPropertyValue< PropertyType >( prop, object, value );
 }
 

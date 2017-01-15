@@ -1,3 +1,4 @@
+#include "CommonLibrary/Serialization/PropertySerialization/stdafx.h"
 #include "Serialization.h"
 
 #include <codecvt>
@@ -43,7 +44,7 @@ std::vector< rttr::property >&	Serialization::GetTypeFilteredProperties( rttr::t
 
 Domyœlnie:
 Je¿eli nie zarejestrowano metadanych, to domyœlnie w³aœciwoœæ jest serializowana.*/
-bool Serialization::ShouldSave( rttr::property& prop, MetaDataType saveFlag )
+bool Serialization::ShouldSave( const rttr::property& prop, MetaDataType saveFlag )
 {
 	auto saveFlagMeta = prop.get_metadata( saveFlag );
 	if( !saveFlagMeta.is_valid() )
@@ -71,7 +72,7 @@ void	Serialization::DefaultSerializeImpl( ISerializer* ser, const rttr::instance
 	auto objectType = dynamicType;
 	auto& properties = GetTypeFilteredProperties( objectType, ser->GetContext< EngineSerializationContext >() );
 
-	ser->EnterObject( objectType.get_name() );
+	ser->EnterObject( objectType.get_name().to_string() );
 
 	SerializePropertiesVec( ser, object, properties );
 
@@ -215,7 +216,7 @@ bool	Serialization::SerializeEnumTypes( ISerializer* ser, const rttr::instance& 
 	
 	rttr::enumeration enumVal = propertyType.get_enumeration();
 
-	ser->SetAttribute( prop.get_name(), enumVal.value_to_name( prop.get_value( object ) ) );
+	ser->SetAttribute( prop.get_name().to_string(), enumVal.value_to_name( prop.get_value( object ) ).to_string() );
 
 	return true;
 }
@@ -243,17 +244,17 @@ bool	Serialization::SerializeArrayTypes		( ISerializer* ser, const rttr::instanc
 	if( !arrayElementType.is_class() && !arrayElementType.get_raw_type().is_class() )
 		return true;
 
-	ser->EnterArray( prop.get_name() );
+	ser->EnterArray( prop.get_name().to_string() );
 	
 	if( arrayView.is_dynamic() )
 		ser->SetAttribute( "ArraySize", arrayView.get_size() );
 
 	for( int i = 0; i < arrayView.get_size(); ++i )
 	{
-		auto element = arrayView.get_value_as_ptr( i );
+		auto element = arrayView.get_value_as_ref( i ).extract_wrapped_value();
 
 		// Process generic objects. We must get real object type.
-		if( arrayElementType.is_pointer() )
+		if( element.get_type().is_pointer() )
 		{
 			element = arrayView.get_value( i );
 			
@@ -364,7 +365,7 @@ bool	Serialization::DeserializeEnumTypes	( IDeserializer* deser, const rttr::ins
 	
 	rttr::enumeration enumVal = propertyType.get_enumeration();
 
-	auto enumString = deser->GetAttribute( prop.get_name(), "" );
+	auto enumString = deser->GetAttribute( prop.get_name().to_string(), "" );
 	rttr::variant value = enumVal.name_to_value( enumString );
 
 	prop.set_value( object, value );
@@ -394,7 +395,7 @@ bool	Serialization::DeserializeArrayTypes	( IDeserializer* deser, const rttr::in
 	if( !arrayElementType.is_class() && !arrayElementType.get_raw_type().is_class() )
 		return true;
 
-	deser->EnterArray( prop.get_name() );
+	deser->EnterArray( prop.get_name().to_string() );
 	
 	if( arrayView.is_dynamic() )
 	{
@@ -431,7 +432,7 @@ bool	Serialization::DeserializeArrayTypes	( IDeserializer* deser, const rttr::in
 			}
 			else
 			{
-				auto element = arrayView.get_value_as_ptr( idx );
+				auto element = arrayView.get_value_as_ref( idx ).extract_wrapped_value();
 
 				// Non generic objects use default deserialization.
 				DefaultDeserializeImpl( deser, element, arrayElementType );
@@ -525,7 +526,7 @@ void			Serialization::SerializeProperty< EngineObject* >( ISerializer* ser, rttr
 	EngineObject* engineObj = GetPropertyValue< EngineObject* >( prop, object );
 	if( engineObj )
 	{
-		ser->EnterObject( prop.get_name() );
+		ser->EnterObject( prop.get_name().to_string() );
 		engineObj->Serialize( ser );
 		ser->Exit();	//	prop.get_name()
 	}
@@ -540,7 +541,7 @@ void			Serialization::SerializeProperty< void* >( ISerializer* ser, rttr::proper
 	void* engineObj = GetPropertyValue< void* >( prop, object );
 	if( engineObj )
 	{
-		ser->EnterObject( prop.get_name() );
+		ser->EnterObject( prop.get_name().to_string() );
 		
 		rttr::variant objVariant( engineObj );
 		TypeID realType = prop.get_type();
@@ -559,7 +560,7 @@ template<>
 void			Serialization::SerializeProperty< DirectX::XMFLOAT3* >	( ISerializer* ser, rttr::property prop, const rttr::instance& object )
 {
 	DirectX::XMFLOAT3* xmFloat = GetPropertyValue< DirectX::XMFLOAT3* >( prop, object );
-	ser->EnterObject( prop.get_name() );
+	ser->EnterObject( prop.get_name().to_string() );
 
 	ser->SetAttribute( "X", xmFloat->x );
 	ser->SetAttribute( "Y", xmFloat->y );
@@ -573,7 +574,7 @@ template<>
 void			Serialization::SerializeProperty< DirectX::XMFLOAT2* >	( ISerializer* ser, rttr::property prop, const rttr::instance& object )
 {
 	DirectX::XMFLOAT2* xmFloat = GetPropertyValue< DirectX::XMFLOAT2* >( prop, object );
-	ser->EnterObject( prop.get_name() );
+	ser->EnterObject( prop.get_name().to_string() );
 
 	ser->SetAttribute( "X", xmFloat->x );
 	ser->SetAttribute( "Y", xmFloat->y );
@@ -586,7 +587,7 @@ template<>
 void			Serialization::SerializeProperty< DirectX::XMFLOAT4* >	( ISerializer* ser, rttr::property prop, const rttr::instance& object )
 {
 	DirectX::XMFLOAT4* xmFloat = GetPropertyValue< DirectX::XMFLOAT4* >( prop, object );
-	ser->EnterObject( prop.get_name() );
+	ser->EnterObject( prop.get_name().to_string() );
 
 	ser->SetAttribute( "X", xmFloat->x );
 	ser->SetAttribute( "Y", xmFloat->y );
@@ -601,7 +602,7 @@ template<>
 void			Serialization::SerializeProperty< std::wstring >	( ISerializer* ser, rttr::property prop, const rttr::instance& object )
 {
 	std::wstring str = GetPropertyValue< std::wstring >( prop, object );
-	ser->SetAttribute( prop.get_name(), WstringToUTF( str ) );
+	ser->SetAttribute( prop.get_name().to_string(), WstringToUTF( str ) );
 }
 
 //====================================================================================//
@@ -633,7 +634,7 @@ void				Serialization::DeserializeProperty< EngineObject* >		( IDeserializer* de
 template<>
 void				Serialization::DeserializeProperty< void* >				( IDeserializer* deser, rttr::property prop, const rttr::instance& object )
 {
-	if( deser->EnterObject( prop.get_name() ) )
+	if( deser->EnterObject( prop.get_name().to_string() ) )
 	{
 		TypeID propertyType = prop.get_type();
 		auto deserObject = prop.get_value( object );
@@ -650,7 +651,7 @@ void				Serialization::DeserializeProperty< void* >				( IDeserializer* deser, r
 template<>
 void			Serialization::DeserializeProperty< DirectX::XMFLOAT3* >	( IDeserializer* deser, rttr::property prop, const rttr::instance& object )
 {
-	if( deser->EnterObject( prop.get_name() ) )
+	if( deser->EnterObject( prop.get_name().to_string() ) )
 	{
 		DirectX::XMFLOAT3 value;
 		value.x = static_cast< float > ( deser->GetAttribute( "X", TypeDefaultValue< float >() ) );
@@ -668,7 +669,7 @@ void			Serialization::DeserializeProperty< DirectX::XMFLOAT3* >	( IDeserializer*
 template<>
 void			Serialization::DeserializeProperty< DirectX::XMFLOAT2* >	( IDeserializer* deser, rttr::property prop, const rttr::instance& object )
 {
-	if( deser->EnterObject( prop.get_name() ) )
+	if( deser->EnterObject( prop.get_name().to_string() ) )
 	{
 		DirectX::XMFLOAT2 value;
 		value.x = static_cast< float > ( deser->GetAttribute( "X", TypeDefaultValue< float >() ) );
@@ -685,7 +686,7 @@ void			Serialization::DeserializeProperty< DirectX::XMFLOAT2* >	( IDeserializer*
 template<>
 void			Serialization::DeserializeProperty< DirectX::XMFLOAT4* >	( IDeserializer* deser, rttr::property prop, const rttr::instance& object )
 {
-	if( deser->EnterObject( prop.get_name() ) )
+	if( deser->EnterObject( prop.get_name().to_string() ) )
 	{
 		DirectX::XMFLOAT4 value;
 		value.x = static_cast< float > ( deser->GetAttribute( "X", TypeDefaultValue< float >() ) );
@@ -705,5 +706,5 @@ template<>
 void			Serialization::DeserializeProperty< std::wstring >	( IDeserializer* deser, rttr::property prop, const rttr::instance& object )
 {
 	std::wstring str = GetPropertyValue< std::wstring >( prop, object );
-	SetPropertyValue( prop, object, UTFToWstring( deser->GetAttribute( prop.get_name(), TypeDefaultValue< std::string >() ) ) );
+	SetPropertyValue( prop, object, UTFToWstring( deser->GetAttribute( prop.get_name().to_string(), TypeDefaultValue< std::string >() ) ) );
 }

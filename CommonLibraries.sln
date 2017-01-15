@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Reflection", "Projects\Visu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommonBase", "Projects\Visual2015\CommonBase\CommonBase.vcxproj", "{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Serialization", "Projects\Visual2015\Serialization\Serialization.vcxproj", "{561754CB-295D-4D69-8DBC-BC069D1A636A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -53,6 +55,14 @@ Global
 		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Release|x64.Build.0 = Release|x64
 		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Release|x86.ActiveCfg = Release|Win32
 		{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}.Release|x86.Build.0 = Release|Win32
+		{561754CB-295D-4D69-8DBC-BC069D1A636A}.Debug|x64.ActiveCfg = Debug|x64
+		{561754CB-295D-4D69-8DBC-BC069D1A636A}.Debug|x64.Build.0 = Debug|x64
+		{561754CB-295D-4D69-8DBC-BC069D1A636A}.Debug|x86.ActiveCfg = Debug|Win32
+		{561754CB-295D-4D69-8DBC-BC069D1A636A}.Debug|x86.Build.0 = Debug|Win32
+		{561754CB-295D-4D69-8DBC-BC069D1A636A}.Release|x64.ActiveCfg = Release|x64
+		{561754CB-295D-4D69-8DBC-BC069D1A636A}.Release|x64.Build.0 = Release|x64
+		{561754CB-295D-4D69-8DBC-BC069D1A636A}.Release|x86.ActiveCfg = Release|Win32
+		{561754CB-295D-4D69-8DBC-BC069D1A636A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +70,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D8738375-5855-4241-8CB9-63FFE08E1B96} = {E69067E0-4911-4971-8702-3E7517C264E3}
 		{91CC6D16-F22C-434A-95E0-35EE857054C7} = {E69067E0-4911-4971-8702-3E7517C264E3}
+		{561754CB-295D-4D69-8DBC-BC069D1A636A} = {E69067E0-4911-4971-8702-3E7517C264E3}
 	EndGlobalSection
 EndGlobal
