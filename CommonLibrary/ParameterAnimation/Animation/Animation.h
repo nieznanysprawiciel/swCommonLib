@@ -5,14 +5,14 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-#include "Common/EngineObject.h"
+#include "CommonLibrary/Common/EngineObject.h"
 
 #include "IAnimation.h"
-#include "Common/ParameterAnimation/Animation/AnimEvaluator.h"
+#include "CommonLibrary/ParameterAnimation/Animation/AnimEvaluator.h"
 
-#include "Common/ParameterAnimation/Parameters/DirectPropertyh.h"
-#include "Common/ParameterAnimation/Parameters/PropertyPath.h"
-#include "Common/ParameterAnimation/Parameters/StringPropertyPath.h"
+#include "CommonLibrary/ParameterAnimation/Parameters/DirectPropertyh.h"
+#include "CommonLibrary/ParameterAnimation/Parameters/PropertyPath.h"
+#include "CommonLibrary/ParameterAnimation/Parameters/StringPropertyPath.h"
 
 
 

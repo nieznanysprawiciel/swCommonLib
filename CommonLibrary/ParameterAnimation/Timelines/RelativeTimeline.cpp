@@ -140,7 +140,7 @@ TimeType	RelativeTimeline::EvalTime			( TimeType parentTime )
 					return m_duration;
 				case WrapMode::Repeat:
 				{
-					int repeats = elapsed / m_duration;
+					int repeats = static_cast< int >( elapsed / m_duration );
 					elapsed = elapsed - repeats * m_duration;
 					break;
 				}

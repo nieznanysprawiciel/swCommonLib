@@ -89,10 +89,7 @@ std::pair< rttr::variant, rttr::property >		Properties::GetProperty		( rttr::var
 		if( !resultProperty.is_valid() )
 			return std::make_pair( rttr::variant(), resultProperty );
 
-		//rttr::instance realObject = object;
-		//realObject.get_derived_type()
-		//object.unsafe_convert_void( resultProperty.get_declaring_type_ptr() );
-
+		object.convert( static_cast< rttr::type >( realType ) );	// Note: This static cast is hack to prevent compiler from complaining about two functions matching arguments.
 		return std::make_pair( object, resultProperty );
 	}
 }
