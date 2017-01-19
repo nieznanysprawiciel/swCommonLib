@@ -12,57 +12,57 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\CommonLibrary\Common\Converters.cpp">
+    <ClCompile Include="..\..\..\Common\Converters.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\CommonLibrary\Common\EngineObject.cpp">
+    <ClCompile Include="..\..\..\Common\EngineObject.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\CommonLibrary\Common\Properties\Properties.cpp">
+    <ClCompile Include="..\..\..\Common\Properties\Properties.cpp">
       <Filter>Common\Properties</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\Converters.h">
+    <ClInclude Include="..\..\..\Common\Converters.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\EngineObject.h">
+    <ClInclude Include="..\..\..\Common\EngineObject.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\MemoryChunk.h">
+    <ClInclude Include="..\..\..\Common\MemoryChunk.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\MemoryLeaks.h">
+    <ClInclude Include="..\..\..\Common\MemoryLeaks.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\Nullable.h">
+    <ClInclude Include="..\..\..\Common\Nullable.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\ObjectDeleter.h">
+    <ClInclude Include="..\..\..\Common\ObjectDeleter.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\RTTR.h">
+    <ClInclude Include="..\..\..\Common\RTTR.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\Traits.h">
+    <ClInclude Include="..\..\..\Common\Traits.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\TypesDefinitions.h">
+    <ClInclude Include="..\..\..\Common\TypesDefinitions.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\UPtr.h">
+    <ClInclude Include="..\..\..\Common\UPtr.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\IEnableProperty.h">
+    <ClInclude Include="..\..\..\Common\Properties\IEnableProperty.h">
       <Filter>Common\Properties</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\Properties.h">
+    <ClInclude Include="..\..\..\Common\Properties\Properties.h">
       <Filter>Common\Properties</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\Property.h">
+    <ClInclude Include="..\..\..\Common\Properties\Property.h">
       <Filter>Common\Properties</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\CommonLibrary\Common\Properties\Containers\ICollection.h">
+    <ClInclude Include="..\..\..\Common\Properties\Containers\ICollection.h">
       <Filter>Common\Properties\Containers</Filter>
     </ClInclude>
   </ItemGroup>
