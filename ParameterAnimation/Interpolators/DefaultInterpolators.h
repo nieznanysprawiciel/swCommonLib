@@ -7,7 +7,7 @@
 
 
 #include "IInterpolator.h"
-#include "CommonLibrary/ParameterAnimation/Key.h"
+#include "swCommonLibraries/ParameterAnimation/Key.h"
 
 #include <string>
 

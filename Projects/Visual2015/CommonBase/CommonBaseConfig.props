@@ -12,12 +12,6 @@
     <CommonBaseBuildDir>$(BuildDir)$(CommonBaseName)_$(Configuration)_$(PlatformShortName)_$(PlatformToolset)\</CommonBaseBuildDir>
   </PropertyGroup>
   
-  <ItemDefinitionGroup>
-    <ClCompile>
-      <AdditionalIncludeDirectories>$(SourceDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-	</ClCompile>
-  </ItemDefinitionGroup>
-  
   <PropertyGroup>
     <IntDir>$(CommonBaseBuildDir)</IntDir>
     <TargetName>$(CommonBaseFileName)</TargetName>

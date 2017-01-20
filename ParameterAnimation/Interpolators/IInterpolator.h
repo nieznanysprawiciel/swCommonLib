@@ -5,7 +5,7 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-#include "CommonLibrary/Common/TypesDefinitions.h"
+#include "swCommonLibraries/Common/TypesDefinitions.h"
 
 /**@defgroup Interpolators Interpolators
 @ingroup KeyFrameAnimation*/

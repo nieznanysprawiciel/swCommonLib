@@ -1,10 +1,10 @@
-#include "Catch/catch.hpp"
+#include "swCommonLibraries/External/Catch/catch.hpp"
 
-#include "CommonLibrary/ParameterAnimation/Animation/Animation.h"
+#include "swCommonLibraries/ParameterAnimation/Animation/Animation.h"
 
-#include "CommonLibrary/ParameterAnimation/Parameters/DirectPropertyh.h"
-#include "CommonLibrary/ParameterAnimation/Parameters/PropertyPath.h"
-#include "CommonLibrary/ParameterAnimation/Parameters/StringPropertyPath.h"
+#include "swCommonLibraries/ParameterAnimation/Parameters/DirectPropertyh.h"
+#include "swCommonLibraries/ParameterAnimation/Parameters/PropertyPath.h"
+#include "swCommonLibraries/ParameterAnimation/Parameters/StringPropertyPath.h"
 
 #include "TestClasses.h"
 

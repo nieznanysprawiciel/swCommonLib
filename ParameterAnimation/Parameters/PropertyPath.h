@@ -5,9 +5,9 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-#include "CommonLibrary/Common/RTTR.h"
-#include "CommonLibrary/Common/Properties/Properties.h"
-#include "CommonLibrary/Serialization/PropertySerialization/Serialization.h"
+#include "swCommonLibraries/Common/RTTR.h"
+#include "swCommonLibraries/Common/Properties/Properties.h"
+#include "swCommonLibraries/Serialization/PropertySerialization/Serialization.h"
 
 #include <vector>
 

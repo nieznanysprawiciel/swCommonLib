@@ -5,10 +5,10 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-#include "CommonLibrary/Common/EngineObject.h"
+#include "swCommonLibraries/Common/EngineObject.h"
 
-#include "CommonLibrary/ParameterAnimation/KeySet.h"
-#include "CommonLibrary/ParameterAnimation/Timelines/TimelineBase.h"
+#include "swCommonLibraries/ParameterAnimation/KeySet.h"
+#include "swCommonLibraries/ParameterAnimation/Timelines/TimelineBase.h"
 
 
 

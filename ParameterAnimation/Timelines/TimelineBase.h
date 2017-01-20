@@ -5,8 +5,8 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-#include "CommonLibrary/Common/EngineObject.h"
-#include "CommonLibrary/ParameterAnimation/Timelines/TimelineTypes.h"
+#include "swCommonLibraries/Common/EngineObject.h"
+#include "swCommonLibraries/ParameterAnimation/Timelines/TimelineTypes.h"
 
 #include <memory>
 

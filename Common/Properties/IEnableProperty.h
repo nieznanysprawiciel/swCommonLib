@@ -1,7 +1,7 @@
 #pragma once
 
 #include "RTTR.h"
-#include "CommonLibrary/Common/Properties/Property.h"
+#include "swCommonLibraries/Common/Properties/Property.h"
 
 
 class IEnableProperty

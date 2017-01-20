@@ -4,18 +4,18 @@
 #undef max
 #undef min
 
-#include "CommonLibrary/Common//TypesDefinitions.h"
+#include "swCommonLibraries/Common//TypesDefinitions.h"
 
-#include "CommonLibrary/Reflection/src/rttr/type.h"
-#include "CommonLibrary/Reflection/src/rttr/rttr_enable.h"
-#include "CommonLibrary/Reflection/src/rttr/rttr_cast.h"
-#include "CommonLibrary/Reflection/src/rttr/constructor.h"
-#include "CommonLibrary/Reflection/src/rttr/destructor.h"
-#include "CommonLibrary/Reflection/src/rttr/method.h"
-#include "CommonLibrary/Reflection/src/rttr/property.h"
-#include "CommonLibrary/Reflection/src/rttr/enumeration.h"
-#include "CommonLibrary/Reflection/src/rttr/registration.h"
-#include "CommonLibrary/Reflection/src/rttr/wrapper_mapper.h"
+#include "swCommonLibraries/Reflection/src/rttr/type.h"
+#include "swCommonLibraries/Reflection/src/rttr/rttr_enable.h"
+#include "swCommonLibraries/Reflection/src/rttr/rttr_cast.h"
+#include "swCommonLibraries/Reflection/src/rttr/constructor.h"
+#include "swCommonLibraries/Reflection/src/rttr/destructor.h"
+#include "swCommonLibraries/Reflection/src/rttr/method.h"
+#include "swCommonLibraries/Reflection/src/rttr/property.h"
+#include "swCommonLibraries/Reflection/src/rttr/enumeration.h"
+#include "swCommonLibraries/Reflection/src/rttr/registration.h"
+#include "swCommonLibraries/Reflection/src/rttr/wrapper_mapper.h"
 
 
 
