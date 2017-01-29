@@ -36,10 +36,13 @@ public:
 
 	Key< KeyType >*			GetKey		( TimeType time );
 	bool					AddKey		( TimeType time, const KeyType& value );
+	bool					AddKey		( TimeType time, const KeyType& value, InterpolatorType type );
 	bool					UpdateKey	( TimeType time, const KeyType& value );
 	bool					RemoveKey	( TimeType time );
 
 	KeyType					Evaluate	( TimeType time );
+
+	bool					ChangeInterpolator	( Size idx, UPtr< Interpolator >&& interpolator );
 
 private:
 
@@ -122,6 +125,17 @@ inline bool				KeySet< KeyType >::AddKey		( TimeType time, const KeyType& value 
 	return true;
 }
 
+/**@brief Adds key. If key exists updates this key.
+
+@param[in] type Adds one of built in interpolators.
+
+@return Returns false if key existed and have been updated.*/
+template< typename KeyType >
+inline bool				KeySet< KeyType >::AddKey		( TimeType time, const KeyType& value, InterpolatorType type )
+{
+	return false;
+}
+
 /**@brief Updates key.
 @return Returns false if key couldn't be found.*/
 template< typename KeyType >
@@ -192,6 +206,22 @@ inline KeyType			KeySet< KeyType >::Evaluate		( TimeType time )
 		return Keys[ 0 ].Value;
 
 	return Interpolators[ keyIdx - 1 ]->Interpolate( time, Keys[ keyIdx - 1 ], Keys[ keyIdx ] );
+}
+
+// ================================ //
+//
+template< typename KeyType>
+inline bool					KeySet< KeyType >::ChangeInterpolator	( Size idx, UPtr< Interpolator >&& interpolator )
+{
+	if( idx < Interpolators.size() )
+	{
+		Interpolators[ idx ] = std::move( interpolator );
+		UpdateInterpolator( idx );
+
+		return true;
+	}
+
+	return false;
 }
 
 //====================================================================================//

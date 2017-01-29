@@ -9,6 +9,7 @@
 
 #include "LinearInterpolator.h"
 #include "DiscreteInterpolator.h"
+#include "CosinusInterpolator.h"
 
 namespace DefaultInterpolators
 {
@@ -49,6 +50,18 @@ DEFINE_SPECIALIZATION( uint64, CreateDiscrete );
 DEFINE_SPECIALIZATION( int64, CreateDiscrete );
 DEFINE_SPECIALIZATION( bool, CreateDiscrete );
 
+
+DEFINE_SPECIALIZATION( float, CreateCosinus );
+DEFINE_SPECIALIZATION( double, CreateCosinus );
+DEFINE_SPECIALIZATION( char, CreateCosinus );
+DEFINE_SPECIALIZATION( uint8, CreateCosinus );
+DEFINE_SPECIALIZATION( int8, CreateCosinus );
+DEFINE_SPECIALIZATION( uint16, CreateCosinus );
+DEFINE_SPECIALIZATION( int16, CreateCosinus );
+DEFINE_SPECIALIZATION( uint32, CreateCosinus );
+DEFINE_SPECIALIZATION( int32, CreateCosinus );
+DEFINE_SPECIALIZATION( uint64, CreateCosinus );
+DEFINE_SPECIALIZATION( int64, CreateCosinus );
 
 
 

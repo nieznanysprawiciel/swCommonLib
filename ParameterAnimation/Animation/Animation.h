@@ -41,7 +41,7 @@ public:
 	virtual bool	AddKey			( TimeType time, const KeyType& value )											= 0;
 	/**@brief Adds key and sets given interpolator.
 	@return False if key already exists.*/
-	virtual bool	AddKey			( TimeType time, const KeyType& value, UPtr< Interpolator >&& interpolator )	= 0;
+	virtual bool	AddKey			( TimeType time, const KeyType& value, InterpolatorType interpolatorType )		= 0;
 	/**@brief Udates key given by time. Sets new interpolator.
 	@return False if There's no key in given time.*/
 	virtual bool	UpdateKey		( TimeType time, const KeyType& newValue, UPtr< Interpolator >&& interpolator )	= 0;
@@ -53,14 +53,22 @@ public:
 	virtual bool	RemoveKey		( TimeType time )																= 0;
 
 	/**@brief Updates interpolator. Key remains unchanged.
-	@return False if There's no key in given time.*/
-	virtual bool	UpdateInterpolator	( UPtr< Interpolator >&& interpolator )										= 0;
+	@return False if there's no interpolator under given index.*/
+	virtual bool	ChangeInterpolator	( Size idx, UPtr< Interpolator >&& interpolator )							= 0;
+	/**@brief Updates interpolator. You can set only built in interpolators.
+	If you want to set your own interpolators use second overload instead.
+	@return False if there's no interpolator under given index.*/
+	virtual bool	ChangeInterpolator	( Size idx, InterpolatorType interpolatorType )								= 0;
+
+	/**@brief Gets interpolator under index.
+	You're not owner of this interpolator.*/
+	virtual Interpolator*				GetInterpolator		( Size idx )											= 0;
 
 	/**@brief Return key in given time.*/
-	virtual const Key< KeyType >*		GetKey	( TimeType time )													= 0;
+	virtual const Key< KeyType >*		GetKey				( TimeType time )										= 0;
 
 	/**@brief Returns KeySet object.*/
-	virtual KeySet< KeyType >&			GetKeySet	()																= 0;
+	virtual KeySet< KeyType >&			GetKeySet			()														= 0;
 };
 
 
@@ -91,7 +99,7 @@ public:
 	/**@copydoc AnimationTyped::AddKey*/
 	virtual bool	AddKey			( TimeType time, const KeyType& value )											override;
 	/**@copydoc AnimationTyped::AddKey*/
-	virtual bool	AddKey			( TimeType time, const KeyType& value, UPtr< Interpolator >&& interpolator )	override;
+	virtual bool	AddKey			( TimeType time, const KeyType& value, InterpolatorType interpolatorType )		override;
 	/**@copydoc AnimationTyped::AddKey*/
 	virtual bool	UpdateKey		( TimeType time, const KeyType& newValue, UPtr< Interpolator >&& interpolator ) override;
 	/**@copydoc AnimationTyped::UpdateKey*/
@@ -100,12 +108,16 @@ public:
 	virtual bool	RemoveKey		( TimeType time )																override;
 
 	/**@copydoc AnimationTyped::UpdateInterpolator*/
-	virtual bool	UpdateInterpolator	( UPtr< Interpolator >&& interpolator )										override;
+	virtual bool	ChangeInterpolator	( Size idx, UPtr< Interpolator >&& interpolator )							override;
+	/**@copydoc AnimationTyped::UpdateInterpolator*/
+	virtual bool	ChangeInterpolator	( Size idx, InterpolatorType interpolatorType )								override;
 
+	/**@copydoc AnimationTyped::GetInterpolator*/
+	virtual Interpolator*				GetInterpolator		( Size idx )											override;
 	/**@copydoc AnimationTyped::GetKey*/
-	virtual const Key< KeyType >*		GetKey	( TimeType time )													override;
+	virtual const Key< KeyType >*		GetKey				( TimeType time )										override;
 	/**@copydoc AnimationTyped::GetKeySet*/
-	virtual KeySet< KeyType >&			GetKeySet	()																override;
+	virtual KeySet< KeyType >&			GetKeySet			()														override;
 };
 
 typedef AnimationImpl< float, StringPropertyPath< float > > FloatAnimationStrPath;

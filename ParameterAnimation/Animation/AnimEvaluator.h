@@ -46,7 +46,7 @@ public:
 	bool	AddKey			( TimeType time, const KeyType& value );
 	/**@brief Adds key and sets given interpolator.
 	@return False if key already exists.*/
-	bool	AddKey			( TimeType time, const KeyType& value, UPtr< Interpolator >&& interpolator );
+	bool	AddKey			( TimeType time, const KeyType& value, InterpolatorType interpolatorType );
 	/**@brief Udates key given by time. Sets new interpolator.
 	@return False if There's no key in given time.*/
 	bool	UpdateKey		( TimeType time, const KeyType& newValue, UPtr< Interpolator >&& interpolator );
@@ -59,7 +59,7 @@ public:
 
 	/**@brief Updates interpolator. Key remains unchanged.
 	@return False if There's no key in given time.*/
-	bool	UpdateInterpolator	( UPtr< Interpolator >&& interpolator );
+	bool	ChangeInterpolator	( Size idx, UPtr< Interpolator >&& interpolator );
 
 	/**@brief Return key in given time.*/
 	const Key< KeyType >*		GetKey		( TimeType time );
@@ -107,16 +107,16 @@ inline bool			AnimEvaluator< KeyType, AddressType >::AddKey		( TimeType time, co
 
 // ================================ //
 //
-template<typename KeyType, typename AddressType>
-inline bool AnimEvaluator<KeyType, AddressType>::AddKey( TimeType time, const KeyType & value, UPtr<Interpolator>&& interpolator )
+template< typename KeyType, typename AddressType >
+inline bool			AnimEvaluator< KeyType, AddressType >::AddKey		( TimeType time, const KeyType & value, InterpolatorType interpolatorType )
 {
 	return false;
 }
 
 // ================================ //
 //
-template<typename KeyType, typename AddressType>
-inline bool AnimEvaluator<KeyType, AddressType>::UpdateKey( TimeType time, const KeyType & newValue, UPtr<Interpolator>&& interpolator )
+template< typename KeyType, typename AddressType >
+inline bool			AnimEvaluator< KeyType, AddressType >::UpdateKey	( TimeType time, const KeyType & newValue, UPtr< Interpolator >&& interpolator )
 {
 	return false;
 }
@@ -139,10 +139,10 @@ inline bool			AnimEvaluator< KeyType, AddressType >::RemoveKey	( TimeType time )
 
 // ================================ //
 //
-template<typename KeyType, typename AddressType>
-inline bool AnimEvaluator<KeyType, AddressType>::UpdateInterpolator( UPtr<Interpolator>&& interpolator )
+template< typename KeyType, typename AddressType >
+inline bool			AnimEvaluator< KeyType, AddressType >::ChangeInterpolator	( Size idx, UPtr< Interpolator >&& interpolator )
 {
-	return false;
+	return m_keySet.ChangeInterpolator( idx, std::move( interpolator ) );
 }
 
 // ================================ //

@@ -42,6 +42,19 @@ namespace DefaultInterpolators
 														  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
 														  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
 
+	template< typename KeyType >
+	UPtr< IInterpolator< KeyType > >	CreateCosinus	( const Key< KeyType >& leftKey,
+														  const Key< KeyType >& rightKey,
+														  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+														  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
+
+
+	template< typename KeyType >
+	UPtr< IInterpolator< KeyType > >	Create			( InterpolatorType type,
+														  const Key< KeyType >& leftKey,
+														  const Key< KeyType >& rightKey,
+														  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+														  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
 
 
 
@@ -129,12 +142,48 @@ DECLARE_SPECIALIZATON( bool, CreateDiscrete );
 DECLARE_SPECIALIZATON( std::wstring, CreateDiscrete );
 DECLARE_SPECIALIZATON( std::string, CreateDiscrete );
 
+DECLARE_SPECIALIZATON( float, CreateCosinus );
+DECLARE_SPECIALIZATON( double, CreateCosinus );
+DECLARE_SPECIALIZATON( char, CreateCosinus );
+DECLARE_SPECIALIZATON( uint8, CreateCosinus );
+DECLARE_SPECIALIZATON( int8, CreateCosinus );
+DECLARE_SPECIALIZATON( uint16, CreateCosinus );
+DECLARE_SPECIALIZATON( int16, CreateCosinus );
+DECLARE_SPECIALIZATON( uint32, CreateCosinus );
+DECLARE_SPECIALIZATON( int32, CreateCosinus );
+DECLARE_SPECIALIZATON( uint64, CreateCosinus );
+DECLARE_SPECIALIZATON( int64, CreateCosinus );
+
 #undef DECLARE_SPECIALIZATON
 
 //====================================================================================//
 //			Implementation	
 //====================================================================================//
 
+// ================================ //
+//
+template< typename KeyType >
+UPtr< IInterpolator< KeyType > >	Create			( InterpolatorType type,
+													  const Key< KeyType >& leftKey,
+													  const Key< KeyType >& rightKey,
+													  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+													  UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+{
+	switch( type )
+	{
+		case InterpolatorType::Discrete:
+			return CreateDiscrete< KeyType >( leftKey, rightKey, leftInterpolator, rightInterpolator );
+		case InterpolatorType::Linear:
+			return CreateLinear< KeyType >( leftKey, rightKey, leftInterpolator, rightInterpolator );
+		case InterpolatorType::Cosinus:
+			return CreateCosinus< KeyType >( leftKey, rightKey, leftInterpolator, rightInterpolator );
+		case InterpolatorType::Bezier:
+			/// @todo Implement Bezier interpolator.
+			return DummyInterpolator< KeyType >( leftKey, rightKey, leftInterpolator, rightInterpolator );
+		default:
+			return DummyInterpolator< KeyType >( leftKey, rightKey, leftInterpolator, rightInterpolator );
+	}
+}
 
 // ================================ //
 //

@@ -1,32 +1,31 @@
 #pragma once
 /**
-@file LinearInterpolator.h
+@file CosinusInterpolator.h
 @author nieznanysprawiciel
 @copyright File is part of graphic engine SWEngine.
 */
 
 #include "IInterpolator.h"
 
-#include <assert.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 
-/**@brief Linear interpolator.
-
+/**@brief Cosinus interpolator
 @ingroup Interpolators*/
 template< typename KeyType >
-class LinearInterpolator : public IInterpolator< KeyType >
+class CosinusInterpolator : public IInterpolator< KeyType >
 {
 private:
 protected:
 public:
-	/// Constructor for serialization.
-	explicit		LinearInterpolator		() = default;
+	explicit		CosinusInterpolator		() = default;
 	/// Constructor for default interpolator creation function.
-	explicit		LinearInterpolator		( const Key< KeyType >& leftKey,
+	explicit		CosinusInterpolator		( const Key< KeyType >& leftKey,
 											  const Key< KeyType >& rightKey,
 											  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
 											  UPtr< const IInterpolator< KeyType > >& rightInterpolator );
-					~LinearInterpolator		() = default;
+					~CosinusInterpolator	() = default;
 
 
 	/**@brief Main function invoked by evaluator.*/
@@ -45,32 +44,32 @@ public:
 	/**@brief Returns curve tangent.
 	Function can be used by surrounding interpolators to smooth curve.*/
 	virtual KeyType			RightTangent	( const Key< KeyType >& left, const Key< KeyType >& right ) const override;
-
-protected:
-	KeyType				Tangent		( const Key< KeyType >& left, const Key< KeyType >& right ) const;
 };
+
 
 //====================================================================================//
 //			Implementation	
 //====================================================================================//
 
-
 // ================================ //
 //
 template< typename KeyType >
-inline				LinearInterpolator< KeyType >::LinearInterpolator	( const Key< KeyType >& leftKey,
+inline				CosinusInterpolator< KeyType >::CosinusInterpolator	( const Key< KeyType >& leftKey,
 																		  const Key< KeyType >& rightKey,
 																		  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
 																		  UPtr< const IInterpolator< KeyType >> & rightInterpolator )
 {}
 
+
 // ================================ //
 //
 template< typename KeyType >
-inline KeyType		LinearInterpolator< KeyType >::Interpolate	( TimeType time, Key< KeyType >& left, Key< KeyType >& right )
+inline KeyType			CosinusInterpolator< KeyType >::Interpolate		( TimeType time, Key< KeyType >& left, Key< KeyType >& right )
 {
 	TimeType timeInterval = right.Time - left.Time;
 	TimeType progress = ( time - left.Time ) / timeInterval;
+
+	progress = 0.5 + 0.5 * cos( progress * M_PI );
 
 	auto leftResult = ( 1.0 + (-1.0f) * progress ) * left.Value;	// Multiply by -1.0f to avoid calling operator-
 	auto rightResult = progress * right.Value;
@@ -81,42 +80,24 @@ inline KeyType		LinearInterpolator< KeyType >::Interpolate	( TimeType time, Key<
 // ================================ //
 //
 template< typename KeyType >
-inline void			LinearInterpolator< KeyType >::Update		( const Key< KeyType >& leftKey,
-																  const Key< KeyType >& rightKey,
-																  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
-																  UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+inline void				CosinusInterpolator< KeyType >::Update			( const Key< KeyType >& leftKey,
+																		  const Key< KeyType >& rightKey,
+																		  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+																		  UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+{}
+
+// ================================ //
+//
+template< typename KeyType >
+inline KeyType			CosinusInterpolator< KeyType >::LeftTangent		( const Key< KeyType >& left, const Key< KeyType >& right ) const
 {
-	// Intencionally empty.
+	return KeyType( 0 );
 }
 
 // ================================ //
 //
 template< typename KeyType >
-inline KeyType		LinearInterpolator< KeyType >::LeftTangent	( const Key< KeyType >& left, const Key< KeyType >& right ) const
+inline KeyType			CosinusInterpolator< KeyType >::RightTangent	( const Key< KeyType >& left, const Key< KeyType >& right ) const
 {
-	return Tangent( left, right );
-}
-
-// ================================ //
-//
-template< typename KeyType >
-inline KeyType		LinearInterpolator< KeyType >::RightTangent	( const Key< KeyType >& left, const Key< KeyType >& right ) const
-{
-	return Tangent( left, right );
-}
-
-
-//====================================================================================//
-//			Internal	
-//====================================================================================//
-
-// ================================ //
-//
-template< typename KeyType >
-inline KeyType		LinearInterpolator< KeyType >::Tangent		( const Key< KeyType >& left, const Key< KeyType >& right ) const
-{
-	KeyType valueInterval = right.Value - left.Value;
-	TimeType timeInterval = right.Time - left.Time;
-
-	return static_cast< KeyType >( ( TimeType( 1.0f ) / timeInterval )* valueInterval );
+	return KeyType( 0 );
 }

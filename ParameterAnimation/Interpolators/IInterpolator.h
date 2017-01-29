@@ -8,14 +8,30 @@
 #include "swCommonLibraries/Common/TypesDefinitions.h"
 
 /**@defgroup Interpolators Interpolators
-@ingroup KeyFrameAnimation*/
+@ingroup KeyFrameAnimation
+
+@section Writing interpolators
+
+To write yout own interpolator you should implement some functions from IInterpolator interface.
+@todo Complete description.
+*/
 
 
 template< typename KeyType >
 struct Key;
 
 
-/**@brief 
+enum class InterpolatorType : int16
+{
+	Discrete,
+	Linear,
+	Cosinus,
+	Bezier
+};
+
+
+
+/**@brief Base class for interpolators.
 
 @ingroup Interpolators*/
 template< typename KeyType >

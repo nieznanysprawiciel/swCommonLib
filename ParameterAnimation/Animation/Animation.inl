@@ -49,9 +49,9 @@ inline bool			AnimationImpl< KeyType, AddressType >::AddKey		( TimeType time, co
 // ================================ //
 //
 template< typename KeyType, typename AddressType  >
-inline bool			AnimationImpl< KeyType, AddressType >::AddKey		( TimeType time, const KeyType& value, UPtr< Interpolator >&& interpolator )
+inline bool			AnimationImpl< KeyType, AddressType >::AddKey		( TimeType time, const KeyType& value, InterpolatorType interpolatorType )
 {
-	return Evaluator.AddKey( time, value, std::move( interpolator ) );
+	return Evaluator.AddKey( time, value, interpolatorType );
 }
 
 // ================================ //
@@ -81,15 +81,31 @@ inline bool			AnimationImpl< KeyType, AddressType >::RemoveKey	( TimeType time )
 // ================================ //
 //
 template< typename KeyType, typename AddressType >
-inline bool			AnimationImpl< KeyType, AddressType >::UpdateInterpolator	( UPtr< Interpolator >&& interpolator )
+inline bool			AnimationImpl< KeyType, AddressType >::ChangeInterpolator	( Size idx, UPtr< Interpolator >&& interpolator )
 {
-	return Evaluator.UpdateInterpolator( std::move( interpolator ) );
+	return Evaluator.ChangeInterpolator( idx, std::move( interpolator ) );
 }
 
 // ================================ //
 //
 template< typename KeyType, typename AddressType >
-inline const Key< KeyType >*	AnimationImpl< KeyType, AddressType >::GetKey	( TimeType time )
+inline bool			AnimationImpl< KeyType, AddressType >::ChangeInterpolator	( Size idx, InterpolatorType interpolatorType )
+{
+	return false;
+}
+
+// ================================ //
+//
+template<typename KeyType, typename AddressType >
+inline IInterpolator< KeyType >*	AnimationImpl< KeyType, AddressType >::GetInterpolator	( Size idx )
+{
+	return nullptr;
+}
+
+// ================================ //
+//
+template< typename KeyType, typename AddressType >
+inline const Key< KeyType >*		AnimationImpl< KeyType, AddressType >::GetKey	( TimeType time )
 {
 	return Evaluator.GetKey( time );
 }
@@ -97,7 +113,7 @@ inline const Key< KeyType >*	AnimationImpl< KeyType, AddressType >::GetKey	( Tim
 // ================================ //
 //
 template< typename KeyType, typename AddressType >
-inline KeySet< KeyType >&		AnimationImpl< KeyType, AddressType >::GetKeySet()
+inline KeySet< KeyType >&			AnimationImpl< KeyType, AddressType >::GetKeySet()
 {
 	return Evaluator.GetKeySet();
 }

@@ -1,6 +1,7 @@
 #include "swCommonLibraries/External/Catch/catch.hpp"
 
 #include "swCommonLibraries/ParameterAnimation/Animation/Animation.h"
+#include "swCommonLibraries/ParameterAnimation/Interpolators/CosinusInterpolator.h"
 
 #include "swCommonLibraries/ParameterAnimation/Parameters/DirectPropertyh.h"
 #include "swCommonLibraries/ParameterAnimation/Parameters/PropertyPath.h"
@@ -121,18 +122,6 @@ DirectX::XMFLOAT4	operator+	( const DirectX::XMFLOAT4& vec1, const DirectX::XMFL
 	return result;
 }
 
-// ================================ //
-//
-DirectX::XMFLOAT4	operator-	( const DirectX::XMFLOAT4& vec1, const DirectX::XMFLOAT4& vec2 )
-{
-	DirectX::XMFLOAT4 result;
-	result.x = vec1.x - vec2.x;
-	result.y = vec1.y - vec2.y;
-	result.z = vec1.z - vec2.z;
-	result.w = vec1.w - vec2.w;
-
-	return result;
-}
 
 }
 
@@ -322,3 +311,37 @@ TEST_CASE( "Interpolators", "[Interpolators Types]" )
 }
 
 
+TEST_CASE( "Interpolators change" )
+{
+	TestInterpolators		AnimClass;
+
+	Ptr< AnimationImpl< float, PropertyPath< float > > > animator = MakePtr< AnimationImpl< float, PropertyPath< float > > >( &AnimClass, "FloatField" );
+
+	// Add new keys.
+	CHECK( animator->AddKey( 2.0, 8 ) );
+	CHECK( animator->AddKey( 3.0, 5 ) );
+	CHECK( animator->AddKey( 4.0, 1 ) );
+	CHECK( animator->AddKey( 5.0, 0, InterpolatorType::Cosinus ) );
+
+	// Check new added keys.
+	CHECK( animator->GetKey( 0.0 )->Value == 2 );
+	CHECK( animator->GetKey( 2.0 )->Value == 8 );
+	CHECK( animator->GetKey( 3.0 )->Value == 5 );
+	CHECK( animator->GetKey( 4.0 )->Value == 1 );
+	CHECK( animator->GetKey( 5.0 )->Value == 0 );
+
+	// Change interpolators to cosinus.
+	CHECK( animator->ChangeInterpolator( 0, MakeUPtr< CosinusInterpolator< float > >() ) );
+	CHECK( animator->ChangeInterpolator( 1, InterpolatorType::Cosinus ) );
+	CHECK( animator->ChangeInterpolator( 2, MakeUPtr< CosinusInterpolator< float > >() ) );
+
+	// Check interpolators existance
+	for( int i = 0; i < 4; ++i )
+	{
+		IInterpolator< float >* interpolatorPtr = animator->GetInterpolator( 0 );
+		REQUIRE( interpolatorPtr != nullptr );
+		CHECK( dynamic_cast< CosinusInterpolator< float >* >( interpolatorPtr ) != nullptr );
+	}
+
+
+}

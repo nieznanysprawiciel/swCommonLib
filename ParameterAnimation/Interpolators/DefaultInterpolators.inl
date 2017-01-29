@@ -9,6 +9,7 @@
 
 #include "LinearInterpolator.h"
 #include "DiscreteInterpolator.h"
+#include "CosinusInterpolator.h"
 
 
 // ================================ //
@@ -33,6 +34,18 @@ inline UPtr< IInterpolator< KeyType > >			DefaultInterpolators::CreateDiscrete( 
 {
 	return UPtr< IInterpolator< KeyType > >( new DiscreteInterpolator< KeyType >( leftKey, rightKey, leftInterpolator, rightInterpolator ) );
 }
+
+// ================================ //
+//
+template< typename KeyType >
+inline UPtr< IInterpolator< KeyType > >			DefaultInterpolators::CreateCosinus	( const Key< KeyType >& leftKey,
+																					  const Key<KeyType>& rightKey,
+																					  UPtr< const IInterpolator< KeyType > >& leftInterpolator,
+																					  UPtr< const IInterpolator< KeyType > >& rightInterpolator )
+{
+	return UPtr< IInterpolator< KeyType > >( new CosinusInterpolator< KeyType >( leftKey, rightKey, leftInterpolator, rightInterpolator ) );
+}
+
 
 
 
