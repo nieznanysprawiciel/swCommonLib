@@ -1,7 +1,7 @@
-#include "swCommonLibraries/External/Catch/catch.hpp"
+#include "swCommonLib/External/Catch/catch.hpp"
 
 
-#include "swCommonLibraries/Common/Properties/Properties.h"
+#include "swCommonLib/Common/Properties/Properties.h"
 
 #include "TestClasses.h"
 

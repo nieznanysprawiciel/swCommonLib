@@ -1,5 +1,5 @@
-#include "swCommonLibraries/Common/EngineObject.h"
-#include "swCommonLibraries/Serialization/PropertySerialization/Serialization.h"
+#include "swCommonLib/Common/EngineObject.h"
+#include "swCommonLib/Serialization/PropertySerialization/Serialization.h"
 
 
 

@@ -5,11 +5,11 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-#include "swCommonLibraries/Common/RTTR.h"
-#include "swCommonLibraries/Common/EngineObject.h"
+#include "swCommonLib/Common/RTTR.h"
+#include "swCommonLib/Common/EngineObject.h"
 
-#include "swCommonLibraries/Common/Properties/Properties.h"
-#include "swCommonLibraries/Serialization/PropertySerialization/Serialization.h"
+#include "swCommonLib/Common/Properties/Properties.h"
+#include "swCommonLib/Serialization/PropertySerialization/Serialization.h"
 
 
 /**@brief */

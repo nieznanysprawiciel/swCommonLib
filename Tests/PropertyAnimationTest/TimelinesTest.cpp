@@ -1,7 +1,7 @@
-#include "swCommonLibraries/External/Catch/catch.hpp"
+#include "swCommonLib/External/Catch/catch.hpp"
 
-#include "swCommonLibraries/ParameterAnimation/Timelines/TimelineBase.h"
-#include "swCommonLibraries/ParameterAnimation/Timelines/RelativeTimeline.h"
+#include "swCommonLib/ParameterAnimation/Timelines/TimelineBase.h"
+#include "swCommonLib/ParameterAnimation/Timelines/RelativeTimeline.h"
 
 #include "FakeTimeline.h"
 

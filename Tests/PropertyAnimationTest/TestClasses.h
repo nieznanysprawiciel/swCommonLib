@@ -1,11 +1,11 @@
 #pragma once
 
 
-#include "swCommonLibraries/ParameterAnimation/Animation/Animation.h"
+#include "swCommonLib/ParameterAnimation/Animation/Animation.h"
 
-#include "swCommonLibraries/ParameterAnimation/Parameters/DirectPropertyh.h"
-#include "swCommonLibraries/ParameterAnimation/Parameters/PropertyPath.h"
-#include "swCommonLibraries/ParameterAnimation/Parameters/StringPropertyPath.h"
+#include "swCommonLib/ParameterAnimation/Parameters/DirectPropertyh.h"
+#include "swCommonLib/ParameterAnimation/Parameters/PropertyPath.h"
+#include "swCommonLib/ParameterAnimation/Parameters/StringPropertyPath.h"
 
 
 #include <DirectXMath.h>

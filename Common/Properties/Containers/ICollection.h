@@ -1,8 +1,8 @@
 #pragma once
 
-#include "swCommonLibraries/Common/TypesDefinitions.h"
-#include "swCommonLibraries/Common/Properties/IEnableProperty.h"
-#include "swCommonLibraries/Common/RTTR.h"
+#include "swCommonLib/Common/TypesDefinitions.h"
+#include "swCommonLib/Common/Properties/IEnableProperty.h"
+#include "swCommonLib/Common/RTTR.h"
 
 
 template< typename ElementType = IEnableProperty* >

@@ -5,7 +5,7 @@
 @copyright File is part of graphic engine SWEngine.
 */
 
-#include "swCommonLibraries/Serialization/PropertySerialization/Serialization.h"
+#include "swCommonLib/Serialization/PropertySerialization/Serialization.h"
 
 
 /**@brief */

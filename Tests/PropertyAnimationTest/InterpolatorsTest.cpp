@@ -1,11 +1,11 @@
-#include "swCommonLibraries/External/Catch/catch.hpp"
+#include "swCommonLib/External/Catch/catch.hpp"
 
-#include "swCommonLibraries/ParameterAnimation/Animation/Animation.h"
-#include "swCommonLibraries/ParameterAnimation/Interpolators/CosinusInterpolator.h"
+#include "swCommonLib/ParameterAnimation/Animation/Animation.h"
+#include "swCommonLib/ParameterAnimation/Interpolators/CosinusInterpolator.h"
 
-#include "swCommonLibraries/ParameterAnimation/Parameters/DirectPropertyh.h"
-#include "swCommonLibraries/ParameterAnimation/Parameters/PropertyPath.h"
-#include "swCommonLibraries/ParameterAnimation/Parameters/StringPropertyPath.h"
+#include "swCommonLib/ParameterAnimation/Parameters/DirectPropertyh.h"
+#include "swCommonLib/ParameterAnimation/Parameters/PropertyPath.h"
+#include "swCommonLib/ParameterAnimation/Parameters/StringPropertyPath.h"
 
 #include "TestClasses.h"
 
@@ -63,7 +63,7 @@ RTTR_REGISTRATION
 		.property( "Position3F", &TestInterpolators::Position3F ) BIND_AS_PTR;
 }
 
-#include "swCommonLibraries/ParameterAnimation/Interpolators/DefaultInterpolators.inl"
+#include "swCommonLib/ParameterAnimation/Interpolators/DefaultInterpolators.inl"
 
 
 namespace

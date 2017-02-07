@@ -1,7 +1,7 @@
 #pragma once
 
-#include "swCommonLibraries/Common/EngineObject.h"
-#include "swCommonLibraries/Common/RTTR.h"
+#include "swCommonLib/Common/EngineObject.h"
+#include "swCommonLib/Common/RTTR.h"
 
 #include <vector>
 #include <string>

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "swCommonLibraries/Common//TypesDefinitions.h"
+#include "swCommonLib/Common//TypesDefinitions.h"
 
 #include <vector>
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "swCommonLibraries/Common/RTTR.h"
+#include "swCommonLib/Common/RTTR.h"
 #include <cassert>
 
 class IEnableProperty;
