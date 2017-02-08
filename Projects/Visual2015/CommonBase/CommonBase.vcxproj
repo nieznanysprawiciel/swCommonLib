@@ -39,6 +39,11 @@
     <ClInclude Include="..\..\..\Common\TypesDefinitions.h" />
     <ClInclude Include="..\..\..\Common\UPtr.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Serialization\Serialization.vcxproj">
+      <Project>{561754cb-295d-4d69-8dbc-bc069d1a636a}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9ABCBAB4-05B4-47C5-B5D8-F201559FD096}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
