@@ -9,6 +9,10 @@
 #include "swCommonLib/Common/Version.h"
 
 
+namespace sw
+{
+
+
 /**@brief Hierarchical Chunked Format file header.
 
 Main header.*/
@@ -19,7 +23,7 @@ struct FileHeader
 	Size			FileSize;				///< Size including header.
 	Size			RootChunkOffset;		///< First chunk in file.
 	Version			VersionHCF;				///< Version of HCF file library.
-	
+
 
 // ================================ //
 //
@@ -36,7 +40,7 @@ struct FileHeader
 		LittleEndian = CheckLittleEndian();
 	}
 
-	/**@brief 
+	/**@brief
 	Based on: http://stackoverflow.com/questions/4181951/how-to-check-whether-a-system-is-big-endian-or-little-endian
 	*/
 	bool	CheckLittleEndian()
@@ -49,4 +53,5 @@ struct FileHeader
 	}
 };
 
+}	// sw
 

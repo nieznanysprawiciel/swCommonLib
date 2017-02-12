@@ -8,6 +8,10 @@
 #include "swCommonLib/Common/TypesDefinitions.h"
 
 
+namespace sw
+{
+
+
 /**@brief */
 struct ChunkHeader
 {
@@ -15,3 +19,4 @@ struct ChunkHeader
 	Size			NextChunk;		///< Offset to Next chunk on the same level.
 };
 
+}	// sw
