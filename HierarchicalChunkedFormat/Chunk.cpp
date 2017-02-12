@@ -8,7 +8,23 @@
 
 #include "swCommonLib/HierarchicalChunkedFormat/Chunk.h"
 
+namespace sw
+{
 
 
+// ================================ //
+//
+Chunk			Chunk::CreateChunk		()
+{
+	return Chunk();
+}
 
 
+// ================================ //
+//
+Attribute		Chunk::AddAttribute		( AttributeType type )
+{
+	return Attribute();
+}
+
+}	// sw

@@ -8,7 +8,9 @@
 #include "swCommonLib/Common/TypesDefinitions.h"
 #include "swCommonLib/System/Path.h"
 
-#include "Headers/AttributeTypes.h"
+#include "swCommonLib/HierarchicalChunkedFormat/Attributes/IAttribute.h"
+#include "Chunk.h"
+#include "Attribute.h"
 
 #include <string>
 
@@ -16,8 +18,6 @@
 namespace sw
 {
 
-
-typedef uint8* DataPtr;
 
 /**@brief Main class for loading and writing HCF files.*/
 class HCF
@@ -36,7 +36,7 @@ public:
 	bool			WriteFile		( const filesystem::Path& filePath );
 	///@}
 
-
+	Chunk			GetRootChunk	();
 
 };
 

@@ -9,7 +9,11 @@
 namespace sw
 {
 
-enum AttributeType
+typedef uint64 AttributeType;
+typedef uint8* DataPtr;
+
+
+enum AttributeTypeBuiltIn
 {
 	ChunkName,
 	Compression

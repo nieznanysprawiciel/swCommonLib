@@ -6,19 +6,24 @@
 */
 
 #include "swCommonLib/Common/TypesDefinitions.h"
-
+#include "swCommonLib/HierarchicalChunkedFormat/Attributes/AttributeTypes.h"
 
 namespace sw
 {
-
-typedef uint64 AttributeType;
-
 
 /**@brief */
 struct AttributeHeader
 {
 	Size			AttribSize;		///< Size of attribute including this field.
 	AttributeType	AttribType;		///< Attribute type. Low 16 bits are reserved fo built in attributes.
+
+
+// ================================ //
+//
+	AttributeHeader( AttributeType type )
+		:	AttribSize( 0 )
+		,	AttribType( type )
+	{}
 };
 
 

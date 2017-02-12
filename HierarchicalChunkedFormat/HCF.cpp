@@ -38,5 +38,12 @@ bool		HCF::WriteFile		( const filesystem::Path& filePath )
 	return false;
 }
 
+// ================================ //
+//
+Chunk		HCF::GetRootChunk	()
+{
+	return Chunk();
+}
+
 
 }	// sw
