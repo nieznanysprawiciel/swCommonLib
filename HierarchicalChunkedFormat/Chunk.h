@@ -29,8 +29,13 @@ public:
 	~Chunk() = default;
 
 
+	/**@brief Create child chunk.*/
 	Chunk		CreateChunk		();
+	/**@brief Adds attribute to list.*/
 	Attribute	AddAttribute	( AttributeType type );
+
+	/**@brief Checks if you can use this attribute properly.*/
+	bool		IsValid			() const;
 };
 
 

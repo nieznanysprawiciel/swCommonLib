@@ -28,6 +28,8 @@ public:
 	explicit		Attribute() = default;
 	~Attribute() = default;
 
+
+	bool			IsValid		() const;
 };
 
 

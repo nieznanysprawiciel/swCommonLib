@@ -27,4 +27,13 @@ Attribute		Chunk::AddAttribute		( AttributeType type )
 	return Attribute();
 }
 
+// ================================ //
+//
+bool			Chunk::IsValid() const
+{
+	if( m_chunkPtr )
+		return true;
+	return false;
+}
+
 }	// sw
