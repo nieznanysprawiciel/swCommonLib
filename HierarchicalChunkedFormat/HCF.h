@@ -62,7 +62,7 @@ public:
 	///@name Attributes manipulation
 	///@{
 	/**@brief Adds attribute and fills it with data.*/
-	Attribute		AddAttribute	( AttributeType type, DataPtr data, Size dataSize );
+	Attribute		AddAttribute	( AttributeType type, const DataPtr data, Size dataSize );
 
 	/**@brief Adds attribute and creates content from POD structure.
 	@param[in] type You must provide type of attribute by yourself. Use second spetialization if struct
@@ -78,13 +78,13 @@ public:
 
 };
 
-/**@brief Override this funtion for your attribute atructure.*/
-template< typename AttributeStruct >
-AttributeType		GetAttributeTypeID		();
-
-
 
 
 }	// sw
+
+/**@brief Override this funtion for your attribute atructure.*/
+template< typename AttributeStruct >
+sw::AttributeType		GetAttributeTypeID		();
+
 
 #include "HCF.inl"

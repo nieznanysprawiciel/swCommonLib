@@ -11,7 +11,7 @@ namespace sw
 template< typename AttributeStruct >
 inline Attribute			HCF::AddAttribute	( AttributeType type, const AttributeStruct& content )
 {
-	return Attribute();
+	return m_impl.AddAttribute( type, (const DataPtr)&content, sizeof( AttributeStruct ) );
 }
 
 // ================================ //
@@ -19,7 +19,7 @@ inline Attribute			HCF::AddAttribute	( AttributeType type, const AttributeStruct
 template< typename AttributeStruct >
 inline Attribute			HCF::AddAttribute	( const AttributeStruct& content )
 {
-	return Attribute();
+	return AddAttribute( GetAttributeTypeID< AttributeStruct >(), content );
 }
 
 

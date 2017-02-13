@@ -24,11 +24,15 @@ private:
 
 	AttributeReprPtr	m_nextAttrib;	///< Next attribute in list.
 
-protected:
+
 public:
-	explicit		AttributeRepr() = default;
+	explicit		AttributeRepr( AttributeType type );
 	~AttributeRepr() = default;
 
+
+	AttributeHeader&		AccessHeader		() { return m_header; }
+
+	void					AddNextAttribute	( AttributeReprPtr& attribPtr );
 };
 
 }	// sw

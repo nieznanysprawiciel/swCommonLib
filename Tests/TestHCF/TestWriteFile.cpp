@@ -25,15 +25,20 @@ struct ExampleRealFormatHeader
 	}
 };
 
+template<>
+sw::AttributeType	GetAttributeTypeID< ExampleRealFormatHeader >() { return 0x10000;  }
 
 
 using namespace sw;
 
-TEST_CASE( "HCF - Write test" )
+TEST_CASE( "HCF - Simple write test" )
 {
 	sw::HCF hcf;
-	bool openResult = hcf.OpenFile( "", HCF::WriteMode::DirectToFile );
+	bool openResult = hcf.OpenFile( "HCF/SimpleWriteTest.hcf", HCF::WriteMode::DirectToFile );
 	REQUIRE( openResult );
+
+	Attribute topAttribute = hcf.AddAttribute( ExampleRealFormatHeader() );
+	CHECK( topAttribute.IsValid() );
 
 	Chunk rootChunk = hcf.GetRootChunk();
 	REQUIRE( rootChunk.IsValid() );

@@ -12,6 +12,11 @@
 namespace sw
 {
 
+// ================================ //
+//
+Attribute::Attribute	( AttributeReprPtr& attribPtr )
+	: m_attribPtr( attribPtr )
+{}
 
 
 // ================================ //

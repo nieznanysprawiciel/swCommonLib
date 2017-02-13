@@ -25,7 +25,8 @@ private:
 
 protected:
 public:
-	explicit		Attribute() = default;
+	explicit		Attribute	() = default;
+	explicit		Attribute	( AttributeReprPtr& attribPtr );
 	~Attribute() = default;
 
 

@@ -14,6 +14,12 @@
 
 #include "swCommonLib/HierarchicalChunkedFormat/Headers/FileHeader.h"
 
+#include "swCommonLib/System/Path.h"
+
+
+#include <stdio.h>
+
+
 
 namespace sw
 {
@@ -28,6 +34,10 @@ private:
 	ChunkReprPtr		m_rootChunk;			///< Main Chunk.
 	AttributeReprPtr	m_fileAttributes;		///< Top level attributes.
 
+	// File related things.
+	FILE*				m_file;
+	Size				m_writePtr;
+
 public:
 
 	bool				m_directWrite : 1;
@@ -35,13 +45,15 @@ public:
 protected:
 public:
 	explicit		ImplHCF		();
-					~ImplHCF	() = default;
+					~ImplHCF	();
 
 
 	Chunk			GetRootChunk	();
 	Chunk			CreateRootChunk	();
 
-	Attribute		AddAttribute	( AttributeType type, DataPtr data, Size dataSize );
+	bool			OpenFile		( const filesystem::Path& filePath, bool writeDirect );
+
+	Attribute		AddAttribute	( AttributeType type, const DataPtr data, Size dataSize );
 };
 
 

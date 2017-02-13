@@ -47,7 +47,7 @@ bool		HCF::WriteFile		( const filesystem::Path& filePath )
 //
 bool		HCF::OpenFile		( const filesystem::Path& filePath, WriteMode mode )
 {
-	return false;
+	return m_impl.OpenFile( filePath, WriteMode::DirectToFile == mode ? true : false );
 }
 
 // ================================ //
