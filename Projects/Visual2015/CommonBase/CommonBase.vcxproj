@@ -22,6 +22,8 @@
     <ClCompile Include="..\..\..\Common\Converters.cpp" />
     <ClCompile Include="..\..\..\Common\EngineObject.cpp" />
     <ClCompile Include="..\..\..\Common\Properties\Properties.cpp" />
+    <ClCompile Include="..\..\..\System\Dir.cpp" />
+    <ClCompile Include="..\..\..\System\File.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Common\Converters.h" />
@@ -38,6 +40,9 @@
     <ClInclude Include="..\..\..\Common\Traits.h" />
     <ClInclude Include="..\..\..\Common\TypesDefinitions.h" />
     <ClInclude Include="..\..\..\Common\UPtr.h" />
+    <ClInclude Include="..\..\..\System\Dir.h" />
+    <ClInclude Include="..\..\..\System\File.h" />
+    <ClInclude Include="..\..\..\System\Path.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Serialization\Serialization.vcxproj">

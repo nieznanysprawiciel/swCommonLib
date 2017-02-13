@@ -9,6 +9,8 @@
 #include "swCommonLib/System/Path.h"
 
 #include "swCommonLib/HierarchicalChunkedFormat/Attributes/IAttribute.h"
+#include "swCommonLib/HierarchicalChunkedFormat/Internal/ImplHCF.h"
+
 #include "Chunk.h"
 #include "Attribute.h"
 
@@ -18,27 +20,71 @@
 namespace sw
 {
 
+class ImplHCF;
+
 
 /**@brief Main class for loading and writing HCF files.*/
 class HCF
 {
+public:
+
+	enum WriteMode : uint8
+	{
+		DirectToFile,
+		Indirect
+	};
+
 private:
+	ImplHCF			m_impl;
+
 protected:
 public:
-	explicit		HCF	() = default;
-					~HCF() = default;
+	explicit		HCF			();
+					~HCF		() = default;
 
 ///@name Loading and saving
 ///@{
 	bool			LoadFile		( const filesystem::Path& filePath );
 	bool			Load			( DataPtr data, Size size );
 
+	/**@brief Saves content to file.
+	@see HCF::OpenFile*/
 	bool			WriteFile		( const filesystem::Path& filePath );
+
+	/**@brief Opens file for writing.
+	This functions allows to use WriteMode::DirectToFile. If you use Indirect mode, there's no need to call this function.*/
+	bool			OpenFile		( const filesystem::Path& filePath, WriteMode mode );
 	///@}
 
 	Chunk			GetRootChunk	();
+	Chunk			CreateRootChunk	();
+
+	///@name Attributes manipulation
+	///@{
+	/**@brief Adds attribute and fills it with data.*/
+	Attribute		AddAttribute	( AttributeType type, DataPtr data, Size dataSize );
+
+	/**@brief Adds attribute and creates content from POD structure.
+	@param[in] type You must provide type of attribute by yourself. Use second spetialization if struct
+	defines attribute type getter.*/
+	template< typename AttributeStruct >
+	Attribute		AddAttribute	( AttributeType type, const AttributeStruct& content );
+
+	/**@brief Adds attribute and creates content from POD structure.
+	Attribute type will be taken from struct. Specialize GetAttributeTypeID template.*/
+	template< typename AttributeStruct >
+	Attribute		AddAttribute	( const AttributeStruct& content );
+	///@}
 
 };
 
+/**@brief Override this funtion for your attribute atructure.*/
+template< typename AttributeStruct >
+AttributeType		GetAttributeTypeID		();
+
+
+
 
 }	// sw
+
+#include "HCF.inl"

@@ -16,11 +16,15 @@ class ChunkRepr;
 DEFINE_PTR_TYPE( ChunkRepr );
 DEFINE_WPTR_TYPE( ChunkRepr );
 
+class ImplHCF;
+
 
 /**@brief */
 class ChunkRepr
 {
 private:
+	ImplHCF*		m_hcf;
+
 	ChunkHeader		m_header;
 
 	Size			m_absolutOffset;	///< Offset from beginning of file.
@@ -32,6 +36,10 @@ private:
 	AttributeReprPtr	m_firstAttrib;	///< Attributes list.
 
 public:
+	ChunkRepr( ImplHCF* hcf )
+		: m_hcf( hcf )
+	{}
+
 };
 
 

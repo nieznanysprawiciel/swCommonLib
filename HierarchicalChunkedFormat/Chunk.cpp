@@ -11,6 +11,11 @@
 namespace sw
 {
 
+// ================================ //
+//
+Chunk::Chunk		( ChunkReprPtr chunkRepr )
+	:	m_chunkPtr( chunkRepr )
+{}
 
 // ================================ //
 //
@@ -18,7 +23,6 @@ Chunk			Chunk::CreateChunk		()
 {
 	return Chunk();
 }
-
 
 // ================================ //
 //

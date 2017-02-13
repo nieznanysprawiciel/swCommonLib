@@ -25,7 +25,8 @@ private:
 
 protected:
 public:
-	explicit		Chunk() = default;
+	explicit		Chunk	() = default;
+	explicit		Chunk	( ChunkReprPtr chunkRepr );
 	~Chunk() = default;
 
 

@@ -75,13 +75,13 @@ struct Version
 	/**@brief */
 	friend std::ostream& operator<<		( std::ostream& stream, const Version& ver )
 	{
-		stream << ver.major;
+		stream << ver.Major;
 		stream << '.';
-		stream << ver.minor;
+		stream << ver.Minor;
 		stream << '.';
-		stream << ver.revision;
+		stream << ver.Revision;
 		stream << '.';
-		stream << ver.build;
+		stream << ver.Build;
 		return stream;
 	}
 };
