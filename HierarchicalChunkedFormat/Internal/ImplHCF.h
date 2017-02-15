@@ -40,7 +40,8 @@ private:
 
 public:
 
-	bool				m_directWrite : 1;
+	bool				m_directWrite			: 1;
+	bool				m_attributesWritten		: 1;
 
 protected:
 public:
@@ -52,8 +53,17 @@ public:
 	Chunk			CreateRootChunk	();
 
 	bool			OpenFile		( const filesystem::Path& filePath, bool writeDirect );
+	bool			WriteFile		( const filesystem::Path& filePath );
 
-	Attribute		AddAttribute	( AttributeType type, const DataPtr data, Size dataSize );
+	Attribute		AddGlobalAttribute	( AttributeType type, const DataPtr data, Size dataSize );
+	Attribute		AddAttribute		( AttributeReprPtr& list, AttributeType type, const DataPtr data, Size dataSize );
+
+public:
+	// Internal implementation
+	Size			ComputeWholeSize	( Attribute attrib );
+
+	Size			ReserveMemory		( Size dataSize );
+	FILE*			GetFile				()					{ return m_file; }
 };
 
 

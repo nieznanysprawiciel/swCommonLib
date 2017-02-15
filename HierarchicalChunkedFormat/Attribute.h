@@ -6,7 +6,7 @@
 */
 
 #include "swCommonLib/Common/TypesDefinitions.h"
-
+#include "swCommonLib/HierarchicalChunkedFormat/Attributes/AttributeTypes.h"
 
 namespace sw
 {
@@ -26,11 +26,13 @@ private:
 protected:
 public:
 	explicit		Attribute	() = default;
-	explicit		Attribute	( AttributeReprPtr& attribPtr );
+	explicit		Attribute	( AttributeReprPtr attribPtr );
 	~Attribute() = default;
 
 
 	bool			IsValid		() const;
+	AttributeType	GetType		() const;
+	Size			GetSize		() const;
 };
 
 

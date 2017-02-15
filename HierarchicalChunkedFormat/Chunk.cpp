@@ -7,6 +7,7 @@
 #include "swCommonLib/HierarchicalChunkedFormat/stdafx.h"
 
 #include "swCommonLib/HierarchicalChunkedFormat/Chunk.h"
+#include "swCommonLib/HierarchicalChunkedFormat/Internal/ChunkRepr.h"
 
 namespace sw
 {
@@ -21,14 +22,21 @@ Chunk::Chunk		( ChunkReprPtr chunkRepr )
 //
 Chunk			Chunk::CreateChunk		()
 {
-	return Chunk();
+	return m_chunkPtr->CreateChunk();
 }
 
 // ================================ //
 //
-Attribute		Chunk::AddAttribute		( AttributeType type )
+Attribute		Chunk::AddAttribute		( AttributeType type, const DataPtr data, Size dataSize )
 {
-	return Attribute();
+	return m_chunkPtr->AddAttribute( type, data, dataSize );
+}
+
+// ================================ //
+//
+bool			Chunk::Fill				( const DataPtr data, Size dataSize )
+{
+	return m_chunkPtr->Fill( data, dataSize );
 }
 
 // ================================ //

@@ -21,6 +21,8 @@ const Version currentVersion = "1.0.0.0";
 ImplHCF::ImplHCF()
 	:	m_header( currentVersion )
 	,	m_file( nullptr )
+	,	m_writePtr( 0 )
+	,	m_attributesWritten( false )
 {}
 
 // ================================ //
@@ -36,7 +38,7 @@ ImplHCF::~ImplHCF()
 //
 Chunk			ImplHCF::GetRootChunk()
 {
-	return Chunk();
+	return Chunk( m_rootChunk );
 }
 
 // ================================ //
@@ -50,8 +52,8 @@ bool			ImplHCF::OpenFile	( const filesystem::Path& filePath, bool writeDirect )
 		m_directWrite = writeDirect;
 		if( m_directWrite )
 		{
+			ReserveMemory( sizeof( FileHeader ) );
 			m_header.FileSize = sizeof( FileHeader );
-			m_writePtr = sizeof( FileHeader );
 			m_header.RootChunkOffset = m_writePtr;
 
 			// Write header to file. Header must be modified in future.
@@ -66,11 +68,39 @@ bool			ImplHCF::OpenFile	( const filesystem::Path& filePath, bool writeDirect )
 
 // ================================ //
 //
+bool			ImplHCF::WriteFile	( const filesystem::Path& filePath )
+{
+	if( m_directWrite )
+	{
+		m_header.FileSize = m_writePtr;
+
+		fseek( m_file, (long)0, SEEK_SET );
+		fwrite( (void*)&m_header, sizeof( FileHeader ), 1, m_file );
+
+		return true;
+	}
+	else
+	{
+
+	}
+
+	return false;
+}
+
+
+// ================================ //
+//
 Chunk			ImplHCF::CreateRootChunk()
 {
 	if( !m_rootChunk )
 	{
-		m_rootChunk = MakePtr< ChunkRepr >( this );
+		if( m_directWrite )
+		{
+			m_header.RootChunkOffset = ReserveMemory( 0 );
+			m_attributesWritten = true;
+		}
+
+		m_rootChunk = MakePtr< ChunkRepr >( this, nullptr );
 		return Chunk( m_rootChunk );
 	}
 	else
@@ -79,33 +109,53 @@ Chunk			ImplHCF::CreateRootChunk()
 
 // ================================ //
 //
-Attribute		ImplHCF::AddAttribute	( AttributeType type, const DataPtr data, Size dataSize )
+Attribute		ImplHCF::AddGlobalAttribute	( AttributeType type, const DataPtr data, Size dataSize )
 {
-	AttributeReprPtr attribRepr = MakePtr< AttributeRepr >( type );
-	attribRepr->AccessHeader().AttribSize = dataSize + sizeof( AttributeHeader );
+	Attribute newAttribute = AddAttribute( m_fileAttributes, type, data, dataSize );
+
+	// Move offset in file header.
+	Size size = ComputeWholeSize( newAttribute );
+	ReserveMemory( size );
+
+	m_header.RootChunkOffset += size;
+	m_header.FileSize += size;
+
+	return newAttribute;
+}
+
+// ================================ //
+//
+Attribute		ImplHCF::AddAttribute	( AttributeReprPtr& list, AttributeType type, const DataPtr data, Size dataSize )
+{
+	AttributeReprPtr attribRepr = MakePtr< AttributeRepr >( this, type );
 
 	// Add attribute to list
-	if( m_fileAttributes )
-		m_fileAttributes->AddNextAttribute( attribRepr );
+	if( list )
+		list->AddNextAttribute( attribRepr );
 	else
-		m_fileAttributes = attribRepr;
+		list = attribRepr;
 
-
-	if( m_directWrite )
-	{
-		if( !m_file )
-			throw std::runtime_error( "No file opened for writing." );
-
-		fwrite( (void*)&attribRepr->AccessHeader(), sizeof( AttributeHeader ), 1, m_file );
-		fwrite( data, dataSize, 1, m_file );
-	}
-	else
-	{
-
-	}
+	attribRepr->FillAttribute( data, dataSize );
 
 	return Attribute( attribRepr );
 }
 
+// ================================ //
+//
+Size			ImplHCF::ComputeWholeSize	( Attribute attrib )
+{
+	return attrib.GetSize() + sizeof( AttributeHeader );
+}
+
+
+// ================================ //
+//
+Size			ImplHCF::ReserveMemory		( Size dataSize )
+{
+	Size curPtr = m_writePtr;
+	m_writePtr += dataSize;
+	
+	return curPtr;
+}
 
 }	// sw

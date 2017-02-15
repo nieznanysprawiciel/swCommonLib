@@ -15,6 +15,7 @@ typedef uint8* DataPtr;
 
 enum AttributeTypeBuiltIn
 {
+	InvalidAttribute,
 	ChunkName,
 	Compression
 };

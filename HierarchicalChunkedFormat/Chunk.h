@@ -33,7 +33,11 @@ public:
 	/**@brief Create child chunk.*/
 	Chunk		CreateChunk		();
 	/**@brief Adds attribute to list.*/
-	Attribute	AddAttribute	( AttributeType type );
+	Attribute	AddAttribute	( AttributeType type, const DataPtr data, Size dataSize );
+
+	/**@brief Fills chunk with data.
+	You can fill only chunks without children. One filled chunk, can't add children anymore.*/
+	bool		Fill			( const DataPtr data, Size dataSize );
 
 	/**@brief Checks if you can use this attribute properly.*/
 	bool		IsValid			() const;

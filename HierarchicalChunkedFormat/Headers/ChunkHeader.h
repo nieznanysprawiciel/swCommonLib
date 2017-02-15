@@ -17,6 +17,14 @@ struct ChunkHeader
 {
 	Size			DataOffset;		///< Data or nested chunks.
 	Size			NextChunk;		///< Offset to Next chunk on the same level.
+
+// ================================ //
+//
+	ChunkHeader()
+		: DataOffset( 0 )
+		, NextChunk( 0 )
+	{ }
+
 };
 
 }	// sw

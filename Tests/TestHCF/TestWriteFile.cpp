@@ -4,6 +4,8 @@
 #include "swCommonLib/External/Catch/catch.hpp"
 
 
+#include <numeric>
+
 
 struct ExampleRealFormatHeader
 {
@@ -33,33 +35,45 @@ using namespace sw;
 
 TEST_CASE( "HCF - Simple write test" )
 {
+	std::vector< int > writeData( 2000 );
+	std::iota( writeData.begin(), writeData.end(), 1 );
+
 	sw::HCF hcf;
 	bool openResult = hcf.OpenFile( "HCF/SimpleWriteTest.hcf", HCF::WriteMode::DirectToFile );
 	REQUIRE( openResult );
 
 	Attribute topAttribute = hcf.AddAttribute( ExampleRealFormatHeader() );
 	CHECK( topAttribute.IsValid() );
+	CHECK( topAttribute.GetType() == GetAttributeTypeID< ExampleRealFormatHeader >() );
 
-	Chunk rootChunk = hcf.GetRootChunk();
+	Chunk rootChunk = hcf.CreateRootChunk();
 	REQUIRE( rootChunk.IsValid() );
 
-	Attribute attrib = rootChunk.AddAttribute( AttributeTypeBuiltIn::ChunkName );
+	std::string rootChunkName = "rootChunk";
+	Attribute attrib = rootChunk.AddAttribute( AttributeTypeBuiltIn::ChunkName, (const DataPtr)rootChunkName.c_str(), rootChunkName.length() + 1 );
 
 	REQUIRE( attrib.IsValid() );
 
 	Chunk chunk1 = rootChunk.CreateChunk();
-	Chunk chunk2 = rootChunk.CreateChunk();
-
 	REQUIRE( chunk1.IsValid() );
-	REQUIRE( chunk2.IsValid() );
 
 	Chunk nested1 = chunk1.CreateChunk();
-	Chunk nested2 = chunk1.CreateChunk();
-
 	REQUIRE( nested1.IsValid() );
-	REQUIRE( nested2.IsValid() );
 
-	//chunk2.FillData( )
+	nested1.Fill( (const DataPtr)writeData.data(), sizeof( int ) * writeData.size() );
+
+
+	Chunk nested2 = chunk1.CreateChunk();
+	REQUIRE( nested2.IsValid() );
+	
+	nested2.Fill( (const DataPtr)writeData.data(), sizeof( int ) * writeData.size() );
+
+
+
+	Chunk chunk2 = rootChunk.CreateChunk();
+	REQUIRE( chunk2.IsValid() );
+
+	chunk2.Fill( (const DataPtr)writeData.data(), sizeof( int ) * writeData.size() );
 
 	bool result = hcf.WriteFile( "HCF/WriteTest.hcf" );
 

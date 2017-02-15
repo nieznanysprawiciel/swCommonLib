@@ -40,7 +40,7 @@ bool		HCF::Load			( DataPtr data, Size size )
 //
 bool		HCF::WriteFile		( const filesystem::Path& filePath )
 {
-	return false;
+	return m_impl.WriteFile( filePath );
 }
 
 // ================================ //
@@ -54,21 +54,21 @@ bool		HCF::OpenFile		( const filesystem::Path& filePath, WriteMode mode )
 //
 Chunk		HCF::GetRootChunk	()
 {
-	return Chunk();
+	return m_impl.GetRootChunk();
 }
 
 // ================================ //
 //
 Chunk		HCF::CreateRootChunk()
 {
-	return Chunk();
+	return m_impl.CreateRootChunk();
 }
 
 // ================================ //
 //
 Attribute	HCF::AddAttribute		( AttributeType type, DataPtr data, Size dataSize )
 {
-	return m_impl.AddAttribute( type, data, dataSize );
+	return m_impl.AddGlobalAttribute( type, data, dataSize );
 }
 
 

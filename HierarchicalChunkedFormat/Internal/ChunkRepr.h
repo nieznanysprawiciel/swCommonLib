@@ -6,7 +6,9 @@
 */
 
 #include "swCommonLib/HierarchicalChunkedFormat/Headers/ChunkHeader.h"
+#include "swCommonLib/HierarchicalChunkedFormat/Chunk.h"
 #include "swCommonLib/HierarchicalChunkedFormat/Internal/AttributeRepr.h"
+#include "swCommonLib/HierarchicalChunkedFormat/Attribute.h"
 
 
 namespace sw
@@ -29,17 +31,28 @@ private:
 
 	Size			m_absolutOffset;	///< Offset from beginning of file.
 
-	ChunkReprWPtr	m_parent;			///< Parent chunk.
+	ChunkRepr*		m_parent;			///< Parent chunk.
 	ChunkReprPtr	m_nextChunk;		///< Next chunk on the same nesting level.
 	ChunkReprPtr	m_childChunk;		///< First child chunk.
 
 	AttributeReprPtr	m_firstAttrib;	///< Attributes list.
 
 public:
-	ChunkRepr( ImplHCF* hcf )
-		: m_hcf( hcf )
-	{}
+	ChunkRepr					( ImplHCF* hcf, ChunkRepr* parent );
 
+
+	Chunk		CreateChunk		();
+	Attribute	AddAttribute	( AttributeType type, const DataPtr data, Size dataSize );
+	bool		Fill			( const DataPtr data, Size dataSize );
+
+	void		AddNextChunk	( ChunkReprPtr& newChunk );
+
+private:
+	bool		CanAddAttribute	() const;
+	bool		CanCreateChunk	() const;
+	bool		CanFillData		() const;
+
+	void		WriteHeader		( Size revertOffset );
 };
 
 
