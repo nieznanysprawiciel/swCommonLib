@@ -49,6 +49,12 @@ TEST_CASE( "HCF - Simple write test" )
 	Chunk rootChunk = hcf.CreateRootChunk();
 	REQUIRE( rootChunk.IsValid() );
 
+
+	// Can't add attribute after root chunk creation.
+	Attribute topAttribute2 = hcf.AddAttribute( ExampleRealFormatHeader() );
+	CHECK( !topAttribute2.IsValid() );
+
+
 	std::string rootChunkName = "rootChunk";
 	Attribute attrib = rootChunk.AddAttribute( AttributeTypeBuiltIn::ChunkName, (const DataPtr)rootChunkName.c_str(), rootChunkName.length() + 1 );
 
@@ -57,8 +63,18 @@ TEST_CASE( "HCF - Simple write test" )
 	Chunk chunk1 = rootChunk.CreateChunk();
 	REQUIRE( chunk1.IsValid() );
 
+	// Can't add attribute after child chunk creation.
+	Attribute attrib2 = rootChunk.AddAttribute( ExampleRealFormatHeader() );
+	CHECK( !attrib2.IsValid() );
+
+
 	Chunk nested1 = chunk1.CreateChunk();
 	REQUIRE( nested1.IsValid() );
+
+	// Can't fille chunk after child chunk creation.
+	bool fillResult = chunk1.Fill( (const DataPtr)writeData.data(), sizeof( int ) * writeData.size() );
+	CHECK( !fillResult );
+
 
 	nested1.Fill( (const DataPtr)writeData.data(), sizeof( int ) * writeData.size() );
 

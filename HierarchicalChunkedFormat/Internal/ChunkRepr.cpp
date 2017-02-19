@@ -150,7 +150,7 @@ bool			ChunkRepr::CanFillData		() const
 		return true;
 
 	// Can't create child chunk if next chunk on the same level already exists.
-	if( m_nextChunk )
+	if( m_childChunk || m_nextChunk )
 		return false;
 
 	return true;

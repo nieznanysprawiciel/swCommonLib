@@ -32,8 +32,7 @@ public:
 
 	/**@brief Create child chunk.*/
 	Chunk		CreateChunk		();
-	/**@brief Adds attribute to list.*/
-	Attribute	AddAttribute	( AttributeType type, const DataPtr data, Size dataSize );
+
 
 	/**@brief Fills chunk with data.
 	You can fill only chunks without children. One filled chunk, can't add children anymore.*/
@@ -41,7 +40,45 @@ public:
 
 	/**@brief Checks if you can use this attribute properly.*/
 	bool		IsValid			() const;
+
+	///@name Attributes manipulation
+	///@{
+	/**@brief Adds attribute and fills it with data.*/
+	Attribute		AddAttribute	( AttributeType type, const DataPtr data, Size dataSize );
+
+	/**@brief Adds attribute and creates content from POD structure.
+	@param[in] type You must provide type of attribute by yourself. Use second spetialization if struct
+	defines attribute type getter.*/
+	template< typename AttributeStruct >
+	Attribute		AddAttribute	( AttributeType type, const AttributeStruct& content );
+
+	/**@brief Adds attribute and creates content from POD structure.
+	Attribute type will be taken from struct. Specialize GetAttributeTypeID template.*/
+	template< typename AttributeStruct >
+	Attribute		AddAttribute	( const AttributeStruct& content );
+	///@}
 };
+
+//====================================================================================//
+//			Implementation	
+//====================================================================================//
+
+
+// ================================ //
+//
+template< typename AttributeStruct >
+inline Attribute			Chunk::AddAttribute	( AttributeType type, const AttributeStruct& content )
+{
+	return m_chunkPtr->AddAttribute( type, (const DataPtr)&content, sizeof( AttributeStruct ) );
+}
+
+// ================================ //
+//
+template< typename AttributeStruct >
+inline Attribute			Chunk::AddAttribute	( const AttributeStruct& content )
+{
+	return AddAttribute( GetAttributeTypeID< AttributeStruct >(), content );
+}
 
 
 }	// sw

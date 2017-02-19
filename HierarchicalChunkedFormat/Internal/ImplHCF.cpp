@@ -111,16 +111,20 @@ Chunk			ImplHCF::CreateRootChunk()
 //
 Attribute		ImplHCF::AddGlobalAttribute	( AttributeType type, const DataPtr data, Size dataSize )
 {
-	Attribute newAttribute = AddAttribute( m_fileAttributes, type, data, dataSize );
+	if( !m_rootChunk )
+	{
+		Attribute newAttribute = AddAttribute( m_fileAttributes, type, data, dataSize );
 
-	// Move offset in file header.
-	Size size = ComputeWholeSize( newAttribute );
-	ReserveMemory( size );
+		// Move offset in file header.
+		Size size = ComputeWholeSize( newAttribute );
+		ReserveMemory( size );
 
-	m_header.RootChunkOffset += size;
-	m_header.FileSize += size;
+		m_header.RootChunkOffset += size;
+		m_header.FileSize += size;
 
-	return newAttribute;
+		return newAttribute;
+	}
+	return Attribute();
 }
 
 // ================================ //
