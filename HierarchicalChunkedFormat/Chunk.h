@@ -69,7 +69,9 @@ public:
 template< typename AttributeStruct >
 inline Attribute			Chunk::AddAttribute	( AttributeType type, const AttributeStruct& content )
 {
-	return m_chunkPtr->AddAttribute( type, (const DataPtr)&content, sizeof( AttributeStruct ) );
+	if( IsValid() )
+		return m_chunkPtr->AddAttribute( type, (const DataPtr)&content, sizeof( AttributeStruct ) );
+	return Attribute( nullptr );
 }
 
 // ================================ //
@@ -77,7 +79,9 @@ inline Attribute			Chunk::AddAttribute	( AttributeType type, const AttributeStru
 template< typename AttributeStruct >
 inline Attribute			Chunk::AddAttribute	( const AttributeStruct& content )
 {
-	return AddAttribute( GetAttributeTypeID< AttributeStruct >(), content );
+	if( IsValid() )
+		return AddAttribute( GetAttributeTypeID< AttributeStruct >(), content );
+	return Attribute( nullptr );
 }
 
 

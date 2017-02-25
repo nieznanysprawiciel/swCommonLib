@@ -34,6 +34,9 @@ public:
 		Indirect
 	};
 
+	const static bool		READ_ONLY		= true;
+	const static bool		READ_WRITE		= false;
+
 private:
 	ImplHCF			m_impl;
 
@@ -44,7 +47,7 @@ public:
 
 ///@name Loading and saving
 ///@{
-	bool			LoadFile		( const filesystem::Path& filePath );
+	bool			LoadFile		( const filesystem::Path& filePath, bool readOnly );
 	bool			Load			( DataPtr data, Size size );
 
 	/**@brief Saves content to file.

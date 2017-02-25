@@ -23,6 +23,7 @@ ImplHCF::ImplHCF()
 	,	m_file( nullptr )
 	,	m_writePtr( 0 )
 	,	m_attributesWritten( false )
+	,	m_fileReadOnly( false )
 {}
 
 // ================================ //
@@ -38,6 +39,17 @@ ImplHCF::~ImplHCF()
 //
 Chunk			ImplHCF::GetRootChunk()
 {
+	if( !m_rootChunk )
+	{
+		if( m_header.RootChunkOffset != 0 )
+		{
+			auto newChunk = MakePtr< ChunkRepr >( this, nullptr, m_header.RootChunkOffset );
+
+			if( newChunk->CheckValidity() )
+				m_rootChunk = newChunk;
+		}
+	}
+
 	return Chunk( m_rootChunk );
 }
 
@@ -54,7 +66,7 @@ bool			ImplHCF::OpenFile	( const filesystem::Path& filePath, bool writeDirect )
 		{
 			ReserveMemory( sizeof( FileHeader ) );
 			m_header.FileSize = sizeof( FileHeader );
-			m_header.RootChunkOffset = m_writePtr;
+			m_header.RootChunkOffset = 0;
 
 			// Write header to file. Header must be modified in future.
 			fwrite( (void*)&m_header, sizeof( FileHeader ), 1, m_file );	// Should check result for safety.
@@ -87,6 +99,31 @@ bool			ImplHCF::WriteFile	( const filesystem::Path& filePath )
 	return false;
 }
 
+// ================================ //
+//
+bool			ImplHCF::LoadFile		( const filesystem::Path& filePath, bool readOnly )
+{
+	m_fileReadOnly = readOnly;
+	m_directWrite = false;
+
+	const char* openMode = nullptr;
+	if( m_fileReadOnly )
+		openMode = "rb";
+	else
+		openMode = "wb";
+
+
+	m_file = fopen( filePath.String().c_str(), openMode );
+	if( m_file != nullptr )
+	{
+		fread( (void*)&m_header, sizeof( FileHeader ), 1, m_file );
+		m_rootChunk = nullptr;
+
+		return true;
+	}
+
+	return false;
+}
 
 // ================================ //
 //
@@ -117,7 +154,7 @@ Attribute		ImplHCF::AddGlobalAttribute	( AttributeType type, const DataPtr data,
 
 		// Move offset in file header.
 		Size size = ComputeWholeSize( newAttribute );
-		ReserveMemory( size );
+		//ReserveMemory( size );
 
 		m_header.RootChunkOffset += size;
 		m_header.FileSize += size;

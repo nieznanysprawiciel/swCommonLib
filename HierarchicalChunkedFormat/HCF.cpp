@@ -24,9 +24,9 @@ namespace sw
 
 // ================================ //
 //
-bool		HCF::LoadFile		( const filesystem::Path& filePath )
+bool		HCF::LoadFile		( const filesystem::Path& filePath, bool readOnly )
 {
-	return false;
+	return m_impl.LoadFile( filePath, readOnly );
 }
 
 // ================================ //

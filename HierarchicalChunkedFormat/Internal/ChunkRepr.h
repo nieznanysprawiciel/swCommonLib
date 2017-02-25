@@ -38,8 +38,10 @@ private:
 	AttributeReprPtr	m_firstAttrib;	///< Attributes list.
 
 public:
+	/// Write only constructor.
 	ChunkRepr					( ImplHCF* hcf, ChunkRepr* parent );
-
+	/// Read constructor.
+	ChunkRepr					( ImplHCF* hcf, ChunkRepr* parent, Size fileOffset );
 
 	Chunk		CreateChunk		();
 	Attribute	AddAttribute	( AttributeType type, const DataPtr data, Size dataSize );
@@ -47,12 +49,16 @@ public:
 
 	void		AddNextChunk	( ChunkReprPtr& newChunk );
 
+
+	bool		CheckValidity	() const;
+
 private:
 	bool		CanAddAttribute	() const;
 	bool		CanCreateChunk	() const;
 	bool		CanFillData		() const;
 
 	void		WriteHeader		( Size revertOffset );
+	void		LoadHeader		( Size revertOffset );
 };
 
 

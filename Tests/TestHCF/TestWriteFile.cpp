@@ -96,3 +96,21 @@ TEST_CASE( "HCF - Simple write test" )
 	CHECK( result );
 }
 
+
+TEST_CASE( "HCF - Simple load test" )
+{
+	// Comparision data.
+	std::vector< int > readData( 2000 );
+	std::iota( readData.begin(), readData.end(), 1 );
+
+	sw::HCF hcf;
+	bool openResult = hcf.LoadFile( "HCF/SimpleReadTest.hcf", sw::HCF::READ_ONLY );
+	REQUIRE( openResult );
+
+	Chunk root = hcf.GetRootChunk();
+	REQUIRE( root.IsValid() );
+
+	//Chunk afterRoot = root.NextChunk();
+	//CHECK_FALSE( afterRoot.IsValid() );
+}
+

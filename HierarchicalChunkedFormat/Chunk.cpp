@@ -22,21 +22,27 @@ Chunk::Chunk		( ChunkReprPtr chunkRepr )
 //
 Chunk			Chunk::CreateChunk		()
 {
-	return m_chunkPtr->CreateChunk();
+	if( IsValid() )
+		return m_chunkPtr->CreateChunk();
+	return Chunk( nullptr );
 }
 
 // ================================ //
 //
 Attribute		Chunk::AddAttribute		( AttributeType type, const DataPtr data, Size dataSize )
 {
-	return m_chunkPtr->AddAttribute( type, data, dataSize );
+	if( IsValid() )
+		return m_chunkPtr->AddAttribute( type, data, dataSize );
+	return Attribute( nullptr );
 }
 
 // ================================ //
 //
 bool			Chunk::Fill				( const DataPtr data, Size dataSize )
 {
-	return m_chunkPtr->Fill( data, dataSize );
+	if( IsValid() )
+		return m_chunkPtr->Fill( data, dataSize );
+	return false;
 }
 
 // ================================ //

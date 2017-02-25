@@ -23,6 +23,16 @@ ChunkRepr::ChunkRepr( ImplHCF* hcf, ChunkRepr* parent )
 		m_absolutOffset = m_hcf->ReserveMemory( sizeof( ChunkHeader ) );
 }
 
+// ================================ //
+//
+ChunkRepr::ChunkRepr( ImplHCF* hcf, ChunkRepr* parent, Size fileOffset )
+	:	m_hcf( hcf )
+	,	m_parent( parent )
+	,	m_absolutOffset( fileOffset )
+{
+	LoadHeader( m_absolutOffset );
+}
+
 
 // ================================ //
 //
@@ -31,6 +41,8 @@ Chunk			ChunkRepr::CreateChunk		()
 	if( CanCreateChunk() )
 	{
 		ChunkReprPtr newChunk = MakePtr< ChunkRepr >( m_hcf, this );
+
+		m_header.HasChildren = true;
 
 		if( m_childChunk )
 			m_childChunk->AddNextChunk( newChunk );
@@ -50,7 +62,7 @@ Attribute		ChunkRepr::AddAttribute		( AttributeType type, const DataPtr data, Si
 	{
 		Attribute newAttribute = m_hcf->AddAttribute( m_firstAttrib, type, data, dataSize );
 
-		m_header.DataOffset += m_hcf->ComputeWholeSize( newAttribute );
+		m_header.DataOffset += (uint32)m_hcf->ComputeWholeSize( newAttribute );
 		m_header.NextChunk += m_hcf->ComputeWholeSize( newAttribute );
 
 		return newAttribute;
@@ -68,7 +80,9 @@ bool			ChunkRepr::Fill				( const DataPtr data, Size dataSize )
 	{
 		if( m_hcf->m_directWrite )
 		{
-			m_header.DataOffset = m_hcf->ReserveMemory( dataSize ) - m_absolutOffset;
+			m_header.DataSize = dataSize;
+			m_header.HasChildren = false;
+			m_header.DataOffset = static_cast< uint32 >( m_hcf->ReserveMemory( dataSize ) - m_absolutOffset );
 
 			auto file = m_hcf->GetFile();
 			if( !file )
@@ -103,6 +117,20 @@ void			ChunkRepr::AddNextChunk		( ChunkReprPtr& newChunk )
 
 		WriteHeader( newChunk->m_absolutOffset );
 	}
+}
+
+// ================================ //
+//
+bool			ChunkRepr::CheckValidity	() const
+{
+	bool valid = true;
+
+	if( !( m_header.ChunkHead[ 0 ] == 'C' &&
+		m_header.ChunkHead[ 1 ] == 'H' && 
+		m_header.ChunkHead[ 2 ] == 'N' ) )
+	valid = false;
+
+	return valid;
 }
 
 
@@ -166,6 +194,19 @@ void			ChunkRepr::WriteHeader		( Size revertOffset )
 
 	fseek( file, (long)m_absolutOffset, SEEK_SET );
 	fwrite( (void*)&m_header, sizeof( ChunkHeader ), 1, file );
+	fseek( file, (long)revertOffset, SEEK_SET );
+}
+
+// ================================ //
+//
+void			ChunkRepr::LoadHeader		( Size revertOffset )
+{
+	auto file = m_hcf->GetFile();
+	if( !file )
+		throw std::runtime_error( "No file opened for reading." );
+
+	fseek( file, (long)m_absolutOffset, SEEK_SET );
+	fread( (void*)&m_header, sizeof( ChunkHeader ), 1, file );
 	fseek( file, (long)revertOffset, SEEK_SET );
 }
 

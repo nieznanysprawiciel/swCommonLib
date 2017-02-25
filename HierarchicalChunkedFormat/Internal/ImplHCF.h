@@ -42,6 +42,7 @@ public:
 
 	bool				m_directWrite			: 1;
 	bool				m_attributesWritten		: 1;
+	bool				m_fileReadOnly			: 1;
 
 protected:
 public:
@@ -54,6 +55,7 @@ public:
 
 	bool			OpenFile		( const filesystem::Path& filePath, bool writeDirect );
 	bool			WriteFile		( const filesystem::Path& filePath );
+	bool			LoadFile		( const filesystem::Path& filePath, bool readOnly );
 
 	Attribute		AddGlobalAttribute	( AttributeType type, const DataPtr data, Size dataSize );
 	Attribute		AddAttribute		( AttributeReprPtr& list, AttributeType type, const DataPtr data, Size dataSize );
