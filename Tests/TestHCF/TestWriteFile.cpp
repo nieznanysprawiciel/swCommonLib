@@ -112,20 +112,24 @@ TEST_CASE( "HCF - Simple load test" )
 
 	Chunk afterRoot = root.NextChunk();
 	CHECK_FALSE( afterRoot.IsValid() );
-
+	
 	CHECK( root.HasChildren() );
+
+	Chunk chunk1 = root.FirstChild();
+	REQUIRE( chunk1.IsValid() );
+	CHECK( chunk1.HasChildren() );
 
 	// Check nested chunks.
 	int numChunks = 0;
 
-	Chunk firstChild = root.FirstChild();
+	Chunk firstChild = chunk1.FirstChild();
 	while( firstChild.IsValid() )
 	{
 		numChunks++;
 
 		CHECK_FALSE( firstChild.HasChildren() );
 		CHECK_FALSE( firstChild.FirstChild().IsValid() );
-		//CHECK( firstChild.ParentChunk() == root );
+		//CHECK( chunk1.ParentChunk() == root );
 
 
 		firstChild = firstChild.NextChunk();

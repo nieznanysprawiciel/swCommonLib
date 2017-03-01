@@ -56,13 +56,13 @@ Chunk			ChunkRepr::CreateChunk		()
 	{
 		ChunkReprPtr newChunk = ChunkRepr::Create( m_hcf, shared_from_this() );
 
-		m_header.HasChildren = true;
-		m_header.DataOffset = static_cast< uint32 >( newChunk->m_absolutOffset - m_absolutOffset );
-
 		if( m_childChunk )
 			m_childChunk->AddNextChunk( newChunk );
 		else
 		{
+			m_header.HasChildren = true;
+			m_header.DataOffset = static_cast< uint32 >( newChunk->m_absolutOffset - m_absolutOffset );
+
 			m_childChunk = newChunk;
 			UpdateHeader();
 		}
@@ -80,9 +80,9 @@ Chunk			ChunkRepr::NextChunk()
 		return Chunk( m_nextChunk );
 
 	// Need to load chunk from file.
-	if( m_header.NextChunk > sizeof( ChunkHeader ) )
+	if( m_header.NextChunk >= sizeof( ChunkHeader ) )
 	{
-		ChunkReprPtr newChunk = ChunkRepr::CreateFromFile( m_hcf, shared_from_this(), m_header.NextChunk );
+		ChunkReprPtr newChunk = ChunkRepr::CreateFromFile( m_hcf, shared_from_this(), m_absolutOffset + m_header.NextChunk );
 		if( newChunk->CheckValidity() )
 			m_nextChunk = newChunk;
 		
@@ -101,9 +101,9 @@ Chunk			ChunkRepr::FirstChild()
 	// Need to load chunk from file.
 	if( m_header.HasChildren )
 	{
-		if( m_header.DataOffset > sizeof( ChunkHeader ) )
+		if( m_header.DataOffset >= sizeof( ChunkHeader ) )
 		{
-			ChunkReprPtr newChunk = ChunkRepr::CreateFromFile( m_hcf, shared_from_this(), m_header.DataOffset );
+			ChunkReprPtr newChunk = ChunkRepr::CreateFromFile( m_hcf, shared_from_this(), m_absolutOffset + m_header.DataOffset );
 			if( newChunk->CheckValidity() )
 				m_nextChunk = newChunk;
 
