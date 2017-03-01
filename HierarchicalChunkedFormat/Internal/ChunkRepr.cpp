@@ -50,13 +50,69 @@ Chunk			ChunkRepr::CreateChunk		()
 		else
 		{
 			m_childChunk = newChunk;
-			Size curPtr = m_hcf->ReserveMemory( 0 );
-			WriteHeader( curPtr );
+			UpdateHeader();
 		}
 
 		return Chunk( newChunk );
 	}
 	return Chunk();
+}
+
+// ================================ //
+//
+Chunk			ChunkRepr::NextChunk()
+{
+	if( m_nextChunk )
+		return Chunk( m_nextChunk );
+
+	// Need to load chunk from file.
+	if( m_header.NextChunk > sizeof( ChunkHeader ) )
+	{
+		ChunkReprPtr newChunk = MakePtr< ChunkRepr >( m_hcf, this, m_header.NextChunk );
+		if( newChunk->CheckValidity() )
+			m_nextChunk = newChunk;
+		
+		return Chunk( m_nextChunk );
+	}
+	return Chunk();
+}
+
+// ================================ //
+//
+Chunk			ChunkRepr::FirstChild()
+{
+	if( m_childChunk )
+		return Chunk( m_childChunk );
+
+	// Need to load chunk from file.
+	if( m_header.HasChildren )
+	{
+		if( m_header.DataOffset > sizeof( ChunkHeader ) )
+		{
+			ChunkReprPtr newChunk = MakePtr< ChunkRepr >( m_hcf, this, m_header.DataOffset );
+			if( newChunk->CheckValidity() )
+				m_nextChunk = newChunk;
+
+			return Chunk( m_nextChunk );
+		}
+	}
+	return Chunk();
+}
+
+// ================================ //
+//
+bool			ChunkRepr::HasChildren()
+{
+	return m_header.HasChildren;
+}
+
+// ================================ //
+//
+Chunk			ChunkRepr::ParentChunk()
+{
+	// Fuck shared_ptrs.
+	//return Chunk( m_parent );
+	return Chunk( nullptr );
 }
 
 // ================================ //
@@ -94,9 +150,7 @@ bool			ChunkRepr::Fill				( const DataPtr data, Size dataSize )
 				throw std::runtime_error( "No file opened for writing." );
 
 			fwrite( (void*)data, dataSize, 1, file );
-
-			Size curPtr = m_hcf->ReserveMemory( 0 );
-			WriteHeader( curPtr );
+			UpdateHeader();
 
 			return true;
 		}
@@ -119,6 +173,7 @@ void			ChunkRepr::AddNextChunk		( ChunkReprPtr& newChunk )
 	{
 		m_nextChunk = newChunk;
 		m_header.NextChunk = newChunk->m_absolutOffset - m_absolutOffset;
+		UpdateHeader();
 	}
 }
 
@@ -211,6 +266,14 @@ void			ChunkRepr::LoadHeader		( Size revertOffset )
 	fseek( file, (long)m_absolutOffset, SEEK_SET );
 	fread( (void*)&m_header, sizeof( ChunkHeader ), 1, file );
 	fseek( file, (long)revertOffset, SEEK_SET );
+}
+
+// ================================ //
+//
+void			ChunkRepr::UpdateHeader		()
+{
+	Size curPtr = m_hcf->ReserveMemory( 0 );
+	WriteHeader( curPtr );
 }
 
 }	// sw

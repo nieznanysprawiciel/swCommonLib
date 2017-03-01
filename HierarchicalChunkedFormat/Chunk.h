@@ -29,10 +29,27 @@ public:
 	explicit		Chunk	( ChunkReprPtr chunkRepr );
 	~Chunk() = default;
 
-
+	///@name Chunks manipulation
+	///@{
 	/**@brief Create child chunk.*/
 	Chunk		CreateChunk		();
 
+	/**@brief Gets next chunk on the same nesting level.
+	@return Returns invalid chunk if there's no next chunk.*/
+	Chunk		NextChunk		();
+
+	/**@brief Gets first child chunk of this chunk.
+	@return Returns invalid chunk if there's no children.*/
+	Chunk		FirstChild		();
+
+	/**@brief Check if you should call FirstChild or AccessData.*/
+	bool		HasChildren		();
+
+	/**@brief Get Chunks parent.
+	@return Returned chunk can be invalid if this chunk is invalid or there's no parent.*/
+	Chunk		ParentChunk		();
+
+	///@}
 
 	/**@brief Fills chunk with data.
 	You can fill only chunks without children. One filled chunk, can't add children anymore.*/

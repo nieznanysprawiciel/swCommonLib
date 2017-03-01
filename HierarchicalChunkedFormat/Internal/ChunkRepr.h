@@ -44,6 +44,23 @@ public:
 	ChunkRepr					( ImplHCF* hcf, ChunkRepr* parent, Size fileOffset );
 
 	Chunk		CreateChunk		();
+
+	/**@brief Gets next chunk on the same nesting level.
+	@return Returns invalid chunk if there's no next chunk.*/
+	Chunk		NextChunk		();
+
+	/**@brief Gets first child chunk of this chunk.
+	@return Returns invalid chunk if there's no children.*/
+	Chunk		FirstChild		();
+
+	/**@brief Check if you should call FirstChild or AccessData.*/
+	bool		HasChildren		();
+
+	/**@brief Get Chunks parent.
+	@return Returned chunk can be invalid if this chunk is invalid or there's no parent.*/
+	Chunk		ParentChunk		();
+
+
 	Attribute	AddAttribute	( AttributeType type, const DataPtr data, Size dataSize );
 	bool		Fill			( const DataPtr data, Size dataSize );
 
@@ -59,6 +76,7 @@ private:
 
 	void		WriteHeader		( Size revertOffset );
 	void		LoadHeader		( Size revertOffset );
+	void		UpdateHeader	();							///< Updates header in file using current info from m_header field.
 };
 
 

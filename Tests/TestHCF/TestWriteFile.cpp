@@ -110,7 +110,27 @@ TEST_CASE( "HCF - Simple load test" )
 	Chunk root = hcf.GetRootChunk();
 	REQUIRE( root.IsValid() );
 
-	//Chunk afterRoot = root.NextChunk();
-	//CHECK_FALSE( afterRoot.IsValid() );
+	Chunk afterRoot = root.NextChunk();
+	CHECK_FALSE( afterRoot.IsValid() );
+
+	CHECK( root.HasChildren() );
+
+	// Check nested chunks.
+	int numChunks = 0;
+
+	Chunk firstChild = root.FirstChild();
+	while( firstChild.IsValid() )
+	{
+		numChunks++;
+
+		CHECK_FALSE( firstChild.HasChildren() );
+		CHECK_FALSE( firstChild.FirstChild().IsValid() );
+		//CHECK( firstChild.ParentChunk() == root );
+
+
+		firstChild = firstChild.NextChunk();
+	}
+
+	CHECK( numChunks == 2 );
 }
 

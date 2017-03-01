@@ -29,6 +29,42 @@ Chunk			Chunk::CreateChunk		()
 
 // ================================ //
 //
+Chunk			Chunk::NextChunk()
+{
+	if( IsValid() )
+		return m_chunkPtr->NextChunk();
+	return Chunk( nullptr );
+}
+
+// ================================ //
+//
+Chunk			Chunk::FirstChild()
+{
+	if( IsValid() )
+		return m_chunkPtr->FirstChild();
+	return Chunk( nullptr );
+}
+
+// ================================ //
+//
+bool			Chunk::HasChildren()
+{
+	if( IsValid() )
+		return m_chunkPtr->HasChildren();
+	return false;
+}
+
+// ================================ //
+//
+Chunk			Chunk::ParentChunk()
+{
+	if( IsValid() )
+		return m_chunkPtr->ParentChunk();
+	return Chunk( nullptr );
+}
+
+// ================================ //
+//
 Attribute		Chunk::AddAttribute		( AttributeType type, const DataPtr data, Size dataSize )
 {
 	if( IsValid() )
