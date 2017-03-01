@@ -14,7 +14,7 @@ namespace sw
 
 // ================================ //
 //
-ChunkRepr::ChunkRepr( ImplHCF* hcf, ChunkRepr* parent )
+ChunkRepr::ChunkRepr( ImplHCF* hcf, ChunkReprPtr& parent )
 	:	m_hcf( hcf )
 	,	m_parent( parent )
 	,	m_absolutOffset( 0 )
@@ -25,12 +25,26 @@ ChunkRepr::ChunkRepr( ImplHCF* hcf, ChunkRepr* parent )
 
 // ================================ //
 //
-ChunkRepr::ChunkRepr( ImplHCF* hcf, ChunkRepr* parent, Size fileOffset )
+ChunkRepr::ChunkRepr( ImplHCF* hcf, ChunkReprPtr& parent, Size fileOffset )
 	:	m_hcf( hcf )
 	,	m_parent( parent )
 	,	m_absolutOffset( fileOffset )
 {
 	LoadHeader( m_absolutOffset );
+}
+
+// ================================ //
+//
+ChunkReprPtr	ChunkRepr::CreateFromFile	( ImplHCF* hcf, ChunkReprPtr parent, Size fileOffset )
+{
+	return std::shared_ptr< ChunkRepr >( new ChunkRepr( hcf, parent, fileOffset ) );
+}
+
+// ================================ //
+//
+ChunkReprPtr	ChunkRepr::Create			( ImplHCF* hcf, ChunkReprPtr parent )
+{
+	return std::shared_ptr< ChunkRepr >( new ChunkRepr( hcf, parent ) );
 }
 
 
@@ -40,7 +54,7 @@ Chunk			ChunkRepr::CreateChunk		()
 {
 	if( CanCreateChunk() )
 	{
-		ChunkReprPtr newChunk = MakePtr< ChunkRepr >( m_hcf, this );
+		ChunkReprPtr newChunk = ChunkRepr::Create( m_hcf, shared_from_this() );
 
 		m_header.HasChildren = true;
 		m_header.DataOffset = static_cast< uint32 >( newChunk->m_absolutOffset - m_absolutOffset );
@@ -68,7 +82,7 @@ Chunk			ChunkRepr::NextChunk()
 	// Need to load chunk from file.
 	if( m_header.NextChunk > sizeof( ChunkHeader ) )
 	{
-		ChunkReprPtr newChunk = MakePtr< ChunkRepr >( m_hcf, this, m_header.NextChunk );
+		ChunkReprPtr newChunk = ChunkRepr::CreateFromFile( m_hcf, shared_from_this(), m_header.NextChunk );
 		if( newChunk->CheckValidity() )
 			m_nextChunk = newChunk;
 		
@@ -89,7 +103,7 @@ Chunk			ChunkRepr::FirstChild()
 	{
 		if( m_header.DataOffset > sizeof( ChunkHeader ) )
 		{
-			ChunkReprPtr newChunk = MakePtr< ChunkRepr >( m_hcf, this, m_header.DataOffset );
+			ChunkReprPtr newChunk = ChunkRepr::CreateFromFile( m_hcf, shared_from_this(), m_header.DataOffset );
 			if( newChunk->CheckValidity() )
 				m_nextChunk = newChunk;
 
@@ -110,9 +124,7 @@ bool			ChunkRepr::HasChildren()
 //
 Chunk			ChunkRepr::ParentChunk()
 {
-	// Fuck shared_ptrs.
-	//return Chunk( m_parent );
-	return Chunk( nullptr );
+	return Chunk( m_parent.lock() );
 }
 
 // ================================ //

@@ -43,7 +43,7 @@ Chunk			ImplHCF::GetRootChunk()
 	{
 		if( m_header.RootChunkOffset != 0 )
 		{
-			auto newChunk = MakePtr< ChunkRepr >( this, nullptr, m_header.RootChunkOffset );
+			auto newChunk = ChunkRepr::CreateFromFile( this, nullptr, m_header.RootChunkOffset );
 
 			if( newChunk->CheckValidity() )
 				m_rootChunk = newChunk;
@@ -137,7 +137,7 @@ Chunk			ImplHCF::CreateRootChunk()
 			m_attributesWritten = true;
 		}
 
-		m_rootChunk = MakePtr< ChunkRepr >( this, nullptr );
+		m_rootChunk = ChunkRepr::Create( this, nullptr );
 		return Chunk( m_rootChunk );
 	}
 	else

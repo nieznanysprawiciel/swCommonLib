@@ -22,7 +22,7 @@ class ImplHCF;
 
 
 /**@brief */
-class ChunkRepr
+class ChunkRepr : public std::enable_shared_from_this< ChunkRepr >
 {
 private:
 	ImplHCF*		m_hcf;
@@ -31,17 +31,22 @@ private:
 
 	Size			m_absolutOffset;	///< Offset from beginning of file.
 
-	ChunkRepr*		m_parent;			///< Parent chunk.
+	ChunkReprWPtr	m_parent;			///< Parent chunk.
 	ChunkReprPtr	m_nextChunk;		///< Next chunk on the same nesting level.
 	ChunkReprPtr	m_childChunk;		///< First child chunk.
 
 	AttributeReprPtr	m_firstAttrib;	///< Attributes list.
 
-public:
+private:
 	/// Write only constructor.
-	ChunkRepr					( ImplHCF* hcf, ChunkRepr* parent );
+	ChunkRepr					( ImplHCF* hcf, ChunkReprPtr& parent );
 	/// Read constructor.
-	ChunkRepr					( ImplHCF* hcf, ChunkRepr* parent, Size fileOffset );
+	ChunkRepr					( ImplHCF* hcf, ChunkReprPtr& parent, Size fileOffset );
+
+public:
+	static ChunkReprPtr		CreateFromFile	( ImplHCF* hcf, ChunkReprPtr parent, Size fileOffset );
+	static ChunkReprPtr		Create			( ImplHCF* hcf, ChunkReprPtr parent );
+
 
 	Chunk		CreateChunk		();
 
