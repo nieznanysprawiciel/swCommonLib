@@ -43,11 +43,16 @@ Chunk			ChunkRepr::CreateChunk		()
 		ChunkReprPtr newChunk = MakePtr< ChunkRepr >( m_hcf, this );
 
 		m_header.HasChildren = true;
+		m_header.DataOffset = static_cast< uint32 >( newChunk->m_absolutOffset - m_absolutOffset );
 
 		if( m_childChunk )
 			m_childChunk->AddNextChunk( newChunk );
 		else
+		{
 			m_childChunk = newChunk;
+			Size curPtr = m_hcf->ReserveMemory( 0 );
+			WriteHeader( curPtr );
+		}
 
 		return Chunk( newChunk );
 	}
@@ -62,8 +67,8 @@ Attribute		ChunkRepr::AddAttribute		( AttributeType type, const DataPtr data, Si
 	{
 		Attribute newAttribute = m_hcf->AddAttribute( m_firstAttrib, type, data, dataSize );
 
-		m_header.DataOffset += (uint32)m_hcf->ComputeWholeSize( newAttribute );
-		m_header.NextChunk += m_hcf->ComputeWholeSize( newAttribute );
+		//m_header.DataOffset += (uint32)m_hcf->ComputeWholeSize( newAttribute );
+		//m_header.NextChunk += m_hcf->ComputeWholeSize( newAttribute );
 
 		return newAttribute;
 	}
@@ -114,8 +119,6 @@ void			ChunkRepr::AddNextChunk		( ChunkReprPtr& newChunk )
 	{
 		m_nextChunk = newChunk;
 		m_header.NextChunk = newChunk->m_absolutOffset - m_absolutOffset;
-
-		WriteHeader( newChunk->m_absolutOffset );
 	}
 }
 

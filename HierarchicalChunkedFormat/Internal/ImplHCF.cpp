@@ -148,15 +148,12 @@ Chunk			ImplHCF::CreateRootChunk()
 //
 Attribute		ImplHCF::AddGlobalAttribute	( AttributeType type, const DataPtr data, Size dataSize )
 {
-	if( !m_rootChunk )
+	if( CanAddGlobalAttrib() )
 	{
 		Attribute newAttribute = AddAttribute( m_fileAttributes, type, data, dataSize );
 
 		// Move offset in file header.
 		Size size = ComputeWholeSize( newAttribute );
-		//ReserveMemory( size );
-
-		m_header.RootChunkOffset += size;
 		m_header.FileSize += size;
 
 		return newAttribute;
@@ -197,6 +194,16 @@ Size			ImplHCF::ReserveMemory		( Size dataSize )
 	m_writePtr += dataSize;
 	
 	return curPtr;
+}
+
+// ================================ //
+//
+bool			ImplHCF::CanAddGlobalAttrib	() const
+{
+	if( !m_rootChunk &&
+		!m_attributesWritten )
+		return true;
+	return false;
 }
 
 }	// sw

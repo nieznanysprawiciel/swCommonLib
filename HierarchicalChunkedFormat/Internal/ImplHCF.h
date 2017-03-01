@@ -66,6 +66,8 @@ public:
 
 	Size			ReserveMemory		( Size dataSize );
 	FILE*			GetFile				()					{ return m_file; }
+
+	bool			CanAddGlobalAttrib	() const;
 };
 
 
