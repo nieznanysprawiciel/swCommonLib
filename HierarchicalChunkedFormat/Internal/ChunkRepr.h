@@ -37,6 +37,8 @@ private:
 
 	AttributeReprPtr	m_firstAttrib;	///< Attributes list.
 
+	DataUPack		m_data;				///< Contains chunk's data.
+
 private:
 	/// Write only constructor.
 	ChunkRepr					( ImplHCF* hcf, ChunkReprPtr& parent );
@@ -59,7 +61,7 @@ public:
 	Chunk		FirstChild		();
 
 	/**@brief Check if you should call FirstChild or AccessData.*/
-	bool		HasChildren		();
+	bool		HasChildren		() const;
 
 	/**@brief Get Chunks parent.
 	@return Returned chunk can be invalid if this chunk is invalid or there's no parent.*/
@@ -68,6 +70,12 @@ public:
 
 	Attribute	AddAttribute	( AttributeType type, const DataPtr data, Size dataSize );
 	bool		Fill			( const DataPtr data, Size dataSize );
+
+	/**@brief Returns chunk's data and transfers ownership to caller.*/
+	DataUPack	StealData		();
+
+	/**@brief Returns chunk's data.*/
+	DataPack	AccessData		();
 
 	void		AddNextChunk	( ChunkReprPtr& newChunk );
 
@@ -78,10 +86,13 @@ private:
 	bool		CanAddAttribute	() const;
 	bool		CanCreateChunk	() const;
 	bool		CanFillData		() const;
+	bool		CanLoadData		() const;
 
 	void		WriteHeader		( Size revertOffset );
 	void		LoadHeader		( Size revertOffset );
 	void		UpdateHeader	();							///< Updates header in file using current info from m_header field.
+
+	DataUPack	LoadData		();
 };
 
 

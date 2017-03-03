@@ -33,9 +33,15 @@ sw::AttributeType	GetAttributeTypeID< ExampleRealFormatHeader >() { return 0x100
 
 using namespace sw;
 
+
+const Size DataElementsCount = 2000;
+typedef int DataElementType;
+
+
+
 TEST_CASE( "HCF - Simple write test" )
 {
-	std::vector< int > writeData( 2000 );
+	std::vector< DataElementType > writeData( DataElementsCount );
 	std::iota( writeData.begin(), writeData.end(), 1 );
 
 	sw::HCF hcf;
@@ -100,7 +106,7 @@ TEST_CASE( "HCF - Simple write test" )
 TEST_CASE( "HCF - Simple load test" )
 {
 	// Comparision data.
-	std::vector< int > readData( 2000 );
+	std::vector< DataElementType > readData( DataElementsCount );
 	std::iota( readData.begin(), readData.end(), 1 );
 
 	sw::HCF hcf;
@@ -122,17 +128,31 @@ TEST_CASE( "HCF - Simple load test" )
 	// Check nested chunks.
 	int numChunks = 0;
 
-	Chunk firstChild = chunk1.FirstChild();
-	while( firstChild.IsValid() )
+	Chunk childIter = chunk1.FirstChild();
+	while( childIter.IsValid() )
 	{
 		numChunks++;
 
-		CHECK_FALSE( firstChild.HasChildren() );
-		CHECK_FALSE( firstChild.FirstChild().IsValid() );
-		//CHECK( chunk1.ParentChunk() == root );
+		CHECK_FALSE( childIter.HasChildren() );
+		CHECK_FALSE( childIter.FirstChild().IsValid() );
+		CHECK( chunk1.ParentChunk() == root );
 
+		DataPack data = childIter.AccessData();
+		
+		CHECK( data.DataSize == DataElementsCount * sizeof( DataElementType ) );
+		REQUIRE( data.Data );
 
-		firstChild = firstChild.NextChunk();
+		bool equal = true;
+		DataElementType* typedData = (DataElementType*)data.Data;
+		// Compare loaded data with reference
+		for( size_t i = 0; i < DataElementsCount; i++ )
+		{
+			if( readData[ i ] != typedData[ i ] )
+				equal = false;
+		}
+		CHECK( equal );
+
+		childIter = childIter.NextChunk();
 	}
 
 	CHECK( numChunks == 2 );

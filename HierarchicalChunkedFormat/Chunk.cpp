@@ -83,9 +83,36 @@ bool			Chunk::Fill				( const DataPtr data, Size dataSize )
 
 // ================================ //
 //
+DataUPack		Chunk::StealData()
+{
+	if( IsValid() )
+		return m_chunkPtr->StealData();
+	return DataUPack();
+}
+
+// ================================ //
+//
+DataPack		Chunk::AccessData()
+{
+	if( IsValid() )
+		return m_chunkPtr->AccessData();
+	return DataPack();
+}
+
+// ================================ //
+//
 bool			Chunk::IsValid() const
 {
 	if( m_chunkPtr )
+		return true;
+	return false;
+}
+
+// ================================ //
+//
+bool			Chunk::operator==	( Chunk other ) const
+{
+	if( m_chunkPtr == other.m_chunkPtr )
 		return true;
 	return false;
 }

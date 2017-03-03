@@ -51,12 +51,22 @@ public:
 
 	///@}
 
+	///@name Data access
+	///@{
+
 	/**@brief Fills chunk with data.
 	You can fill only chunks without children. One filled chunk, can't add children anymore.*/
 	bool		Fill			( const DataPtr data, Size dataSize );
 
-	/**@brief Checks if you can use this attribute properly.*/
-	bool		IsValid			() const;
+	/**@brief Returns chunk's data and transfers ownership to caller.*/
+	DataUPack	StealData		();
+
+	/**@brief Returns chunk's data.
+	@return Returns memory pointer and it's size but you are not owner of this pointer.
+	You can use @ref Chunk::StealMamory function instead.*/
+	DataPack	AccessData		();
+
+	///@}
 
 	///@name Attributes manipulation
 	///@{
@@ -74,6 +84,11 @@ public:
 	template< typename AttributeStruct >
 	Attribute		AddAttribute	( const AttributeStruct& content );
 	///@}
+
+	/**@brief Checks if you can use this attribute properly.*/
+	bool		IsValid			() const;
+
+	bool		operator==		( Chunk other ) const;
 };
 
 //====================================================================================//

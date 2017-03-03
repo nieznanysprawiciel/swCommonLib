@@ -115,7 +115,7 @@ Chunk			ChunkRepr::FirstChild()
 
 // ================================ //
 //
-bool			ChunkRepr::HasChildren()
+bool			ChunkRepr::HasChildren() const
 {
 	return m_header.HasChildren;
 }
@@ -173,6 +173,34 @@ bool			ChunkRepr::Fill				( const DataPtr data, Size dataSize )
 	}
 
 	return false;
+}
+
+// ================================ //
+//
+DataUPack		ChunkRepr::StealData()
+{
+	if( !m_data.Data )
+	{
+		m_data = LoadData();
+	}
+
+	return std::move( m_data );
+}
+
+// ================================ //
+//
+DataPack		ChunkRepr::AccessData()
+{
+	if( !m_data.Data )
+	{
+		m_data = LoadData();
+	}
+	
+	DataPack data;
+	data.Data = m_data.Data.get();
+	data.DataSize = m_data.DataSize;
+
+	return data;
 }
 
 // ================================ //
@@ -256,6 +284,28 @@ bool			ChunkRepr::CanFillData		() const
 
 // ================================ //
 //
+bool			ChunkRepr::CanLoadData		() const
+{
+	// If chunk has children, can't have data.
+	if( HasChildren() )
+		return false;
+
+	// We can't load data if we're in write only mode.
+	if( m_hcf->m_directWrite )
+		return false;
+
+	// If DataOffset must point to free memory space. If it's smaller than ChunkHeader,
+	// probably there's no data in this chunk.
+	if( m_header.DataOffset < sizeof( ChunkHeader ) )
+		return false;
+
+	if( m_header.DataSize > 0 )
+		return true;
+}
+
+
+// ================================ //
+//
 void			ChunkRepr::WriteHeader		( Size revertOffset )
 {
 	auto file = m_hcf->GetFile();
@@ -286,6 +336,33 @@ void			ChunkRepr::UpdateHeader		()
 {
 	Size curPtr = m_hcf->ReserveMemory( 0 );
 	WriteHeader( curPtr );
+}
+
+// ================================ //
+//
+DataUPack		ChunkRepr::LoadData()
+{
+	if( CanLoadData() )
+	{
+		DataUPack dataPack;
+		dataPack.Data = DataUPtr( new DataUnderlayingType[ m_header.DataSize ] );
+		dataPack.DataSize = m_header.DataSize;
+
+		auto file = m_hcf->GetFile();
+		if( !file )
+			throw std::runtime_error( "No file opened for reading." );
+
+		DataPtr dstPtr = dataPack.Data.get();
+		//Size revertOffset = m_hcf->ReserveMemory( 0 );	// Remember current read pointer
+
+		fseek( file, (long)m_absolutOffset + m_header.DataOffset, SEEK_SET );
+		fread( dstPtr, dataPack.DataSize, 1, file );
+		//fseek( file, (long)revertOffset, SEEK_SET );		// Set previous file position.
+
+		return std::move( dataPack );
+	}
+
+	return DataUPack();
 }
 
 }	// sw
