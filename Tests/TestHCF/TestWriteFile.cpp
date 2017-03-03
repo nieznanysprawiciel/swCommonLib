@@ -139,18 +139,38 @@ TEST_CASE( "HCF - Simple load test" )
 
 		DataPack data = childIter.AccessData();
 		
+		// Check content.
 		CHECK( data.DataSize == DataElementsCount * sizeof( DataElementType ) );
 		REQUIRE( data.Data );
 
+		//  This should contain the same pointer.
+		DataPack dataSecondCopy = childIter.AccessData();
+		CHECK( dataSecondCopy.DataSize == DataElementsCount * sizeof( DataElementType ) );
+		CHECK( dataSecondCopy.Data == data.Data );
+
+
+		// Compare loaded data with reference
 		bool equal = true;
 		DataElementType* typedData = (DataElementType*)data.Data;
-		// Compare loaded data with reference
+		
 		for( size_t i = 0; i < DataElementsCount; i++ )
 		{
 			if( readData[ i ] != typedData[ i ] )
 				equal = false;
 		}
 		CHECK( equal );
+
+		// Steal data from chunk
+		DataUPack dataOwner = childIter.StealData();
+		CHECK( dataOwner.DataSize == DataElementsCount * sizeof( DataElementType ) );
+		CHECK( dataOwner.Data );
+
+		// Call access data for the second time to prove, that previously data has been stolen properly.
+		DataPack dataThird = childIter.AccessData();
+		CHECK( dataThird.DataSize == DataElementsCount * sizeof( DataElementType ) );
+		CHECK( dataThird.Data != data.Data );
+		CHECK( dataThird.Data != dataSecondCopy.Data );
+
 
 		childIter = childIter.NextChunk();
 	}
