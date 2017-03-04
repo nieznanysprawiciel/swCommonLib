@@ -14,7 +14,7 @@ Definicje s¹ stworzone w celu ³atwiejszego u¿ytku. Biblioteka standardowa defini
 typ int8_t, który jest zamieniany na int8.
 */
 
-/**@defgroup CommonFiles Common
+/**@defgroup CommonLibrary Common Library
 @ingroup ModulesStructure
 @brief Czêsto u¿ywane deklaracje i inne funkcjonalnoœci.*/
 

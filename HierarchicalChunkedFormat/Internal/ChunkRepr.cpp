@@ -299,8 +299,10 @@ bool			ChunkRepr::CanLoadData		() const
 	if( m_header.DataOffset < sizeof( ChunkHeader ) )
 		return false;
 
-	if( m_header.DataSize > 0 )
-		return true;
+	if( m_header.DataSize == 0 )
+		return false;
+
+	return true;
 }
 
 

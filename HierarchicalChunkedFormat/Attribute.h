@@ -16,7 +16,8 @@ class AttributeRepr;
 DEFINE_PTR_TYPE( AttributeRepr );
 
 
-/**@brief */
+/**@brief 
+@ingroup HierarchicalChunkedFormat*/
 class Attribute
 {
 private:

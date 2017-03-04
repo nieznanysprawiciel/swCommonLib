@@ -23,7 +23,14 @@ namespace sw
 class ImplHCF;
 
 
-/**@brief Main class for loading and writing HCF files.*/
+/**@defgroup HierarchicalChunkedFormat Hierarchical Chunked Format
+@ingroup CommonLibrary
+@brief Skeleton for writing and reading binary data from file in hierarchical maner.*/
+
+
+
+/**@brief Main class for loading and writing HCF files.
+@ingroup HierarchicalChunkedFormat*/
 class HCF
 {
 public:

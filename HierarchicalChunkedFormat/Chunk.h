@@ -16,7 +16,11 @@ class ChunkRepr;
 DEFINE_PTR_TYPE( ChunkRepr );
 
 
-/**@brief */
+/**@brief Represents memory chunk in file.
+
+Chunk can consist of nested chunks or it can contain data.
+
+@ingroup HierarchicalChunkedFormat*/
 class Chunk
 {
 private:
