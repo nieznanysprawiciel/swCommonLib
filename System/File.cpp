@@ -6,6 +6,10 @@
 
 #include "File.h"
 
+#include <fstream>
+#include <sstream>
+#include <string>
+
 
 // ================================ //
 //
@@ -52,4 +56,15 @@ bool		filesystem::File::Move		( const Path& newPath )
 bool		filesystem::File::Copy		( const Path& newPath )
 {
 	return experimental::copy_file( m_filePath.GetStdPath(), newPath.GetStdPath() );
+}
+
+// ================================ //
+//
+std::string			filesystem::File::Load		( const Path& newPath )
+{
+	std::ifstream file( newPath.String() );
+	std::stringstream buffer;
+	buffer << file.rdbuf();
+
+	return buffer.str();
 }

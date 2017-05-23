@@ -14,6 +14,9 @@ wiêc nie da siê tego zaimplementowac w pe³ni przenoœnie.
 #include <string>
 #include <codecvt>
 
+#include "swCommonLib/Common/Converters.h"
+
+
 namespace filesystem
 {
 
@@ -27,8 +30,8 @@ private:
 public:
 
 	explicit				Path			();
-							Path			( const Path& path );
-							Path			( Path&& path );
+							Path			( const Path& path )			= default;
+							Path			( Path&& path )					= default;
 							Path			( const std::wstring& path );
 
 	template< class Source >
@@ -45,6 +48,7 @@ public:
 	friend Path				operator/		( const Path& path1, const Path& path2 );
 
 	std::string				String			() const;
+	std::wstring			WString			() const;
 
 
 	std::string				GetFileName		() const;
@@ -78,19 +82,19 @@ inline		Path::Path		( const Source& source )
 	:	m_path( experimental::path( source ) )
 {}
 
-/**@brief */
-inline		Path::Path()
-{}
-
-/**@brief */
-inline		Path::Path		( const Path& path )
-	:	m_path( path.m_path )
-{}
-
-/**@brief */
-inline		Path::Path		( Path&& path )
-	:	m_path( std::move( path.m_path ) )
-{}
+///**@brief */
+//inline		Path::Path()
+//{}
+//
+///**@brief */
+//inline		Path::Path		( const Path& path )
+//	:	m_path( path.m_path )
+//{}
+//
+///**@brief */
+//inline		Path::Path		( Path&& path )
+//	:	m_path( std::move( path.m_path ) )
+//{}
 
 /**@brief */
 inline		Path::Path		( const std::wstring& path )
@@ -139,6 +143,12 @@ inline bool		Path::Compare		( const Path& path1, const Path& path2 )
 inline std::string		Path::String() const
 {
 	return m_path.string();
+}
+
+/**@brief */
+inline std::wstring		Path::WString() const
+{
+	return Convert::FromString< std::wstring >( m_path.string(), std::wstring() );
 }
 
 /**@brief */

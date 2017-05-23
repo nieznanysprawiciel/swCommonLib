@@ -116,5 +116,8 @@
     <ClInclude Include="..\..\..\Common\Multithreading\ThreadsLatch.h">
       <Filter>Common\Multithreading</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Multithreading\QueueMT.h">
+      <Filter>Common\Multithreading</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

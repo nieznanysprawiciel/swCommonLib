@@ -34,6 +34,7 @@
     <ClInclude Include="..\..\..\Common\EngineObject.h" />
     <ClInclude Include="..\..\..\Common\MemoryChunk.h" />
     <ClInclude Include="..\..\..\Common\MemoryLeaks.h" />
+    <ClInclude Include="..\..\..\Common\Multithreading\QueueMT.h" />
     <ClInclude Include="..\..\..\Common\Multithreading\Semaphore.h" />
     <ClInclude Include="..\..\..\Common\Multithreading\SpinLock.h" />
     <ClInclude Include="..\..\..\Common\Multithreading\SpinLockedQueue.h" />
