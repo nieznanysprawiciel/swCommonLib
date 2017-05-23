@@ -82,19 +82,9 @@ inline		Path::Path		( const Source& source )
 	:	m_path( experimental::path( source ) )
 {}
 
-///**@brief */
-//inline		Path::Path()
-//{}
-//
-///**@brief */
-//inline		Path::Path		( const Path& path )
-//	:	m_path( path.m_path )
-//{}
-//
-///**@brief */
-//inline		Path::Path		( Path&& path )
-//	:	m_path( std::move( path.m_path ) )
-//{}
+/**@brief */
+inline		Path::Path()
+{}
 
 /**@brief */
 inline		Path::Path		( const std::wstring& path )

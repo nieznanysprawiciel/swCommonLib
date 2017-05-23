@@ -19,6 +19,9 @@
     <Filter Include="Common\Multithreading">
       <UniqueIdentifier>{d2e3373f-b49e-4611-a93b-e727e7ceeb9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\Logging">
+      <UniqueIdentifier>{c846e1e2-4296-4192-b226-3874455dc193}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Common\Converters.cpp">
@@ -117,6 +120,12 @@
       <Filter>Common\Multithreading</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Common\Multithreading\QueueMT.h">
+      <Filter>Common\Multithreading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Logging\Logger.h">
+      <Filter>Common\Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Multithreading\ReaderWriterLock.h">
       <Filter>Common\Multithreading</Filter>
     </ClInclude>
   </ItemGroup>
