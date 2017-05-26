@@ -43,6 +43,10 @@ public:
 
 	Path&					operator/=		( const Path& other );
 	bool					operator==		( const Path& other ) const;
+	bool					operator<		( const Path& other ) const;
+	bool					operator<=		( const Path& other ) const;
+	bool					operator>		( const Path& other ) const;
+	bool					operator>=		( const Path& other ) const;
 	bool					Compare			( const Path& path1, const Path& path2 );
 
 	friend Path				operator/		( const Path& path1, const Path& path2 );
@@ -121,6 +125,34 @@ inline Path&	Path::operator/=	( const Path& other )
 inline bool		Path::operator==	( const Path& other ) const
 {
 	return experimental::equivalent( m_path, other.m_path );
+}
+
+// ================================ //
+//
+inline bool		Path::operator<		( const Path& other ) const
+{
+	return m_path < other.m_path;
+}
+
+// ================================ //
+//
+inline bool		Path::operator<=	( const Path& other ) const
+{
+	return m_path <= other.m_path;
+}
+
+// ================================ //
+//
+inline bool		Path::operator>		( const Path& other ) const
+{
+	return m_path > other.m_path;
+}
+
+// ================================ //
+//
+inline bool		Path::operator>=	( const Path& other ) const
+{
+	return m_path >= other.m_path;
 }
 
 /**@brief Porównuje œcie¿ki. Przed porównaniem œcie¿ki s¹ normalizowane.*/

@@ -7,9 +7,10 @@
 które maj¹ prywatne destruktory.
 */
 
+class ResourceObject;
 template <class TYPE> class ResourceContainer;
-
-
+template< class ResourceType > class ResourceContainer;
+template<> class ResourceContainer< ResourceObject >;
 
 
 /**
@@ -37,6 +38,7 @@ template<typename class_type> class ObjectDeleterKey
 	friend class ResourceManager;
 	friend class AssetsManager;
 	friend class ResourceContainer<class_type>;
+	friend class ResourceContainer< ResourceObject >;
 	friend class RenderTargetObject;
 private:
 	ObjectDeleterKey() = default;						///<Tylko klasa zaprzyjaŸniona mo¿e stworzyæ obiekt.
