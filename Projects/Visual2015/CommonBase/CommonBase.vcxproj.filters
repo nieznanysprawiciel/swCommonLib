@@ -128,5 +128,8 @@
     <ClInclude Include="..\..\..\Common\Multithreading\ReaderWriterLock.h">
       <Filter>Common\Multithreading</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Multithreading\UniqueLock.h">
+      <Filter>Common\Multithreading</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
