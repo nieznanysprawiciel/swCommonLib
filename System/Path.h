@@ -43,6 +43,7 @@ public:
 
 	Path&					operator/=		( const Path& other );
 	bool					operator==		( const Path& other ) const;
+	bool					operator!=		( const Path& other ) const;
 	bool					operator<		( const Path& other ) const;
 	bool					operator<=		( const Path& other ) const;
 	bool					operator>		( const Path& other ) const;
@@ -80,17 +81,20 @@ public:
 };
 
 
-/**@brief */
+// ================================ //
+//
 template< class Source >
 inline		Path::Path		( const Source& source )
 	:	m_path( experimental::path( source ) )
 {}
 
-/**@brief */
+// ================================ //
+//
 inline		Path::Path()
 {}
 
-/**@brief */
+// ================================ //
+//
 inline		Path::Path		( const std::wstring& path )
 {
 	typedef std::codecvt_utf8< wchar_t > ConvertType;
@@ -100,31 +104,42 @@ inline		Path::Path		( const std::wstring& path )
 	m_path = experimental::path( pathStr );
 }
 
-/**@brief */
+// ================================ //
+//
 inline Path&	Path::operator=		( const Path& other )
 {
 	m_path = other.m_path;
 	return *this;
 }
 
-/**@brief */
+// ================================ //
+//
 inline Path&	Path::operator=		( Path&& other )
 {
 	m_path = std::move( other.m_path );
 	return *this;
 }
 
-/**@brief */
+// ================================ //
+//
 inline Path&	Path::operator/=	( const Path& other )
 {
 	m_path /= other.m_path;
 	return *this;
 }
 
-/**@brief */
+// ================================ //
+//
 inline bool		Path::operator==	( const Path& other ) const
 {
-	return experimental::equivalent( m_path, other.m_path );
+	return m_path == other.m_path;
+}
+
+// ================================ //
+//
+inline bool		Path::operator!=	( const Path& other ) const
+{
+	return m_path != other.m_path;
 }
 
 // ================================ //
@@ -155,7 +170,8 @@ inline bool		Path::operator>=	( const Path& other ) const
 	return m_path >= other.m_path;
 }
 
-/**@brief Porównuje œcie¿ki. Przed porównaniem œcie¿ki s¹ normalizowane.*/
+/**@brief Porównuje œcie¿ki. Przed porównaniem œcie¿ki s¹ normalizowane.
+Paths must exist on file system.*/
 inline bool		Path::Compare		( const Path& path1, const Path& path2 )
 {
 	return experimental::equivalent( path1.m_path, path2.m_path );
