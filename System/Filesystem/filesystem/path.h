@@ -30,7 +30,7 @@ NAMESPACE_BEGIN(filesystem)
  * dependency until boost::filesystem is integrated into the standard template
  * library at some point in the future.
  */
-class path {
+class path_impl {
 public:
     enum path_type {
         windows_path = 0,
@@ -42,22 +42,22 @@ public:
 #endif
     };
 
-    path() : m_type(native_path), m_absolute(false) { }
+    path_impl() : m_type(native_path), m_absolute(false) { }
 
-    path(const path &path)
+    path_impl(const path_impl &path)
         : m_type(path.m_type), m_path(path.m_path), m_absolute(path.m_absolute) {}
 
-    path(path &&path)
+    path_impl(path_impl &&path)
         : m_type(path.m_type), m_path(std::move(path.m_path)),
           m_absolute(path.m_absolute) {}
 
-    path(const char *string) { set(string); }
+    path_impl(const char *string) { set(string); }
 
-    path(const std::string &string) { set(string); }
+    path_impl(const std::string &string) { set(string); }
 
 #if defined(_WIN32)
-    path(const std::wstring &wstring) { set(wstring); }
-    path(const wchar_t *wstring) { set(wstring); }
+    path_impl(const std::wstring &wstring) { set(wstring); }
+    path_impl(const wchar_t *wstring) { set(wstring); }
 #endif
 
     size_t length() const { return m_path.size(); }
@@ -66,7 +66,7 @@ public:
 
     bool is_absolute() const { return m_absolute; }
 
-	path make_absolute() const;
+	path_impl make_absolute() const;
 
 	bool exists() const;
 
@@ -91,8 +91,8 @@ public:
         return last;
     }
 
-    path parent_path() const {
-        path result;
+    path_impl parent_path() const {
+        path_impl result;
         result.m_absolute = m_absolute;
 
         if (m_path.empty()) {
@@ -106,13 +106,13 @@ public:
         return result;
     }
 
-    path operator/(const path &other) const {
+    path_impl operator/(const path_impl &other) const {
         if (other.m_absolute)
             throw std::runtime_error("path::operator/(): expected a relative path!");
         if (m_type != other.m_type)
             throw std::runtime_error("path::operator/(): expected a path of the same type!");
 
-        path result(*this);
+        path_impl result(*this);
 
         for (size_t i=0; i<other.m_path.size(); ++i)
             result.m_path.push_back(other.m_path[i]);
@@ -150,14 +150,14 @@ public:
         }
     }
 
-    path &operator=(const path &path) {
+    path_impl &operator=(const path_impl &path) {
         m_type = path.m_type;
         m_path = path.m_path;
         m_absolute = path.m_absolute;
         return *this;
     }
 
-    path &operator=(path &&path) {
+    path_impl &operator=(path_impl &&path) {
         if (this != &path) {
             m_type = path.m_type;
             m_path = std::move(path.m_path);
@@ -166,7 +166,7 @@ public:
         return *this;
     }
 
-    friend std::ostream &operator<<(std::ostream &os, const path &path) {
+    friend std::ostream &operator<<(std::ostream &os, const path_impl &path) {
         os << path.str();
         return os;
     }
@@ -175,16 +175,16 @@ public:
 
 	bool resize_file( size_t target_length );
 
-	static path getcwd();
+	static path_impl getcwd();
 
 #if defined(_WIN32)
 	std::wstring wstr( path_type type = native_path ) const;
 	void set( const std::wstring &wstring, path_type type = native_path );
-    path &operator=(const std::wstring &str) { set(str); return *this; }
+    path_impl &operator=(const std::wstring &str) { set(str); return *this; }
 #endif
 
-    bool operator==(const path &p) const { return p.m_path == m_path; }
-    bool operator!=(const path &p) const { return p.m_path != m_path; }
+    bool operator==(const path_impl &p) const { return p.m_path == m_path; }
+    bool operator!=(const path_impl &p) const { return p.m_path != m_path; }
 
 protected:
     static std::vector<std::string> tokenize(const std::string &string, const std::string &delim) {
@@ -209,6 +209,6 @@ protected:
     bool m_absolute;
 };
 
-bool create_directory( const path& p );
+bool create_directory( const path_impl& p );
 
 NAMESPACE_END(filesystem)

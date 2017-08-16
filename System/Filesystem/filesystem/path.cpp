@@ -23,7 +23,7 @@ NAMESPACE_BEGIN(filesystem)
 
 // ================================ //
 //
-path		path::make_absolute() const
+path_impl		path_impl::make_absolute() const
 {
 #if !defined(_WIN32)
 	char temp[ PATH_MAX ];
@@ -35,14 +35,14 @@ path		path::make_absolute() const
 	DWORD length = GetFullPathNameW( value.c_str(), MAX_PATH, &out[ 0 ], NULL );
 	if( length == 0 )
 		throw std::runtime_error( "Internal error in realpath(): " + std::to_string( GetLastError() ) );
-	return path( out.substr( 0, length ) );
+	return path_impl( out.substr( 0, length ) );
 #endif
 }
 
 
 // ================================ //
 //
-bool		path::exists() const
+bool		path_impl::exists() const
 {
 #if defined(_WIN32)
 	return GetFileAttributesW( wstr().c_str() ) != INVALID_FILE_ATTRIBUTES;
@@ -55,7 +55,7 @@ bool		path::exists() const
 
 // ================================ //
 //
-size_t			path::file_size() const
+size_t			path_impl::file_size() const
 {
 #if defined(_WIN32)
 	struct _stati64 sb;
@@ -72,7 +72,7 @@ size_t			path::file_size() const
 
 // ================================ //
 //
-bool			path::is_directory() const
+bool			path_impl::is_directory() const
 {
 #if defined(_WIN32)
 	DWORD result = GetFileAttributesW( wstr().c_str() );
@@ -90,7 +90,7 @@ bool			path::is_directory() const
 
 // ================================ //
 //
-bool			path::is_file() const
+bool			path_impl::is_file() const
 {
 #if defined(_WIN32)
 	DWORD attr = GetFileAttributesW( wstr().c_str() );
@@ -106,7 +106,7 @@ bool			path::is_file() const
 
 // ================================ //
 //
-bool		path::remove_file()
+bool		path_impl::remove_file()
 {
 #if !defined(_WIN32)
 	return std::remove( str().c_str() ) == 0;
@@ -118,7 +118,7 @@ bool		path::remove_file()
 
 // ================================ //
 //
-bool			path::resize_file( size_t target_length )
+bool			path_impl::resize_file( size_t target_length )
 {
 #if !defined(_WIN32)
 	return ::truncate( str().c_str(), (off_t)target_length ) == 0;
@@ -146,7 +146,7 @@ bool			path::resize_file( size_t target_length )
 
 // ================================ //
 //
-path			path::getcwd()
+path_impl			path_impl::getcwd()
 {
 #if !defined(_WIN32)
 	char temp[ PATH_MAX ];
@@ -157,13 +157,13 @@ path			path::getcwd()
 	std::wstring temp( MAX_PATH, '\0' );
 	if( !_wgetcwd( &temp[ 0 ], MAX_PATH ) )
 		throw std::runtime_error( "Internal error in getcwd(): " + std::to_string( GetLastError() ) );
-	return path( temp.c_str() );
+	return path_impl( temp.c_str() );
 #endif
 }
 
 // ================================ //
 //
-std::wstring path::wstr( path_type type ) const
+std::wstring path_impl::wstr( path_type type ) const
 {
 	std::string temp = str( type );
 	int size = MultiByteToWideChar( CP_UTF8, 0, &temp[ 0 ], (int)temp.size(), NULL, 0 );
@@ -175,7 +175,7 @@ std::wstring path::wstr( path_type type ) const
 
 // ================================ //
 //
-void path::set( const std::wstring & wstring, path_type type )
+void path_impl::set( const std::wstring & wstring, path_type type )
 {
 	std::string string;
 	if( !wstring.empty() )
@@ -193,7 +193,7 @@ void path::set( const std::wstring & wstring, path_type type )
 
 // ================================ //
 //
-bool create_directory( const path & p )
+bool create_directory( const path_impl & p )
 {
 #if defined(_WIN32)
 	return CreateDirectoryW( p.wstr().c_str(), NULL ) != 0;

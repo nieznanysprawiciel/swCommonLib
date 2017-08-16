@@ -22,11 +22,11 @@ NAMESPACE_BEGIN(filesystem)
  */
 class resolver {
 public:
-    typedef std::vector<path>::iterator iterator;
-    typedef std::vector<path>::const_iterator const_iterator;
+    typedef std::vector<path_impl>::iterator iterator;
+    typedef std::vector<path_impl>::const_iterator const_iterator;
 
     resolver() {
-        m_paths.push_back(path::getcwd());
+        m_paths.push_back(path_impl::getcwd());
     }
 
     size_t size() const { return m_paths.size(); }
@@ -39,14 +39,14 @@ public:
 
     void erase(iterator it) { m_paths.erase(it); }
 
-    void prepend(const path &path) { m_paths.insert(m_paths.begin(), path); }
-    void append(const path &path) { m_paths.push_back(path); }
-    const path &operator[](size_t index) const { return m_paths[index]; }
-    path &operator[](size_t index) { return m_paths[index]; }
+    void prepend(const path_impl &path) { m_paths.insert(m_paths.begin(), path); }
+    void append(const path_impl &path) { m_paths.push_back(path); }
+    const path_impl &operator[](size_t index) const { return m_paths[index]; }
+    path_impl &operator[](size_t index) { return m_paths[index]; }
 
-    path resolve(const path &value) const {
+    path_impl resolve(const path_impl &value) const {
         for (const_iterator it = m_paths.begin(); it != m_paths.end(); ++it) {
-            path combined = *it / value;
+            path_impl combined = *it / value;
             if (combined.exists())
                 return combined;
         }
@@ -66,7 +66,7 @@ public:
     }
 
 private:
-    std::vector<path> m_paths;
+    std::vector<path_impl> m_paths;
 };
 
 NAMESPACE_END(filesystem)

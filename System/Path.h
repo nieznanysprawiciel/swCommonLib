@@ -10,7 +10,8 @@ Na razie implementacje dla ró¿nych kompilatorów umieszczaj¹ tê klasê w ró¿nych n
 wiêc nie da siê tego zaimplementowac w pe³ni przenoœnie.
 */
 
-#include <filesystem>
+//#include <filesystem>
+#include "Filesystem/filesystem/path.h"
 #include <string>
 #include <codecvt>
 
@@ -20,12 +21,12 @@ wiêc nie da siê tego zaimplementowac w pe³ni przenoœnie.
 namespace filesystem
 {
 
-namespace experimental = std::tr2::sys;
+//namespace experimental = std::tr2::sys;
 
 class Path
 {
 private:
-	experimental::path		m_path;
+	path_impl				m_path;
 
 public:
 
@@ -48,7 +49,7 @@ public:
 	bool					operator<=		( const Path& other ) const;
 	bool					operator>		( const Path& other ) const;
 	bool					operator>=		( const Path& other ) const;
-	bool					Compare			( const Path& path1, const Path& path2 );
+	//bool					Compare			( const Path& path1, const Path& path2 );
 
 	friend Path				operator/		( const Path& path1, const Path& path2 );
 
@@ -64,7 +65,7 @@ public:
 	void					Normalize		();
 
 
-	bool					HasRoot			() const;
+	//bool					HasRoot			() const;
 	bool					HasFileName		() const;
 	bool					HasExtension	() const;
 
@@ -77,7 +78,7 @@ public:
 	static Path				WorkingDirectory();
 
 public:
-	const experimental::path&		GetStdPath		() const;
+	//const experimental::path&		GetStdPath		() const;
 };
 
 
@@ -85,7 +86,7 @@ public:
 //
 template< class Source >
 inline		Path::Path		( const Source& source )
-	:	m_path( experimental::path( source ) )
+	:	m_path( path_impl( source ) )
 {}
 
 // ================================ //
@@ -97,11 +98,11 @@ inline		Path::Path()
 //
 inline		Path::Path		( const std::wstring& path )
 {
-	typedef std::codecvt_utf8< wchar_t > ConvertType;
-	std::wstring_convert< ConvertType, wchar_t > converter;
-	auto pathStr = converter.to_bytes( path );
+	//typedef std::codecvt_utf8< wchar_t > ConvertType;
+	//std::wstring_convert< ConvertType, wchar_t > converter;
+	//auto pathStr = converter.to_bytes( path );
 
-	m_path = experimental::path( pathStr );
+	m_path = path_impl( path );
 }
 
 // ================================ //
@@ -124,7 +125,7 @@ inline Path&	Path::operator=		( Path&& other )
 //
 inline Path&	Path::operator/=	( const Path& other )
 {
-	m_path /= other.m_path;
+	m_path = m_path / other.m_path;
 	return *this;
 }
 
@@ -146,59 +147,59 @@ inline bool		Path::operator!=	( const Path& other ) const
 //
 inline bool		Path::operator<		( const Path& other ) const
 {
-	return m_path < other.m_path;
+	return m_path.str() < other.m_path.str();
 }
 
 // ================================ //
 //
 inline bool		Path::operator<=	( const Path& other ) const
 {
-	return m_path <= other.m_path;
+	return m_path.str() <= other.m_path.str();
 }
 
 // ================================ //
 //
 inline bool		Path::operator>		( const Path& other ) const
 {
-	return m_path > other.m_path;
+	return m_path.str() > other.m_path.str();
 }
 
 // ================================ //
 //
 inline bool		Path::operator>=	( const Path& other ) const
 {
-	return m_path >= other.m_path;
+	return m_path.str() >= other.m_path.str();
 }
 
-/**@brief Porównuje œcie¿ki. Przed porównaniem œcie¿ki s¹ normalizowane.
-Paths must exist on file system.*/
-inline bool		Path::Compare		( const Path& path1, const Path& path2 )
-{
-	return experimental::equivalent( path1.m_path, path2.m_path );
-}
+///**@brief Porównuje œcie¿ki. Przed porównaniem œcie¿ki s¹ normalizowane.
+//Paths must exist on file system.*/
+//inline bool		Path::Compare		( const Path& path1, const Path& path2 )
+//{
+//	return experimental::equivalent( path1.m_path, path2.m_path );
+//}
 
 /**@brief */
 inline std::string		Path::String() const
 {
-	return m_path.string();
+	return m_path.str();
 }
 
 /**@brief */
 inline std::wstring		Path::WString() const
 {
-	return Convert::FromString< std::wstring >( m_path.string(), std::wstring() );
+	return m_path.wstr();
 }
 
 /**@brief */
 inline std::string		Path::GetFileName() const
 {
-	return m_path.filename().string();
+	return m_path.filename();
 }
 
 /**@brief */
 inline std::string		Path::GetExtension() const
 {
-	return m_path.extension().string();
+	return m_path.extension();
 }
 
 /**@brief */
@@ -210,7 +211,7 @@ inline Path				Path::GetParent() const
 /**@brief */
 inline Path				Path::GetDirectory() const
 {
-	if( m_path.has_filename() )
+	if( HasFileName() )
 		return GetParent();
 	else
 		return Path( *this );
@@ -223,16 +224,16 @@ inline void				Path::Normalize()
 	//m_path = experimental::complete( m_path );
 }
 
-/**@brief */
-inline bool				Path::HasRoot() const
-{
-	return m_path.has_root_directory();
-}
+///**@brief */
+//inline bool				Path::HasRoot() const
+//{
+//	return m_path.has_root_directory();
+//}
 
 /**@brief */
 inline bool				Path::HasFileName() const
 {
-	return m_path.has_filename();
+	return !m_path.str().empty();
 }
 
 /**@brief */
@@ -250,20 +251,20 @@ inline bool				Path::IsRelative() const
 /**@brief */
 inline bool				Path::IsAbsolut() const
 {
-	return m_path.has_root_name() && m_path.has_root_directory();
+	return m_path.is_absolute();
 }
 
 /**@brief Check if file exists.*/
 inline bool				Path::Exists() const
 {
-	return experimental::exists( m_path );
+	return m_path.exists();
 }
 
 // ================================ //
 //
 inline Path				Path::WorkingDirectory()
 {
-	return experimental::current_path();
+	return path_impl::getcwd();
 }
 
 /**@brief */
@@ -274,11 +275,11 @@ inline Path				operator/( const Path& path1, const Path& path2 )
 	return newPath;
 }
 
-/**@brief Returns standard library path.
-Use only if you must.*/
-inline const experimental::path&	Path::GetStdPath() const
-{
-	return m_path;
-}
+///**@brief Returns standard library path.
+//Use only if you must.*/
+//inline const experimental::path&	Path::GetStdPath() const
+//{
+//	return m_path;
+//}
 
 }
