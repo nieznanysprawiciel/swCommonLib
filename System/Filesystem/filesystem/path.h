@@ -81,7 +81,12 @@ public:
         size_t pos = name.find_last_of(".");
         if (pos == std::string::npos)
             return "";
-        return name.substr(pos+1);
+
+		// Ignore special cases
+		if( name == "." || name == ".." )
+			return "";
+
+        return name.substr(pos);
     }
 
     std::string filename() const {
