@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultithreadingTest", "Proje
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileSystemTest", "Projects\Visual2015\Tests\FileSystemTest\FileSystemTest.vcxproj", "{C9F57866-06E8-4D03-963A-879AAC77EE8E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerializationTest", "Projects\Visual2015\Tests\Serialization\Serialization\SerializationTest.vcxproj", "{36978EBD-9F8D-4A5D-98B7-4664EF50F807}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -155,6 +157,14 @@ Global
 		{C9F57866-06E8-4D03-963A-879AAC77EE8E}.Release|x64.Build.0 = Release|x64
 		{C9F57866-06E8-4D03-963A-879AAC77EE8E}.Release|x86.ActiveCfg = Release|Win32
 		{C9F57866-06E8-4D03-963A-879AAC77EE8E}.Release|x86.Build.0 = Release|Win32
+		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Debug|x64.ActiveCfg = Debug|x64
+		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Debug|x64.Build.0 = Debug|x64
+		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Debug|x86.ActiveCfg = Debug|Win32
+		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Debug|x86.Build.0 = Debug|Win32
+		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Release|x64.ActiveCfg = Release|x64
+		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Release|x64.Build.0 = Release|x64
+		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Release|x86.ActiveCfg = Release|Win32
+		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,5 +180,6 @@ Global
 		{CC1DC1E6-26BB-43D3-A156-4C60DC92DDB5} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
 		{22C79F18-F938-4A9E-A4B0-B77E8F87429D} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
 		{C9F57866-06E8-4D03-963A-879AAC77EE8E} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
+		{36978EBD-9F8D-4A5D-98B7-4664EF50F807} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
 	EndGlobalSection
 EndGlobal
