@@ -13,7 +13,7 @@ namespace filesystem
 {
 
 
-/**@brief */
+/**@brief Directory manipulation.*/
 class Dir
 {
 private:
