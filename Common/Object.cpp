@@ -6,7 +6,6 @@
 
 
 #include "swCommonLib/Common/Object.h"
-#include "swCommonLib/Serialization/PropertySerialization/Serialization.h"
 
 
 
