@@ -25,6 +25,9 @@
     <Filter Include="System\Filesystem">
       <UniqueIdentifier>{8a21dd59-2a45-46e5-b3ec-17912109b0cf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\Exceptions">
+      <UniqueIdentifier>{1d235bb2-b3b8-46d7-bc00-c5300c1fcb32}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Common\Converters.cpp">
@@ -145,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\System\Filesystem\filesystem\resolver.h">
       <Filter>System\Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Exceptions\Nullable.h">
+      <Filter>Common\Exceptions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
