@@ -21,11 +21,15 @@ namespace sw
 template< typename ContentType >
 class Nullable
 {
+public:
+
+	typedef std::exception_ptr ErrorType;
+
 protected:
     union
     {
         ContentType			Content;
-        std::exception_ptr	Error;
+        ErrorType			Error;
     };
 
     bool					m_isValid;
@@ -35,17 +39,18 @@ public:
     explicit                Nullable			();
                             Nullable			( ContentType content );
 							Nullable			( const ContentType& content );
-                            Nullable			( const std::exception_ptr& error );
+                            Nullable			( const ErrorType& error );
 							Nullable			( const std::string& error );
                             Nullable			( const Nullable< ContentType > & that );
                             ~Nullable			();
 
     bool                    IsValid             ();
     std::string             GetErrorReason      ();
-    std::exception_ptr		GetError            ();
+    ErrorType		GetError            ();
 
-    bool                    operator==          ( const ContentType & that );
-    bool                    operator!=          ( const ContentType & that );
+    bool						operator==          ( const ContentType & that );
+    bool						operator!=          ( const ContentType & that );
+	Nullable< ContentType >&	operator=			( const Nullable< ContentType > & that );
 
     const ContentType &				Get			() const;
     operator const ContentType &				() const;
@@ -55,7 +60,7 @@ public:
 
 public:
 
-    static Nullable			FromError           ( const std::exception_ptr& error );
+    static Nullable			FromError           ( const ErrorType& error );
     static Nullable			FromError           ( const std::string& reason );
     static Nullable			FromError           ();
 };
@@ -83,21 +88,21 @@ inline Nullable< ContentType >::Nullable			( ContentType content )
 // ================================ //
 //
 template< typename ContentType >
-inline Nullable< ContentType >::Nullable	( const ContentType& content )
+inline Nullable< ContentType >::Nullable			( const ContentType& content )
 	: m_isValid( true ), Content( content ) 
 {}
 
 // ================================ //
 //
 template< typename ContentType >
-inline Nullable< ContentType >::Nullable			( const std::exception_ptr & error ) 
+inline Nullable< ContentType >::Nullable			( const ErrorType & error ) 
     : m_isValid( false ), Error( error )
 {}
 
 // ================================ //
 //
 template< typename ContentType >
-inline Nullable< ContentType >::Nullable	( const std::string& error )
+inline Nullable< ContentType >::Nullable			( const std::string& error )
 	: m_isValid( false ), Error( std::make_shared< std::runtime_error >( error ) )
 {}
 
@@ -110,14 +115,14 @@ inline Nullable< ContentType >::Nullable			( const Nullable< ContentType > & tha
     if( m_isValid ) 
         new( &Content ) ContentType( that.Content ); 
     else 
-        new( &Error ) std::exception_ptr( that.Error ); 
+        new( &Error ) ErrorType( that.Error ); 
 }
 
 // ================================ //
 //
 template< typename ContentType >
 inline Nullable< ContentType >::~Nullable       () 
-{ 
+{
     if( m_isValid ) 
         Content.~ContentType(); 
     else 
@@ -143,7 +148,7 @@ inline std::string				Nullable< ContentType >::GetErrorReason  ()
 // ================================ //
 //
 template< typename ContentType >
-inline std::exception_ptr		Nullable< ContentType >::GetError ()
+inline typename Nullable< ContentType >::ErrorType		Nullable< ContentType >::GetError ()
 {
     if( m_isValid )
         assert( false ); // FIXME: error handling(?)
@@ -164,6 +169,26 @@ template< typename ContentType >
 inline bool						Nullable< ContentType >::operator!=      ( const ContentType & that ) 
 { 
     return !( *this == that ); 
+}
+
+// ================================ //
+//
+template< typename ContentType >
+Nullable< ContentType >&		Nullable< ContentType >::operator=		( const Nullable< ContentType > & that )
+{
+    if( m_isValid ) 
+        Content.~ContentType(); 
+    else 
+        Error.~ErrorType();
+
+	m_isValid = that.m_isValid;
+
+    if( m_isValid ) 
+        new( &Content ) ContentType( that.Content ); 
+    else 
+        new( &Error ) ErrorType( that.Error ); 
+
+	return *this;
 }
 
 // ================================ //
@@ -207,7 +232,7 @@ inline Nullable< ContentType >::operator ContentType &				()
 //====================================================================================//
 
 template< typename ContentType >
-inline Nullable< ContentType >     Nullable< ContentType >::FromError       ( const std::exception_ptr& error ) 
+inline Nullable< ContentType >     Nullable< ContentType >::FromError       ( const ErrorType& error ) 
 { 
     Nullable< ContentType > ret; 
     ret.Error = error; 
