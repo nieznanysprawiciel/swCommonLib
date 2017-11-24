@@ -206,8 +206,8 @@ inline const ContentType &		Nullable< ContentType >::Get          () const
 template< typename ContentType >
 inline ContentType &			Nullable< ContentType >::Get          () 
 { 
-    if( !m_isValid ) 
-        assert( false );  // FIXME: error handling(?)
+	if( !m_isValid )
+		std::rethrow_exception( Error );
     return Content; 
 }
 
