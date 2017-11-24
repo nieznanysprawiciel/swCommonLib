@@ -37,7 +37,7 @@ protected:
 public:
 
     explicit                Nullable			();
-                            Nullable			( ContentType content );
+                            Nullable			( ContentType&& content );
 							Nullable			( const ContentType& content );
                             Nullable			( const ErrorType& error );
 							Nullable			( const std::string& error );
@@ -46,7 +46,7 @@ public:
 
     bool                    IsValid             ();
     std::string             GetErrorReason      ();
-    ErrorType		GetError            ();
+    ErrorType				GetError            ();
 
     bool						operator==          ( const ContentType & that );
     bool						operator!=          ( const ContentType & that );
@@ -81,8 +81,8 @@ inline Nullable< ContentType >::Nullable        ()
 // ================================ //
 //
 template< typename ContentType >
-inline Nullable< ContentType >::Nullable			( ContentType content ) 
-    : m_isValid( true ), Content( content ) 
+inline Nullable< ContentType >::Nullable			( ContentType&& content ) 
+    : m_isValid( true ), Content( std::move( content ) ) 
 {}
 
 // ================================ //
