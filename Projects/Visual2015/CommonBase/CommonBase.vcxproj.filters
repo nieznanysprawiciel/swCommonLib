@@ -149,6 +149,9 @@
     <ClInclude Include="..\..\..\Common\Exceptions\Nullable.h">
       <Filter>Common\Exceptions</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Common\Exceptions\Exception.h">
+      <Filter>Common\Exceptions</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\Common\Object.h">
       <Filter>Common</Filter>
     </ClInclude>
