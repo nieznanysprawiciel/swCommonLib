@@ -72,6 +72,9 @@ std::pair< rttr::variant, rttr::property >		Properties::GetProperty		( Object* o
 //
 std::pair< rttr::variant, rttr::property >		Properties::GetProperty		( rttr::variant object, const std::string& propertyPath, Size offset, char separator )
 {
+	if( propertyPath.empty() )
+		return std::make_pair( object, TypeID::get< rttr::detail::invalid_type >().get_property( "" ) );
+
 	TypeID realType = GetRealType( object );
 
 	Size propertyEnd = propertyPath.find_first_of( separator, offset );
