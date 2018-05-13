@@ -17,24 +17,27 @@
 namespace sw
 {
 
+const int cArraySize = 4;
 
 // ================================ //
 //
-class ArrayContainer : public EngineObject
+class StaticArrayContainer : public EngineObject
 {
 	RTTR_ENABLE( EngineObject );
 	RTTR_REGISTRATION_FRIEND
 public:
 
-	std::vector< StructWithSimpleTypes >		StructsVec;
+	StructWithSimpleTypes		StructsVec[ cArraySize ];
 
 protected:
 public:
-	explicit		ArrayContainer		();
-	~ArrayContainer	() = default;
+	explicit		StaticArrayContainer		();
+	~StaticArrayContainer	() = default;
 
 	void			ArraysSet1			();
 	void			ArraysSet2			();
+
+	bool			Compare				( const StaticArrayContainer& other );
 };
 
 //====================================================================================//
@@ -43,48 +46,60 @@ public:
 
 // ================================ //
 //
-inline ArrayContainer::ArrayContainer()
+inline StaticArrayContainer::StaticArrayContainer()
 {
 	ArraysSet1();
 }
 
 // ================================ //
 //
-inline void			ArrayContainer::ArraysSet1()
+inline void			StaticArrayContainer::ArraysSet1()
 {
 	StructWithSimpleTypes content;
 
-	StructsVec.clear();
-
 	content.FillWithDataset1();
-	StructsVec.push_back( content );
+	StructsVec[ 0 ] = content;
 
 	content.FillWithDataset2();
-	StructsVec.push_back( content );
+	StructsVec[ 1 ] = content;
 
 	content.FillWithDataset3();
-	StructsVec.push_back( content );
+	StructsVec[ 2 ] = content;
+
+	content.FillWithDataset3();
+	StructsVec[ 3 ] = content;
 }
 
 // ================================ //
 //
-inline void			ArrayContainer::ArraysSet2()
+inline void			StaticArrayContainer::ArraysSet2()
 {
 	StructWithSimpleTypes content;
 
-	StructsVec.clear();
-
 	content.FillWithDataset3();
-	StructsVec.push_back( content );
-
-	content.FillWithDataset2();
-	StructsVec.push_back( content );
+	StructsVec[ 0 ] = content;
 
 	content.FillWithDataset1();
-	StructsVec.push_back( content );
+	StructsVec[ 1 ] = content;
 
-	content.FillWithDataset4();
-	StructsVec.push_back( content );
+	content.FillWithDataset2();
+	StructsVec[ 2 ] = content;
+
+	content.FillWithDataset2();
+	StructsVec[ 3 ] = content;
+}
+
+// ================================ //
+//
+inline bool			StaticArrayContainer::Compare	( const StaticArrayContainer& other )
+{
+	for( int i = 0; i < cArraySize; ++i )
+	{
+		if( StructsVec[ i ] != other.StructsVec[ i ] )
+			return false;
+	}
+
+	return true;
 }
 
 

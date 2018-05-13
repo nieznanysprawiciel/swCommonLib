@@ -181,6 +181,13 @@ inline bool		operator==		( const StructWithSimpleTypes& struct1, const StructWit
 	return true;
 }
 
+// ================================ //
+//
+inline bool		operator!=		( const StructWithSimpleTypes& struct1, const StructWithSimpleTypes& struct2 )
+{
+	return !( struct1 == struct2 );
+}
+
 }	// sw
 
 

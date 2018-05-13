@@ -9,6 +9,8 @@
 #include "BaseObject.h"
 #include "StringContainer.h"
 #include "Arrays/ArrayContainer.h"
+#include "Arrays/StaticArrayContainer.h"
+#include "Arrays/StaticArrayContainer_Readonly.h"
 
 #include "swCommonLib/Common/RTTR.h"
 
@@ -45,6 +47,12 @@ RTTR_REGISTRATION
 
 	rttr::registration::class_< sw::ArrayContainer >( "ArrayContainer" )
 		.property( "StructsVec", &sw::ArrayContainer::StructsVec ) BIND_AS_REF;
+
+	rttr::registration::class_< sw::StaticArrayContainer >( "StaticArrayContainer" )
+		.property( "StructsVec", &sw::StaticArrayContainer::StructsVec );
+
+	rttr::registration::class_< sw::StaticArrayContainer_Readonly >( "StaticArrayContainer_Readonly" )
+		.property_readonly( "StructsVec", &sw::StaticArrayContainer_Readonly::StructsVec ) BIND_AS_REF;
 }
 
 
