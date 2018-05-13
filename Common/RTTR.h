@@ -16,6 +16,7 @@
 #include "swCommonLib/Reflection/src/rttr/enumeration.h"
 #include "swCommonLib/Reflection/src/rttr/registration.h"
 #include "swCommonLib/Reflection/src/rttr/wrapper_mapper.h"
+#include "swCommonLib/Reflection/src/rttr/registration_friend.h"
 
 
 
