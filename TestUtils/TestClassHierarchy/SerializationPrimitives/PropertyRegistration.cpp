@@ -46,3 +46,12 @@ RTTR_REGISTRATION
 	rttr::registration::class_< sw::ArrayContainer >( "ArrayContainer" )
 		.property( "StructsVec", &sw::ArrayContainer::StructsVec ) BIND_AS_REF;
 }
+
+
+// ================================ //
+// Add this function to pull registration code into library.
+int			sw::LinkPrimitivesRegistration()
+{
+	return 0;
+}
+

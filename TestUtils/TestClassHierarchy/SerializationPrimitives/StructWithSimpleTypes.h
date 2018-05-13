@@ -14,6 +14,12 @@ namespace sw
 
 // ================================ //
 //
+int		LinkPrimitivesRegistration	();
+
+
+
+// ================================ //
+//
 struct StructWithSimpleTypes
 {
 	double		DoubleField;
