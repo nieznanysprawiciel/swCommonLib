@@ -37,6 +37,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileSystemTest", "Projects\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerializationTest", "Projects\Visual2015\Tests\Serialization\Serialization\SerializationTest.vcxproj", "{36978EBD-9F8D-4A5D-98B7-4664EF50F807}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestsUtils", "TestsUtils", "{CC085143-1800-42AB-B98B-7BE05D700B8B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestClassHierarchy", "Projects\Visual2015\TestClassHierarchy\TestClassHierarchy.vcxproj", "{33DB1307-8EDB-4ABD-B861-39A58D37B489}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -165,6 +169,14 @@ Global
 		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Release|x64.Build.0 = Release|x64
 		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Release|x86.ActiveCfg = Release|Win32
 		{36978EBD-9F8D-4A5D-98B7-4664EF50F807}.Release|x86.Build.0 = Release|Win32
+		{33DB1307-8EDB-4ABD-B861-39A58D37B489}.Debug|x64.ActiveCfg = Debug|x64
+		{33DB1307-8EDB-4ABD-B861-39A58D37B489}.Debug|x64.Build.0 = Debug|x64
+		{33DB1307-8EDB-4ABD-B861-39A58D37B489}.Debug|x86.ActiveCfg = Debug|Win32
+		{33DB1307-8EDB-4ABD-B861-39A58D37B489}.Debug|x86.Build.0 = Debug|Win32
+		{33DB1307-8EDB-4ABD-B861-39A58D37B489}.Release|x64.ActiveCfg = Release|x64
+		{33DB1307-8EDB-4ABD-B861-39A58D37B489}.Release|x64.Build.0 = Release|x64
+		{33DB1307-8EDB-4ABD-B861-39A58D37B489}.Release|x86.ActiveCfg = Release|Win32
+		{33DB1307-8EDB-4ABD-B861-39A58D37B489}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -181,5 +193,6 @@ Global
 		{22C79F18-F938-4A9E-A4B0-B77E8F87429D} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
 		{C9F57866-06E8-4D03-963A-879AAC77EE8E} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
 		{36978EBD-9F8D-4A5D-98B7-4664EF50F807} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
+		{33DB1307-8EDB-4ABD-B861-39A58D37B489} = {CC085143-1800-42AB-B98B-7BE05D700B8B}
 	EndGlobalSection
 EndGlobal
