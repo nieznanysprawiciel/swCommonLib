@@ -8,7 +8,7 @@
 #include "StructWithSimpleTypes.h"
 #include "BaseObject.h"
 #include "StringContainer.h"
-#include "ArrayContainer.h"
+#include "Arrays/ArrayContainer.h"
 
 #include "swCommonLib/Common/RTTR.h"
 
