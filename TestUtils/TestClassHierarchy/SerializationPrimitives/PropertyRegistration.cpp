@@ -12,12 +12,25 @@
 #include "Arrays/StaticArrayContainer.h"
 #include "Arrays/StaticArrayContainer_Readonly.h"
 
+#include "Enums/TriStateEnum.h"
+#include "Enums/TriStateObject.h"
+
 #include "swCommonLib/Common/RTTR.h"
 
 
 
 RTTR_REGISTRATION
 {
+
+	rttr::registration::enumeration< sw::TriStateEnum >( "TriStateEnum" )
+		(
+		  rttr::value( "Down",      sw::TriStateEnum::Down ),
+		  rttr::value( "Middle",    sw::TriStateEnum::Middle ),
+		  rttr::value( "Up",		sw::TriStateEnum::Up )
+		 );
+
+	rttr::registration::class_< sw::TriStateObject >( "TriStateObject" )
+	.property( "State", &sw::TriStateObject::State );
 
 	rttr::registration::class_< sw::StructWithSimpleTypes >( "StructWithSimpleTypes" )
 		.property( "DoubleField", &sw::StructWithSimpleTypes::DoubleField )
