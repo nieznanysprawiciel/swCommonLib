@@ -15,6 +15,9 @@
 #include "Enums/TriStateEnum.h"
 #include "Enums/TriStateObject.h"
 
+#include "Structs/StructAsRefContainer.h"
+#include "Structs/StructAsPtrContainer.h"
+
 #include "swCommonLib/Common/RTTR.h"
 
 
@@ -30,7 +33,13 @@ RTTR_REGISTRATION
 		 );
 
 	rttr::registration::class_< sw::TriStateObject >( "TriStateObject" )
-	.property( "State", &sw::TriStateObject::State );
+		.property( "State", &sw::TriStateObject::State );
+
+	rttr::registration::class_< sw::StructAsRefContainer >( "StructAsRefContainer" )
+		.property( "SimpleStruct", &sw::StructAsRefContainer::SimpleStruct ) BIND_AS_REF;
+
+	rttr::registration::class_< sw::StructAsPtrContainer >( "StructAsPtrContainer" )
+		.property( "SimpleStruct", &sw::StructAsPtrContainer::SimpleStruct ) BIND_AS_PTR;
 
 	rttr::registration::class_< sw::StructWithSimpleTypes >( "StructWithSimpleTypes" )
 		.property( "DoubleField", &sw::StructWithSimpleTypes::DoubleField )
