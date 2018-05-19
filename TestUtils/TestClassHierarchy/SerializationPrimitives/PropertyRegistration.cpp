@@ -50,6 +50,7 @@ RTTR_REGISTRATION
 		.property( "SimpleStruct", &sw::StructPtrContainer::SimpleStruct );
 
 	rttr::registration::class_< sw::StructWithSimpleTypes >( "StructWithSimpleTypes" )
+		.constructor<>()	( rttr::policy::ctor::as_raw_ptr )
 		.property( "DoubleField", &sw::StructWithSimpleTypes::DoubleField )
 		.property( "FloatField", &sw::StructWithSimpleTypes::FloatField )
 		.property( "UIntField64", &sw::StructWithSimpleTypes::UIntField64 )
