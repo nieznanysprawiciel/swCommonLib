@@ -18,6 +18,7 @@
 #include "Structs/StructAsRefContainer.h"
 #include "Structs/StructAsPtrContainer.h"
 #include "Structs/StructAsCopyContainer.h"
+#include "Structs/StructPtrContainer.h"
 
 #include "swCommonLib/Common/RTTR.h"
 
@@ -44,6 +45,9 @@ RTTR_REGISTRATION
 
 	rttr::registration::class_< sw::StructAsCopyContainer >( "StructAsCopyContainer" )
 		.property( "SimpleStruct", &sw::StructAsCopyContainer::SimpleStruct );
+
+	rttr::registration::class_< sw::StructPtrContainer >( "StructPtrContainer" )
+		.property( "SimpleStruct", &sw::StructPtrContainer::SimpleStruct );
 
 	rttr::registration::class_< sw::StructWithSimpleTypes >( "StructWithSimpleTypes" )
 		.property( "DoubleField", &sw::StructWithSimpleTypes::DoubleField )
