@@ -9,7 +9,9 @@ namespace sw
 // ================================ //
 //
 struct StructWithSimpleTypesShared : public StructWithSimpleTypes
-{};
+{
+	explicit StructWithSimpleTypesShared() {}
+};
 
 DEFINE_PTR_TYPE( StructWithSimpleTypesShared )
 
