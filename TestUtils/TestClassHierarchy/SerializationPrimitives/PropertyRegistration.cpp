@@ -23,6 +23,8 @@
 
 #include "Structs/StructWithSimpleTypesShared.h"
 
+#include "Polymorphic/PolymorphicObjectContainer.h"
+
 #include "swCommonLib/Common/RTTR.h"
 
 
@@ -90,6 +92,9 @@ RTTR_REGISTRATION
 
 	rttr::registration::class_< sw::DerivedObject >( "DerivedObject" )
 		.property( "SimpleStruct2", &sw::DerivedObject::m_simpleStruct2 ) BIND_AS_PTR;
+
+	rttr::registration::class_< sw::PolymorphicObjectContainer >( "PolymorphicObjectContainer" )
+		.property( "ObjectPtr", &sw::PolymorphicObjectContainer::ObjectPtr );
 
 	rttr::registration::class_< sw::StringContainer >( "StringContainer" )
 		.property( "Description", &sw::StringContainer::Description )
