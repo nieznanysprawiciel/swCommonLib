@@ -88,9 +88,11 @@ RTTR_REGISTRATION
 		.property( "BoolField", &sw::StructWithSimpleTypesShared::BoolField );
 
 	rttr::registration::class_< sw::BaseObject >( "BaseObject" )
+		.constructor<>()	( rttr::policy::ctor::as_raw_ptr )
 		.property( "SimpleStruct1", &sw::BaseObject::m_simpleStruct1 ) BIND_AS_PTR;
 
 	rttr::registration::class_< sw::DerivedObject >( "DerivedObject" )
+		.constructor<>()	( rttr::policy::ctor::as_raw_ptr )
 		.property( "SimpleStruct2", &sw::DerivedObject::m_simpleStruct2 ) BIND_AS_PTR;
 
 	rttr::registration::class_< sw::PolymorphicObjectContainer >( "PolymorphicObjectContainer" )
