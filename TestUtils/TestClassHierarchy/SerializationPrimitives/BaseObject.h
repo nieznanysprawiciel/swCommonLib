@@ -51,6 +51,22 @@ public:
 
 };
 
+// ================================ //
+//
+class NotRelated : public EngineObject
+{
+	RTTR_ENABLE( EngineObject )
+	RTTR_REGISTRATION_FRIEND
+public:
+
+	StructWithSimpleTypes		m_simpleStruct1;
+
+protected:
+public:
+	explicit		NotRelated		() = default;
+	~NotRelated	() = default;
+
+};
 
 
 
