@@ -5,8 +5,8 @@
 */
 
 
-#include "StructWithSimpleTypes.h"
-#include "BaseObject.h"
+
+#include "Polymorphic/BaseObject.h"
 #include "StringContainer.h"
 #include "Arrays/ArrayContainer.h"
 #include "Arrays/StaticArrayContainer.h"
@@ -15,6 +15,7 @@
 #include "Enums/TriStateEnum.h"
 #include "Enums/TriStateObject.h"
 
+#include "Structs/StructWithSimpleTypes.h"
 #include "Structs/StructAsRefContainer.h"
 #include "Structs/StructAsPtrContainer.h"
 #include "Structs/StructAsCopyContainer.h"
@@ -26,6 +27,7 @@
 #include "Polymorphic/PolymorphicObjectContainer.h"
 
 #include "swCommonLib/Common/RTTR.h"
+#include "swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/LinkLibrary.h"
 
 
 
@@ -119,10 +121,16 @@ RTTR_REGISTRATION
 }
 
 
+namespace sw
+{
+
+
 // ================================ //
 // Add this function to pull registration code into library.
-int			sw::LinkPrimitivesRegistration()
+int			LinkPrimitivesRegistration()
 {
 	return 0;
 }
 
+
+}	// sw

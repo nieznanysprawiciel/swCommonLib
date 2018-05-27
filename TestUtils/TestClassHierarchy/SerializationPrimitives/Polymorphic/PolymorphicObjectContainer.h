@@ -1,6 +1,6 @@
 #pragma once
 
-#include "swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/BaseObject.h"
+#include "BaseObject.h"
 
 
 namespace sw

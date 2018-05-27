@@ -1,6 +1,6 @@
 #pragma once
 
-#include "swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/StructWithSimpleTypes.h"
+#include "StructWithSimpleTypes.h"
 
 
 

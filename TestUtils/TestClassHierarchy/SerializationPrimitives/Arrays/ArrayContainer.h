@@ -8,7 +8,7 @@
 
 #include "swCommonLib/Serialization/PropertySerialization/EngineObject.h"
 
-#include "swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/StructWithSimpleTypes.h"
+#include "swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/StructWithSimpleTypes.h"
 
 #include <vector>
 
