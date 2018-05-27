@@ -6,7 +6,6 @@
 
 
 
-#include "Polymorphic/BaseObject.h"
 #include "StringContainer.h"
 #include "Arrays/ArrayContainer.h"
 #include "Arrays/StaticArrayContainer.h"
@@ -24,6 +23,8 @@
 
 #include "Structs/StructWithSimpleTypesShared.h"
 
+#include "Polymorphic/BaseObject.h"
+#include "Polymorphic/SharedObject.h"
 #include "Polymorphic/PolymorphicObjectContainer.h"
 
 #include "swCommonLib/Common/RTTR.h"
@@ -96,6 +97,10 @@ RTTR_REGISTRATION
 	rttr::registration::class_< sw::DerivedObject >( "DerivedObject" )
 		.constructor<>()	( rttr::policy::ctor::as_raw_ptr )
 		.property( "SimpleStruct2", &sw::DerivedObject::m_simpleStruct2 ) BIND_AS_PTR;
+
+	rttr::registration::class_< sw::SharedObject >( "SharedObject" )
+		.constructor<>()	( rttr::policy::ctor::as_std_shared_ptr )
+		.property( "SimpleStruct2", &sw::SharedObject::m_simpleStruct2 ) BIND_AS_PTR;
 
 	rttr::registration::class_< sw::NotRelated >( "NotRelated" )
 		.constructor<>()	( rttr::policy::ctor::as_raw_ptr )
