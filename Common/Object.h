@@ -1,12 +1,23 @@
 #pragma once
-/**@file Object.h
+/**
+@file Object.h
 @author nieznanysprawiciel
-@copyright Plik jest czêœci¹ silnika graficznego SWEngine.
+@copyright File is part of Sleeping Wombat Libraries.
+*/
 
-@brief */
 
 #include "swCommonLib/Common/RTTR.h"
 #include "swCommonLib/Common/TypesDefinitions.h"
+
+/**@mainpage
+
+Library functionalities:
+- @ref Page_Serialization "Serialization"
+- @ref HierarchicalChunkedFormat "Hierarchical Chunked Format"
+- @ref KeyFrameAnimation "Parameters Animation"
+
+*/
+
 
 
 
