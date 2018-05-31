@@ -26,6 +26,7 @@
 #include "Polymorphic/BaseObject.h"
 #include "Polymorphic/SharedObject.h"
 #include "Polymorphic/PolymorphicObjectContainer.h"
+#include "Polymorphic/PolymorphicSharedPtrContainer.h"
 
 #include "swCommonLib/Common/RTTR.h"
 #include "swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/LinkLibrary.h"
@@ -102,12 +103,18 @@ RTTR_REGISTRATION
 		.constructor<>()	( rttr::policy::ctor::as_std_shared_ptr )
 		.property( "SimpleStruct2", &sw::SharedObject::m_simpleStruct2 ) BIND_AS_PTR;
 
+	rttr::registration::class_< sw::DerivedFromSharedObject >( "DerivedFromSharedObject" )
+		.constructor<>()	( rttr::policy::ctor::as_raw_ptr );
+
 	rttr::registration::class_< sw::NotRelated >( "NotRelated" )
 		.constructor<>()	( rttr::policy::ctor::as_raw_ptr )
 		.property( "SimpleStruct1", &sw::BaseObject::m_simpleStruct1 ) BIND_AS_PTR;
 
 	rttr::registration::class_< sw::PolymorphicObjectContainer >( "PolymorphicObjectContainer" )
 		.property( "ObjectPtr", &sw::PolymorphicObjectContainer::ObjectPtr );
+
+	rttr::registration::class_< sw::PolymorphicSharedPtrContainer >( "PolymorphicSharedPtrContainer" )
+		.property( "ObjectPtr", &sw::PolymorphicSharedPtrContainer::ObjectPtr );
 
 	rttr::registration::class_< sw::StringContainer >( "StringContainer" )
 		.property( "Description", &sw::StringContainer::Description )
