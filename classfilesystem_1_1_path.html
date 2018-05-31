@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -104,12 +104,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acb8e37893bc76200e252fbf52a450b77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb8e37893bc76200e252fbf52a450b77"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Path</b> (const <a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;path)</td></tr>
-<tr class="separator:acb8e37893bc76200e252fbf52a450b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa198ff78dc58eef2577b1d9130212dd1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa198ff78dc58eef2577b1d9130212dd1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Path</b> (<a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;&amp;path)</td></tr>
-<tr class="separator:aa198ff78dc58eef2577b1d9130212dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad55a0e0b65a7b9efb140d84fa3d5e2f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad55a0e0b65a7b9efb140d84fa3d5e2f1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Path</b> (const <a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;path)=default</td></tr>
+<tr class="separator:ad55a0e0b65a7b9efb140d84fa3d5e2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc12e26038bd575ce0ee7eab25fdda5e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc12e26038bd575ce0ee7eab25fdda5e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Path</b> (<a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;&amp;path)=default</td></tr>
+<tr class="separator:acc12e26038bd575ce0ee7eab25fdda5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b7c56f638cee3597522579ba1abbb97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b7c56f638cee3597522579ba1abbb97"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Path</b> (const std::wstring &amp;path)</td></tr>
 <tr class="separator:a8b7c56f638cee3597522579ba1abbb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,13 +129,28 @@ template&lt;class Source &gt; </td></tr>
 <tr class="memitem:acace29f8090b5a68370805f08804bb17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acace29f8090b5a68370805f08804bb17"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;other) const </td></tr>
 <tr class="separator:acace29f8090b5a68370805f08804bb17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fd86b058b30ab319e0ece55c903e172"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0fd86b058b30ab319e0ece55c903e172"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfilesystem_1_1_path.html#a0fd86b058b30ab319e0ece55c903e172">Compare</a> (const <a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;path1, const <a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;path2)</td></tr>
-<tr class="memdesc:a0fd86b058b30ab319e0ece55c903e172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Porównuje ścieżki. Przed porównaniem ścieżki są normalizowane. <br /></td></tr>
-<tr class="separator:a0fd86b058b30ab319e0ece55c903e172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac81096e2cd6faea2d2124558fabace40"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac81096e2cd6faea2d2124558fabace40"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;other) const </td></tr>
+<tr class="separator:ac81096e2cd6faea2d2124558fabace40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaedcb873e664c0c88d36d637e31721f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaedcb873e664c0c88d36d637e31721f2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (const <a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;other) const </td></tr>
+<tr class="separator:aaedcb873e664c0c88d36d637e31721f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a047436947dcf80a0e11c7301fab054b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a047436947dcf80a0e11c7301fab054b8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;=</b> (const <a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;other) const </td></tr>
+<tr class="separator:a047436947dcf80a0e11c7301fab054b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4fc14ff0df8a2564ecec8a671d2a5f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d4fc14ff0df8a2564ecec8a671d2a5f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;</b> (const <a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;other) const </td></tr>
+<tr class="separator:a1d4fc14ff0df8a2564ecec8a671d2a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea88750bc8ac0c88f5b4d42c24b414b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afea88750bc8ac0c88f5b4d42c24b414b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;=</b> (const <a class="el" href="classfilesystem_1_1_path.html">Path</a> &amp;other) const </td></tr>
+<tr class="separator:afea88750bc8ac0c88f5b4d42c24b414b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02d87fc3130cad94bb3e45a2d46f11da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02d87fc3130cad94bb3e45a2d46f11da"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>String</b> () const </td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfilesystem_1_1_path.html#a02d87fc3130cad94bb3e45a2d46f11da">String</a> () const </td></tr>
+<tr class="memdesc:a02d87fc3130cad94bb3e45a2d46f11da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Porównuje ścieżki. Przed porównaniem ścieżki są normalizowane. Paths must exist on file system. <br /></td></tr>
 <tr class="separator:a02d87fc3130cad94bb3e45a2d46f11da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5167bda5e3395431def7cd607f8ae2cc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5167bda5e3395431def7cd607f8ae2cc"></a>
+std::wstring&#160;</td><td class="memItemRight" valign="bottom"><b>WString</b> () const </td></tr>
+<tr class="separator:a5167bda5e3395431def7cd607f8ae2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab30f8edf69adb856bcaad83b3975e62b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab30f8edf69adb856bcaad83b3975e62b"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetFileName</b> () const </td></tr>
 <tr class="separator:ab30f8edf69adb856bcaad83b3975e62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,9 +166,6 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetExtension</
 <tr class="memitem:acfab82da16bf1ac014838825a1b28084"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfilesystem_1_1_path.html#acfab82da16bf1ac014838825a1b28084">Normalize</a> ()</td></tr>
 <tr class="memdesc:acfab82da16bf1ac014838825a1b28084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizuje ścieżkę.  <a href="#acfab82da16bf1ac014838825a1b28084">More...</a><br /></td></tr>
 <tr class="separator:acfab82da16bf1ac014838825a1b28084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f55344c5106576a68ae978e983f296c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f55344c5106576a68ae978e983f296c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasRoot</b> () const </td></tr>
-<tr class="separator:a7f55344c5106576a68ae978e983f296c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae288e99e27f09bebfdb27eda46246b58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae288e99e27f09bebfdb27eda46246b58"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasFileName</b> () const </td></tr>
 <tr class="separator:ae288e99e27f09bebfdb27eda46246b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,10 +181,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsAbsolut</b> () cons
 <tr class="memitem:ab3183434639a83fe6834d4a9e74d746c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfilesystem_1_1_path.html#ab3183434639a83fe6834d4a9e74d746c">Exists</a> () const </td></tr>
 <tr class="memdesc:ab3183434639a83fe6834d4a9e74d746c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if file or directory exists on filesystem.  <a href="#ab3183434639a83fe6834d4a9e74d746c">More...</a><br /></td></tr>
 <tr class="separator:ab3183434639a83fe6834d4a9e74d746c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceb4a74f50711fe635bc07279336838d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aceb4a74f50711fe635bc07279336838d"></a>
-const experimental::path &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfilesystem_1_1_path.html#aceb4a74f50711fe635bc07279336838d">GetStdPath</a> () const </td></tr>
-<tr class="memdesc:aceb4a74f50711fe635bc07279336838d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns standard library path. Use only if you must. <br /></td></tr>
-<tr class="separator:aceb4a74f50711fe635bc07279336838d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -182,9 +190,9 @@ static <a class="el" href="classfilesystem_1_1_path.html">Path</a>&#160;</td><td
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a67132acf9a1616e12dcbc976c9626fdf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67132acf9a1616e12dcbc976c9626fdf"></a>
-experimental::path&#160;</td><td class="memItemRight" valign="bottom"><b>m_path</b></td></tr>
-<tr class="separator:a67132acf9a1616e12dcbc976c9626fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd12b3c92b7461e75e1bee47f2536753"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd12b3c92b7461e75e1bee47f2536753"></a>
+<a class="el" href="classpath__impl.html">path_impl</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_path</b></td></tr>
+<tr class="separator:afd12b3c92b7461e75e1bee47f2536753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -246,12 +254,12 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>System/<a class="el" href="_path_8h_source.html">Path.h</a></li>
+<li>System/<a class="el" href="path_8h_source.html">Path.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:56:00 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

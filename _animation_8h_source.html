@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_animation_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;swCommonLib/Common/EngineObject.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_object_8h.html">swCommonLib/Common/Object.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_animation_8h.html">IAnimation.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_anim_evaluator_8h.html">swCommonLib/ParameterAnimation/Animation/AnimEvaluator.h</a>&quot;</span></div>
@@ -152,12 +152,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="class_anim_evaluator.html">AnimEvaluator&lt; KeyType, AddressType &gt;</a>       Evaluator;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    <a class="code" href="class_animation_impl.html">AnimationImpl</a>   ( <a class="code" href="class_engine_object.html">EngineObject</a>* <span class="keywordtype">object</span>, <span class="keyword">const</span> std::string&amp; propertyPath );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    <a class="code" href="class_animation_impl.html">AnimationImpl</a>   ( <a class="code" href="class_object.html">Object</a>* <span class="keywordtype">object</span>, <span class="keyword">const</span> std::string&amp; propertyPath );</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">virtual</span>         ~<a class="code" href="class_animation_impl.html">AnimationImpl</a>  () = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    Animate         ( <a class="code" href="class_engine_object.html">EngineObject</a>* <span class="keywordtype">object</span>, <a class="code" href="class_timeline_base.html">TimelineBase</a>* timeline )        <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    Animate         ( <a class="code" href="class_engine_object.html">EngineObject</a>* <span class="keywordtype">object</span>, TimeType time )                 <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    Animate         ( <a class="code" href="class_object.html">Object</a>* <span class="keywordtype">object</span>, <a class="code" href="class_timeline_base.html">TimelineBase</a>* timeline )      <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    Animate         ( <a class="code" href="class_object.html">Object</a>* <span class="keywordtype">object</span>, TimeType time )                   <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>    <a class="code" href="class_animation_impl.html#a84f61ecc458179bbb723bab935bbfbf2">AddKey</a>          ( TimeType time, <span class="keyword">const</span> KeyType&amp; value )                                         <span class="keyword">override</span>;</div>
@@ -206,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_animation_typed_html_ad5baa21eb1fb47b30c7185a106ea2a18"><div class="ttname"><a href="class_animation_typed.html#ad5baa21eb1fb47b30c7185a106ea2a18">AnimationTyped::AddKey</a></div><div class="ttdeci">virtual bool AddKey(TimeType time, const KeyType &amp;value)=0</div><div class="ttdoc">Adds key and sets default interpolator. </div></div>
 <div class="ttc" id="struct_key_html"><div class="ttname"><a href="struct_key.html">Key</a></div><div class="ttdoc">Animation key. </div><div class="ttdef"><b>Definition:</b> IInterpolator.h:21</div></div>
 <div class="ttc" id="class_animation_impl_html_a618b44c917c564a892a46b0879063c80"><div class="ttname"><a href="class_animation_impl.html#a618b44c917c564a892a46b0879063c80">AnimationImpl::RemoveKey</a></div><div class="ttdeci">virtual bool RemoveKey(TimeType time) override</div><div class="ttdoc">Removes key in given time. </div><div class="ttdef"><b>Definition:</b> Animation.inl:76</div></div>
-<div class="ttc" id="class_engine_object_html"><div class="ttname"><a href="class_engine_object.html">EngineObject</a></div><div class="ttdoc">Klasa bazowa dla obiektów, które mają być dostępne w edytorze poprzez rttr. Należy po niej odziedzicz...</div><div class="ttdef"><b>Definition:</b> EngineObject.h:22</div></div>
+<div class="ttc" id="_object_8h_html"><div class="ttname"><a href="_object_8h.html">Object.h</a></div></div>
 <div class="ttc" id="struct_key_set_html"><div class="ttname"><a href="struct_key_set.html">KeySet</a></div><div class="ttdoc">Set of animation keys and interpolators. </div><div class="ttdef"><b>Definition:</b> KeySet.h:25</div></div>
 <div class="ttc" id="class_animation_typed_html_a9a784163e47c2cd1ae551f296e5e8f05"><div class="ttname"><a href="class_animation_typed.html#a9a784163e47c2cd1ae551f296e5e8f05">AnimationTyped::GetInterpolator</a></div><div class="ttdeci">virtual Interpolator * GetInterpolator(Size idx)=0</div><div class="ttdoc">Gets interpolator under index. You&#39;re not owner of this interpolator. </div></div>
 <div class="ttc" id="class_animation_impl_html_a16f61ae05c761ce722bf132151b05da5"><div class="ttname"><a href="class_animation_impl.html#a16f61ae05c761ce722bf132151b05da5">AnimationImpl::UpdateKey</a></div><div class="ttdeci">virtual bool UpdateKey(TimeType time, const KeyType &amp;newValue, UPtr&lt; Interpolator &gt; &amp;&amp;interpolator) override</div><div class="ttdoc">Adds key and sets default interpolator. </div><div class="ttdef"><b>Definition:</b> Animation.inl:60</div></div>
@@ -214,13 +214,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="_string_property_path_8h_html"><div class="ttname"><a href="_string_property_path_8h.html">StringPropertyPath.h</a></div></div>
 <div class="ttc" id="class_animation_typed_html_afdc1161df28ab7102a9ef28af2ead8cb"><div class="ttname"><a href="class_animation_typed.html#afdc1161df28ab7102a9ef28af2ead8cb">AnimationTyped::UpdateKey</a></div><div class="ttdeci">virtual bool UpdateKey(TimeType time, const KeyType &amp;newValue, UPtr&lt; Interpolator &gt; &amp;&amp;interpolator)=0</div><div class="ttdoc">Udates key given by time. Sets new interpolator. </div></div>
 <div class="ttc" id="class_animation_impl_html"><div class="ttname"><a href="class_animation_impl.html">AnimationImpl</a></div><div class="ttdef"><b>Definition:</b> Animation.h:83</div></div>
+<div class="ttc" id="class_object_html"><div class="ttname"><a href="class_object.html">Object</a></div><div class="ttdoc">Base clas for all objects in sleeping wombat libraries. </div><div class="ttdef"><b>Definition:</b> Object.h:42</div></div>
 <div class="ttc" id="_property_path_8h_html"><div class="ttname"><a href="_property_path_8h.html">PropertyPath.h</a></div></div>
 <div class="ttc" id="class_animation_impl_html_ab40ebfe6f3e0e01108a48cb2b4a30728"><div class="ttname"><a href="class_animation_impl.html#ab40ebfe6f3e0e01108a48cb2b4a30728">AnimationImpl::GetKeySet</a></div><div class="ttdeci">virtual KeySet&lt; KeyType &gt; &amp; GetKeySet() override</div><div class="ttdoc">Returns KeySet object. </div><div class="ttdef"><b>Definition:</b> Animation.inl:116</div></div>
 <div class="ttc" id="class_animation_impl_html_a41162c1c771a08fc405fb179a65e4534"><div class="ttname"><a href="class_animation_impl.html#a41162c1c771a08fc405fb179a65e4534">AnimationImpl::ChangeInterpolator</a></div><div class="ttdeci">virtual bool ChangeInterpolator(Size idx, UPtr&lt; Interpolator &gt; &amp;&amp;interpolator) override</div><div class="ttdef"><b>Definition:</b> Animation.inl:84</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:56:00 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

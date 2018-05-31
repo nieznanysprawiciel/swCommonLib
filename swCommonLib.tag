@@ -1,6 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <tagfile>
   <compound kind="file">
+    <name>ConfigHelper.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Config/</path>
+    <filename>_config_helper_8h</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEFINE_CONFIG_VALUE_DEFAULT</name>
+      <anchorfile>_config_helper_8h.html</anchorfile>
+      <anchor>a6afab2970f18bc56d7ba95ba05294452</anchor>
+      <arglist>(type, name, defaultValue)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
     <name>Converters.cpp</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/</path>
     <filename>_converters_8cpp</filename>
@@ -12,16 +24,40 @@
     <class kind="class">Convert</class>
   </compound>
   <compound kind="file">
-    <name>EngineObject.cpp</name>
-    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/</path>
-    <filename>_engine_object_8cpp</filename>
+    <name>Exception.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Exceptions/</path>
+    <filename>_exception_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <class kind="class">sw::Exception</class>
+    <class kind="class">sw::RuntimeException</class>
   </compound>
   <compound kind="file">
-    <name>EngineObject.h</name>
+    <name>Nullable.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Exceptions/</path>
+    <filename>_exceptions_2_nullable_8h</filename>
+    <class kind="class">sw::Nullable</class>
+    <class kind="class">sw::Nullable&lt; void &gt;</class>
+    <member kind="enumeration">
+      <type></type>
+      <name>Result</name>
+      <anchorfile>group___helpers.html</anchorfile>
+      <anchor>ga9201d23470c14e880d2d2b5dc7389ed2</anchor>
+      <arglist></arglist>
+      <enumvalue file="group___helpers.html" anchor="gga9201d23470c14e880d2d2b5dc7389ed2a902b0d55fddef6f8d651fe1035b7d4bd">Error</enumvalue>
+      <enumvalue file="group___helpers.html" anchor="gga9201d23470c14e880d2d2b5dc7389ed2a505a83f220c02df2f85c3810cd9ceb38">Success</enumvalue>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>Nullable.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/</path>
-    <filename>_engine_object_8h</filename>
-    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
-    <class kind="class">EngineObject</class>
+    <filename>_nullable_8h</filename>
+    <class kind="struct">Nullable</class>
+  </compound>
+  <compound kind="file">
+    <name>Logger.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Logging/</path>
+    <filename>_logger_8h</filename>
+    <class kind="class">sw::Logger</class>
   </compound>
   <compound kind="file">
     <name>MemoryChunk.h</name>
@@ -36,15 +72,92 @@
     <filename>_memory_leaks_8h</filename>
   </compound>
   <compound kind="file">
-    <name>Nullable.h</name>
+    <name>QueueMT.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_queue_m_t_8h</filename>
+    <class kind="class">sw::QueueMT</class>
+  </compound>
+  <compound kind="file">
+    <name>ReaderWriterLock.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_reader_writer_lock_8h</filename>
+    <class kind="class">sw::ReaderWriterLock</class>
+  </compound>
+  <compound kind="file">
+    <name>Semaphore.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_semaphore_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>Semaphore.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_semaphore_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <class kind="class">sw::Semaphore</class>
+  </compound>
+  <compound kind="file">
+    <name>SpinLock.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_spin_lock_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <class kind="class">SpinLock</class>
+  </compound>
+  <compound kind="file">
+    <name>SpinLockedQueue.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_spin_locked_queue_8h</filename>
+    <class kind="class">SpinLockedQueue</class>
+  </compound>
+  <compound kind="file">
+    <name>ThreadsBarrier.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_threads_barrier_8cpp</filename>
+    <includes id="_threads_barrier_8h" name="ThreadsBarrier.h" local="yes" imported="no">ThreadsBarrier.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>ThreadsBarrier.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_threads_barrier_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <class kind="class">sw::ThreadsBarrier</class>
+  </compound>
+  <compound kind="file">
+    <name>ThreadsLatch.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_threads_latch_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>ThreadsLatch.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_threads_latch_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <class kind="class">sw::ThreadsLatch</class>
+  </compound>
+  <compound kind="file">
+    <name>UniqueLock.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Multithreading/</path>
+    <filename>_unique_lock_8h</filename>
+    <class kind="class">sw::WriterUniqueLock</class>
+    <class kind="class">sw::ReaderUniqueLock</class>
+  </compound>
+  <compound kind="file">
+    <name>Object.cpp</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/</path>
-    <filename>_nullable_8h</filename>
-    <class kind="struct">Nullable</class>
+    <filename>_object_8cpp</filename>
+    <includes id="_object_8h" name="Object.h" local="yes" imported="no">swCommonLib/Common/Object.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>Object.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/</path>
+    <filename>_object_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <class kind="class">Object</class>
   </compound>
   <compound kind="file">
     <name>ObjectDeleter.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/</path>
     <filename>_object_deleter_8h</filename>
+    <class kind="class">ResourceContainer</class>
     <class kind="class">ResourceContainer</class>
     <class kind="class">ObjectDeleterKey</class>
     <class kind="class">ObjectDeleter</class>
@@ -71,6 +184,7 @@
     <name>Properties.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Common/Properties/</path>
     <filename>_properties_8h</filename>
+    <includes id="_object_8h" name="Object.h" local="yes" imported="no">swCommonLib/Common/Object.h</includes>
     <class kind="class">Properties</class>
   </compound>
   <compound kind="file">
@@ -192,7 +306,6 @@
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/HierarchicalChunkedFormat/</path>
     <filename>_h_c_f_8h</filename>
     <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
-    <includes id="_path_8h" name="Path.h" local="yes" imported="no">swCommonLib/System/Path.h</includes>
     <includes id="_i_attribute_8h" name="IAttribute.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/Attributes/IAttribute.h</includes>
     <includes id="_impl_h_c_f_8h" name="ImplHCF.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/Internal/ImplHCF.h</includes>
     <includes id="_chunk_8h" name="Chunk.h" local="yes" imported="no">Chunk.h</includes>
@@ -246,6 +359,7 @@
     <name>AttributeRepr.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/HierarchicalChunkedFormat/Internal/</path>
     <filename>_attribute_repr_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
     <includes id="_attribute_header_8h" name="AttributeHeader.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/Headers/AttributeHeader.h</includes>
     <class kind="class">sw::AttributeRepr</class>
   </compound>
@@ -260,6 +374,7 @@
     <name>ChunkRepr.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/HierarchicalChunkedFormat/Internal/</path>
     <filename>_chunk_repr_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
     <includes id="_chunk_header_8h" name="ChunkHeader.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/Headers/ChunkHeader.h</includes>
     <includes id="_chunk_8h" name="Chunk.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/Chunk.h</includes>
     <includes id="_attribute_repr_8h" name="AttributeRepr.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/Internal/AttributeRepr.h</includes>
@@ -281,7 +396,6 @@
     <includes id="_chunk_8h" name="Chunk.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/Chunk.h</includes>
     <includes id="_attribute_8h" name="Attribute.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/Attribute.h</includes>
     <includes id="_file_header_8h" name="FileHeader.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/Headers/FileHeader.h</includes>
-    <includes id="_path_8h" name="Path.h" local="yes" imported="no">swCommonLib/System/Path.h</includes>
     <class kind="class">sw::ImplHCF</class>
   </compound>
   <compound kind="file">
@@ -293,6 +407,11 @@
     <name>stdafx.cpp</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/</path>
     <filename>_serialization_2_property_serialization_2stdafx_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>stdafx.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializationTest/PrecompiledHeader/</path>
+    <filename>_tests_2_serialization_test_2_precompiled_header_2stdafx_8cpp</filename>
   </compound>
   <compound kind="file">
     <name>stdafx.cpp</name>
@@ -308,6 +427,17 @@
     <name>stdafx.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/</path>
     <filename>_serialization_2_property_serialization_2stdafx_8h</filename>
+    <includes id="_engine_object_8h" name="EngineObject.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/EngineObject.h</includes>
+    <includes id="_deserializer_8h" name="Deserializer.h" local="yes" imported="no">swCommonLib/Serialization/Deserializer.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>stdafx.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializationTest/PrecompiledHeader/</path>
+    <filename>_tests_2_serialization_test_2_precompiled_header_2stdafx_8h</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/StructWithSimpleTypes.h</includes>
+    <includes id="_string_container_8h" name="StringContainer.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/StringContainer.h</includes>
+    <includes id="_base_object_8h" name="BaseObject.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Polymorphic/BaseObject.h</includes>
   </compound>
   <compound kind="file">
     <name>stdafx.h</name>
@@ -325,22 +455,10 @@
     <filename>_tests_2_test_h_c_f_2targetver_8h</filename>
   </compound>
   <compound kind="file">
-    <name>SpinLock.h</name>
-    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Multithreading/</path>
-    <filename>_spin_lock_8h</filename>
-    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">Common/TypesDefinitions.h</includes>
-    <class kind="class">SpinLock</class>
-  </compound>
-  <compound kind="file">
-    <name>SpinLockedQueue.h</name>
-    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Multithreading/</path>
-    <filename>_spin_locked_queue_8h</filename>
-    <class kind="class">SpinLockedQueue</class>
-  </compound>
-  <compound kind="file">
     <name>Animation.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/ParameterAnimation/Animation/</path>
     <filename>_animation_8h</filename>
+    <includes id="_object_8h" name="Object.h" local="yes" imported="no">swCommonLib/Common/Object.h</includes>
     <includes id="_i_animation_8h" name="IAnimation.h" local="yes" imported="no">IAnimation.h</includes>
     <includes id="_anim_evaluator_8h" name="AnimEvaluator.h" local="yes" imported="no">swCommonLib/ParameterAnimation/Animation/AnimEvaluator.h</includes>
     <includes id="_property_path_8h" name="PropertyPath.h" local="yes" imported="no">swCommonLib/ParameterAnimation/Parameters/PropertyPath.h</includes>
@@ -364,6 +482,7 @@
     <name>AnimEvaluator.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/ParameterAnimation/Animation/</path>
     <filename>_anim_evaluator_8h</filename>
+    <includes id="_object_8h" name="Object.h" local="yes" imported="no">swCommonLib/Common/Object.h</includes>
     <includes id="_key_set_8h" name="KeySet.h" local="yes" imported="no">swCommonLib/ParameterAnimation/KeySet.h</includes>
     <includes id="_timeline_base_8h" name="TimelineBase.h" local="yes" imported="no">swCommonLib/ParameterAnimation/Timelines/TimelineBase.h</includes>
     <class kind="class">AnimEvaluator</class>
@@ -467,18 +586,22 @@
     <name>DirectPropertyh.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/ParameterAnimation/Parameters/</path>
     <filename>_direct_propertyh_8h</filename>
+    <includes id="_object_8h" name="Object.h" local="yes" imported="no">swCommonLib/Common/Object.h</includes>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
     <class kind="class">DirectProperty</class>
   </compound>
   <compound kind="file">
     <name>PropertyPath.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/ParameterAnimation/Parameters/</path>
     <filename>_property_path_8h</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
     <class kind="class">PropertyPath</class>
   </compound>
   <compound kind="file">
     <name>StringPropertyPath.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/ParameterAnimation/Parameters/</path>
     <filename>_string_property_path_8h</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
     <class kind="class">StringPropertyPath</class>
   </compound>
   <compound kind="file">
@@ -504,6 +627,7 @@
     <name>TimelineBase.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/ParameterAnimation/Timelines/</path>
     <filename>_timeline_base_8h</filename>
+    <includes id="_object_8h" name="Object.h" local="yes" imported="no">swCommonLib/Common/Object.h</includes>
     <class kind="class">TimelineBase</class>
   </compound>
   <compound kind="file">
@@ -517,6 +641,7 @@
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/</path>
     <filename>_deserializer_8h</filename>
     <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <includes id="_i_serialization_context_8h" name="ISerializationContext.h" local="yes" imported="no">swCommonLib/Serialization/ISerializationContext.h</includes>
     <class kind="class">IDeserializer</class>
     <member kind="enumeration">
       <type></type>
@@ -529,48 +654,117 @@
     </member>
   </compound>
   <compound kind="file">
+    <name>FilePosition.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/</path>
+    <filename>_file_position_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <class kind="struct">sw::FilePosition</class>
+  </compound>
+  <compound kind="file">
+    <name>ISerializationContext.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/</path>
+    <filename>_i_serialization_context_8h</filename>
+    <class kind="struct">ISerializationContext</class>
+  </compound>
+  <compound kind="file">
+    <name>SerializationException.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/Core/Exceptions/</path>
+    <filename>_serialization_exception_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>SerializationException.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/Core/Exceptions/</path>
+    <filename>_serialization_exception_8h</filename>
+    <class kind="class">sw::SerializationException</class>
+  </compound>
+  <compound kind="file">
+    <name>SerializationCore.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/Core/</path>
+    <filename>_serialization_core_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>SerializationCore.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/Core/</path>
+    <filename>_serialization_core_8h</filename>
+    <includes id="_engine_object_8h" name="EngineObject.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/EngineObject.h</includes>
+    <includes id="_deserializer_8h" name="Deserializer.h" local="yes" imported="no">swCommonLib/Serialization/Deserializer.h</includes>
+    <includes id="_serialization_core_8inl" name="SerializationCore.inl" local="yes" imported="no">SerializationCore.inl</includes>
+    <class kind="class">sw::SerializationCore</class>
+  </compound>
+  <compound kind="file">
+    <name>SerializationCore.inl</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/Core/</path>
+    <filename>_serialization_core_8inl</filename>
+  </compound>
+  <compound kind="file">
+    <name>EngineObject.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/</path>
+    <filename>_engine_object_8cpp</filename>
+    <includes id="_engine_object_8h" name="EngineObject.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/EngineObject.h</includes>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>EngineObject.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/</path>
+    <filename>_engine_object_8h</filename>
+    <includes id="_object_8h" name="Object.h" local="yes" imported="no">swCommonLib/Common/Object.h</includes>
+    <class kind="class">sw::EngineObject</class>
+  </compound>
+  <compound kind="file">
     <name>EngineSerializationContext.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/</path>
     <filename>_engine_serialization_context_8h</filename>
+    <includes id="_i_serialization_context_8h" name="ISerializationContext.h" local="yes" imported="no">swCommonLib/Serialization/ISerializationContext.h</includes>
     <class kind="struct">EngineSerializationContext</class>
   </compound>
   <compound kind="file">
     <name>Serialization.cpp</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/</path>
     <filename>_serialization_8cpp</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">Serialization.h</includes>
   </compound>
   <compound kind="file">
     <name>Serialization.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/</path>
     <filename>_serialization_8h</filename>
+    <includes id="_engine_object_8h" name="EngineObject.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/EngineObject.h</includes>
     <includes id="_deserializer_8h" name="Deserializer.h" local="yes" imported="no">swCommonLib/Serialization/Deserializer.h</includes>
-    <class kind="class">Serialization</class>
+    <includes id="_dir_8h" name="Dir.h" local="yes" imported="no">swCommonLib/System/Dir.h</includes>
+    <class kind="class">sw::Serialization</class>
   </compound>
   <compound kind="file">
     <name>Serialization.inl</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/</path>
     <filename>_serialization_8inl</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">Serialization.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>SerializationContext.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/</path>
+    <filename>_serialization_context_8cpp</filename>
   </compound>
   <compound kind="file">
     <name>SerializationContext.h</name>
-    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/</path>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/PropertySerialization/</path>
     <filename>_serialization_context_8h</filename>
-    <class kind="struct">SerializationContext</class>
+    <includes id="_i_serialization_context_8h" name="ISerializationContext.h" local="yes" imported="no">swCommonLib/Serialization/ISerializationContext.h</includes>
+    <class kind="struct">sw::SerializationContext</class>
   </compound>
   <compound kind="file">
     <name>Serializer.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Serialization/</path>
     <filename>_serializer_8h</filename>
     <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <includes id="_i_serialization_context_8h" name="ISerializationContext.h" local="yes" imported="no">swCommonLib/Serialization/ISerializationContext.h</includes>
     <class kind="class">ISerializer</class>
     <member kind="enumeration">
       <type></type>
       <name>WritingMode</name>
       <anchorfile>group___serialization.html</anchorfile>
-      <anchor>ga46d11c2d08142ef2d32761c04d1aaa26</anchor>
+      <anchor>gab38eccf0465e4b346f77b8bd29974c46</anchor>
       <arglist></arglist>
-      <enumvalue file="group___serialization.html" anchor="gga46d11c2d08142ef2d32761c04d1aaa26a4051f1312e691dc1d55f4006dfa59bb4">Sparing</enumvalue>
-      <enumvalue file="group___serialization.html" anchor="gga46d11c2d08142ef2d32761c04d1aaa26a4b8123df4e2b3456270c11394adf7607">Readable</enumvalue>
+      <enumvalue file="group___serialization.html" anchor="ggab38eccf0465e4b346f77b8bd29974c46a4051f1312e691dc1d55f4006dfa59bb4">Sparing</enumvalue>
+      <enumvalue file="group___serialization.html" anchor="ggab38eccf0465e4b346f77b8bd29974c46a4b8123df4e2b3456270c11394adf7607">Readable</enumvalue>
     </member>
   </compound>
   <compound kind="file">
@@ -618,7 +812,7 @@
     <name>Dir.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/System/</path>
     <filename>_dir_8h</filename>
-    <class kind="class">Dir</class>
+    <class kind="class">filesystem::Dir</class>
   </compound>
   <compound kind="file">
     <name>File.cpp</name>
@@ -631,14 +825,76 @@
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/System/</path>
     <filename>_file_8h</filename>
     <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
-    <includes id="_path_8h" name="Path.h" local="yes" imported="no">Path.h</includes>
     <class kind="class">filesystem::File</class>
+  </compound>
+  <compound kind="file">
+    <name>fwd.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/System/Filesystem/filesystem/</path>
+    <filename>fwd_8h</filename>
+  </compound>
+  <compound kind="file">
+    <name>path.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/System/Filesystem/filesystem/</path>
+    <filename>path_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>path.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/System/Filesystem/filesystem/</path>
+    <filename>_filesystem_2filesystem_2path_8h</filename>
+    <class kind="class">path_impl</class>
   </compound>
   <compound kind="file">
     <name>Path.h</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/System/</path>
-    <filename>_path_8h</filename>
+    <filename>path_8h</filename>
     <class kind="class">filesystem::Path</class>
+  </compound>
+  <compound kind="file">
+    <name>resolver.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/System/Filesystem/filesystem/</path>
+    <filename>resolver_8h</filename>
+    <class kind="class">resolver</class>
+  </compound>
+  <compound kind="file">
+    <name>path_demo.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/System/Filesystem/</path>
+    <filename>path__demo_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>README.md</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/System/Filesystem/</path>
+    <filename>_r_e_a_d_m_e_8md</filename>
+  </compound>
+  <compound kind="file">
+    <name>main.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/FileSystemTest/</path>
+    <filename>_file_system_test_2main_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>main.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/MultithreadingTest/</path>
+    <filename>_multithreading_test_2main_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>main.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/PropertyAnimationTest/</path>
+    <filename>_property_animation_test_2main_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>main.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializationTest/</path>
+    <filename>_serialization_test_2main_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>PathTest.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/FileSystemTest/</path>
+    <filename>_path_test_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>ThreadBarrierTest.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/MultithreadingTest/</path>
+    <filename>_thread_barrier_test_8cpp</filename>
+    <includes id="_threads_barrier_8h" name="ThreadsBarrier.h" local="yes" imported="no">swCommonLib/Common/Multithreading/ThreadsBarrier.h</includes>
   </compound>
   <compound kind="file">
     <name>AnimationClassTest.cpp</name>
@@ -671,11 +927,6 @@
     <includes id="_default_interpolators_8inl" name="DefaultInterpolators.inl" local="yes" imported="no">swCommonLib/ParameterAnimation/Interpolators/DefaultInterpolators.inl</includes>
   </compound>
   <compound kind="file">
-    <name>main.cpp</name>
-    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/PropertyAnimationTest/</path>
-    <filename>main_8cpp</filename>
-  </compound>
-  <compound kind="file">
     <name>PropertyHelpersTest.cpp</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/PropertyAnimationTest/</path>
     <filename>_property_helpers_test_8cpp</filename>
@@ -705,10 +956,72 @@
     <includes id="_relative_timeline_8h" name="RelativeTimeline.h" local="yes" imported="no">swCommonLib/ParameterAnimation/Timelines/RelativeTimeline.h</includes>
   </compound>
   <compound kind="file">
+    <name>ArraySerialization.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializationTest/TestCases/</path>
+    <filename>_array_serialization_8cpp</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>BasicTypesSerialization.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializationTest/TestCases/</path>
+    <filename>_basic_types_serialization_8cpp</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/StructWithSimpleTypes.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>EngineObjectSerialization.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializationTest/TestCases/</path>
+    <filename>_engine_object_serialization_8cpp</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/StructWithSimpleTypes.h</includes>
+    <includes id="_base_object_8h" name="BaseObject.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Polymorphic/BaseObject.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>EnumSerialization.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializationTest/TestCases/</path>
+    <filename>_enum_serialization_8cpp</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>PolymorphicSerialization.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializationTest/TestCases/</path>
+    <filename>_polymorphic_serialization_8cpp</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>StlTypesSerialization.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializationTest/TestCases/</path>
+    <filename>_stl_types_serialization_8cpp</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
+    <includes id="_string_container_8h" name="StringContainer.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/StringContainer.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>StructsSerialization.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializationTest/TestCases/</path>
+    <filename>_structs_serialization_8cpp</filename>
+    <includes id="_serialization_8h" name="Serialization.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/Serialization.h</includes>
+  </compound>
+  <compound kind="file">
     <name>SerializationMain.cpp</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/SerializerTest/</path>
     <filename>_serialization_main_8cpp</filename>
     <includes id="_deserializer_8h" name="Deserializer.h" local="yes" imported="no">swCommonLib/Serialization/Deserializer.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>TestAttribs.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/TestHCF/TesterClasses/</path>
+    <filename>_test_attribs_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <includes id="_version_8h" name="Version.h" local="yes" imported="no">swCommonLib/Common/Version.h</includes>
+    <includes id="_h_c_f_8h" name="HCF.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/HCF.h</includes>
+    <class kind="struct">VoxtreeHeader</class>
+  </compound>
+  <compound kind="file">
+    <name>TesterHCF.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/TestHCF/TesterClasses/</path>
+    <filename>_tester_h_c_f_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <includes id="_h_c_f_8h" name="HCF.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/HCF.h</includes>
   </compound>
   <compound kind="file">
     <name>TestHCF.cpp</name>
@@ -716,11 +1029,197 @@
     <filename>_test_h_c_f_8cpp</filename>
   </compound>
   <compound kind="file">
+    <name>TestStreamPosition.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/TestHCF/</path>
+    <filename>_test_stream_position_8cpp</filename>
+    <includes id="_h_c_f_8h" name="HCF.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/HCF.h</includes>
+  </compound>
+  <compound kind="file">
     <name>TestWriteFile.cpp</name>
     <path>D:/ProgramyVS/SWLibraries/swCommonLib/Tests/TestHCF/</path>
     <filename>_test_write_file_8cpp</filename>
     <includes id="_h_c_f_8h" name="HCF.h" local="yes" imported="no">swCommonLib/HierarchicalChunkedFormat/HCF.h</includes>
     <class kind="struct">ExampleRealFormatHeader</class>
+  </compound>
+  <compound kind="file">
+    <name>Animal.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/Animals/</path>
+    <filename>_animal_8h</filename>
+    <class kind="class">sw::Animal</class>
+  </compound>
+  <compound kind="file">
+    <name>PhysicalProperties.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/Animals/Components/</path>
+    <filename>_physical_properties_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <class kind="struct">sw::PhysicalProperties</class>
+  </compound>
+  <compound kind="file">
+    <name>Dog.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/Animals/Mammals/</path>
+    <filename>_dog_8h</filename>
+    <class kind="class">sw::Dog</class>
+  </compound>
+  <compound kind="file">
+    <name>HomoSapiens.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/Animals/Mammals/</path>
+    <filename>_homo_sapiens_8h</filename>
+    <class kind="class">sw::HomoSapiens</class>
+  </compound>
+  <compound kind="file">
+    <name>Mammal.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/Animals/Mammals/</path>
+    <filename>_mammal_8h</filename>
+    <class kind="class">sw::Mammal</class>
+  </compound>
+  <compound kind="file">
+    <name>Registration.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/Animals/</path>
+    <filename>_registration_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>Zoo.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/Animals/</path>
+    <filename>_zoo_8h</filename>
+    <class kind="class">sw::Zoo</class>
+  </compound>
+  <compound kind="file">
+    <name>ArrayContainer.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Arrays/</path>
+    <filename>_array_container_8h</filename>
+    <includes id="_engine_object_8h" name="EngineObject.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/EngineObject.h</includes>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/StructWithSimpleTypes.h</includes>
+    <class kind="class">sw::ArrayContainer</class>
+  </compound>
+  <compound kind="file">
+    <name>StaticArrayContainer.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Arrays/</path>
+    <filename>_static_array_container_8h</filename>
+    <includes id="_engine_object_8h" name="EngineObject.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/EngineObject.h</includes>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/StructWithSimpleTypes.h</includes>
+    <class kind="class">sw::StaticArrayContainer</class>
+  </compound>
+  <compound kind="file">
+    <name>StaticArrayContainer_Readonly.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Arrays/</path>
+    <filename>_static_array_container___readonly_8h</filename>
+    <includes id="_engine_object_8h" name="EngineObject.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/EngineObject.h</includes>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/StructWithSimpleTypes.h</includes>
+    <class kind="class">sw::StaticArrayContainer_Readonly</class>
+  </compound>
+  <compound kind="file">
+    <name>TriStateEnum.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Enums/</path>
+    <filename>_tri_state_enum_8h</filename>
+  </compound>
+  <compound kind="file">
+    <name>TriStateObject.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Enums/</path>
+    <filename>_tri_state_object_8h</filename>
+    <class kind="class">sw::TriStateObject</class>
+  </compound>
+  <compound kind="file">
+    <name>LinkLibrary.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/</path>
+    <filename>_link_library_8h</filename>
+  </compound>
+  <compound kind="file">
+    <name>BaseObject.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Polymorphic/</path>
+    <filename>_base_object_8h</filename>
+    <includes id="_engine_object_8h" name="EngineObject.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/EngineObject.h</includes>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/StructWithSimpleTypes.h</includes>
+    <class kind="class">sw::BaseObject</class>
+    <class kind="class">sw::DerivedObject</class>
+    <class kind="class">sw::NotRelated</class>
+  </compound>
+  <compound kind="file">
+    <name>PolymorphicObjectContainer.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Polymorphic/</path>
+    <filename>_polymorphic_object_container_8h</filename>
+    <includes id="_base_object_8h" name="BaseObject.h" local="yes" imported="no">BaseObject.h</includes>
+    <class kind="class">sw::PolymorphicObjectContainer</class>
+  </compound>
+  <compound kind="file">
+    <name>PolymorphicSharedPtrContainer.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Polymorphic/</path>
+    <filename>_polymorphic_shared_ptr_container_8h</filename>
+    <class kind="class">sw::PolymorphicSharedPtrContainer</class>
+  </compound>
+  <compound kind="file">
+    <name>SharedObject.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Polymorphic/</path>
+    <filename>_shared_object_8h</filename>
+    <includes id="_base_object_8h" name="BaseObject.h" local="yes" imported="no">BaseObject.h</includes>
+    <class kind="class">sw::SharedObject</class>
+    <class kind="class">sw::DerivedFromSharedObject</class>
+  </compound>
+  <compound kind="file">
+    <name>PropertyRegistration.cpp</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/</path>
+    <filename>_property_registration_8cpp</filename>
+    <includes id="_string_container_8h" name="StringContainer.h" local="yes" imported="no">StringContainer.h</includes>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">Structs/StructWithSimpleTypes.h</includes>
+    <includes id="_base_object_8h" name="BaseObject.h" local="yes" imported="no">Polymorphic/BaseObject.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>StringContainer.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/</path>
+    <filename>_string_container_8h</filename>
+    <includes id="_engine_object_8h" name="EngineObject.h" local="yes" imported="no">swCommonLib/Serialization/PropertySerialization/EngineObject.h</includes>
+    <class kind="class">sw::StringContainer</class>
+  </compound>
+  <compound kind="file">
+    <name>StructAsCopyContainer.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/</path>
+    <filename>_struct_as_copy_container_8h</filename>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">StructWithSimpleTypes.h</includes>
+    <class kind="class">sw::StructAsCopyContainer</class>
+  </compound>
+  <compound kind="file">
+    <name>StructAsPtrContainer.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/</path>
+    <filename>_struct_as_ptr_container_8h</filename>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">StructWithSimpleTypes.h</includes>
+    <class kind="class">sw::StructAsPtrContainer</class>
+  </compound>
+  <compound kind="file">
+    <name>StructAsRefContainer.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/</path>
+    <filename>_struct_as_ref_container_8h</filename>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">StructWithSimpleTypes.h</includes>
+    <class kind="class">sw::StructAsRefContainer</class>
+  </compound>
+  <compound kind="file">
+    <name>StructPtrContainer.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/</path>
+    <filename>_struct_ptr_container_8h</filename>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">StructWithSimpleTypes.h</includes>
+    <class kind="class">sw::StructPtrContainer</class>
+  </compound>
+  <compound kind="file">
+    <name>StructSharedPtrContainer.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/</path>
+    <filename>_struct_shared_ptr_container_8h</filename>
+    <class kind="class">sw::StructSharedPtrContainer</class>
+  </compound>
+  <compound kind="file">
+    <name>StructWithSimpleTypes.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/</path>
+    <filename>_struct_with_simple_types_8h</filename>
+    <includes id="_types_definitions_8h" name="TypesDefinitions.h" local="yes" imported="no">swCommonLib/Common/TypesDefinitions.h</includes>
+    <class kind="struct">sw::StructWithSimpleTypes</class>
+  </compound>
+  <compound kind="file">
+    <name>StructWithSimpleTypesShared.h</name>
+    <path>D:/ProgramyVS/SWLibraries/swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/Structs/</path>
+    <filename>_struct_with_simple_types_shared_8h</filename>
+    <includes id="_struct_with_simple_types_8h" name="StructWithSimpleTypes.h" local="yes" imported="no">StructWithSimpleTypes.h</includes>
+    <class kind="struct">sw::StructWithSimpleTypesShared</class>
+  </compound>
+  <compound kind="class">
+    <name>sw::Animal</name>
+    <filename>classsw_1_1_animal.html</filename>
   </compound>
   <compound kind="class">
     <name>AnimationImpl</name>
@@ -949,6 +1448,11 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>sw::ArrayContainer</name>
+    <filename>classsw_1_1_array_container.html</filename>
+    <base>sw::EngineObject</base>
+  </compound>
+  <compound kind="class">
     <name>sw::Attribute</name>
     <filename>classsw_1_1_attribute.html</filename>
   </compound>
@@ -994,6 +1498,11 @@
       <anchor>a8f5229574046f633d36650abb4f1dc65</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="class">
+    <name>sw::BaseObject</name>
+    <filename>classsw_1_1_base_object.html</filename>
+    <base>sw::EngineObject</base>
   </compound>
   <compound kind="class">
     <name>sw::Chunk</name>
@@ -1394,13 +1903,23 @@
     <name>sw::DataUPack</name>
     <filename>structsw_1_1_data_u_pack.html</filename>
   </compound>
+  <compound kind="class">
+    <name>sw::DerivedFromSharedObject</name>
+    <filename>classsw_1_1_derived_from_shared_object.html</filename>
+    <base>sw::SharedObject</base>
+  </compound>
+  <compound kind="class">
+    <name>sw::DerivedObject</name>
+    <filename>classsw_1_1_derived_object.html</filename>
+    <base>sw::BaseObject</base>
+  </compound>
   <compound kind="struct">
     <name>DeserializerImpl</name>
     <filename>struct_deserializer_impl.html</filename>
   </compound>
   <compound kind="class">
-    <name>Dir</name>
-    <filename>class_dir.html</filename>
+    <name>filesystem::Dir</name>
+    <filename>classfilesystem_1_1_dir.html</filename>
   </compound>
   <compound kind="class">
     <name>DirectProperty</name>
@@ -1470,6 +1989,11 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>sw::Dog</name>
+    <filename>classsw_1_1_dog.html</filename>
+    <base>sw::Mammal</base>
+  </compound>
+  <compound kind="class">
     <name>DummyInterpolator</name>
     <filename>class_dummy_interpolator.html</filename>
     <templarg>KeyType</templarg>
@@ -1504,34 +2028,28 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>EngineObject</name>
-    <filename>class_engine_object.html</filename>
+    <name>sw::EngineObject</name>
+    <filename>classsw_1_1_engine_object.html</filename>
+    <base>Object</base>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>Serialize</name>
-      <anchorfile>class_engine_object.html</anchorfile>
-      <anchor>a5dd6ce8a45796814cccbfee320fd5c5e</anchor>
-      <arglist>(ISerializer *ser) const </arglist>
+      <anchorfile>classsw_1_1_engine_object.html</anchorfile>
+      <anchor>aaba5beea5aede80d6dc77bcabee41445</anchor>
+      <arglist>(ISerializer &amp;ser) const </arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>Deserialize</name>
-      <anchorfile>class_engine_object.html</anchorfile>
-      <anchor>aa75a619db892e51fa9cb28aa4dceee38</anchor>
-      <arglist>(IDeserializer *deser)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual Size</type>
-      <name>MemorySize</name>
-      <anchorfile>class_engine_object.html</anchorfile>
-      <anchor>ae9412b884612f08341e1f638e3cbed90</anchor>
-      <arglist>()</arglist>
+      <anchorfile>classsw_1_1_engine_object.html</anchorfile>
+      <anchor>adff361c92079615c322af34c09c31fab</anchor>
+      <arglist>(const IDeserializer &amp;deser)</arglist>
     </member>
   </compound>
   <compound kind="struct">
     <name>EngineSerializationContext</name>
     <filename>struct_engine_serialization_context.html</filename>
-    <base>SerializationContext</base>
+    <base>ISerializationContext</base>
     <member kind="variable">
       <type>bool</type>
       <name>SaveWholeMap</name>
@@ -1557,6 +2075,17 @@
   <compound kind="struct">
     <name>ExampleRealFormatHeader</name>
     <filename>struct_example_real_format_header.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::Exception</name>
+    <filename>classsw_1_1_exception.html</filename>
+    <member kind="function" virtualness="pure">
+      <type>virtual std::string</type>
+      <name>ErrorMessage</name>
+      <anchorfile>classsw_1_1_exception.html</anchorfile>
+      <anchor>a49d262c099cb77eb5dc64d4e45ec0093</anchor>
+      <arglist>() const =0</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FakeTimeline</name>
@@ -1612,6 +2141,10 @@
       <anchor>ae51b39f7b7fbbd8d120e281817936ee1</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="struct">
+    <name>sw::FilePosition</name>
+    <filename>structsw_1_1_file_position.html</filename>
   </compound>
   <compound kind="class">
     <name>sw::HCF</name>
@@ -1688,6 +2221,11 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>sw::HomoSapiens</name>
+    <filename>classsw_1_1_homo_sapiens.html</filename>
+    <base>sw::Mammal</base>
+  </compound>
+  <compound kind="class">
     <name>IAnimation</name>
     <filename>class_i_animation.html</filename>
   </compound>
@@ -1722,197 +2260,204 @@
       <type>const char *</type>
       <name>GetName</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>aa2e4cdafc62e9a6d4f83af8abc2009b2</anchor>
-      <arglist>()</arglist>
+      <anchor>acfd98da3c85e533210534f93865a4ea9</anchor>
+      <arglist>() const </arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>EnterObject</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a9f06467f4430ae832344ad1b04796171</anchor>
-      <arglist>(const std::string &amp;name)</arglist>
+      <anchor>a267f445d930dc9f0337e93952a7368d5</anchor>
+      <arglist>(const std::string &amp;name) const </arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>EnterArray</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a2facc14593dac9a7dac4597445e66f0f</anchor>
-      <arglist>(const std::string &amp;name)</arglist>
+      <anchor>ab90ad9e324b1348cdb1476c67a7e2784</anchor>
+      <arglist>(const std::string &amp;name) const </arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>EnterObject</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a986d7680cf1c7300e67cc69819c95396</anchor>
-      <arglist>(const char *name)</arglist>
+      <anchor>a05c75f470100429895a709654b956f2c</anchor>
+      <arglist>(const char *name) const </arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>EnterArray</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a0b6984b71325caafceabdef4f2efc80e</anchor>
-      <arglist>(const char *name)</arglist>
+      <anchor>af307fb2e5bbb054f24472c9636034581</anchor>
+      <arglist>(const char *name) const </arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Exit</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a1398abe89ed24718488048bf2b3d12ac</anchor>
-      <arglist>()</arglist>
+      <anchor>ab8c59885a1fa045243f9f9012ebd1f66</anchor>
+      <arglist>() const </arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>FirstElement</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a7c0530b1cc565bb3812ed5852d45ea8f</anchor>
-      <arglist>()</arglist>
+      <anchor>accbdec255a41f3288cd8b3bab637a265</anchor>
+      <arglist>() const </arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>NextElement</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a0d470007aac145969afcec2f5042bef7</anchor>
-      <arglist>()</arglist>
+      <anchor>a053398c2930f87a95c23b25934b06bc1</anchor>
+      <arglist>() const </arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>PrevElement</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a08c7998e4ce782de1db21574acb138a7</anchor>
-      <arglist>()</arglist>
+      <anchor>ad698d20d6f6fe0f87806b0b97be2b353</anchor>
+      <arglist>() const </arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>LastElement</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>ac4aae4473eada8a7dc0f9dc9dbd719cb</anchor>
-      <arglist>()</arglist>
+      <anchor>ac0af1318a4b2a76d6c5be8693e044fc7</anchor>
+      <arglist>() const </arglist>
     </member>
     <member kind="function">
       <type>std::string</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>aa8cfd54d2e775719fc907ab5aea54544</anchor>
-      <arglist>(const std::string &amp;name, std::string &amp;defaultValue)</arglist>
+      <anchor>ae34d6ad6a76110c650f7a3d3429f9eea</anchor>
+      <arglist>(const std::string &amp;name, std::string &amp;defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a3f0fa5f5ca66fd5fc2f6b217bc2c93ac</anchor>
-      <arglist>(const std::string &amp;name, const char *defaultValue)</arglist>
+      <anchor>a863c231f45e0495605f529cd1850d32e</anchor>
+      <arglist>(const std::string &amp;name, const char *defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>uint32</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>ae6b89f6fa2bd6ca252977c1c98efd402</anchor>
-      <arglist>(const std::string &amp;name, uint32 defaultValue)</arglist>
+      <anchor>afade2a1ffbacdfb690e9ac9d4e9f8508</anchor>
+      <arglist>(const std::string &amp;name, uint32 defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>uint64</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a8f59944ee3add863e223ad50e51d534d</anchor>
-      <arglist>(const std::string &amp;name, uint64 defaultValue)</arglist>
+      <anchor>a24ef00f0b37b9eead13352e6c971b5dd</anchor>
+      <arglist>(const std::string &amp;name, uint64 defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>int32</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a168885fe6ff2eb4ffc3cc533b44a00e2</anchor>
-      <arglist>(const std::string &amp;name, int32 defaultValue)</arglist>
+      <anchor>a380f54ce59deff39bdfdee49e0ef9ae2</anchor>
+      <arglist>(const std::string &amp;name, int32 defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>int64</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a6ce5fec73935835c04015d9fdbfaeaea</anchor>
-      <arglist>(const std::string &amp;name, int64 defaultValue)</arglist>
+      <anchor>a1ce3f7050e3c4b01581ef990d236ec7b</anchor>
+      <arglist>(const std::string &amp;name, int64 defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a9071ad0b604a13fd20c3bc870c6aefdf</anchor>
-      <arglist>(const std::string &amp;name, bool defaultValue)</arglist>
+      <anchor>afab2fd258419340a7a8b52cda32d18a5</anchor>
+      <arglist>(const std::string &amp;name, bool defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>double</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a8a808cae748afd52f88450808f82f130</anchor>
-      <arglist>(const std::string &amp;name, double defaultValue)</arglist>
+      <anchor>a520a94b8223cf650131c73ab516a4761</anchor>
+      <arglist>(const std::string &amp;name, double defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>std::string</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a349815c56ab725e224cc99309f99b74a</anchor>
-      <arglist>(const char *name, std::string &amp;defaultValue)</arglist>
+      <anchor>a6bfbb292b31c5f4c53599d530052803f</anchor>
+      <arglist>(const char *name, std::string &amp;defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a138b49be185ea5b2fc99725abb8a03fd</anchor>
-      <arglist>(const char *name, const char *defaultValue)</arglist>
+      <anchor>adbff7fff8ae888f340f602f95386f703</anchor>
+      <arglist>(const char *name, const char *defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>uint32</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>ab9cdf8ded3d639c4121e2c2634d6a028</anchor>
-      <arglist>(const char *name, uint32 defaultValue)</arglist>
+      <anchor>a1a309c6822b079d328bd98a8c2be22af</anchor>
+      <arglist>(const char *name, uint32 defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>uint64</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a720b6ebf3f73531284465911c2e01702</anchor>
-      <arglist>(const char *name, uint64 defaultValue)</arglist>
+      <anchor>aba01e0cb34326624f09637e120aa11f2</anchor>
+      <arglist>(const char *name, uint64 defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>int32</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a1d8835ef7f164074a1034b40e163add0</anchor>
-      <arglist>(const char *name, int32 defaultValue)</arglist>
+      <anchor>a3ddc05dc245e6b0c5641f78b2e20d5e3</anchor>
+      <arglist>(const char *name, int32 defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>int64</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a79994501bea6576582dc752cad99e04b</anchor>
-      <arglist>(const char *name, int64 defaultValue)</arglist>
+      <anchor>a8a177d52d451e0891db194df5d8e793e</anchor>
+      <arglist>(const char *name, int64 defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>ad6fd37d46026c83a269ac2084c98e876</anchor>
-      <arglist>(const char *name, bool defaultValue)</arglist>
+      <anchor>a26d11d60670ff7cf622ea9dea5d798fe</anchor>
+      <arglist>(const char *name, bool defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>double</type>
       <name>GetAttribute</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>a184b88687f0eb16e32576373f7106001</anchor>
-      <arglist>(const char *name, double defaultValue)</arglist>
+      <anchor>a4f19e3ca53cb19bcab2f7d4f5f603a1a</anchor>
+      <arglist>(const char *name, double defaultValue) const </arglist>
     </member>
     <member kind="function">
       <type>std::string</type>
       <name>GetError</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>aae34245a4f01ffcae44c04aae37528e1</anchor>
-      <arglist>()</arglist>
+      <anchor>a192dbd55f81a06e222c502ae6f10190d</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>sw::FilePosition</type>
+      <name>CurrentLineNumber</name>
+      <anchorfile>class_i_deserializer.html</anchorfile>
+      <anchor>a9090bdc6d4c4daaf4877d8b104207666</anchor>
+      <arglist>() const </arglist>
     </member>
     <member kind="function">
       <type>ContextType *</type>
       <name>GetContext</name>
       <anchorfile>class_i_deserializer.html</anchorfile>
-      <anchor>aeb74b772044d2b4f2326e0a3e08a2cff</anchor>
-      <arglist>()</arglist>
+      <anchor>aaae112cf8501bc5ff9c94f0145327da1</anchor>
+      <arglist>() const </arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -1986,6 +2531,10 @@
     <filename>struct_default_interpolators_1_1is__param__animation__enabled.html</filename>
     <templarg></templarg>
   </compound>
+  <compound kind="struct">
+    <name>ISerializationContext</name>
+    <filename>struct_i_serialization_context.html</filename>
+  </compound>
   <compound kind="class">
     <name>ISerializer</name>
     <filename>class_i_serializer.html</filename>
@@ -1993,8 +2542,8 @@
       <type></type>
       <name>ISerializer</name>
       <anchorfile>class_i_serializer.html</anchorfile>
-      <anchor>a33d03a7fb1adc4f34a0f09516f9b6d50</anchor>
-      <arglist>(std::unique_ptr&lt; SerializationContext &gt; serContext)</arglist>
+      <anchor>a2d9c5320ddce62aa5223db5240899be9</anchor>
+      <arglist>(ISerializationContextPtr serContext)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
@@ -2217,6 +2766,15 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>sw::Logger</name>
+    <filename>classsw_1_1_logger.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::Mammal</name>
+    <filename>classsw_1_1_mammal.html</filename>
+    <base>sw::Animal</base>
+  </compound>
+  <compound kind="class">
     <name>MemoryChunk</name>
     <filename>class_memory_chunk.html</filename>
     <member kind="function">
@@ -2333,6 +2891,16 @@
     <name>Nested2</name>
     <filename>struct_nested2.html</filename>
   </compound>
+  <compound kind="class">
+    <name>sw::NotRelated</name>
+    <filename>classsw_1_1_not_related.html</filename>
+    <base>sw::EngineObject</base>
+  </compound>
+  <compound kind="class">
+    <name>sw::Nullable</name>
+    <filename>classsw_1_1_nullable.html</filename>
+    <templarg>ContentType</templarg>
+  </compound>
   <compound kind="struct">
     <name>Nullable</name>
     <filename>struct_nullable.html</filename>
@@ -2364,6 +2932,21 @@
       <anchorfile>struct_nullable.html</anchorfile>
       <anchor>a9dddbc351be5d1e60d2e81afb7420858</anchor>
       <arglist>(ResultType &amp;&amp;result)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>sw::Nullable&lt; void &gt;</name>
+    <filename>classsw_1_1_nullable_3_01void_01_4.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Object</name>
+    <filename>class_object.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>virtual Size</type>
+      <name>MemorySize</name>
+      <anchorfile>class_object.html</anchorfile>
+      <anchor>a96ea1c48332caf42ec80d2cf0e931d5c</anchor>
+      <arglist>() const </arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -2429,11 +3012,11 @@
     <name>filesystem::Path</name>
     <filename>classfilesystem_1_1_path.html</filename>
     <member kind="function">
-      <type>bool</type>
-      <name>Compare</name>
+      <type>std::string</type>
+      <name>String</name>
       <anchorfile>classfilesystem_1_1_path.html</anchorfile>
-      <anchor>a0fd86b058b30ab319e0ece55c903e172</anchor>
-      <arglist>(const Path &amp;path1, const Path &amp;path2)</arglist>
+      <anchor>a02d87fc3130cad94bb3e45a2d46f11da</anchor>
+      <arglist>() const </arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -2449,13 +3032,22 @@
       <anchor>ab3183434639a83fe6834d4a9e74d746c</anchor>
       <arglist>() const </arglist>
     </member>
-    <member kind="function">
-      <type>const experimental::path &amp;</type>
-      <name>GetStdPath</name>
-      <anchorfile>classfilesystem_1_1_path.html</anchorfile>
-      <anchor>aceb4a74f50711fe635bc07279336838d</anchor>
-      <arglist>() const </arglist>
-    </member>
+  </compound>
+  <compound kind="class">
+    <name>path_impl</name>
+    <filename>classpath__impl.html</filename>
+  </compound>
+  <compound kind="struct">
+    <name>sw::PhysicalProperties</name>
+    <filename>structsw_1_1_physical_properties.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::PolymorphicObjectContainer</name>
+    <filename>classsw_1_1_polymorphic_object_container.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::PolymorphicSharedPtrContainer</name>
+    <filename>classsw_1_1_polymorphic_shared_ptr_container.html</filename>
   </compound>
   <compound kind="class">
     <name>Properties</name>
@@ -2464,15 +3056,15 @@
       <type>static TypeID</type>
       <name>GetRealType</name>
       <anchorfile>class_properties.html</anchorfile>
-      <anchor>af9900dd4b381d5553c93a6e6125870b3</anchor>
-      <arglist>(rttr::variant &amp;object)</arglist>
+      <anchor>a6969eaca9fc455be15a9714efc34b328</anchor>
+      <arglist>(const rttr::variant &amp;object)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static TypeID</type>
       <name>GetRealType</name>
       <anchorfile>class_properties.html</anchorfile>
-      <anchor>a0fcddab3177f08a046b9b287c5a7676f</anchor>
-      <arglist>(EngineObject *object)</arglist>
+      <anchor>a6e81cd0b0dc187412c0cc8cada061c2e</anchor>
+      <arglist>(Object *object)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -2501,6 +3093,48 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>sw::QueueMT</name>
+    <filename>classsw_1_1_queue_m_t.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>Pop</name>
+      <anchorfile>classsw_1_1_queue_m_t.html</anchorfile>
+      <anchor>a209db94857b8ea26185d0d1785ea09b8</anchor>
+      <arglist>(ContentType &amp;element)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsEmpty</name>
+      <anchorfile>classsw_1_1_queue_m_t.html</anchorfile>
+      <anchor>a3eff7b901a7ba6cd41a0bb1f41dbaf58</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>sw::ReaderUniqueLock</name>
+    <filename>classsw_1_1_reader_unique_lock.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>Lock</name>
+      <anchorfile>classsw_1_1_reader_unique_lock.html</anchorfile>
+      <anchor>ace7db238f40d7f699599903e422770d0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Unlock</name>
+      <anchorfile>classsw_1_1_reader_unique_lock.html</anchorfile>
+      <anchor>ab7d77e7ab298a110d429d23c306bd8af</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>sw::ReaderWriterLock</name>
+    <filename>classsw_1_1_reader_writer_lock.html</filename>
+  </compound>
+  <compound kind="class">
     <name>RelativeTimeline</name>
     <filename>class_relative_timeline.html</filename>
     <base>TimelineBase</base>
@@ -2527,182 +3161,357 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>resolver</name>
+    <filename>classresolver.html</filename>
+  </compound>
+  <compound kind="class">
     <name>ResourceContainer</name>
     <filename>class_resource_container.html</filename>
     <templarg></templarg>
   </compound>
   <compound kind="class">
-    <name>Serialization</name>
-    <filename>class_serialization.html</filename>
+    <name>sw::RuntimeException</name>
+    <filename>classsw_1_1_runtime_exception.html</filename>
+    <base>sw::Exception</base>
+    <member kind="function" virtualness="virtual">
+      <type>virtual std::string</type>
+      <name>ErrorMessage</name>
+      <anchorfile>classsw_1_1_runtime_exception.html</anchorfile>
+      <anchor>ad445298efa789f38817280d80f1fa422</anchor>
+      <arglist>() const </arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>sw::Semaphore</name>
+    <filename>classsw_1_1_semaphore.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::Serialization</name>
+    <filename>classsw_1_1_serialization.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>Serialization</name>
+      <anchorfile>classsw_1_1_serialization.html</anchorfile>
+      <anchor>a9236489776db9d7855f32a7e5a183923</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Serialization</name>
+      <anchorfile>classsw_1_1_serialization.html</anchorfile>
+      <anchor>acf80f8a9fd204be98e2440a3d92d594a</anchor>
+      <arglist>(SerializationContextPtr ctx)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Serialize</name>
+      <anchorfile>classsw_1_1_serialization.html</anchorfile>
+      <anchor>a049a545747e972cd97a949b4dc8822f3</anchor>
+      <arglist>(const filesystem::Path &amp;filePath, const EngineObject *object)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Serialize</name>
+      <anchorfile>classsw_1_1_serialization.html</anchorfile>
+      <anchor>a7d39c33336bff7d8d462193ed645cccc</anchor>
+      <arglist>(const filesystem::Path &amp;filePath, const Type &amp;object)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Serialize</name>
+      <anchorfile>classsw_1_1_serialization.html</anchorfile>
+      <anchor>ad5ec1201c04d7ca43c1f58d19c2aa610</anchor>
+      <arglist>(ISerializer &amp;ser, const Type &amp;object)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Deserialize</name>
+      <anchorfile>classsw_1_1_serialization.html</anchorfile>
+      <anchor>a9235c8b70bb31b57a8ca78226c3c4ce1</anchor>
+      <arglist>(const filesystem::Path &amp;filePath, const Type &amp;object)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Deserialize</name>
+      <anchorfile>classsw_1_1_serialization.html</anchorfile>
+      <anchor>acb84570066f6c3c2a8a49158dda785f6</anchor>
+      <arglist>(IDeserializer &amp;deser, Type &amp;object)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>sw::SerializationContext</name>
+    <filename>structsw_1_1_serialization_context.html</filename>
+    <base>ISerializationContext</base>
+    <member kind="variable">
+      <type>TypePropertyMap</type>
+      <name>TypeProperties</name>
+      <anchorfile>structsw_1_1_serialization_context.html</anchorfile>
+      <anchor>a4a97901aa9a7234b0b52bf2294c0484e</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>sw::SerializationCore</name>
+    <filename>classsw_1_1_serialization_core.html</filename>
     <member kind="function">
       <type>void</type>
       <name>SerializeProperty</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>ae409ffa93bf760976c5aaec8fc6bc9fb</anchor>
-      <arglist>(ISerializer *ser, rttr::property prop, const rttr::instance &amp;object)</arglist>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a7a0e45d0e7cb93c9a1ea7d1d30f6d625</anchor>
+      <arglist>(ISerializer &amp;ser, rttr::property prop, const rttr::instance &amp;object)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SerializeProperty</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>ae409ffa93bf760976c5aaec8fc6bc9fb</anchor>
-      <arglist>(ISerializer *ser, rttr::property prop, const rttr::instance &amp;object)</arglist>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a7a0e45d0e7cb93c9a1ea7d1d30f6d625</anchor>
+      <arglist>(ISerializer &amp;ser, rttr::property prop, const rttr::instance &amp;object)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>DeserializeProperty</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>ad4264ef893bcd254fc2313e6685a2319</anchor>
-      <arglist>(IDeserializer *deser, rttr::property prop, const rttr::instance &amp;object)</arglist>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a4a6242bb4680300786aa6019a86f5667</anchor>
+      <arglist>(const IDeserializer &amp;deser, rttr::property prop, const rttr::instance &amp;object)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>DeserializeProperty</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>ad4264ef893bcd254fc2313e6685a2319</anchor>
-      <arglist>(IDeserializer *deser, rttr::property prop, const rttr::instance &amp;object)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static std::vector&lt; rttr::property &gt; &amp;</type>
-      <name>GetTypeFilteredProperties</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a407bcc6f14719b760c874d8b98422c93</anchor>
-      <arglist>(rttr::type objType, EngineSerializationContext *context)</arglist>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a4a6242bb4680300786aa6019a86f5667</anchor>
+      <arglist>(const IDeserializer &amp;deser, rttr::property prop, const rttr::instance &amp;object)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static bool</type>
-      <name>ShouldSave</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>ab393b0abe216ae036076b23e13114382</anchor>
-      <arglist>(const rttr::property &amp;prop, MetaDataType saveFlag)</arglist>
+      <name>IsPolymorphicType</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a497086bf0674797776a2b74cbda56861</anchor>
+      <arglist>(TypeID type)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
-      <name>DefaultSerialize</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a7351a2335ff63b2c94cb585a4b35bbe9</anchor>
-      <arglist>(ISerializer *ser, const EngineObject *object)</arglist>
+      <name>DeserializePolymorphic</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a2de70dc21794acfb62cf563de643a44f</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
-      <name>DefaultDeserialize</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a39419e1238dce1d0e2281b3ef8ee0932</anchor>
-      <arglist>(IDeserializer *deser, EngineObject *object)</arglist>
+      <name>DeserializeNotPolymorphic</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a8745a6c6ad2d2ae0b303c7fc138dd8d3</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>SerializeBasicTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a7277ad694fe96999109700a280e57fda</anchor>
-      <arglist>(ISerializer *ser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>SerializeVectorTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a96b49b46d54be5e253ecec8cb94b7d49</anchor>
-      <arglist>(ISerializer *ser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>SerializeStringTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a5980831c6b150062566465dae82af9a9</anchor>
-      <arglist>(ISerializer *ser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>SerializeEnumTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a49b134d56818468778ed17495f1138cd</anchor>
-      <arglist>(ISerializer *ser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>SerializeArrayTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a91e6010e1420991a26d6b241893c5285</anchor>
-      <arglist>(ISerializer *ser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>DeserializeBasicTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a599d95402418fde1a0ae2a00152ed5f8</anchor>
-      <arglist>(IDeserializer *deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>DeserializeVectorTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a4d0e333a7575d68c439db8cc4b4867c4</anchor>
-      <arglist>(IDeserializer *deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>DeserializeStringTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a0be73170a686d63dcb3ee75a064f5057</anchor>
-      <arglist>(IDeserializer *deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>DeserializeEnumTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a86955dc364161b5a45eb5b61d8fbe356</anchor>
-      <arglist>(IDeserializer *deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>DeserializeArrayTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>ad4d9e06e398255dd082471c0fa9714cc</anchor>
-      <arglist>(IDeserializer *deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>DeserializeObjectTypes</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a89fa57d07046d42a1a7c45c5f47e7338</anchor>
-      <arglist>(IDeserializer *deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+      <type>static rttr::variant</type>
+      <name>CreateAndSetObjectProperty</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>ab659878ab9fd8d469cb1b2bfa32250ef</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop, TypeID dynamicType)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static PropertyType</type>
       <name>GetPropertyValue</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>af0cbd1b82dbac877a8d6b5e9cfabea76</anchor>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a35b73d4296e38f5ff1ab770cce63bda0</anchor>
       <arglist>(rttr::property prop, const rttr::instance &amp;object)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
       <name>SerializeProperty</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>ad48a8e77c61881e58ee409e539320f09</anchor>
-      <arglist>(ISerializer *ser, rttr::property prop, const rttr::instance &amp;object)</arglist>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a00d0e40cc02559de16c20d25ec3b3f01</anchor>
+      <arglist>(ISerializer &amp;ser, rttr::property prop, const rttr::instance &amp;object)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
       <name>SetPropertyValue</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a516ed2a66a77d1c20c863db176faa69a</anchor>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a8a37f88e8d60932404f3c30a4753d59a</anchor>
       <arglist>(rttr::property prop, const rttr::instance &amp;object, PropertyType value)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
       <name>DeserializeProperty</name>
-      <anchorfile>class_serialization.html</anchorfile>
-      <anchor>a41067b3b3863a550173d92c8bd925335</anchor>
-      <arglist>(IDeserializer *deser, rttr::property prop, const rttr::instance &amp;object)</arglist>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a6ed272f7c8a32ceca7e6d11883a22619</anchor>
+      <arglist>(const IDeserializer &amp;deser, rttr::property prop, const rttr::instance &amp;object)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static TypeID</type>
+      <name>GetRealType</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>abe4273c688c8c5dfed914ff718db5de2</anchor>
+      <arglist>(const rttr::instance &amp;object)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static TypeID</type>
+      <name>GetWrappedType</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>ac31b9dbd41dd6cb09fa39aef0ba5c46a</anchor>
+      <arglist>(TypeID type)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static TypeID</type>
+      <name>GetRawWrappedType</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>abf72a99b128b906d29475c591873d87c</anchor>
+      <arglist>(TypeID type)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static SerializationContext *</type>
+      <name>Context</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a0fbeaba917a415118bb17e76e2c7bd18</anchor>
+      <arglist>(const IDeserializer &amp;deser)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>DestroyObject</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a166115f01cd217a4b6a400c78f7d4262</anchor>
+      <arglist>(rttr::variant &amp;object)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>DeserializeProperty</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>acefeb9607735b51aa5399f223979d8c4</anchor>
+      <arglist>(const IDeserializer &amp;deser, rttr::property prop, const rttr::instance &amp;object)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>SerializeBasicTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>aee89ff077e8e573595f1f15b967cbc79</anchor>
+      <arglist>(ISerializer &amp;ser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>SerializeEnumTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a152905469d23076e1360bf9f10efc630</anchor>
+      <arglist>(ISerializer &amp;ser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeBasicTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a2496c7f9670a987ed479f90ca782ff8c</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeVectorTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>aa7039b5fe5396632e8664e62893723e3</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeStringTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a53b9afd918fe1b7aa49eb6e4c5580de3</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeEnumTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a8a64062ef0c5193f6694187c5634f600</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeArrayTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a2bfc2a1eaadad7c17ab75a4dd88e640e</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeObjectTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a51f3c1fc88f343d0e1606e73a6c9fd52</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>SerializeBasicTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>aee89ff077e8e573595f1f15b967cbc79</anchor>
+      <arglist>(ISerializer &amp;ser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>SerializeEnumTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a152905469d23076e1360bf9f10efc630</anchor>
+      <arglist>(ISerializer &amp;ser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeBasicTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a2496c7f9670a987ed479f90ca782ff8c</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeVectorTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>aa7039b5fe5396632e8664e62893723e3</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeStringTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a53b9afd918fe1b7aa49eb6e4c5580de3</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeEnumTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a8a64062ef0c5193f6694187c5634f600</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeArrayTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a2bfc2a1eaadad7c17ab75a4dd88e640e</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeserializeObjectTypes</name>
+      <anchorfile>classsw_1_1_serialization_core.html</anchorfile>
+      <anchor>a51f3c1fc88f343d0e1606e73a6c9fd52</anchor>
+      <arglist>(const IDeserializer &amp;deser, const rttr::instance &amp;object, rttr::property &amp;prop)</arglist>
     </member>
   </compound>
-  <compound kind="struct">
-    <name>SerializationContext</name>
-    <filename>struct_serialization_context.html</filename>
+  <compound kind="class">
+    <name>sw::SerializationException</name>
+    <filename>classsw_1_1_serialization_exception.html</filename>
+    <base>sw::RuntimeException</base>
+    <member kind="function" virtualness="virtual">
+      <type>virtual std::string</type>
+      <name>ErrorMessage</name>
+      <anchorfile>classsw_1_1_serialization_exception.html</anchorfile>
+      <anchor>a352f3325eac9f8220832d69819d477d3</anchor>
+      <arglist>() const </arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>SerializerImpl</name>
     <filename>struct_serializer_impl.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::SharedObject</name>
+    <filename>classsw_1_1_shared_object.html</filename>
+    <base>sw::BaseObject</base>
   </compound>
   <compound kind="class">
     <name>SpinLock</name>
@@ -2749,24 +3558,76 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>sw::StaticArrayContainer</name>
+    <filename>classsw_1_1_static_array_container.html</filename>
+    <base>sw::EngineObject</base>
+  </compound>
+  <compound kind="class">
+    <name>sw::StaticArrayContainer_Readonly</name>
+    <filename>classsw_1_1_static_array_container___readonly.html</filename>
+    <base>sw::EngineObject</base>
+  </compound>
+  <compound kind="class">
+    <name>sw::StringContainer</name>
+    <filename>classsw_1_1_string_container.html</filename>
+    <base>sw::EngineObject</base>
+  </compound>
+  <compound kind="class">
     <name>StringPropertyPath</name>
     <filename>class_string_property_path.html</filename>
     <templarg></templarg>
   </compound>
   <compound kind="class">
+    <name>sw::StructAsCopyContainer</name>
+    <filename>classsw_1_1_struct_as_copy_container.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::StructAsPtrContainer</name>
+    <filename>classsw_1_1_struct_as_ptr_container.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::StructAsRefContainer</name>
+    <filename>classsw_1_1_struct_as_ref_container.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::StructPtrContainer</name>
+    <filename>classsw_1_1_struct_ptr_container.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::StructSharedPtrContainer</name>
+    <filename>classsw_1_1_struct_shared_ptr_container.html</filename>
+  </compound>
+  <compound kind="struct">
+    <name>sw::StructWithSimpleTypes</name>
+    <filename>structsw_1_1_struct_with_simple_types.html</filename>
+  </compound>
+  <compound kind="struct">
+    <name>sw::StructWithSimpleTypesShared</name>
+    <filename>structsw_1_1_struct_with_simple_types_shared.html</filename>
+    <base>sw::StructWithSimpleTypes</base>
+  </compound>
+  <compound kind="class">
     <name>TestAnim</name>
     <filename>class_test_anim.html</filename>
-    <base>EngineObject</base>
+    <base>Object</base>
   </compound>
   <compound kind="class">
     <name>TestInterpolators</name>
     <filename>class_test_interpolators.html</filename>
-    <base>EngineObject</base>
+    <base>Object</base>
+  </compound>
+  <compound kind="class">
+    <name>sw::ThreadsBarrier</name>
+    <filename>classsw_1_1_threads_barrier.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>sw::ThreadsLatch</name>
+    <filename>classsw_1_1_threads_latch.html</filename>
   </compound>
   <compound kind="class">
     <name>TimelineBase</name>
     <filename>class_timeline_base.html</filename>
-    <base>EngineObject</base>
+    <base>Object</base>
     <member kind="function">
       <type>TimeType</type>
       <name>GetTime</name>
@@ -2781,6 +3642,10 @@
       <anchor>a7143e812d025103ad0b8babeb3c34d01</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="class">
+    <name>sw::TriStateObject</name>
+    <filename>classsw_1_1_tri_state_object.html</filename>
   </compound>
   <compound kind="class">
     <name>UPtr</name>
@@ -2812,21 +3677,69 @@
       <arglist>(const Version &amp;other)</arglist>
     </member>
   </compound>
-  <compound kind="namespace">
-    <name>@74</name>
-    <filename>namespace@74.html</filename>
+  <compound kind="struct">
+    <name>VoxtreeHeader</name>
+    <filename>struct_voxtree_header.html</filename>
+    <member kind="variable">
+      <type>char</type>
+      <name>VoxtreeLetters</name>
+      <anchorfile>struct_voxtree_header.html</anchorfile>
+      <anchor>aa2d3b0fdde085f321fcf8bd11fa0474e</anchor>
+      <arglist>[7]</arglist>
+    </member>
+    <member kind="variable">
+      <type>Version</type>
+      <name>VoxtreeVersion</name>
+      <anchorfile>struct_voxtree_header.html</anchorfile>
+      <anchor>afd1ce0da91d2d22c8881fcc393735aa3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Size</type>
+      <name>FreeIndirectOffset</name>
+      <anchorfile>struct_voxtree_header.html</anchorfile>
+      <anchor>a24b1efe49de9f8cebf1af63fb0c1a16a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>sw::WriterUniqueLock</name>
+    <filename>classsw_1_1_writer_unique_lock.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>Lock</name>
+      <anchorfile>classsw_1_1_writer_unique_lock.html</anchorfile>
+      <anchor>a7c5666c5684d540b3f355d1386fce44a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Unlock</name>
+      <anchorfile>classsw_1_1_writer_unique_lock.html</anchorfile>
+      <anchor>a0ddcea2a74d86862894f9cb929d16986</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>sw::Zoo</name>
+    <filename>classsw_1_1_zoo.html</filename>
   </compound>
   <compound kind="namespace">
-    <name>@77</name>
-    <filename>namespace@77.html</filename>
+    <name>@100</name>
+    <filename>namespace@100.html</filename>
   </compound>
   <compound kind="namespace">
-    <name>@78</name>
-    <filename>namespace@78.html</filename>
+    <name>@101</name>
+    <filename>namespace@101.html</filename>
   </compound>
   <compound kind="namespace">
-    <name>@88</name>
-    <filename>namespace@88.html</filename>
+    <name>@120</name>
+    <filename>namespace@120.html</filename>
+  </compound>
+  <compound kind="namespace">
+    <name>@97</name>
+    <filename>namespace@97.html</filename>
   </compound>
   <compound kind="namespace">
     <name>DefaultInterpolators</name>
@@ -2850,6 +3763,7 @@
   <compound kind="namespace">
     <name>filesystem</name>
     <filename>namespacefilesystem.html</filename>
+    <class kind="class">filesystem::Dir</class>
     <class kind="class">filesystem::File</class>
     <class kind="class">filesystem::Path</class>
   </compound>
@@ -2858,34 +3772,111 @@
     <filename>namespacerttr.html</filename>
   </compound>
   <compound kind="namespace">
+    <name>std</name>
+    <filename>namespacestd.html</filename>
+  </compound>
+  <compound kind="namespace">
     <name>sw</name>
     <filename>namespacesw.html</filename>
+    <class kind="class">sw::Animal</class>
+    <class kind="class">sw::ArrayContainer</class>
     <class kind="class">sw::Attribute</class>
     <class kind="struct">sw::AttributeHeader</class>
     <class kind="class">sw::AttributeRepr</class>
+    <class kind="class">sw::BaseObject</class>
     <class kind="class">sw::Chunk</class>
     <class kind="struct">sw::ChunkHeader</class>
     <class kind="class">sw::ChunkNameAttrib</class>
     <class kind="class">sw::ChunkRepr</class>
     <class kind="struct">sw::DataPack</class>
     <class kind="struct">sw::DataUPack</class>
+    <class kind="class">sw::DerivedFromSharedObject</class>
+    <class kind="class">sw::DerivedObject</class>
+    <class kind="class">sw::Dog</class>
+    <class kind="class">sw::EngineObject</class>
+    <class kind="class">sw::Exception</class>
     <class kind="struct">sw::FileHeader</class>
+    <class kind="struct">sw::FilePosition</class>
     <class kind="class">sw::HCF</class>
+    <class kind="class">sw::HomoSapiens</class>
     <class kind="class">sw::IAttribute</class>
     <class kind="class">sw::ImplHCF</class>
+    <class kind="class">sw::Logger</class>
+    <class kind="class">sw::Mammal</class>
+    <class kind="class">sw::NotRelated</class>
+    <class kind="class">sw::Nullable</class>
+    <class kind="class">sw::Nullable&lt; void &gt;</class>
+    <class kind="struct">sw::PhysicalProperties</class>
+    <class kind="class">sw::PolymorphicObjectContainer</class>
+    <class kind="class">sw::PolymorphicSharedPtrContainer</class>
+    <class kind="class">sw::QueueMT</class>
+    <class kind="class">sw::ReaderUniqueLock</class>
+    <class kind="class">sw::ReaderWriterLock</class>
+    <class kind="class">sw::RuntimeException</class>
+    <class kind="class">sw::Semaphore</class>
+    <class kind="class">sw::Serialization</class>
+    <class kind="struct">sw::SerializationContext</class>
+    <class kind="class">sw::SerializationCore</class>
+    <class kind="class">sw::SerializationException</class>
+    <class kind="class">sw::SharedObject</class>
+    <class kind="class">sw::StaticArrayContainer</class>
+    <class kind="class">sw::StaticArrayContainer_Readonly</class>
+    <class kind="class">sw::StringContainer</class>
+    <class kind="class">sw::StructAsCopyContainer</class>
+    <class kind="class">sw::StructAsPtrContainer</class>
+    <class kind="class">sw::StructAsRefContainer</class>
+    <class kind="class">sw::StructPtrContainer</class>
+    <class kind="class">sw::StructSharedPtrContainer</class>
+    <class kind="struct">sw::StructWithSimpleTypes</class>
+    <class kind="struct">sw::StructWithSimpleTypesShared</class>
+    <class kind="class">sw::ThreadsBarrier</class>
+    <class kind="class">sw::ThreadsLatch</class>
+    <class kind="class">sw::TriStateObject</class>
+    <class kind="class">sw::WriterUniqueLock</class>
+    <class kind="class">sw::Zoo</class>
+    <member kind="enumeration">
+      <type></type>
+      <name>Result</name>
+      <anchorfile>group___helpers.html</anchorfile>
+      <anchor>ga9201d23470c14e880d2d2b5dc7389ed2</anchor>
+      <arglist></arglist>
+      <enumvalue file="group___helpers.html" anchor="gga9201d23470c14e880d2d2b5dc7389ed2a902b0d55fddef6f8d651fe1035b7d4bd">Error</enumvalue>
+      <enumvalue file="group___helpers.html" anchor="gga9201d23470c14e880d2d2b5dc7389ed2a505a83f220c02df2f85c3810cd9ceb38">Success</enumvalue>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>sw::detail</name>
+    <filename>namespacesw_1_1detail.html</filename>
   </compound>
   <compound kind="group">
-    <name>DeletingObjects</name>
-    <title>Private Deleter</title>
-    <filename>group___deleting_objects.html</filename>
+    <name>Helpers</name>
+    <title>Helpers</title>
+    <filename>group___helpers.html</filename>
+    <class kind="class">sw::Exception</class>
+    <class kind="class">sw::RuntimeException</class>
+    <class kind="class">sw::Nullable</class>
+    <class kind="class">sw::Nullable&lt; void &gt;</class>
+    <class kind="class">sw::Semaphore</class>
+    <class kind="class">SpinLock</class>
+    <class kind="class">sw::ThreadsBarrier</class>
+    <class kind="class">sw::ThreadsLatch</class>
+    <class kind="struct">Nullable</class>
     <class kind="class">ObjectDeleterKey</class>
-    <class kind="class">ObjectDeleter</class>
+    <member kind="enumeration">
+      <type></type>
+      <name>Result</name>
+      <anchorfile>group___helpers.html</anchorfile>
+      <anchor>ga9201d23470c14e880d2d2b5dc7389ed2</anchor>
+      <arglist></arglist>
+      <enumvalue file="group___helpers.html" anchor="gga9201d23470c14e880d2d2b5dc7389ed2a902b0d55fddef6f8d651fe1035b7d4bd">Error</enumvalue>
+      <enumvalue file="group___helpers.html" anchor="gga9201d23470c14e880d2d2b5dc7389ed2a505a83f220c02df2f85c3810cd9ceb38">Success</enumvalue>
+    </member>
   </compound>
   <compound kind="group">
     <name>Reflection</name>
     <title>Reflection</title>
     <filename>group___reflection.html</filename>
-    <class kind="class">EngineObject</class>
+    <class kind="class">Object</class>
     <docanchor file="group___reflection" title="Tworzenie własnych klas">CreatingOwnClasses</docanchor>
     <docanchor file="group___reflection" title="Deklarowanie typów obiektów">DeklaringRTTRTypes</docanchor>
     <docanchor file="group___reflection" title="Aktorzy z klasami zagnieżdżonymi">RTTRNestedClasses</docanchor>
@@ -2894,10 +3885,9 @@
     <name>CommonLibrary</name>
     <title>Common Library</title>
     <filename>group___common_library.html</filename>
-    <subgroup>DeletingObjects</subgroup>
+    <subgroup>Helpers</subgroup>
     <subgroup>Reflection</subgroup>
     <subgroup>HierarchicalChunkedFormat</subgroup>
-    <subgroup>Multithreading</subgroup>
     <subgroup>KeyFrameAnimation</subgroup>
     <subgroup>Serialization</subgroup>
   </compound>
@@ -2908,11 +3898,6 @@
     <class kind="class">sw::Attribute</class>
     <class kind="class">sw::Chunk</class>
     <class kind="class">sw::HCF</class>
-  </compound>
-  <compound kind="group">
-    <name>Multithreading</name>
-    <title>Helpers for multithreading</title>
-    <filename>group___multithreading.html</filename>
   </compound>
   <compound kind="group">
     <name>KeyFrameAnimation</name>
@@ -2951,16 +3936,20 @@
     <subgroup>SerializerJSON</subgroup>
     <subgroup>SerializerXML</subgroup>
     <class kind="class">IDeserializer</class>
-    <class kind="struct">SerializationContext</class>
+    <class kind="struct">ISerializationContext</class>
+    <class kind="class">sw::SerializationCore</class>
+    <class kind="class">sw::EngineObject</class>
+    <class kind="class">sw::Serialization</class>
+    <class kind="struct">sw::SerializationContext</class>
     <class kind="class">ISerializer</class>
     <member kind="enumeration">
       <type></type>
       <name>WritingMode</name>
       <anchorfile>group___serialization.html</anchorfile>
-      <anchor>ga46d11c2d08142ef2d32761c04d1aaa26</anchor>
+      <anchor>gab38eccf0465e4b346f77b8bd29974c46</anchor>
       <arglist></arglist>
-      <enumvalue file="group___serialization.html" anchor="gga46d11c2d08142ef2d32761c04d1aaa26a4051f1312e691dc1d55f4006dfa59bb4">Sparing</enumvalue>
-      <enumvalue file="group___serialization.html" anchor="gga46d11c2d08142ef2d32761c04d1aaa26a4b8123df4e2b3456270c11394adf7607">Readable</enumvalue>
+      <enumvalue file="group___serialization.html" anchor="ggab38eccf0465e4b346f77b8bd29974c46a4051f1312e691dc1d55f4006dfa59bb4">Sparing</enumvalue>
+      <enumvalue file="group___serialization.html" anchor="ggab38eccf0465e4b346f77b8bd29974c46a4b8123df4e2b3456270c11394adf7607">Readable</enumvalue>
     </member>
   </compound>
   <compound kind="group">
@@ -2972,5 +3961,45 @@
     <name>SerializerXML</name>
     <title>XML Serializer</title>
     <filename>group___serializer_x_m_l.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>Tests</name>
+    <title>Tests</title>
+    <filename>group___tests.html</filename>
+    <subgroup>TestClassHierarchy</subgroup>
+  </compound>
+  <compound kind="group">
+    <name>TestClassHierarchy</name>
+    <title>Test Classes Hierarchy</title>
+    <filename>group___test_class_hierarchy.html</filename>
+    <class kind="class">sw::Animal</class>
+    <class kind="struct">sw::PhysicalProperties</class>
+    <class kind="class">sw::Dog</class>
+    <class kind="class">sw::HomoSapiens</class>
+    <class kind="class">sw::Mammal</class>
+    <class kind="class">sw::Zoo</class>
+  </compound>
+  <compound kind="page">
+    <name>Page_Serialization</name>
+    <title>Serialization</title>
+    <filename>_page__serialization</filename>
+    <docanchor file="_page__serialization" title="General">Serialization_General</docanchor>
+    <docanchor file="_page__serialization" title="Choosing serializer">Serialization_ChoosingSerializer</docanchor>
+    <docanchor file="_page__serialization" title="Usage Examples">Serialization_Usage</docanchor>
+    <docanchor file="_page__serialization" title="Serialization">Serialization_Usage_Serialization</docanchor>
+    <docanchor file="_page__serialization" title="Deserialization">Serialization_Usage_Deserialization</docanchor>
+    <docanchor file="_page__serialization" title="Future plans">Serialization_FuturePlans</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>md_System_Filesystem_README</name>
+    <title>filesystem/path.h: A simple class for manipulating paths on Linux/Windows/Mac OS</title>
+    <filename>md__system__filesystem__r_e_a_d_m_e</filename>
+  </compound>
+  <compound kind="page">
+    <name>index</name>
+    <title></title>
+    <filename>index</filename>
+    <docanchor file="index" title="Library functionalities">Mainpage_LibraryFunctionalities</docanchor>
+    <docanchor file="index" title="Using libraries">MainPage_Usage</docanchor>
   </compound>
 </tagfile>

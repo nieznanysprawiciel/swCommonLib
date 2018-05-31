@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -95,53 +95,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_attribute_repr_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_attribute_header_8h.html">swCommonLib/HierarchicalChunkedFormat/Headers/AttributeHeader.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesw.html">sw</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span>AttributeRepr;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;DEFINE_PTR_TYPE( AttributeRepr );</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;DEFINE_WPTR_TYPE( AttributeRepr );</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span>ImplHCF;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_types_definitions_8h.html">swCommonLib/Common/TypesDefinitions.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_attribute_header_8h.html">swCommonLib/HierarchicalChunkedFormat/Headers/AttributeHeader.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesw.html">sw</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span>AttributeRepr;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;DEFINE_PTR_TYPE( AttributeRepr );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;DEFINE_WPTR_TYPE( AttributeRepr );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span>ImplHCF;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classsw_1_1_attribute_repr.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsw_1_1_attribute_repr.html">AttributeRepr</a></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classsw_1_1_impl_h_c_f.html">ImplHCF</a>*            m_hcf;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classsw_1_1_attribute_repr.html#ad3473944d88e3111bfcb62fa3f366e78">   27</a></span>&#160;    <a class="code" href="structsw_1_1_attribute_header.html">AttributeHeader</a>     <a class="code" href="classsw_1_1_attribute_repr.html#ad3473944d88e3111bfcb62fa3f366e78">m_header</a>;       </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classsw_1_1_attribute_repr.html#aa457136f0a55694297ecc5ff90aa60a3">   28</a></span>&#160;    AttributeReprPtr    <a class="code" href="classsw_1_1_attribute_repr.html#aa457136f0a55694297ecc5ff90aa60a3">m_nextAttrib</a>;   </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classsw_1_1_attribute_repr.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsw_1_1_attribute_repr.html">AttributeRepr</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    FRIEND_CLASS_TESTER( <a class="code" href="classsw_1_1_h_c_f.html">HCF</a> );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    FRIEND_CLASS_TESTER( <a class="code" href="classsw_1_1_attribute_repr.html">AttributeRepr</a> );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classsw_1_1_impl_h_c_f.html">ImplHCF</a>*            m_hcf;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classsw_1_1_attribute_repr.html#a8f5229574046f633d36650abb4f1dc65">   30</a></span>&#160;    Size                <a class="code" href="classsw_1_1_attribute_repr.html#a8f5229574046f633d36650abb4f1dc65">m_absolutOffset</a>;    </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">explicit</span>        <a class="code" href="classsw_1_1_attribute_repr.html">AttributeRepr</a>               ( <a class="code" href="classsw_1_1_impl_h_c_f.html">ImplHCF</a>* hcf, AttributeType type );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    ~<a class="code" href="classsw_1_1_attribute_repr.html">AttributeRepr</a>              () = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structsw_1_1_attribute_header.html">AttributeHeader</a>&amp;        AccessHeader        () { <span class="keywordflow">return</span> <a class="code" href="classsw_1_1_attribute_repr.html#ad3473944d88e3111bfcb62fa3f366e78">m_header</a>; }</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classsw_1_1_attribute_repr.html#ad3473944d88e3111bfcb62fa3f366e78">   30</a></span>&#160;    <a class="code" href="structsw_1_1_attribute_header.html">AttributeHeader</a>     <a class="code" href="classsw_1_1_attribute_repr.html#ad3473944d88e3111bfcb62fa3f366e78">m_header</a>;       </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classsw_1_1_attribute_repr.html#aa457136f0a55694297ecc5ff90aa60a3">   31</a></span>&#160;    AttributeReprPtr    <a class="code" href="classsw_1_1_attribute_repr.html#aa457136f0a55694297ecc5ff90aa60a3">m_nextAttrib</a>;   </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classsw_1_1_attribute_repr.html#a8f5229574046f633d36650abb4f1dc65">   33</a></span>&#160;    Size                <a class="code" href="classsw_1_1_attribute_repr.html#a8f5229574046f633d36650abb4f1dc65">m_absolutOffset</a>;    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">explicit</span>        <a class="code" href="classsw_1_1_attribute_repr.html">AttributeRepr</a>               ( <a class="code" href="classsw_1_1_impl_h_c_f.html">ImplHCF</a>* hcf, AttributeType type );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    ~<a class="code" href="classsw_1_1_attribute_repr.html">AttributeRepr</a>              () = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span>                    FillAttribute       ( <span class="keyword">const</span> DataPtr data, Size dataSize );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span>                    AddNextAttribute    ( AttributeReprPtr&amp; attribPtr );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}   <span class="comment">// sw</span></div>
-<div class="ttc" id="namespacesw_html"><div class="ttname"><a href="namespacesw.html">sw</a></div><div class="ttdef"><b>Definition:</b> Attribute.cpp:12</div></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="structsw_1_1_attribute_header.html">AttributeHeader</a>&amp;        AccessHeader        () { <span class="keywordflow">return</span> <a class="code" href="classsw_1_1_attribute_repr.html#ad3473944d88e3111bfcb62fa3f366e78">m_header</a>; }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span>                    FillAttribute       ( <span class="keyword">const</span> DataPtr data, Size dataSize );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span>                    AddNextAttribute    ( AttributeReprPtr&amp; attribPtr );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}   <span class="comment">// sw</span></div>
+<div class="ttc" id="namespacesw_html"><div class="ttname"><a href="namespacesw.html">sw</a></div><div class="ttdef"><b>Definition:</b> Exception.h:11</div></div>
 <div class="ttc" id="classsw_1_1_impl_h_c_f_html"><div class="ttname"><a href="classsw_1_1_impl_h_c_f.html">sw::ImplHCF</a></div><div class="ttdef"><b>Definition:</b> ImplHCF.h:28</div></div>
+<div class="ttc" id="classsw_1_1_h_c_f_html"><div class="ttname"><a href="classsw_1_1_h_c_f.html">sw::HCF</a></div><div class="ttdoc">Main class for loading and writing HCF files. </div><div class="ttdef"><b>Definition:</b> HCF.h:34</div></div>
+<div class="ttc" id="_types_definitions_8h_html"><div class="ttname"><a href="_types_definitions_8h.html">TypesDefinitions.h</a></div><div class="ttdoc">Plik zawiera definicje podstawowych typów zmiennych. </div></div>
 <div class="ttc" id="structsw_1_1_attribute_header_html"><div class="ttname"><a href="structsw_1_1_attribute_header.html">sw::AttributeHeader</a></div><div class="ttdef"><b>Definition:</b> AttributeHeader.h:15</div></div>
-<div class="ttc" id="classsw_1_1_attribute_repr_html_aa457136f0a55694297ecc5ff90aa60a3"><div class="ttname"><a href="classsw_1_1_attribute_repr.html#aa457136f0a55694297ecc5ff90aa60a3">sw::AttributeRepr::m_nextAttrib</a></div><div class="ttdeci">AttributeReprPtr m_nextAttrib</div><div class="ttdoc">Next attribute in list. </div><div class="ttdef"><b>Definition:</b> AttributeRepr.h:28</div></div>
-<div class="ttc" id="classsw_1_1_attribute_repr_html_ad3473944d88e3111bfcb62fa3f366e78"><div class="ttname"><a href="classsw_1_1_attribute_repr.html#ad3473944d88e3111bfcb62fa3f366e78">sw::AttributeRepr::m_header</a></div><div class="ttdeci">AttributeHeader m_header</div><div class="ttdoc">Header from file. </div><div class="ttdef"><b>Definition:</b> AttributeRepr.h:27</div></div>
+<div class="ttc" id="classsw_1_1_attribute_repr_html_aa457136f0a55694297ecc5ff90aa60a3"><div class="ttname"><a href="classsw_1_1_attribute_repr.html#aa457136f0a55694297ecc5ff90aa60a3">sw::AttributeRepr::m_nextAttrib</a></div><div class="ttdeci">AttributeReprPtr m_nextAttrib</div><div class="ttdoc">Next attribute in list. </div><div class="ttdef"><b>Definition:</b> AttributeRepr.h:31</div></div>
+<div class="ttc" id="classsw_1_1_attribute_repr_html_ad3473944d88e3111bfcb62fa3f366e78"><div class="ttname"><a href="classsw_1_1_attribute_repr.html#ad3473944d88e3111bfcb62fa3f366e78">sw::AttributeRepr::m_header</a></div><div class="ttdeci">AttributeHeader m_header</div><div class="ttdoc">Header from file. </div><div class="ttdef"><b>Definition:</b> AttributeRepr.h:30</div></div>
 <div class="ttc" id="_attribute_header_8h_html"><div class="ttname"><a href="_attribute_header_8h.html">AttributeHeader.h</a></div></div>
-<div class="ttc" id="classsw_1_1_attribute_repr_html"><div class="ttname"><a href="classsw_1_1_attribute_repr.html">sw::AttributeRepr</a></div><div class="ttdef"><b>Definition:</b> AttributeRepr.h:22</div></div>
-<div class="ttc" id="classsw_1_1_attribute_repr_html_a8f5229574046f633d36650abb4f1dc65"><div class="ttname"><a href="classsw_1_1_attribute_repr.html#a8f5229574046f633d36650abb4f1dc65">sw::AttributeRepr::m_absolutOffset</a></div><div class="ttdeci">Size m_absolutOffset</div><div class="ttdoc">Offset from beginning of file. </div><div class="ttdef"><b>Definition:</b> AttributeRepr.h:30</div></div>
+<div class="ttc" id="classsw_1_1_attribute_repr_html"><div class="ttname"><a href="classsw_1_1_attribute_repr.html">sw::AttributeRepr</a></div><div class="ttdef"><b>Definition:</b> AttributeRepr.h:23</div></div>
+<div class="ttc" id="classsw_1_1_attribute_repr_html_a8f5229574046f633d36650abb4f1dc65"><div class="ttname"><a href="classsw_1_1_attribute_repr.html#a8f5229574046f633d36650abb4f1dc65">sw::AttributeRepr::m_absolutOffset</a></div><div class="ttdeci">Size m_absolutOffset</div><div class="ttdoc">Offset from beginning of file. </div><div class="ttdef"><b>Definition:</b> AttributeRepr.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:56:00 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -1,19 +1,17 @@
 var searchData=
 [
-  ['get',['Get',['../class_memory_chunk.html#a42554db8628ff59a938091ad2d8ae713',1,'MemoryChunk']]],
-  ['getattribute',['GetAttribute',['../class_i_deserializer.html#aa8cfd54d2e775719fc907ab5aea54544',1,'IDeserializer::GetAttribute(const std::string &amp;name, std::string &amp;defaultValue)'],['../class_i_deserializer.html#a3f0fa5f5ca66fd5fc2f6b217bc2c93ac',1,'IDeserializer::GetAttribute(const std::string &amp;name, const char *defaultValue)'],['../class_i_deserializer.html#ae6b89f6fa2bd6ca252977c1c98efd402',1,'IDeserializer::GetAttribute(const std::string &amp;name, uint32 defaultValue)'],['../class_i_deserializer.html#a8f59944ee3add863e223ad50e51d534d',1,'IDeserializer::GetAttribute(const std::string &amp;name, uint64 defaultValue)'],['../class_i_deserializer.html#a168885fe6ff2eb4ffc3cc533b44a00e2',1,'IDeserializer::GetAttribute(const std::string &amp;name, int32 defaultValue)'],['../class_i_deserializer.html#a6ce5fec73935835c04015d9fdbfaeaea',1,'IDeserializer::GetAttribute(const std::string &amp;name, int64 defaultValue)'],['../class_i_deserializer.html#a9071ad0b604a13fd20c3bc870c6aefdf',1,'IDeserializer::GetAttribute(const std::string &amp;name, bool defaultValue)'],['../class_i_deserializer.html#a8a808cae748afd52f88450808f82f130',1,'IDeserializer::GetAttribute(const std::string &amp;name, double defaultValue)'],['../class_i_deserializer.html#a349815c56ab725e224cc99309f99b74a',1,'IDeserializer::GetAttribute(const char *name, std::string &amp;defaultValue)'],['../class_i_deserializer.html#a138b49be185ea5b2fc99725abb8a03fd',1,'IDeserializer::GetAttribute(const char *name, const char *defaultValue)'],['../class_i_deserializer.html#ab9cdf8ded3d639c4121e2c2634d6a028',1,'IDeserializer::GetAttribute(const char *name, uint32 defaultValue)'],['../class_i_deserializer.html#a720b6ebf3f73531284465911c2e01702',1,'IDeserializer::GetAttribute(const char *name, uint64 defaultValue)'],['../class_i_deserializer.html#a1d8835ef7f164074a1034b40e163add0',1,'IDeserializer::GetAttribute(const char *name, int32 defaultValue)'],['../class_i_deserializer.html#a79994501bea6576582dc752cad99e04b',1,'IDeserializer::GetAttribute(const char *name, int64 defaultValue)'],['../class_i_deserializer.html#ad6fd37d46026c83a269ac2084c98e876',1,'IDeserializer::GetAttribute(const char *name, bool defaultValue)'],['../class_i_deserializer.html#a184b88687f0eb16e32576373f7106001',1,'IDeserializer::GetAttribute(const char *name, double defaultValue)']]],
-  ['getattributetypeid',['GetAttributeTypeID',['../_h_c_f_8h.html#a713491e22da88d551258891262c2d995',1,'HCF.h']]],
-  ['getcontext',['GetContext',['../class_i_deserializer.html#aeb74b772044d2b4f2326e0a3e08a2cff',1,'IDeserializer::GetContext()'],['../class_i_serializer.html#a9bb3161c90bcf9b9c2aa7ff4f4cb3731',1,'ISerializer::GetContext()']]],
-  ['geterror',['GetError',['../class_i_deserializer.html#aae34245a4f01ffcae44c04aae37528e1',1,'IDeserializer']]],
-  ['getinterpolator',['GetInterpolator',['../class_animation_typed.html#a9a784163e47c2cd1ae551f296e5e8f05',1,'AnimationTyped::GetInterpolator()'],['../class_animation_impl.html#a944d2003578c8fc139c9c9a24a11c65f',1,'AnimationImpl::GetInterpolator()']]],
-  ['getkey',['GetKey',['../class_animation_typed.html#a79e204f2ebdd000e0cffbde0edb4a1ad',1,'AnimationTyped::GetKey()'],['../class_animation_impl.html#a6d144d8dfa12baf72e6ca22d32efc1e4',1,'AnimationImpl::GetKey()'],['../class_anim_evaluator.html#aa60a520284ec04caf931efc952309429',1,'AnimEvaluator::GetKey()']]],
-  ['getkeyset',['GetKeySet',['../class_animation_typed.html#aebe4f53ad8161154d3cd3fb412981840',1,'AnimationTyped::GetKeySet()'],['../class_animation_impl.html#ab40ebfe6f3e0e01108a48cb2b4a30728',1,'AnimationImpl::GetKeySet()'],['../class_anim_evaluator.html#ae942a6e7bd2cc21838319e75b4e937df',1,'AnimEvaluator::GetKeySet()']]],
-  ['getmemory',['GetMemory',['../class_memory_chunk.html#a7aeed3b0b5dd92a5d329f5b0b164224e',1,'MemoryChunk::GetMemory()'],['../class_memory_chunk.html#a3298239a73437fe47125e97cd6881b14',1,'MemoryChunk::GetMemory() const ']]],
-  ['getmemorysize',['GetMemorySize',['../class_memory_chunk.html#a6422a2c74bf4e42f81945efc5213e682',1,'MemoryChunk']]],
-  ['getname',['GetName',['../class_i_deserializer.html#aa2e4cdafc62e9a6d4f83af8abc2009b2',1,'IDeserializer']]],
-  ['getpropertyvalue',['GetPropertyValue',['../class_serialization.html#af0cbd1b82dbac877a8d6b5e9cfabea76',1,'Serialization']]],
-  ['getrealtype',['GetRealType',['../class_properties.html#af9900dd4b381d5553c93a6e6125870b3',1,'Properties::GetRealType(rttr::variant &amp;object)'],['../class_properties.html#a0fcddab3177f08a046b9b287c5a7676f',1,'Properties::GetRealType(EngineObject *object)']]],
-  ['getstdpath',['GetStdPath',['../classfilesystem_1_1_path.html#aceb4a74f50711fe635bc07279336838d',1,'filesystem::Path']]],
-  ['gettime',['GetTime',['../class_timeline_base.html#affd3fda570cd686d64fe8769341d1dd0',1,'TimelineBase']]],
-  ['gettypefilteredproperties',['GetTypeFilteredProperties',['../class_serialization.html#a407bcc6f14719b760c874d8b98422c93',1,'Serialization']]]
+  ['faketimeline',['FakeTimeline',['../class_fake_timeline.html',1,'']]],
+  ['file',['File',['../classfilesystem_1_1_file.html',1,'filesystem']]],
+  ['file_2ecpp',['File.cpp',['../_file_8cpp.html',1,'']]],
+  ['file_2eh',['File.h',['../_file_8h.html',1,'']]],
+  ['fileheader',['FileHeader',['../structsw_1_1_file_header.html',1,'sw']]],
+  ['fileheader_2eh',['FileHeader.h',['../_file_header_8h.html',1,'']]],
+  ['fileposition',['FilePosition',['../structsw_1_1_file_position.html',1,'sw']]],
+  ['filesize',['FileSize',['../structsw_1_1_file_header.html#a432e4fb8d1daae0082244f7221c17f5e',1,'sw::FileHeader']]],
+  ['fill',['Fill',['../classsw_1_1_chunk.html#a53428125c52d8142416b88cfac286d64',1,'sw::Chunk']]],
+  ['firstchild',['FirstChild',['../classsw_1_1_chunk.html#af33a02f5ef2552ff0913d006fb7c6034',1,'sw::Chunk::FirstChild()'],['../classsw_1_1_chunk_repr.html#a276ae9232bce909f54470fd688bc3de2',1,'sw::ChunkRepr::FirstChild()']]],
+  ['firstelement',['FirstElement',['../class_i_deserializer.html#accbdec255a41f3288cd8b3bab637a265',1,'IDeserializer']]],
+  ['freeindirectoffset',['FreeIndirectOffset',['../struct_voxtree_header.html#a24b1efe49de9f8cebf1af63fb0c1a16a',1,'VoxtreeHeader']]],
+  ['fromstring',['FromString',['../class_convert.html#a8f88c9113774390b3c5788d8b1e66088',1,'Convert']]],
+  ['filesystem_2fpath_2eh_3a_20a_20simple_20class_20for_20manipulating_20paths_20on_20linux_2fwindows_2fmac_20os',['filesystem/path.h: A simple class for manipulating paths on Linux/Windows/Mac OS',['../md__system__filesystem__r_e_a_d_m_e.html',1,'']]]
 ];

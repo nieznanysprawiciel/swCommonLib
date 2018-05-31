@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -105,8 +105,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html">IDeserializer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for deserializers.  <a href="class_i_deserializer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_serialization_context.html">SerializationContext</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for context used in serialization and deserialization.<a class="el" href="struct_serialization_context.html" title="Interface for context used in serialization and deserialization.SerializationContext is used to store...">SerializationContext</a> is used to store additional data during serialization and deserialization. Classes derived from <a class="el" href="class_engine_object.html">EngineObject</a> can provide their own implementation of Serialize and Deserialize function which can retrive context by calling <a class="el" href="class_i_serializer.html#a9bb3161c90bcf9b9c2aa7ff4f4cb3731">ISerializer::GetContext</a> or <a class="el" href="class_i_deserializer.html#aeb74b772044d2b4f2326e0a3e08a2cff">IDeserializer::GetContext</a> function.  <a href="struct_serialization_context.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_serialization_context.html">ISerializationContext</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for context used in serialization and deserialization.<a class="el" href="struct_i_serialization_context.html" title="Interface for context used in serialization and deserialization.ISerializationContext is used to stor...">ISerializationContext</a> is used to store additional data during serialization and deserialization. Classes derived from <a class="el" href="class_object.html">Object</a> can provide their own implementation of Serialize and Deserialize function which can retrive context by calling <a class="el" href="class_i_serializer.html#a9bb3161c90bcf9b9c2aa7ff4f4cb3731">ISerializer::GetContext</a> or <a class="el" href="class_i_deserializer.html#aaae112cf8501bc5ff9c94f0145327da1">IDeserializer::GetContext</a> function.  <a href="struct_i_serialization_context.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsw_1_1_serialization_core.html">sw::SerializationCore</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Core serialization/deserialization functions.  <a href="classsw_1_1_serialization_core.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsw_1_1_engine_object.html">sw::EngineObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for serializable objects.  <a href="classsw_1_1_engine_object.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsw_1_1_serialization.html">sw::Serialization</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main object which performs serialization and deserialization.  <a href="classsw_1_1_serialization.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsw_1_1_serialization_context.html">sw::SerializationContext</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsw_1_1_serialization.html" title="Main object which performs serialization and deserialization. ">Serialization</a> context for automatic serialization.  <a href="structsw_1_1_serialization_context.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_serializer.html">ISerializer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializers interface.  <a href="class_i_serializer.html#details">More...</a><br /></td></tr>
@@ -114,16 +126,17 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga46d11c2d08142ef2d32761c04d1aaa26"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___serialization.html#ga46d11c2d08142ef2d32761c04d1aaa26">WritingMode</a> { <a class="el" href="group___serialization.html#gga46d11c2d08142ef2d32761c04d1aaa26a4051f1312e691dc1d55f4006dfa59bb4">WritingMode::Sparing</a>, 
-<a class="el" href="group___serialization.html#gga46d11c2d08142ef2d32761c04d1aaa26a4b8123df4e2b3456270c11394adf7607">WritingMode::Readable</a>
+<tr class="memitem:gab38eccf0465e4b346f77b8bd29974c46"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___serialization.html#gab38eccf0465e4b346f77b8bd29974c46">WritingMode</a> : uint8 { <a class="el" href="group___serialization.html#ggab38eccf0465e4b346f77b8bd29974c46a4051f1312e691dc1d55f4006dfa59bb4">WritingMode::Sparing</a>, 
+<a class="el" href="group___serialization.html#ggab38eccf0465e4b346f77b8bd29974c46a4b8123df4e2b3456270c11394adf7607">WritingMode::Readable</a>
  }</td></tr>
-<tr class="memdesc:ga46d11c2d08142ef2d32761c04d1aaa26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tryb Zapisywania JSONa.  <a href="group___serialization.html#ga46d11c2d08142ef2d32761c04d1aaa26">More...</a><br /></td></tr>
-<tr class="separator:ga46d11c2d08142ef2d32761c04d1aaa26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:gab38eccf0465e4b346f77b8bd29974c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writing to file mode.  <a href="group___serialization.html#gab38eccf0465e4b346f77b8bd29974c46">More...</a><br /></td></tr>
+<tr class="separator:gab38eccf0465e4b346f77b8bd29974c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Automatic serialization library based on rttr properties. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_page__serialization.html">Serialization Reference</a> </dd></dl>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="ga46d11c2d08142ef2d32761c04d1aaa26"></a>
+<a class="anchor" id="gab38eccf0465e4b346f77b8bd29974c46"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -131,7 +144,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group___serialization.html#ga46d11c2d08142ef2d32761c04d1aaa26">WritingMode</a></td>
+          <td class="memname">enum <a class="el" href="group___serialization.html#gab38eccf0465e4b346f77b8bd29974c46">WritingMode</a> : uint8</td>
         </tr>
       </table>
   </td>
@@ -141,13 +154,13 @@ Enumerations</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Tryb Zapisywania JSONa. </p>
+<p>Writing to file mode. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga46d11c2d08142ef2d32761c04d1aaa26a4051f1312e691dc1d55f4006dfa59bb4"></a>Sparing&#160;</td><td class="fielddoc">
-<p>Tryb oszczędny bez spacji i tabulacji. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ggab38eccf0465e4b346f77b8bd29974c46a4051f1312e691dc1d55f4006dfa59bb4"></a>Sparing&#160;</td><td class="fielddoc">
+<p>Mode without spaces and tabulations. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="gga46d11c2d08142ef2d32761c04d1aaa26a4b8123df4e2b3456270c11394adf7607"></a>Readable&#160;</td><td class="fielddoc">
-<p>Tryb przeznaczony do czytania przez ludzi. </p>
+<tr><td class="fieldname"><a class="anchor" id="ggab38eccf0465e4b346f77b8bd29974c46a4b8123df4e2b3456270c11394adf7607"></a>Readable&#160;</td><td class="fielddoc">
+<p>Mode for reading by people. </p>
 </td></tr>
 </table>
 
@@ -156,7 +169,7 @@ Enumerations</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:56:00 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

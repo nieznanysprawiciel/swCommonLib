@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unlock',['unlock',['../class_spin_lock.html#a25ef6814d1e3fbd621db947ae7522d0e',1,'SpinLock']]],
+  ['unlock',['unlock',['../class_spin_lock.html#a25ef6814d1e3fbd621db947ae7522d0e',1,'SpinLock::unlock()'],['../classsw_1_1_writer_unique_lock.html#a0ddcea2a74d86862894f9cb929d16986',1,'sw::WriterUniqueLock::Unlock()'],['../classsw_1_1_reader_unique_lock.html#ab7d77e7ab298a110d429d23c306bd8af',1,'sw::ReaderUniqueLock::Unlock()']]],
   ['update',['Update',['../class_cosinus_interpolator.html#a94e5703f470f6cb803e20377bdecf896',1,'CosinusInterpolator::Update()'],['../class_discrete_interpolator.html#ac56b2e77b009f4fab45e6c845718ab9e',1,'DiscreteInterpolator::Update()'],['../class_i_interpolator.html#ae0087607fe150178444f048aec02e151',1,'IInterpolator::Update()'],['../class_dummy_interpolator.html#a993ff9e8820fb91ce40d312ec3b7e2f2',1,'DummyInterpolator::Update()'],['../class_linear_interpolator.html#a82ae1a446bb6184c3c354d2fce2e9294',1,'LinearInterpolator::Update()']]],
   ['updateheader',['UpdateHeader',['../classsw_1_1_chunk_repr.html#ab230c1fbfd4a6bb82f4feecb1dfaaf2f',1,'sw::ChunkRepr']]],
   ['updateinterpolator',['UpdateInterpolator',['../struct_key_set.html#a249ca44a0a6e7889aebe55f297f485ff',1,'KeySet']]],

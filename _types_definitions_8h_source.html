@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -158,13 +158,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#define DEFINE_WPTR_TYPE( type )        typedef std::weak_ptr&lt; type &gt; type ## WPtr;</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#define DEFINE_OPTR_TYPE( type )        typedef OPtr&lt; type &gt; type ## OPtr;</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#define CLASS_TESTER( type )            __ ## type ## __Tester</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#define FRIEND_CLASS_TESTER( type )     friend class CLASS_TESTER( type );</span></div>
 <div class="ttc" id="namespacerttr_html"><div class="ttname"><a href="namespacerttr.html">rttr</a></div><div class="ttdef"><b>Definition:</b> TypesDefinitions.h:42</div></div>
 <div class="ttc" id="class_u_ptr_html"><div class="ttname"><a href="class_u_ptr.html">UPtr</a></div><div class="ttdef"><b>Definition:</b> UPtr.h:10</div></div>
 <div class="ttc" id="_types_definitions_8h_html_a241c5a5859b4bbf5ccef226cef528e50"><div class="ttname"><a href="_types_definitions_8h.html#a241c5a5859b4bbf5ccef226cef528e50">OPtr</a></div><div class="ttdeci">std::unique_ptr&lt; PtrType &gt; OPtr</div><div class="ttdef"><b>Definition:</b> TypesDefinitions.h:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:55:59 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -103,117 +103,135 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abf181d4ba43fb47eb97773e4911fb5c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf181d4ba43fb47eb97773e4911fb5c7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>IDeserializer</b> (std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">SerializationContext</a> &gt; serContext)</td></tr>
-<tr class="separator:abf181d4ba43fb47eb97773e4911fb5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a976a836cc763b6d4954cf5109a7e6ca5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a976a836cc763b6d4954cf5109a7e6ca5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>IDeserializer</b> (ISerializationContextPtr serContext)</td></tr>
+<tr class="separator:a976a836cc763b6d4954cf5109a7e6ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5dde3fe855454ea25728dc7dc1e4c01"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#ac5dde3fe855454ea25728dc7dc1e4c01">LoadFromFile</a> (const std::string &amp;fileName, <a class="el" href="_deserializer_8h.html#ac1f1e0a72eb3bb133c13c1aedc837223">ParsingMode</a> mode)</td></tr>
 <tr class="memdesc:ac5dde3fe855454ea25728dc7dc1e4c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje i parsuje podany plik.  <a href="#ac5dde3fe855454ea25728dc7dc1e4c01">More...</a><br /></td></tr>
 <tr class="separator:ac5dde3fe855454ea25728dc7dc1e4c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e3d069c5a72237c7c21bfbea2d98563"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a4e3d069c5a72237c7c21bfbea2d98563">LoadFromString</a> (const std::string &amp;contentString)</td></tr>
 <tr class="memdesc:a4e3d069c5a72237c7c21bfbea2d98563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parsuje XMLa z podanego stringa.  <a href="#a4e3d069c5a72237c7c21bfbea2d98563">More...</a><br /></td></tr>
 <tr class="separator:a4e3d069c5a72237c7c21bfbea2d98563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2e4cdafc62e9a6d4f83af8abc2009b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2e4cdafc62e9a6d4f83af8abc2009b2"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#aa2e4cdafc62e9a6d4f83af8abc2009b2">GetName</a> ()</td></tr>
-<tr class="memdesc:aa2e4cdafc62e9a6d4f83af8abc2009b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca nazwę węzła, w którym znajduje się serializator. <br /></td></tr>
-<tr class="separator:aa2e4cdafc62e9a6d4f83af8abc2009b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f06467f4430ae832344ad1b04796171"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a9f06467f4430ae832344ad1b04796171">EnterObject</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a9f06467f4430ae832344ad1b04796171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyszukuje obiekt o podanej nazwie i wchodzi w głąb drzewa.  <a href="#a9f06467f4430ae832344ad1b04796171">More...</a><br /></td></tr>
-<tr class="separator:a9f06467f4430ae832344ad1b04796171"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2facc14593dac9a7dac4597445e66f0f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a2facc14593dac9a7dac4597445e66f0f">EnterArray</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a2facc14593dac9a7dac4597445e66f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyszukuje tablicę o podanej nazwie i wchodzi w głąb drzewa.  <a href="#a2facc14593dac9a7dac4597445e66f0f">More...</a><br /></td></tr>
-<tr class="separator:a2facc14593dac9a7dac4597445e66f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a986d7680cf1c7300e67cc69819c95396"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a986d7680cf1c7300e67cc69819c95396">EnterObject</a> (const char *name)</td></tr>
-<tr class="memdesc:a986d7680cf1c7300e67cc69819c95396"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyszukuje obiekt o podanej nazwie i wchodzi w głąb drzewa.  <a href="#a986d7680cf1c7300e67cc69819c95396">More...</a><br /></td></tr>
-<tr class="separator:a986d7680cf1c7300e67cc69819c95396"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b6984b71325caafceabdef4f2efc80e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a0b6984b71325caafceabdef4f2efc80e">EnterArray</a> (const char *name)</td></tr>
-<tr class="memdesc:a0b6984b71325caafceabdef4f2efc80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyszukuje tablicę o podanej nazwie i wchodzi w głąb drzewa.  <a href="#a0b6984b71325caafceabdef4f2efc80e">More...</a><br /></td></tr>
-<tr class="separator:a0b6984b71325caafceabdef4f2efc80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1398abe89ed24718488048bf2b3d12ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1398abe89ed24718488048bf2b3d12ac"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a1398abe89ed24718488048bf2b3d12ac">Exit</a> ()</td></tr>
-<tr class="memdesc:a1398abe89ed24718488048bf2b3d12ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wychodzi z tablicy albo obiektu, w którym znaleziono się przy pomocy funkcji EnterObject lub EnterArray. <br /></td></tr>
-<tr class="separator:a1398abe89ed24718488048bf2b3d12ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c0530b1cc565bb3812ed5852d45ea8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a7c0530b1cc565bb3812ed5852d45ea8f">FirstElement</a> ()</td></tr>
-<tr class="memdesc:a7c0530b1cc565bb3812ed5852d45ea8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wchodzi do pierwszego elementu tablicy lub obiektu.  <a href="#a7c0530b1cc565bb3812ed5852d45ea8f">More...</a><br /></td></tr>
-<tr class="separator:a7c0530b1cc565bb3812ed5852d45ea8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d470007aac145969afcec2f5042bef7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a0d470007aac145969afcec2f5042bef7">NextElement</a> ()</td></tr>
-<tr class="memdesc:a0d470007aac145969afcec2f5042bef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechodzi do następnego elementu w tablicy lub w obiekcie.  <a href="#a0d470007aac145969afcec2f5042bef7">More...</a><br /></td></tr>
-<tr class="separator:a0d470007aac145969afcec2f5042bef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08c7998e4ce782de1db21574acb138a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08c7998e4ce782de1db21574acb138a7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a08c7998e4ce782de1db21574acb138a7">PrevElement</a> ()</td></tr>
-<tr class="memdesc:a08c7998e4ce782de1db21574acb138a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechodzi do poprzedniego elementu w tablicy lub w obiekcie. <br /></td></tr>
-<tr class="separator:a08c7998e4ce782de1db21574acb138a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4aae4473eada8a7dc0f9dc9dbd719cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#ac4aae4473eada8a7dc0f9dc9dbd719cb">LastElement</a> ()</td></tr>
-<tr class="memdesc:ac4aae4473eada8a7dc0f9dc9dbd719cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wchodzi do ostatniego elementu tablicy lub obiektu.  <a href="#ac4aae4473eada8a7dc0f9dc9dbd719cb">More...</a><br /></td></tr>
-<tr class="separator:ac4aae4473eada8a7dc0f9dc9dbd719cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8cfd54d2e775719fc907ab5aea54544"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#aa8cfd54d2e775719fc907ab5aea54544">GetAttribute</a> (const std::string &amp;name, std::string &amp;defaultValue)</td></tr>
-<tr class="memdesc:aa8cfd54d2e775719fc907ab5aea54544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#aa8cfd54d2e775719fc907ab5aea54544">More...</a><br /></td></tr>
-<tr class="separator:aa8cfd54d2e775719fc907ab5aea54544"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f0fa5f5ca66fd5fc2f6b217bc2c93ac"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a3f0fa5f5ca66fd5fc2f6b217bc2c93ac">GetAttribute</a> (const std::string &amp;name, const char *defaultValue)</td></tr>
-<tr class="memdesc:a3f0fa5f5ca66fd5fc2f6b217bc2c93ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca atrybut o podanej nazwie.  <a href="#a3f0fa5f5ca66fd5fc2f6b217bc2c93ac">More...</a><br /></td></tr>
-<tr class="separator:a3f0fa5f5ca66fd5fc2f6b217bc2c93ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6b89f6fa2bd6ca252977c1c98efd402"><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#ae6b89f6fa2bd6ca252977c1c98efd402">GetAttribute</a> (const std::string &amp;name, uint32 defaultValue)</td></tr>
-<tr class="memdesc:ae6b89f6fa2bd6ca252977c1c98efd402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#ae6b89f6fa2bd6ca252977c1c98efd402">More...</a><br /></td></tr>
-<tr class="separator:ae6b89f6fa2bd6ca252977c1c98efd402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f59944ee3add863e223ad50e51d534d"><td class="memItemLeft" align="right" valign="top">uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a8f59944ee3add863e223ad50e51d534d">GetAttribute</a> (const std::string &amp;name, uint64 defaultValue)</td></tr>
-<tr class="memdesc:a8f59944ee3add863e223ad50e51d534d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a8f59944ee3add863e223ad50e51d534d">More...</a><br /></td></tr>
-<tr class="separator:a8f59944ee3add863e223ad50e51d534d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a168885fe6ff2eb4ffc3cc533b44a00e2"><td class="memItemLeft" align="right" valign="top">int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a168885fe6ff2eb4ffc3cc533b44a00e2">GetAttribute</a> (const std::string &amp;name, int32 defaultValue)</td></tr>
-<tr class="memdesc:a168885fe6ff2eb4ffc3cc533b44a00e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a168885fe6ff2eb4ffc3cc533b44a00e2">More...</a><br /></td></tr>
-<tr class="separator:a168885fe6ff2eb4ffc3cc533b44a00e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ce5fec73935835c04015d9fdbfaeaea"><td class="memItemLeft" align="right" valign="top">int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a6ce5fec73935835c04015d9fdbfaeaea">GetAttribute</a> (const std::string &amp;name, int64 defaultValue)</td></tr>
-<tr class="memdesc:a6ce5fec73935835c04015d9fdbfaeaea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a6ce5fec73935835c04015d9fdbfaeaea">More...</a><br /></td></tr>
-<tr class="separator:a6ce5fec73935835c04015d9fdbfaeaea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9071ad0b604a13fd20c3bc870c6aefdf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a9071ad0b604a13fd20c3bc870c6aefdf">GetAttribute</a> (const std::string &amp;name, bool defaultValue)</td></tr>
-<tr class="memdesc:a9071ad0b604a13fd20c3bc870c6aefdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a9071ad0b604a13fd20c3bc870c6aefdf">More...</a><br /></td></tr>
-<tr class="separator:a9071ad0b604a13fd20c3bc870c6aefdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a808cae748afd52f88450808f82f130"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a8a808cae748afd52f88450808f82f130">GetAttribute</a> (const std::string &amp;name, double defaultValue)</td></tr>
-<tr class="memdesc:a8a808cae748afd52f88450808f82f130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a8a808cae748afd52f88450808f82f130">More...</a><br /></td></tr>
-<tr class="separator:a8a808cae748afd52f88450808f82f130"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a349815c56ab725e224cc99309f99b74a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a349815c56ab725e224cc99309f99b74a">GetAttribute</a> (const char *name, std::string &amp;defaultValue)</td></tr>
-<tr class="memdesc:a349815c56ab725e224cc99309f99b74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a349815c56ab725e224cc99309f99b74a">More...</a><br /></td></tr>
-<tr class="separator:a349815c56ab725e224cc99309f99b74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a138b49be185ea5b2fc99725abb8a03fd"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a138b49be185ea5b2fc99725abb8a03fd">GetAttribute</a> (const char *name, const char *defaultValue)</td></tr>
-<tr class="memdesc:a138b49be185ea5b2fc99725abb8a03fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a138b49be185ea5b2fc99725abb8a03fd">More...</a><br /></td></tr>
-<tr class="separator:a138b49be185ea5b2fc99725abb8a03fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9cdf8ded3d639c4121e2c2634d6a028"><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#ab9cdf8ded3d639c4121e2c2634d6a028">GetAttribute</a> (const char *name, uint32 defaultValue)</td></tr>
-<tr class="memdesc:ab9cdf8ded3d639c4121e2c2634d6a028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#ab9cdf8ded3d639c4121e2c2634d6a028">More...</a><br /></td></tr>
-<tr class="separator:ab9cdf8ded3d639c4121e2c2634d6a028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a720b6ebf3f73531284465911c2e01702"><td class="memItemLeft" align="right" valign="top">uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a720b6ebf3f73531284465911c2e01702">GetAttribute</a> (const char *name, uint64 defaultValue)</td></tr>
-<tr class="memdesc:a720b6ebf3f73531284465911c2e01702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a720b6ebf3f73531284465911c2e01702">More...</a><br /></td></tr>
-<tr class="separator:a720b6ebf3f73531284465911c2e01702"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d8835ef7f164074a1034b40e163add0"><td class="memItemLeft" align="right" valign="top">int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a1d8835ef7f164074a1034b40e163add0">GetAttribute</a> (const char *name, int32 defaultValue)</td></tr>
-<tr class="memdesc:a1d8835ef7f164074a1034b40e163add0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a1d8835ef7f164074a1034b40e163add0">More...</a><br /></td></tr>
-<tr class="separator:a1d8835ef7f164074a1034b40e163add0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79994501bea6576582dc752cad99e04b"><td class="memItemLeft" align="right" valign="top">int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a79994501bea6576582dc752cad99e04b">GetAttribute</a> (const char *name, int64 defaultValue)</td></tr>
-<tr class="memdesc:a79994501bea6576582dc752cad99e04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a79994501bea6576582dc752cad99e04b">More...</a><br /></td></tr>
-<tr class="separator:a79994501bea6576582dc752cad99e04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6fd37d46026c83a269ac2084c98e876"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#ad6fd37d46026c83a269ac2084c98e876">GetAttribute</a> (const char *name, bool defaultValue)</td></tr>
-<tr class="memdesc:ad6fd37d46026c83a269ac2084c98e876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#ad6fd37d46026c83a269ac2084c98e876">More...</a><br /></td></tr>
-<tr class="separator:ad6fd37d46026c83a269ac2084c98e876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a184b88687f0eb16e32576373f7106001"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a184b88687f0eb16e32576373f7106001">GetAttribute</a> (const char *name, double defaultValue)</td></tr>
-<tr class="memdesc:a184b88687f0eb16e32576373f7106001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a184b88687f0eb16e32576373f7106001">More...</a><br /></td></tr>
-<tr class="separator:a184b88687f0eb16e32576373f7106001"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae34245a4f01ffcae44c04aae37528e1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#aae34245a4f01ffcae44c04aae37528e1">GetError</a> ()</td></tr>
-<tr class="memdesc:aae34245a4f01ffcae44c04aae37528e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca string zawierający błąd parsowania, jeżeli był.  <a href="#aae34245a4f01ffcae44c04aae37528e1">More...</a><br /></td></tr>
-<tr class="separator:aae34245a4f01ffcae44c04aae37528e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb74b772044d2b4f2326e0a3e08a2cff"><td class="memTemplParams" colspan="2">template&lt;typename ContextType &gt; </td></tr>
-<tr class="memitem:aeb74b772044d2b4f2326e0a3e08a2cff"><td class="memTemplItemLeft" align="right" valign="top">ContextType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#aeb74b772044d2b4f2326e0a3e08a2cff">GetContext</a> ()</td></tr>
-<tr class="memdesc:aeb74b772044d2b4f2326e0a3e08a2cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca kontekst serializacji.  <a href="#aeb74b772044d2b4f2326e0a3e08a2cff">More...</a><br /></td></tr>
-<tr class="separator:aeb74b772044d2b4f2326e0a3e08a2cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfd98da3c85e533210534f93865a4ea9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfd98da3c85e533210534f93865a4ea9"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#acfd98da3c85e533210534f93865a4ea9">GetName</a> () const </td></tr>
+<tr class="memdesc:acfd98da3c85e533210534f93865a4ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca nazwę węzła, w którym znajduje się serializator. <br /></td></tr>
+<tr class="separator:acfd98da3c85e533210534f93865a4ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267f445d930dc9f0337e93952a7368d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a267f445d930dc9f0337e93952a7368d5">EnterObject</a> (const std::string &amp;name) const </td></tr>
+<tr class="memdesc:a267f445d930dc9f0337e93952a7368d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyszukuje obiekt o podanej nazwie i wchodzi w głąb drzewa.  <a href="#a267f445d930dc9f0337e93952a7368d5">More...</a><br /></td></tr>
+<tr class="separator:a267f445d930dc9f0337e93952a7368d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90ad9e324b1348cdb1476c67a7e2784"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#ab90ad9e324b1348cdb1476c67a7e2784">EnterArray</a> (const std::string &amp;name) const </td></tr>
+<tr class="memdesc:ab90ad9e324b1348cdb1476c67a7e2784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyszukuje tablicę o podanej nazwie i wchodzi w głąb drzewa.  <a href="#ab90ad9e324b1348cdb1476c67a7e2784">More...</a><br /></td></tr>
+<tr class="separator:ab90ad9e324b1348cdb1476c67a7e2784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c75f470100429895a709654b956f2c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a05c75f470100429895a709654b956f2c">EnterObject</a> (const char *name) const </td></tr>
+<tr class="memdesc:a05c75f470100429895a709654b956f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyszukuje obiekt o podanej nazwie i wchodzi w głąb drzewa.  <a href="#a05c75f470100429895a709654b956f2c">More...</a><br /></td></tr>
+<tr class="separator:a05c75f470100429895a709654b956f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af307fb2e5bbb054f24472c9636034581"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#af307fb2e5bbb054f24472c9636034581">EnterArray</a> (const char *name) const </td></tr>
+<tr class="memdesc:af307fb2e5bbb054f24472c9636034581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyszukuje tablicę o podanej nazwie i wchodzi w głąb drzewa.  <a href="#af307fb2e5bbb054f24472c9636034581">More...</a><br /></td></tr>
+<tr class="separator:af307fb2e5bbb054f24472c9636034581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c59885a1fa045243f9f9012ebd1f66"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8c59885a1fa045243f9f9012ebd1f66"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#ab8c59885a1fa045243f9f9012ebd1f66">Exit</a> () const </td></tr>
+<tr class="memdesc:ab8c59885a1fa045243f9f9012ebd1f66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wychodzi z tablicy albo obiektu, w którym znaleziono się przy pomocy funkcji EnterObject lub EnterArray. <br /></td></tr>
+<tr class="separator:ab8c59885a1fa045243f9f9012ebd1f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accbdec255a41f3288cd8b3bab637a265"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#accbdec255a41f3288cd8b3bab637a265">FirstElement</a> () const </td></tr>
+<tr class="memdesc:accbdec255a41f3288cd8b3bab637a265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wchodzi do pierwszego elementu tablicy lub obiektu.  <a href="#accbdec255a41f3288cd8b3bab637a265">More...</a><br /></td></tr>
+<tr class="separator:accbdec255a41f3288cd8b3bab637a265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a053398c2930f87a95c23b25934b06bc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a053398c2930f87a95c23b25934b06bc1">NextElement</a> () const </td></tr>
+<tr class="memdesc:a053398c2930f87a95c23b25934b06bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechodzi do następnego elementu w tablicy lub w obiekcie.  <a href="#a053398c2930f87a95c23b25934b06bc1">More...</a><br /></td></tr>
+<tr class="separator:a053398c2930f87a95c23b25934b06bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad698d20d6f6fe0f87806b0b97be2b353"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad698d20d6f6fe0f87806b0b97be2b353"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#ad698d20d6f6fe0f87806b0b97be2b353">PrevElement</a> () const </td></tr>
+<tr class="memdesc:ad698d20d6f6fe0f87806b0b97be2b353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przechodzi do poprzedniego elementu w tablicy lub w obiekcie. <br /></td></tr>
+<tr class="separator:ad698d20d6f6fe0f87806b0b97be2b353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0af1318a4b2a76d6c5be8693e044fc7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#ac0af1318a4b2a76d6c5be8693e044fc7">LastElement</a> () const </td></tr>
+<tr class="memdesc:ac0af1318a4b2a76d6c5be8693e044fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wchodzi do ostatniego elementu tablicy lub obiektu.  <a href="#ac0af1318a4b2a76d6c5be8693e044fc7">More...</a><br /></td></tr>
+<tr class="separator:ac0af1318a4b2a76d6c5be8693e044fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae34d6ad6a76110c650f7a3d3429f9eea"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#ae34d6ad6a76110c650f7a3d3429f9eea">GetAttribute</a> (const std::string &amp;name, std::string &amp;defaultValue) const </td></tr>
+<tr class="memdesc:ae34d6ad6a76110c650f7a3d3429f9eea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#ae34d6ad6a76110c650f7a3d3429f9eea">More...</a><br /></td></tr>
+<tr class="separator:ae34d6ad6a76110c650f7a3d3429f9eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863c231f45e0495605f529cd1850d32e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a863c231f45e0495605f529cd1850d32e">GetAttribute</a> (const std::string &amp;name, const char *defaultValue) const </td></tr>
+<tr class="memdesc:a863c231f45e0495605f529cd1850d32e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca atrybut o podanej nazwie.  <a href="#a863c231f45e0495605f529cd1850d32e">More...</a><br /></td></tr>
+<tr class="separator:a863c231f45e0495605f529cd1850d32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afade2a1ffbacdfb690e9ac9d4e9f8508"><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#afade2a1ffbacdfb690e9ac9d4e9f8508">GetAttribute</a> (const std::string &amp;name, uint32 defaultValue) const </td></tr>
+<tr class="memdesc:afade2a1ffbacdfb690e9ac9d4e9f8508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#afade2a1ffbacdfb690e9ac9d4e9f8508">More...</a><br /></td></tr>
+<tr class="separator:afade2a1ffbacdfb690e9ac9d4e9f8508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24ef00f0b37b9eead13352e6c971b5dd"><td class="memItemLeft" align="right" valign="top">uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a24ef00f0b37b9eead13352e6c971b5dd">GetAttribute</a> (const std::string &amp;name, uint64 defaultValue) const </td></tr>
+<tr class="memdesc:a24ef00f0b37b9eead13352e6c971b5dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a24ef00f0b37b9eead13352e6c971b5dd">More...</a><br /></td></tr>
+<tr class="separator:a24ef00f0b37b9eead13352e6c971b5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380f54ce59deff39bdfdee49e0ef9ae2"><td class="memItemLeft" align="right" valign="top">int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a380f54ce59deff39bdfdee49e0ef9ae2">GetAttribute</a> (const std::string &amp;name, int32 defaultValue) const </td></tr>
+<tr class="memdesc:a380f54ce59deff39bdfdee49e0ef9ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a380f54ce59deff39bdfdee49e0ef9ae2">More...</a><br /></td></tr>
+<tr class="separator:a380f54ce59deff39bdfdee49e0ef9ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ce3f7050e3c4b01581ef990d236ec7b"><td class="memItemLeft" align="right" valign="top">int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a1ce3f7050e3c4b01581ef990d236ec7b">GetAttribute</a> (const std::string &amp;name, int64 defaultValue) const </td></tr>
+<tr class="memdesc:a1ce3f7050e3c4b01581ef990d236ec7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a1ce3f7050e3c4b01581ef990d236ec7b">More...</a><br /></td></tr>
+<tr class="separator:a1ce3f7050e3c4b01581ef990d236ec7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afab2fd258419340a7a8b52cda32d18a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#afab2fd258419340a7a8b52cda32d18a5">GetAttribute</a> (const std::string &amp;name, bool defaultValue) const </td></tr>
+<tr class="memdesc:afab2fd258419340a7a8b52cda32d18a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#afab2fd258419340a7a8b52cda32d18a5">More...</a><br /></td></tr>
+<tr class="separator:afab2fd258419340a7a8b52cda32d18a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a520a94b8223cf650131c73ab516a4761"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a520a94b8223cf650131c73ab516a4761">GetAttribute</a> (const std::string &amp;name, double defaultValue) const </td></tr>
+<tr class="memdesc:a520a94b8223cf650131c73ab516a4761"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a520a94b8223cf650131c73ab516a4761">More...</a><br /></td></tr>
+<tr class="separator:a520a94b8223cf650131c73ab516a4761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bfbb292b31c5f4c53599d530052803f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a6bfbb292b31c5f4c53599d530052803f">GetAttribute</a> (const char *name, std::string &amp;defaultValue) const </td></tr>
+<tr class="memdesc:a6bfbb292b31c5f4c53599d530052803f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a6bfbb292b31c5f4c53599d530052803f">More...</a><br /></td></tr>
+<tr class="separator:a6bfbb292b31c5f4c53599d530052803f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbff7fff8ae888f340f602f95386f703"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#adbff7fff8ae888f340f602f95386f703">GetAttribute</a> (const char *name, const char *defaultValue) const </td></tr>
+<tr class="memdesc:adbff7fff8ae888f340f602f95386f703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#adbff7fff8ae888f340f602f95386f703">More...</a><br /></td></tr>
+<tr class="separator:adbff7fff8ae888f340f602f95386f703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a309c6822b079d328bd98a8c2be22af"><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a1a309c6822b079d328bd98a8c2be22af">GetAttribute</a> (const char *name, uint32 defaultValue) const </td></tr>
+<tr class="memdesc:a1a309c6822b079d328bd98a8c2be22af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a1a309c6822b079d328bd98a8c2be22af">More...</a><br /></td></tr>
+<tr class="separator:a1a309c6822b079d328bd98a8c2be22af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba01e0cb34326624f09637e120aa11f2"><td class="memItemLeft" align="right" valign="top">uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#aba01e0cb34326624f09637e120aa11f2">GetAttribute</a> (const char *name, uint64 defaultValue) const </td></tr>
+<tr class="memdesc:aba01e0cb34326624f09637e120aa11f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#aba01e0cb34326624f09637e120aa11f2">More...</a><br /></td></tr>
+<tr class="separator:aba01e0cb34326624f09637e120aa11f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ddc05dc245e6b0c5641f78b2e20d5e3"><td class="memItemLeft" align="right" valign="top">int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a3ddc05dc245e6b0c5641f78b2e20d5e3">GetAttribute</a> (const char *name, int32 defaultValue) const </td></tr>
+<tr class="memdesc:a3ddc05dc245e6b0c5641f78b2e20d5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a3ddc05dc245e6b0c5641f78b2e20d5e3">More...</a><br /></td></tr>
+<tr class="separator:a3ddc05dc245e6b0c5641f78b2e20d5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a177d52d451e0891db194df5d8e793e"><td class="memItemLeft" align="right" valign="top">int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a8a177d52d451e0891db194df5d8e793e">GetAttribute</a> (const char *name, int64 defaultValue) const </td></tr>
+<tr class="memdesc:a8a177d52d451e0891db194df5d8e793e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a8a177d52d451e0891db194df5d8e793e">More...</a><br /></td></tr>
+<tr class="separator:a8a177d52d451e0891db194df5d8e793e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d11d60670ff7cf622ea9dea5d798fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a26d11d60670ff7cf622ea9dea5d798fe">GetAttribute</a> (const char *name, bool defaultValue) const </td></tr>
+<tr class="memdesc:a26d11d60670ff7cf622ea9dea5d798fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a26d11d60670ff7cf622ea9dea5d798fe">More...</a><br /></td></tr>
+<tr class="separator:a26d11d60670ff7cf622ea9dea5d798fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f19e3ca53cb19bcab2f7d4f5f603a1a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a4f19e3ca53cb19bcab2f7d4f5f603a1a">GetAttribute</a> (const char *name, double defaultValue) const </td></tr>
+<tr class="memdesc:a4f19e3ca53cb19bcab2f7d4f5f603a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parę ( nazwa, wartość ) w aktualnym obiekcie.  <a href="#a4f19e3ca53cb19bcab2f7d4f5f603a1a">More...</a><br /></td></tr>
+<tr class="separator:a4f19e3ca53cb19bcab2f7d4f5f603a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a192dbd55f81a06e222c502ae6f10190d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a192dbd55f81a06e222c502ae6f10190d">GetError</a> () const </td></tr>
+<tr class="memdesc:a192dbd55f81a06e222c502ae6f10190d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns parsing error if it occured.  <a href="#a192dbd55f81a06e222c502ae6f10190d">More...</a><br /></td></tr>
+<tr class="separator:a192dbd55f81a06e222c502ae6f10190d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9090bdc6d4c4daaf4877d8b104207666"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsw_1_1_file_position.html">sw::FilePosition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#a9090bdc6d4c4daaf4877d8b104207666">CurrentLineNumber</a> () const </td></tr>
+<tr class="separator:a9090bdc6d4c4daaf4877d8b104207666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae112cf8501bc5ff9c94f0145327da1"><td class="memTemplParams" colspan="2">template&lt;typename ContextType &gt; </td></tr>
+<tr class="memitem:aaae112cf8501bc5ff9c94f0145327da1"><td class="memTemplItemLeft" align="right" valign="top">ContextType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_i_deserializer.html#aaae112cf8501bc5ff9c94f0145327da1">GetContext</a> () const </td></tr>
+<tr class="memdesc:aaae112cf8501bc5ff9c94f0145327da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca kontekst serializacji.  <a href="#aaae112cf8501bc5ff9c94f0145327da1">More...</a><br /></td></tr>
+<tr class="separator:aaae112cf8501bc5ff9c94f0145327da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a157b8e47821fedb5f485263363742d0e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a157b8e47821fedb5f485263363742d0e"></a>
 <a class="el" href="struct_deserializer_impl.html">DeserializerImpl</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>impl</b></td></tr>
 <tr class="separator:a157b8e47821fedb5f485263363742d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad311eea943c70e35778c3c96d3eccaa0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad311eea943c70e35778c3c96d3eccaa0"></a>
-std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">SerializationContext</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>context</b></td></tr>
-<tr class="separator:ad311eea943c70e35778c3c96d3eccaa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21a086d9144b45132fa4105192d8690c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21a086d9144b45132fa4105192d8690c"></a>
+ISerializationContextPtr&#160;</td><td class="memItemRight" valign="bottom"><b>context</b></td></tr>
+<tr class="separator:a21a086d9144b45132fa4105192d8690c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface for deserializers. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2facc14593dac9a7dac4597445e66f0f"></a>
+<a class="anchor" id="a9090bdc6d4c4daaf4877d8b104207666"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsw_1_1_file_position.html">sw::FilePosition</a> IDeserializer::CurrentLineNumber </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo:</a></b></dt><dd>Think how to do this in AllocStrings mode. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab90ad9e324b1348cdb1476c67a7e2784"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -222,7 +240,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -238,7 +256,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a0b6984b71325caafceabdef4f2efc80e"></a>
+<a class="anchor" id="af307fb2e5bbb054f24472c9636034581"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -247,7 +265,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -263,7 +281,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a9f06467f4430ae832344ad1b04796171"></a>
+<a class="anchor" id="a267f445d930dc9f0337e93952a7368d5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -272,7 +290,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -288,7 +306,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a986d7680cf1c7300e67cc69819c95396"></a>
+<a class="anchor" id="a05c75f470100429895a709654b956f2c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -297,7 +315,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -313,7 +331,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a7c0530b1cc565bb3812ed5852d45ea8f"></a>
+<a class="anchor" id="accbdec255a41f3288cd8b3bab637a265"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -321,7 +339,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
           <td class="memname">bool IDeserializer::FirstElement </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -332,7 +350,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="aa8cfd54d2e775719fc907ab5aea54544"></a>
+<a class="anchor" id="ae34d6ad6a76110c650f7a3d3429f9eea"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -351,7 +369,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -367,7 +385,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a3f0fa5f5ca66fd5fc2f6b217bc2c93ac"></a>
+<a class="anchor" id="a863c231f45e0495605f529cd1850d32e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -386,7 +404,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -403,7 +421,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="ae6b89f6fa2bd6ca252977c1c98efd402"></a>
+<a class="anchor" id="afade2a1ffbacdfb690e9ac9d4e9f8508"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -422,7 +440,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -438,7 +456,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a8f59944ee3add863e223ad50e51d534d"></a>
+<a class="anchor" id="a24ef00f0b37b9eead13352e6c971b5dd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -457,7 +475,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -473,7 +491,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a168885fe6ff2eb4ffc3cc533b44a00e2"></a>
+<a class="anchor" id="a380f54ce59deff39bdfdee49e0ef9ae2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -492,7 +510,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -508,7 +526,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a6ce5fec73935835c04015d9fdbfaeaea"></a>
+<a class="anchor" id="a1ce3f7050e3c4b01581ef990d236ec7b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -527,7 +545,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -543,7 +561,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a9071ad0b604a13fd20c3bc870c6aefdf"></a>
+<a class="anchor" id="afab2fd258419340a7a8b52cda32d18a5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -562,7 +580,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -578,7 +596,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a8a808cae748afd52f88450808f82f130"></a>
+<a class="anchor" id="a520a94b8223cf650131c73ab516a4761"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -597,7 +615,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -613,7 +631,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a349815c56ab725e224cc99309f99b74a"></a>
+<a class="anchor" id="a6bfbb292b31c5f4c53599d530052803f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -632,7 +650,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -648,7 +666,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a138b49be185ea5b2fc99725abb8a03fd"></a>
+<a class="anchor" id="adbff7fff8ae888f340f602f95386f703"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -667,7 +685,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -683,7 +701,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="ab9cdf8ded3d639c4121e2c2634d6a028"></a>
+<a class="anchor" id="a1a309c6822b079d328bd98a8c2be22af"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -702,7 +720,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -718,7 +736,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a720b6ebf3f73531284465911c2e01702"></a>
+<a class="anchor" id="aba01e0cb34326624f09637e120aa11f2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -737,7 +755,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -753,7 +771,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a1d8835ef7f164074a1034b40e163add0"></a>
+<a class="anchor" id="a3ddc05dc245e6b0c5641f78b2e20d5e3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -772,7 +790,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -788,7 +806,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a79994501bea6576582dc752cad99e04b"></a>
+<a class="anchor" id="a8a177d52d451e0891db194df5d8e793e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -807,7 +825,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -823,7 +841,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="ad6fd37d46026c83a269ac2084c98e876"></a>
+<a class="anchor" id="a26d11d60670ff7cf622ea9dea5d798fe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -842,7 +860,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -858,7 +876,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="a184b88687f0eb16e32576373f7106001"></a>
+<a class="anchor" id="a4f19e3ca53cb19bcab2f7d4f5f603a1a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -877,7 +895,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -893,7 +911,7 @@ std::unique_ptr&lt; <a class="el" href="struct_serialization_context.html">Seria
 
 </div>
 </div>
-<a class="anchor" id="aeb74b772044d2b4f2326e0a3e08a2cff"></a>
+<a class="anchor" id="aaae112cf8501bc5ff9c94f0145327da1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -906,7 +924,7 @@ template&lt;typename ContextType &gt; </div>
           <td class="memname">ContextType* IDeserializer::GetContext </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -921,7 +939,7 @@ template&lt;typename ContextType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aae34245a4f01ffcae44c04aae37528e1"></a>
+<a class="anchor" id="a192dbd55f81a06e222c502ae6f10190d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -929,17 +947,17 @@ template&lt;typename ContextType &gt; </div>
           <td class="memname">std::string IDeserializer::GetError </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Zwraca string zawierający błąd parsowania, jeżeli był. </p>
+<p>Returns parsing error if it occured. </p>
 <p>Aby się dowiedzieć czy parsowanie powiodło się, sprawdź wartość zwracaną przez funkcje <a class="el" href="class_i_deserializer.html#a4e3d069c5a72237c7c21bfbea2d98563">LoadFromString</a> lub <a class="el" href="class_i_deserializer.html#ac5dde3fe855454ea25728dc7dc1e4c01">LoadFromFile</a>. </p>
 
 </div>
 </div>
-<a class="anchor" id="ac4aae4473eada8a7dc0f9dc9dbd719cb"></a>
+<a class="anchor" id="ac0af1318a4b2a76d6c5be8693e044fc7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -947,7 +965,7 @@ template&lt;typename ContextType &gt; </div>
           <td class="memname">bool IDeserializer::LastElement </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1018,7 +1036,7 @@ template&lt;typename ContextType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a0d470007aac145969afcec2f5042bef7"></a>
+<a class="anchor" id="a053398c2930f87a95c23b25934b06bc1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1026,7 +1044,7 @@ template&lt;typename ContextType &gt; </div>
           <td class="memname">bool IDeserializer::NextElement </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1043,7 +1061,7 @@ template&lt;typename ContextType &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:56:00 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['serializationmain_2ecpp',['SerializationMain.cpp',['../_serialization_main_8cpp.html',1,'']]],
-  ['stringpropertypath_2eh',['StringPropertyPath.h',['../_string_property_path_8h.html',1,'']]]
+  ['polymorphicserialization_2ecpp',['PolymorphicSerialization.cpp',['../_polymorphic_serialization_8cpp.html',1,'']]],
+  ['propertypath_2eh',['PropertyPath.h',['../_property_path_8h.html',1,'']]],
+  ['propertyregistration_2ecpp',['PropertyRegistration.cpp',['../_property_registration_8cpp.html',1,'']]]
 ];

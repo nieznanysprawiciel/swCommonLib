@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_string_property_path_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;swCommonLib/Serialization/PropertySerialization/Serialization.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_serialization_8h.html">swCommonLib/Serialization/PropertySerialization/Serialization.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> KeyType &gt;</div>
@@ -107,12 +107,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">explicit</span>        <a class="code" href="class_string_property_path.html">StringPropertyPath</a>  ();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">explicit</span>        <a class="code" href="class_string_property_path.html">StringPropertyPath</a>  ( <a class="code" href="class_engine_object.html">EngineObject</a>* <span class="keywordtype">object</span>, <span class="keyword">const</span> std::string&amp; propertyPath );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">explicit</span>        <a class="code" href="class_string_property_path.html">StringPropertyPath</a>  ( <a class="code" href="class_object.html">Object</a>* <span class="keywordtype">object</span>, <span class="keyword">const</span> std::string&amp; propertyPath );</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    ~<a class="code" href="class_string_property_path.html">StringPropertyPath</a> () = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    KeyType         GetValue        ( <a class="code" href="class_engine_object.html">EngineObject</a>* <span class="keywordtype">object</span> );</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span>            SetValue        ( <a class="code" href="class_engine_object.html">EngineObject</a>* <span class="keywordtype">object</span>, KeyType&amp; value );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    KeyType         GetValue        ( <a class="code" href="class_object.html">Object</a>* <span class="keywordtype">object</span> );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span>            SetValue        ( <a class="code" href="class_object.html">Object</a>* <span class="keywordtype">object</span>, KeyType&amp; value );</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
@@ -131,38 +131,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// ================================ //</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> KeyType &gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">inline</span>      <a class="code" href="class_string_property_path.html">StringPropertyPath&lt;	KeyType &gt;::StringPropertyPath</a>( <a class="code" href="class_engine_object.html">EngineObject</a>* <span class="keywordtype">object</span>, <span class="keyword">const</span> std::string&amp; propertyPath )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">inline</span>      <a class="code" href="class_string_property_path.html">StringPropertyPath&lt;	KeyType &gt;::StringPropertyPath</a>( <a class="code" href="class_object.html">Object</a>* <span class="keywordtype">object</span>, <span class="keyword">const</span> std::string&amp; propertyPath )</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    :   m_path( propertyPath )</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// ================================ //</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> KeyType &gt;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">inline</span> KeyType      <a class="code" href="class_string_property_path.html">StringPropertyPath&lt; KeyType &gt;::GetValue</a>     ( <a class="code" href="class_engine_object.html">EngineObject</a>* <span class="keywordtype">object</span> )</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">inline</span> KeyType      <a class="code" href="class_string_property_path.html">StringPropertyPath&lt; KeyType &gt;::GetValue</a>     ( <a class="code" href="class_object.html">Object</a>* <span class="keywordtype">object</span> )</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">auto</span> finalPair = Properties::GetProperty( <span class="keywordtype">object</span>, m_path );</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span>&amp; owner = finalPair.first;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">auto</span>&amp; prop = finalPair.second;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> Serialization::GetPropertyValue&lt; KeyType &gt;( prop, owner );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> sw::SerializationCore::GetPropertyValue&lt; KeyType &gt;( prop, owner );</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span>&lt; <span class="keyword">typename</span> KeyType &gt;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span>         <a class="code" href="class_string_property_path.html">StringPropertyPath&lt; KeyType &gt;::SetValue</a>     ( <a class="code" href="class_engine_object.html">EngineObject</a>* <span class="keywordtype">object</span>, KeyType&amp; value )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span>         <a class="code" href="class_string_property_path.html">StringPropertyPath&lt; KeyType &gt;::SetValue</a>     ( <a class="code" href="class_object.html">Object</a>* <span class="keywordtype">object</span>, KeyType&amp; value )</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">auto</span> finalPair = Properties::GetProperty( <span class="keywordtype">object</span>, m_path );</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">auto</span>&amp; owner = finalPair.first;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">auto</span>&amp; prop = finalPair.second;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="class_serialization.html#a516ed2a66a77d1c20c863db176faa69a">Serialization::SetPropertyValue</a>( prop, owner, value );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classsw_1_1_serialization_core.html#a8a37f88e8d60932404f3c30a4753d59a">sw::SerializationCore::SetPropertyValue</a>( prop, owner, value );</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="ttc" id="class_engine_object_html"><div class="ttname"><a href="class_engine_object.html">EngineObject</a></div><div class="ttdoc">Klasa bazowa dla obiektów, które mają być dostępne w edytorze poprzez rttr. Należy po niej odziedzicz...</div><div class="ttdef"><b>Definition:</b> EngineObject.h:22</div></div>
-<div class="ttc" id="class_serialization_html_a516ed2a66a77d1c20c863db176faa69a"><div class="ttname"><a href="class_serialization.html#a516ed2a66a77d1c20c863db176faa69a">Serialization::SetPropertyValue</a></div><div class="ttdeci">static void SetPropertyValue(rttr::property prop, const rttr::instance &amp;object, PropertyType value)</div><div class="ttdoc">Ustawia wartość podanej właściwości. </div><div class="ttdef"><b>Definition:</b> Serialization.inl:50</div></div>
+<div class="ttc" id="classsw_1_1_serialization_core_html_a8a37f88e8d60932404f3c30a4753d59a"><div class="ttname"><a href="classsw_1_1_serialization_core.html#a8a37f88e8d60932404f3c30a4753d59a">sw::SerializationCore::SetPropertyValue</a></div><div class="ttdeci">static void SetPropertyValue(rttr::property prop, const rttr::instance &amp;object, PropertyType value)</div><div class="ttdoc">Ustawia wartość podanej właściwości. </div><div class="ttdef"><b>Definition:</b> SerializationCore.inl:79</div></div>
+<div class="ttc" id="_serialization_8h_html"><div class="ttname"><a href="_serialization_8h.html">Serialization.h</a></div></div>
+<div class="ttc" id="class_object_html"><div class="ttname"><a href="class_object.html">Object</a></div><div class="ttdoc">Base clas for all objects in sleeping wombat libraries. </div><div class="ttdef"><b>Definition:</b> Object.h:42</div></div>
 <div class="ttc" id="class_string_property_path_html"><div class="ttname"><a href="class_string_property_path.html">StringPropertyPath</a></div><div class="ttdef"><b>Definition:</b> StringPropertyPath.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:56:00 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

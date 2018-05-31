@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -92,11 +92,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#friends">Friends</a> &#124;
 <a href="class_object_deleter_key-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ObjectDeleterKey&lt; class_type &gt; Class Template Reference<div class="ingroups"><a class="el" href="group___common_library.html">Common Library</a> &raquo; <a class="el" href="group___deleting_objects.html">Private Deleter</a></div></div>  </div>
+<div class="title">ObjectDeleterKey&lt; class_type &gt; Class Template Reference<div class="ingroups"><a class="el" href="group___common_library.html">Common Library</a> &raquo; <a class="el" href="group___helpers.html">Helpers</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Szablon klasy klucza dla obiektów <a class="el" href="class_object_deleter.html" title="Klasa służy do kasowania obiektów, których destruktor jest prywatny.Taka sytuacja zachodzi w momencie...">ObjectDeleter</a>.  
+<p>You can specify classes that can delete objects with private constructors.  
  <a href="class_object_deleter_key.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_object_deleter_8h_source.html">ObjectDeleter.h</a>&gt;</code></p>
@@ -121,12 +121,15 @@ Friends</h2></td></tr>
 <tr class="memitem:a54c1252abc87a78a301e6b6984470408"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54c1252abc87a78a301e6b6984470408"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>ResourceManager</b></td></tr>
 <tr class="separator:a54c1252abc87a78a301e6b6984470408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec5a0121502f8198ccc6dcd6c08d98f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec5a0121502f8198ccc6dcd6c08d98f2"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>AssetsManager</b></td></tr>
-<tr class="separator:aec5a0121502f8198ccc6dcd6c08d98f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc004ec369243f423dad4165fe1a255"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadc004ec369243f423dad4165fe1a255"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>sw::AssetsManager</b></td></tr>
+<tr class="separator:aadc004ec369243f423dad4165fe1a255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e70107a540912cd1a63f9c4efe97038"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e70107a540912cd1a63f9c4efe97038"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>ResourceContainer&lt; class_type &gt;</b></td></tr>
 <tr class="separator:a8e70107a540912cd1a63f9c4efe97038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5892f83df604e41be61fcc3b0612539e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5892f83df604e41be61fcc3b0612539e"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>ResourceContainer&lt; ResourceObject &gt;</b></td></tr>
+<tr class="separator:a5892f83df604e41be61fcc3b0612539e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb7b8cd120a7c92cc1e7655a618a473b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb7b8cd120a7c92cc1e7655a618a473b"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTargetObject</b></td></tr>
 <tr class="separator:acb7b8cd120a7c92cc1e7655a618a473b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,7 +138,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RenderTargetObject</
 <div class="textblock"><h3>template&lt;typename class_type&gt;<br />
 class ObjectDeleterKey&lt; class_type &gt;</h3>
 
-<p>Szablon klasy klucza dla obiektów <a class="el" href="class_object_deleter.html" title="Klasa służy do kasowania obiektów, których destruktor jest prywatny.Taka sytuacja zachodzi w momencie...">ObjectDeleter</a>. </p>
+<p>You can specify classes that can delete objects with private constructors. </p>
 <p>Niektóre obiekty są zadeklarowane z prywatnym (chronionym) destruktorem, w celu uniemożliwienia skasowania ich przez niepowołane klasy. Jednakże musi istnieć jakiś dostęp do destruktorów, aby nie powodować wycieków pamięci. Do kasowania obiektów służy klasa <a class="el" href="class_object_deleter.html" title="Klasa służy do kasowania obiektów, których destruktor jest prywatny.Taka sytuacja zachodzi w momencie...">ObjectDeleter</a>. Aby stworzyć obiekt tej klasy potrzebny jest "klucz", którym jest własnie ta klasa.</p>
 <p>Klucz ma prywatne konstruktory, w związku z czym może zostać stworzony jedynie przez klasy, które są z nim zaprzyjaźnione. Domyślnie klasami zaprzyjaźnionymi są ResourceManager i <a class="el" href="class_resource_container.html">ResourceContainer</a>, aby stworzyć klucz dla innych typów klas, należy napisać specjalizację tego szablonu.</p>
 <p>Odddelegowanie innej klasy do kasowania obiektów ma za zadanie zlikwidowanie niewygodnych zależności. Dzięki temu obiekty, które mają być kasowane, nie muszą się przyjaźnić bezpośrednio z klasami, które mogą je usuwać. Wystarczy, że zadeklarują przyjaźń z obiektem <a class="el" href="class_object_deleter.html" title="Klasa służy do kasowania obiektów, których destruktor jest prywatny.Taka sytuacja zachodzi w momencie...">ObjectDeleter</a>. Taka przyjaźń jest niegroźna, ponieważ klasa ta nie służy do niczego innego niż kasowanie obiektów, więc jesteśmy pewni, że zmiany wprowadzone w klasie deklarującej przyjaźń nie będą psuły całego kodu aplikacji. </p>
@@ -145,7 +148,7 @@ class ObjectDeleterKey&lt; class_type &gt;</h3>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:56:00 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

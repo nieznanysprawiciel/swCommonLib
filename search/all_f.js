@@ -1,12 +1,19 @@
 var searchData=
 [
-  ['readable',['Readable',['../group___serialization.html#gga46d11c2d08142ef2d32761c04d1aaa26a4b8123df4e2b3456270c11394adf7607',1,'Serializer.h']]],
-  ['reflection',['Reflection',['../group___reflection.html',1,'']]],
-  ['relativetimeline',['RelativeTimeline',['../class_relative_timeline.html',1,'']]],
-  ['relativetimeline_2ecpp',['RelativeTimeline.cpp',['../_relative_timeline_8cpp.html',1,'']]],
-  ['relativetimeline_2eh',['RelativeTimeline.h',['../_relative_timeline_8h.html',1,'']]],
-  ['removekey',['RemoveKey',['../class_animation_typed.html#a70ae1f7bee83f8b7aa6543fbaad19081',1,'AnimationTyped::RemoveKey()'],['../class_animation_impl.html#a618b44c917c564a892a46b0879063c80',1,'AnimationImpl::RemoveKey()'],['../class_anim_evaluator.html#afaa7f372c1ad07e9e4b0dbd9e794de40',1,'AnimEvaluator::RemoveKey()'],['../struct_key_set.html#a44dbb03e80a26cc1d885155e65efd4d5',1,'KeySet::RemoveKey()']]],
-  ['resourcecontainer',['ResourceContainer',['../class_resource_container.html',1,'']]],
-  ['righttangent',['RightTangent',['../class_cosinus_interpolator.html#a4abd28601e8fb5cedbf5efc067c59595',1,'CosinusInterpolator::RightTangent()'],['../class_discrete_interpolator.html#a32fe39de333c0010e1b67104d28e8dc8',1,'DiscreteInterpolator::RightTangent()'],['../class_i_interpolator.html#afed1fdbbabca8a20641c238d0791b3b1',1,'IInterpolator::RightTangent()'],['../class_dummy_interpolator.html#abc3696e1491c64d6cfd29c2b0d881fa5',1,'DummyInterpolator::RightTangent()'],['../class_linear_interpolator.html#a0fea528710643b009ded053344712bc1',1,'LinearInterpolator::RightTangent()']]],
-  ['rootchunkoffset',['RootChunkOffset',['../structsw_1_1_file_header.html#ac4794c8c7d309b07f196acc6347b6ea6',1,'sw::FileHeader']]]
+  ['parentchunk',['ParentChunk',['../classsw_1_1_chunk.html#a4cd738c166e0d1235dd80b7a2260fa07',1,'sw::Chunk::ParentChunk()'],['../classsw_1_1_chunk_repr.html#a83c71647eb1d0d204b0dbb3102507ba1',1,'sw::ChunkRepr::ParentChunk()']]],
+  ['parseinsitu',['ParseInsitu',['../_deserializer_8h.html#ac1f1e0a72eb3bb133c13c1aedc837223a8e3c037e1c30163e6eed314cdf14cb6d',1,'Deserializer.h']]],
+  ['parsingmode',['ParsingMode',['../_deserializer_8h.html#ac1f1e0a72eb3bb133c13c1aedc837223',1,'Deserializer.h']]],
+  ['path',['Path',['../classfilesystem_1_1_path.html',1,'filesystem']]],
+  ['path_5fimpl',['path_impl',['../classpath__impl.html',1,'']]],
+  ['physicalproperties',['PhysicalProperties',['../structsw_1_1_physical_properties.html',1,'sw']]],
+  ['polymorphicobjectcontainer',['PolymorphicObjectContainer',['../classsw_1_1_polymorphic_object_container.html',1,'sw']]],
+  ['polymorphicserialization_2ecpp',['PolymorphicSerialization.cpp',['../_polymorphic_serialization_8cpp.html',1,'']]],
+  ['polymorphicsharedptrcontainer',['PolymorphicSharedPtrContainer',['../classsw_1_1_polymorphic_shared_ptr_container.html',1,'sw']]],
+  ['pop',['Pop',['../classsw_1_1_queue_m_t.html#a209db94857b8ea26185d0d1785ea09b8',1,'sw::QueueMT']]],
+  ['prevelement',['PrevElement',['../class_i_deserializer.html#ad698d20d6f6fe0f87806b0b97be2b353',1,'IDeserializer']]],
+  ['properties',['Properties',['../class_properties.html',1,'']]],
+  ['property',['Property',['../class_property.html',1,'Property&lt; PropertyType &gt;'],['../class_property.html#a78650fbe22b338601cb22cf81dff92c0',1,'Property::Property()']]],
+  ['propertypath',['PropertyPath',['../class_property_path.html',1,'PropertyPath&lt; KeyType &gt;'],['../class_property_path.html#acde1bbf751265e3a84a2529652891c62',1,'PropertyPath::PropertyPath()']]],
+  ['propertypath_2eh',['PropertyPath.h',['../_property_path_8h.html',1,'']]],
+  ['propertyregistration_2ecpp',['PropertyRegistration.cpp',['../_property_registration_8cpp.html',1,'']]]
 ];

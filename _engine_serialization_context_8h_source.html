@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -96,14 +96,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;swCommonLib/Common/RTTR.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;swCommonLib/Serialization/SerializationContext.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_serialization_context_8h.html">swCommonLib/Serialization/ISerializationContext.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_engine_serialization_context.html">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_engine_serialization_context.html">EngineSerializationContext</a> : <span class="keyword">public</span> <a class="code" href="struct_serialization_context.html">SerializationContext</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_engine_serialization_context.html">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_engine_serialization_context.html">EngineSerializationContext</a> : <span class="keyword">public</span> <a class="code" href="struct_i_serialization_context.html">ISerializationContext</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">typedef</span> std::map&lt; rttr::type, std::vector&lt; rttr::property &gt; &gt; TypePropertyMap;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
@@ -119,15 +119,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span>     ~<a class="code" href="struct_engine_serialization_context.html">EngineSerializationContext</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="ttc" id="struct_serialization_context_html"><div class="ttname"><a href="struct_serialization_context.html">SerializationContext</a></div><div class="ttdoc">Interface for context used in serialization and deserialization.SerializationContext is used to store...</div><div class="ttdef"><b>Definition:</b> SerializationContext.h:20</div></div>
 <div class="ttc" id="struct_engine_serialization_context_html_ad641b8d35a40f0cba7fdd056ca3f0714"><div class="ttname"><a href="struct_engine_serialization_context.html#ad641b8d35a40f0cba7fdd056ca3f0714">EngineSerializationContext::EditorLoad</a></div><div class="ttdeci">bool EditorLoad</div><div class="ttdoc">Wczytywanie mapy w trybie edytora. </div><div class="ttdef"><b>Definition:</b> EngineSerializationContext.h:17</div></div>
 <div class="ttc" id="struct_engine_serialization_context_html_acca96c68548466a3b623475da2fd50dd"><div class="ttname"><a href="struct_engine_serialization_context.html#acca96c68548466a3b623475da2fd50dd">EngineSerializationContext::TypeProperties</a></div><div class="ttdeci">TypePropertyMap TypeProperties</div><div class="ttdoc">Mapa zawierająca typy i ich właściwości. Właściwości nieserializowane są odfiltrowane. </div><div class="ttdef"><b>Definition:</b> EngineSerializationContext.h:19</div></div>
 <div class="ttc" id="struct_engine_serialization_context_html_ad31465f87bf3efcc02a5b28584721710"><div class="ttname"><a href="struct_engine_serialization_context.html#ad31465f87bf3efcc02a5b28584721710">EngineSerializationContext::SaveWholeMap</a></div><div class="ttdeci">bool SaveWholeMap</div><div class="ttdoc">Wartość true oznacza, że zapisujemy mapę, false, że zapisujemy stan gry. </div><div class="ttdef"><b>Definition:</b> EngineSerializationContext.h:16</div></div>
 <div class="ttc" id="struct_engine_serialization_context_html"><div class="ttname"><a href="struct_engine_serialization_context.html">EngineSerializationContext</a></div><div class="ttdef"><b>Definition:</b> EngineSerializationContext.h:11</div></div>
+<div class="ttc" id="_i_serialization_context_8h_html"><div class="ttname"><a href="_i_serialization_context_8h.html">ISerializationContext.h</a></div></div>
+<div class="ttc" id="struct_i_serialization_context_html"><div class="ttname"><a href="struct_i_serialization_context.html">ISerializationContext</a></div><div class="ttdoc">Interface for context used in serialization and deserialization.ISerializationContext is used to stor...</div><div class="ttdef"><b>Definition:</b> ISerializationContext.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:56:00 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -91,8 +91,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine_object.html">EngineObject</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Klasa bazowa dla obiektów, które mają być dostępne w edytorze poprzez rttr. Należy po niej odziedziczyć i dodać odpowiednie deklaracje.  <a href="class_engine_object.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html">Object</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base clas for all objects in sleeping wombat libraries.  <a href="class_object.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -100,10 +100,10 @@ Classes</h2></td></tr>
 <p>Silnik wykorzystuje bibliotekę RTTR autorstwa Axela Menzela udostępnianą na licencji MIT z małymi przeróbkami. Dokumentacja i przykłady znajdują się na stronie: <a href="http://www.rttr.org/">http://www.rttr.org/</a></p>
 <h1><a class="anchor" id="CreatingOwnClasses"></a>
 Tworzenie własnych klas</h1>
-<p>Przy tworzeniu własnych klas należy dodawać do nich metainformacje, aby edytor mógł je poprawnie wyświetlić. Wszystkie klasy powinny mieć na samym szczycie hierarchi dziedziczenia obiekt <a class="el" href="class_engine_object.html" title="Klasa bazowa dla obiektów, które mają być dostępne w edytorze poprzez rttr. Należy po niej odziedzicz...">EngineObject</a>. Jeżeli dziedziczy się po jakiejś silnikowej klasie aktora, to <a class="el" href="class_engine_object.html" title="Klasa bazowa dla obiektów, które mają być dostępne w edytorze poprzez rttr. Należy po niej odziedzicz...">EngineObject</a> w tej hierarchi na pewno się znajduje.</p>
-<p>Pamiętać o tym należy tylko wtedy, gdy tworzy się jakąś strukturę lub klasę, która będzie polem w klasie aktora. Aby edytor mógł wyświetlać propertisy takiej zagnieżdżonej klasy trzeba jawnie odziedziczyć po <a class="el" href="class_engine_object.html" title="Klasa bazowa dla obiektów, które mają być dostępne w edytorze poprzez rttr. Należy po niej odziedzicz...">EngineObject</a>.</p>
-<p>Należy mieć na uwadze, że klasa <a class="el" href="class_engine_object.html" title="Klasa bazowa dla obiektów, które mają być dostępne w edytorze poprzez rttr. Należy po niej odziedzicz...">EngineObject</a> deklaruje metody virtualne biblioteki RTTR, w związku z czym wszystkie klasy dziedziczące będą miały dodatkowe pole ze wskaźnikiem na vtable, co zwiększy rozmiar takiej struktury. Z tego powodu lepiej jest, gdy aktorzy nie mają płaską strukturę i takich zagnieżdżonych strutkur się nie używa, ale nikt nie zabrania.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>W obecnej wersji silnika wymaganie posiadania <a class="el" href="class_engine_object.html" title="Klasa bazowa dla obiektów, które mają być dostępne w edytorze poprzez rttr. Należy po niej odziedzicz...">EngineObject</a> w hierarchii nie jest już konieczne z punktu widzenia edytora. W kolejnych wersjach trzeba zmienić mechanizmy serializacji, żeby potrafiły zapisywać również takie struktury.</dd></dl>
+<p>Przy tworzeniu własnych klas należy dodawać do nich metainformacje, aby edytor mógł je poprawnie wyświetlić. Wszystkie klasy powinny mieć na samym szczycie hierarchi dziedziczenia obiekt <a class="el" href="class_object.html" title="Base clas for all objects in sleeping wombat libraries. ">Object</a>. Jeżeli dziedziczy się po jakiejś silnikowej klasie aktora, to <a class="el" href="class_object.html" title="Base clas for all objects in sleeping wombat libraries. ">Object</a> w tej hierarchi na pewno się znajduje.</p>
+<p>Pamiętać o tym należy tylko wtedy, gdy tworzy się jakąś strukturę lub klasę, która będzie polem w klasie aktora. Aby edytor mógł wyświetlać propertisy takiej zagnieżdżonej klasy trzeba jawnie odziedziczyć po <a class="el" href="class_object.html" title="Base clas for all objects in sleeping wombat libraries. ">Object</a>.</p>
+<p>Należy mieć na uwadze, że klasa <a class="el" href="class_object.html" title="Base clas for all objects in sleeping wombat libraries. ">Object</a> deklaruje metody virtualne biblioteki RTTR, w związku z czym wszystkie klasy dziedziczące będą miały dodatkowe pole ze wskaźnikiem na vtable, co zwiększy rozmiar takiej struktury. Z tego powodu lepiej jest, gdy aktorzy nie mają płaską strukturę i takich zagnieżdżonych strutkur się nie używa, ale nikt nie zabrania.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>W obecnej wersji silnika wymaganie posiadania <a class="el" href="class_object.html" title="Base clas for all objects in sleeping wombat libraries. ">Object</a> w hierarchii nie jest już konieczne z punktu widzenia edytora. W kolejnych wersjach trzeba zmienić mechanizmy serializacji, żeby potrafiły zapisywać również takie struktury.</dd></dl>
 <h2><a class="anchor" id="DeklaringRTTRTypes"></a>
 Deklarowanie typów obiektów</h2>
 <p>Biblioteka RTTR wymaga deklarowania nowych typów dla które mają być przez nią obsługiwane. Typy proste, które nie mają być wyświetlane w edytorze, ale ma być dla nich używana statyczna kontrola typu, mogą zostać zadeklarowane w następujący sposób:</p>
@@ -120,9 +120,9 @@ Deklarowanie typów obiektów</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p>Jeżeli dla klasy ma być używana dynamiczna kontrola typów, trzeba zadeklarować hierarchię dziedziczenia w każdej z klas. Robi się to w następujący sposób:</p>
 <div class="fragment"><div class="line"><span class="comment">// Plik .h</span></div>
-<div class="line"><span class="keyword">class </span>StaticActor : <span class="keyword">public</span> <a class="code" href="class_engine_object.html">EngineObject</a></div>
+<div class="line"><span class="keyword">class </span>StaticActor : <span class="keyword">public</span> <a class="code" href="class_object.html">Object</a></div>
 <div class="line">{</div>
-<div class="line">    RTTR_ENABLE( <a class="code" href="class_engine_object.html">EngineObject</a> )</div>
+<div class="line">    RTTR_ENABLE( <a class="code" href="class_object.html">Object</a> )</div>
 <div class="line">    <span class="comment">//...</span></div>
 <div class="line">};</div>
 </div><!-- fragment --><p>Następnie w pliku .cpp można dodać metadane klasy. Nazwy własciwości nie powinny zawierać białych znaków, ponieważ to może powodować problemy przy serializacji do XMLa.</p>
@@ -143,7 +143,7 @@ Deklarowanie typów obiektów</h2>
 </div><!-- fragment --><h2><a class="anchor" id="RTTRNestedClasses"></a>
 Aktorzy z klasami zagnieżdżonymi</h2>
 <p>Typy złożone jak DirectX::XMFLOAT3 powinny być deklarowane z polityką rttr::policy::prop::BindAsPtr() (Tak jak w przykładzie powyżej). W przeciwnym razie edytor nie będzie mógł ich odczytywać i zapisywać. Podobnie sprawa ma się ze strutkurami wewnątrz klasy np:</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="struct_nested.html">Nested</a> : <span class="keyword">public</span> <a class="code" href="class_engine_object.html">EngineObject</a></div>
+<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="struct_nested.html">Nested</a> : <span class="keyword">public</span> <a class="code" href="class_object.html">Object</a></div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">int</span> variable1;</div>
 <div class="line">    <span class="keywordtype">int</span> variable2;</div>
@@ -188,16 +188,16 @@ Aktorzy z klasami zagnieżdżonymi</h2>
 <div class="line"></div>
 <div class="line">@code</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">class</span> StaticActor : <span class="keyword">public</span> <a class="code" href="class_engine_object.html">EngineObject</a></div>
+<div class="line"><span class="keyword">class</span> StaticActor : <span class="keyword">public</span> <a class="code" href="class_object.html">Object</a></div>
 <div class="line">{</div>
-<div class="line">    RTTR_ENABLE( <a class="code" href="class_engine_object.html">EngineObject</a> )</div>
+<div class="line">    RTTR_ENABLE( <a class="code" href="class_object.html">Object</a> )</div>
 <div class="line">    RTTR_REGISTRATION_FRIEND</div>
 <div class="line">    <span class="comment">//...</span></div>
 <div class="line">};</div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:56:00 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

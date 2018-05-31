@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['objectdeleter',['ObjectDeleter',['../class_object_deleter.html',1,'ObjectDeleter&lt; class_type &gt;'],['../class_object_deleter.html#af9abdc5f54232b4e36e3c9e200ba7661',1,'ObjectDeleter::ObjectDeleter()=default'],['../class_object_deleter.html#aa6d9cd61a1fbda06a90bde38d909f813',1,'ObjectDeleter::ObjectDeleter(const ObjectDeleter &amp;)=default']]],
-  ['objectdeleter_2eh',['ObjectDeleter.h',['../_object_deleter_8h.html',1,'']]],
-  ['objectdeleterkey',['ObjectDeleterKey',['../class_object_deleter_key.html',1,'ObjectDeleterKey&lt; class_type &gt;'],['../class_object_deleter_key.html#a9ba66de585fb7a7996389113127f598b',1,'ObjectDeleterKey::ObjectDeleterKey()=default'],['../class_object_deleter_key.html#a47be2e705202f80529987f08baa62433',1,'ObjectDeleterKey::ObjectDeleterKey(const ObjectDeleterKey &amp;)'],['../class_object_deleter_key.html#af816a5bd52d703c4b96dd9bb075aaace',1,'ObjectDeleterKey::ObjectDeleterKey(const ObjectDeleterKey &amp;&amp;)']]],
-  ['openfile',['OpenFile',['../classsw_1_1_h_c_f.html#a34bb72602507fdf723ca3fd88e0a0330',1,'sw::HCF']]],
-  ['operator_3c',['operator&lt;',['../struct_version.html#ae067cff0a9a0c6de86548fac5aa1c503',1,'Version']]],
-  ['operator_3d',['operator=',['../class_memory_chunk.html#a36a9c8e9dc0bed71eedd2de8d8225ee4',1,'MemoryChunk::operator=(const MemoryChunk &amp;)=delete'],['../class_memory_chunk.html#a16151ee2b66b75d148c8d044c4ef86f6',1,'MemoryChunk::operator=(MemoryChunk &amp;&amp;chunk)']]],
-  ['operator_3d_3d',['operator==',['../struct_version.html#a5ad73c299a70fb715039132980852048',1,'Version']]],
-  ['optr',['OPtr',['../_types_definitions_8h.html#a241c5a5859b4bbf5ccef226cef528e50',1,'TypesDefinitions.h']]]
+  ['nested',['Nested',['../struct_nested.html',1,'']]],
+  ['nested2',['Nested2',['../struct_nested2.html',1,'']]],
+  ['nextchunk',['NextChunk',['../structsw_1_1_chunk_header.html#aeed0f24f94b09df1440f4ea250cd88ba',1,'sw::ChunkHeader::NextChunk()'],['../classsw_1_1_chunk.html#ac30e413dfdc3000ba925d8bc861690c3',1,'sw::Chunk::NextChunk()'],['../classsw_1_1_chunk_repr.html#aee3b8a8c10c6bd3bab7eeba5e941f143',1,'sw::ChunkRepr::NextChunk()']]],
+  ['nextelement',['NextElement',['../class_i_deserializer.html#a053398c2930f87a95c23b25934b06bc1',1,'IDeserializer']]],
+  ['normalize',['Normalize',['../classfilesystem_1_1_path.html#acfab82da16bf1ac014838825a1b28084',1,'filesystem::Path']]],
+  ['notrelated',['NotRelated',['../classsw_1_1_not_related.html',1,'sw']]],
+  ['nullable',['Nullable',['../classsw_1_1_nullable.html',1,'sw']]],
+  ['nullable',['Nullable',['../struct_nullable.html',1,'Nullable&lt; ResultType &gt;'],['../struct_nullable.html#ade82be458a920fae6108c86260ad077c',1,'Nullable::Nullable()'],['../struct_nullable.html#aff0897da8d49707b5def2e9162b814bb',1,'Nullable::Nullable(NullableInit)'],['../struct_nullable.html#a330d65265b54e45cdee37c2d1af3e7b2',1,'Nullable::Nullable(std::string &amp;&amp;error)'],['../struct_nullable.html#a9dddbc351be5d1e60d2e81afb7420858',1,'Nullable::Nullable(ResultType &amp;&amp;result)']]],
+  ['nullable_3c_20void_20_3e',['Nullable&lt; void &gt;',['../classsw_1_1_nullable_3_01void_01_4.html',1,'sw']]]
 ];

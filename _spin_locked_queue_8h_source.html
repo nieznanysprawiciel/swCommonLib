@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>Sleeping Wombat Common Library: Multithreading/SpinLockedQueue.h Source File</title>
+<title>Sleeping Wombat Common Library: Common/Multithreading/SpinLockedQueue.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_1d4128f2e14bbf147625eb9a5f0bee46.html">Multithreading</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4ab6b4cc6a7edbff49100e9123df213f.html">Common</a></li><li class="navelem"><a class="el" href="dir_198fa04190865b3568fdfb49220ca324.html">Multithreading</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -144,14 +144,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::lock_guard&lt; SpinLock &gt; guard( m_accesslock );</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> m_queue.empty();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="ttc" id="class_spin_lock_html"><div class="ttname"><a href="class_spin_lock.html">SpinLock</a></div><div class="ttdoc">Klasa służąca jako mutex z aktywnym oczekiwaniem. </div><div class="ttdef"><b>Definition:</b> SpinLock.h:29</div></div>
+<div class="ttc" id="class_spin_lock_html"><div class="ttname"><a href="class_spin_lock.html">SpinLock</a></div><div class="ttdoc">Klasa służąca jako mutex z aktywnym oczekiwaniem. </div><div class="ttdef"><b>Definition:</b> SpinLock.h:27</div></div>
 <div class="ttc" id="class_spin_locked_queue_html"><div class="ttname"><a href="class_spin_locked_queue.html">SpinLockedQueue</a></div><div class="ttdoc">Kolejka z mechanizmami synchronizacji opartymi o SpinLocka. </div><div class="ttdef"><b>Definition:</b> SpinLockedQueue.h:11</div></div>
 <div class="ttc" id="class_spin_locked_queue_html_a6bf49d1f9a35778366a29ed373e97bc8"><div class="ttname"><a href="class_spin_locked_queue.html#a6bf49d1f9a35778366a29ed373e97bc8">SpinLockedQueue::IsEmpty</a></div><div class="ttdeci">bool IsEmpty()</div><div class="ttdoc">Zwraca true, jeżeli kolejka jest pusta. Należy pamiętać, że po wywołaniu tej funkcji kolejka może zos...</div><div class="ttdef"><b>Definition:</b> SpinLockedQueue.h:55</div></div>
 <div class="ttc" id="class_spin_locked_queue_html_a9a963fbd6a3bf7c351b13623dda6f8d1"><div class="ttname"><a href="class_spin_locked_queue.html#a9a963fbd6a3bf7c351b13623dda6f8d1">SpinLockedQueue::TryPop</a></div><div class="ttdeci">bool TryPop(ContentType &amp;element)</div><div class="ttdoc">Zwraca element w parametrze. </div><div class="ttdef"><b>Definition:</b> SpinLockedQueue.h:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:55:59 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

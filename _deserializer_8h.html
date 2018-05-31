@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Sleeping Wombat Common Library
-   &#160;<span id="projectnumber">1.011</span>
+   &#160;<span id="projectnumber">0.50.0</span>
    </div>
    <div id="projectbrief">swCommonLibrary</div>
   </td>
@@ -100,7 +100,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Deklaracja klasy deserializatora.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_types_definitions_8h_source.html">swCommonLib/Common/TypesDefinitions.h</a>&quot;</code><br />
-<code>#include &quot;swCommonLib/Serialization/SerializationContext.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_i_serialization_context_8h_source.html">swCommonLib/Serialization/ISerializationContext.h</a>&quot;</code><br />
+<code>#include &quot;swCommonLib/Serialization/FilePosition.h&quot;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 </div>
@@ -117,7 +118,7 @@ Enumerations</h2></td></tr>
 <tr class="memitem:ac1f1e0a72eb3bb133c13c1aedc837223"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_deserializer_8h.html#ac1f1e0a72eb3bb133c13c1aedc837223">ParsingMode</a> { <a class="el" href="_deserializer_8h.html#ac1f1e0a72eb3bb133c13c1aedc837223a8e3c037e1c30163e6eed314cdf14cb6d">ParsingMode::ParseInsitu</a>, 
 <a class="el" href="_deserializer_8h.html#ac1f1e0a72eb3bb133c13c1aedc837223aeb63427d5b96b23422d5e974c21b025e">ParsingMode::AllocStrings</a>
  }</td></tr>
-<tr class="memdesc:ac1f1e0a72eb3bb133c13c1aedc837223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parsing modes.  <a class="el" href="class_serialization.html">Serialization</a>.  <a href="_deserializer_8h.html#ac1f1e0a72eb3bb133c13c1aedc837223">More...</a><br /></td></tr>
+<tr class="memdesc:ac1f1e0a72eb3bb133c13c1aedc837223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parsing modes.  Serialization.  <a href="_deserializer_8h.html#ac1f1e0a72eb3bb133c13c1aedc837223">More...</a><br /></td></tr>
 <tr class="separator:ac1f1e0a72eb3bb133c13c1aedc837223"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -143,7 +144,7 @@ Enumerations</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Parsing modes.  <a class="el" href="class_serialization.html">Serialization</a>. </p>
+<p>Parsing modes.  Serialization. </p>
 <p>Parsowanie insitu powoduje zapisanie całego parsowanego dokumentu w pamięci deserializatora. Nowe stringi nie są alokowane, a zapisywane są wskażniki do tego dokumentu. Metoda prawdopodobnie zajmie więcej pamięci niż w przypadku alokowania, ponieważ przechowywane są również nadmiarowe białe znaki i wszystkie niepotrzebne elementy. Zaletą jest za to unikanie alokacji, co powinno przypsieszyć działanie.</p>
 <p>AllocString usuwa cały dokument z pamięci po sparsowaniu. Metoda działa wolniej, ale za to przechowuje tylko to co potrzebne. Wskazaniem do użycia są przypadki, gdy deserializator służy nie tylko do jednokrotnego parsowania, ale również przechowywania danych. </p>
 <table class="fieldtable">
@@ -160,7 +161,7 @@ Enumerations</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 7 2017 22:31:55 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 31 2018 19:56:00 for Sleeping Wombat Common Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

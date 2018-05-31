@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['nested',['Nested',['../struct_nested.html',1,'']]],
-  ['nested2',['Nested2',['../struct_nested2.html',1,'']]],
-  ['nullable',['Nullable',['../struct_nullable.html',1,'']]]
+  ['mammal',['Mammal',['../classsw_1_1_mammal.html',1,'sw']]],
+  ['memorychunk',['MemoryChunk',['../class_memory_chunk.html',1,'']]]
 ];
