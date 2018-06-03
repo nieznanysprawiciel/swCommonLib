@@ -28,6 +28,9 @@
 #include "Polymorphic/PolymorphicObjectContainer.h"
 #include "Polymorphic/PolymorphicSharedPtrContainer.h"
 
+#include "Node.h"
+
+
 #include "swCommonLib/Common/RTTR.h"
 #include "swCommonLib/TestUtils/TestClassHierarchy/SerializationPrimitives/LinkLibrary.h"
 
@@ -117,6 +120,7 @@ RTTR_REGISTRATION
 		.property( "ObjectPtr", &sw::PolymorphicSharedPtrContainer::ObjectPtr );
 
 	rttr::registration::class_< sw::StringContainer >( "StringContainer" )
+		.constructor<>()	( rttr::policy::ctor::as_raw_ptr )
 		.property( "Description", &sw::StringContainer::Description )
 		.property( "Content", &sw::StringContainer::Content );
 
@@ -130,6 +134,10 @@ RTTR_REGISTRATION
 
 	rttr::registration::class_< sw::StaticArrayContainer_Readonly >( "StaticArrayContainer_Readonly" )
 		.property_readonly( "StructsVec", &sw::StaticArrayContainer_Readonly::StructsVec ) BIND_AS_REF;
+
+	rttr::registration::class_< sw::Node >( "Node" )
+		.property_readonly( "Children", &sw::Node::Children ) BIND_AS_REF
+		.property_readonly( "Generic", &sw::Node::Generic );
 }
 
 
