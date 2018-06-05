@@ -7,7 +7,9 @@
 
 
 #include "StringContainer.h"
+
 #include "Arrays/ArrayContainer.h"
+#include "Arrays/ArrayPolymorphicContainer.h"
 #include "Arrays/StaticArrayContainer.h"
 #include "Arrays/StaticArrayContainer_Readonly.h"
 
@@ -128,6 +130,9 @@ RTTR_REGISTRATION
 
 	rttr::registration::class_< sw::ArrayContainer >( "ArrayContainer" )
 		.property( "StructsVec", &sw::ArrayContainer::StructsVec ) BIND_AS_REF;
+
+	rttr::registration::class_< sw::ArrayPolymorphicContainer >( "ArrayPolymorphicContainer" )
+		.property( "PolymorphicsVec", &sw::ArrayPolymorphicContainer::PolymorphicsVec ) BIND_AS_REF;
 
 	rttr::registration::class_< sw::StaticArrayContainer >( "StaticArrayContainer" )
 		.property( "StructsVec", &sw::StaticArrayContainer::StructsVec );
