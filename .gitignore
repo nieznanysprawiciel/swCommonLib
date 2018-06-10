@@ -24,6 +24,8 @@ Projects/ReleaseDir/*
 Projects/ReleaseDir/Serialization/*
 !Projects/ReleaseDir/Serialization/TestInput/
 
+Projects/ReleaseDir/SerializerTest/*
+
 # Generated documentation
 Documentation/
 
