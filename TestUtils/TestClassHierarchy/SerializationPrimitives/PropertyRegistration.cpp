@@ -141,8 +141,8 @@ RTTR_REGISTRATION
 		.property_readonly( "StructsVec", &sw::StaticArrayContainer_Readonly::StructsVec ) BIND_AS_REF;
 
 	rttr::registration::class_< sw::Node >( "Node" )
-		.property_readonly( "Children", &sw::Node::Children ) BIND_AS_REF
-		.property_readonly( "Generic", &sw::Node::Generic );
+		.property( "Children", &sw::Node::Children ) BIND_AS_REF
+		.property( "Generic", &sw::Node::Generic );
 }
 
 
