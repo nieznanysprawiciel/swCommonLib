@@ -54,6 +54,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benchmarks", "Benchmarks", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerializationBenchmark", "Projects\Visual2015\Benchmarks\SerializationBenchmark\SerializationBenchmark.vcxproj", "{1E7C4CFD-8EDC-4BFE-9AB4-DD424B3E921C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Prototyper", "Projects\Visual2015\Tests\Prototyper\Prototyper.vcxproj", "{968FD90D-0835-44FF-BE5E-6271D4DFD916}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -206,6 +208,14 @@ Global
 		{1E7C4CFD-8EDC-4BFE-9AB4-DD424B3E921C}.Release|x64.Build.0 = Release|x64
 		{1E7C4CFD-8EDC-4BFE-9AB4-DD424B3E921C}.Release|x86.ActiveCfg = Release|Win32
 		{1E7C4CFD-8EDC-4BFE-9AB4-DD424B3E921C}.Release|x86.Build.0 = Release|Win32
+		{968FD90D-0835-44FF-BE5E-6271D4DFD916}.Debug|x64.ActiveCfg = Debug|x64
+		{968FD90D-0835-44FF-BE5E-6271D4DFD916}.Debug|x64.Build.0 = Debug|x64
+		{968FD90D-0835-44FF-BE5E-6271D4DFD916}.Debug|x86.ActiveCfg = Debug|Win32
+		{968FD90D-0835-44FF-BE5E-6271D4DFD916}.Debug|x86.Build.0 = Debug|Win32
+		{968FD90D-0835-44FF-BE5E-6271D4DFD916}.Release|x64.ActiveCfg = Release|x64
+		{968FD90D-0835-44FF-BE5E-6271D4DFD916}.Release|x64.Build.0 = Release|x64
+		{968FD90D-0835-44FF-BE5E-6271D4DFD916}.Release|x86.ActiveCfg = Release|Win32
+		{968FD90D-0835-44FF-BE5E-6271D4DFD916}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -227,5 +237,6 @@ Global
 		{476A104B-CD9B-4A92-A7DE-5F5BBB990A5D} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
 		{FFDDC989-C595-4709-A84C-552157BEDD77} = {236BB984-A2C6-4873-9160-8D6FE7DB0B34}
 		{1E7C4CFD-8EDC-4BFE-9AB4-DD424B3E921C} = {31AD8D4C-8799-4BDD-9CDD-59425F7B3E6B}
+		{968FD90D-0835-44FF-BE5E-6271D4DFD916} = {CC085143-1800-42AB-B98B-7BE05D700B8B}
 	EndGlobalSection
 EndGlobal
