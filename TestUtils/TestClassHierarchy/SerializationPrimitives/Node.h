@@ -52,6 +52,8 @@ public:
 //
 inline void			Node::GenerateTree			( uint64 numNodes, uint64 nodesOnLevel, TypeID genericToCreate )
 {
+	Generic = genericToCreate.create().get_value< EngineObject* >();
+
 	if( numNodes > 0 )
 	{
 		Children.clear();
@@ -61,8 +63,6 @@ inline void			Node::GenerateTree			( uint64 numNodes, uint64 nodesOnLevel, TypeI
 
 		auto nodesInSubtree = numNodes / nodesOnLevel;
 		auto rest = numNodes % nodesOnLevel;
-
-		Generic = genericToCreate.create().get_value< EngineObject* >();
 
 		Children.resize( nodesOnLevel );
 
